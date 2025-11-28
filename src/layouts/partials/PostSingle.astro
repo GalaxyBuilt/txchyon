@@ -14,9 +14,40 @@ const posts = await getSinglePage("posts");
 const { post } = Astro.props;
 const similarPosts = similerItems(post, posts, post.slug);
 const { Content } = await render(post);
-const { title, description, authors, categories, image, date, tags } =
-  post.data;
+const { title, description, authors, categories, image, date, tags } = post.data;
+
+// OPEN GRAPH & TWITTER CARDS (THIS IS THE FIX)
+const siteUrl = "https://txchyon.com";
+const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
+const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/og-default.jpg`;
 ---
+
+<!-- ADD THESE META TAGS TO <head> -->
+<head>
+  <meta charset="utf-8" />
+  <title>{title} | Txchyon</title>
+  <meta name="description" content={description} />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content="Txchyon" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@txchyon" />
+  <meta name="twitter:creator" content="@txchyon" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Optional but recommended -->
+  <link rel="canonical" href={canonicalUrl} />
+</head>
 
 <section class="section">
   <div class="container">
@@ -57,7 +88,6 @@ const { title, description, authors, categories, image, date, tags } =
           </li>
           <li class="mx-3 flex items-center flex-wrap">
             <BiCategoryAlt className="mr-1 h-[18px] w-[18px] text-gray-600" />
-
             <ul>
               {
                 categories.map((category: string, i: number) => (
@@ -76,7 +106,6 @@ const { title, description, authors, categories, image, date, tags } =
           </li>
         </ul>
       </div>
-
       <div class="col-12 mt-8 mb-2">
         {
           image && (
@@ -90,7 +119,6 @@ const { title, description, authors, categories, image, date, tags } =
           )
         }
       </div>
-
       <div class="md:col-10">
         <div class="content mb-16 text-left">
           <Content />

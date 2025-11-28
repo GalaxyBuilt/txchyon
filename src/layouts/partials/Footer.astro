@@ -5,9 +5,10 @@ import menu from "@/config/menu.json";
 import social from "@/config/social.json";
 import { markdownify } from "@/lib/utils/textConverter";
 ---
+
 <footer class="section bg-dark">
   <div class="container text-center">
-    {/* footer menu */}
+    {/* Footer menu */}
     <ul class="mb-8 space-x-4">
       {
         menu.footer.map((item) => (
@@ -31,17 +32,30 @@ import { markdownify } from "@/lib/utils/textConverter";
       </li>
     </ul>
 
-    {/* social icons */}
+    {/* Social icons (from your social.json) */}
     <Social source={social.main} className="social-icons mb-8" />
 
-    {/* NEW: Hidden IndieWeb verification links (rel="me") */}
+    {/* NEW: Prominent Telegram link */}
+    <div class="mb-8">
+      <a
+        href="https://t.me/txchyon"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-all shadow-lg"
+      >
+        ✈️ Join Telegram Channel
+      </a>
+    </div>
+
+    {/* Hidden IndieWeb verification links (including Telegram) */}
     <div class="hidden">
       <a rel="me" href="https://github.com/0xnefu">GitHub</a>
       <a rel="me" href="https://twitter.com/txchyon">Twitter</a>
       <a rel="me" href="https://x.com/txchyon">X.com</a>
+      <a rel="me" href="https://t.me/txchyon">Telegram</a>
     </div>
 
-    {/* copyright */}
+    {/* Copyright */}
     <p set:html={markdownify(config.params.copyright)} class="text-white/75" />
   </div>
 </footer>
