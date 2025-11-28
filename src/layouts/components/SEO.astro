@@ -1,0 +1,54 @@
+<!-- src/components/SEO.astro → FINAL VERSION (replace your current one with this) -->
+---
+import { SEO as AstroSEO } from "astro-seo";
+import config from "@/config/config.json";
+
+const {
+  title,
+  description,
+  image,
+  canonical,
+  noindex = false,
+} = Astro.props;
+
+// Build the exact same values your old Base.astro used
+const finalTitle = title ?? "Txchyon";
+const finalDescription = description ?? "on-chain research + Defi alpha and Airdrops";
+const finalImage = image
+  ? `${config.site.base_url}${image.startsWith("/") ? "" : "/"}${image}`
+  : `${config.site.base_url}/images/txchyon-hero.jpg`;
+
+const finalCanonical = canonical 
+  ? canonical 
+  : new URL(Astro.url.pathname, Astro.site).toString();
+---
+<AstroSEO
+  title={finalTitle}
+  description={finalDescription}
+  canonical={finalCanonical}
+  noindex={noindex}
+  openGraph={{
+    basic: {
+      title: finalTitle,
+      type: "website",
+      image: finalImage,
+      url: finalCanonical,
+    },
+    optional: {
+      siteName: "Txchyon Capital",
+      description: finalDescription,
+    },
+    image: {
+      width: 1200,
+      height: 630,
+      alt: finalTitle,
+    },
+  }}
+  twitter={{
+    card: "summary_large_image",
+    site: "@txchyon",
+    title: finalTitle,
+    description: finalDescription,
+    image: finalImage,
+  }}
+/>
