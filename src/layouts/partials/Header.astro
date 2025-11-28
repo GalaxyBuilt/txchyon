@@ -1,12 +1,12 @@
 ---
 import menu from "@/config/menu.json";
 import { IoSearch } from "react-icons/io5";
-
 const { main } = menu as { main: { name: string; url: string }[] };
 ---
 
 <header class="py-6 border-b border-gray-200 dark:border-gray-800">
-  <div class="container mx-auto px-6 flex items-center justify-between">
+  <div class="container mx-auto px-6 flex items-center justify-between relative">
+    
     <!-- LOGO + NAME -->
     <div class="flex items-center space-x-3">
       <a href="/" class="flex items-center space-x-3">
@@ -21,7 +21,7 @@ const { main } = menu as { main: { name: string; url: string }[] };
       </a>
     </div>
 
-    <!-- ONLY THIS LINE CHANGED — perfect in-between spacing -->
+    <!-- Desktop Nav (unchanged) -->
     <nav class="hidden md:flex items-center space-x-10 lg:ml-16">
       {main.map((item) => (
         <a
@@ -39,12 +39,11 @@ const { main } = menu as { main: { name: string; url: string }[] };
       </a>
     </nav>
 
-    <!-- SEARCH + THEME TOGGLE -->
+    <!-- Search + Theme (desktop) -->
     <div class="flex items-center gap-8">
       <a href="/search" class="text-black data-[theme=dark]:text-white hover:text-blue-600 transition">
         <IoSearch class="w-6 h-6" />
       </a>
-
       <button
         id="theme-toggle"
         class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition"
@@ -56,24 +55,65 @@ const { main } = menu as { main: { name: string; url: string }[] };
           <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-3.05-.293l-.707-.707a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414-1.414z"/>
         </svg>
       </button>
+
+      <!-- Mobile Hamburger (ONLY NEW PART) -->
+      <div class="md:hidden" x-data="{ open: false }">
+        <button @click="open = !open" class="text-black data-[theme=dark]:text-white z-50">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path :class="{ 'hidden': open, 'block': !open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path :class="{ 'hidden': !open, 'block': open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Dropdown -->
+        <div 
+          x-show="open" 
+          @click.away="open = false"
+          x-transition
+          class="absolute top-full left-0 right-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-xl"
+        >
+          <div class="px-8 py-10 space-y-8">
+            {main.map((item) => (
+              <a href={item.url} class="block text-2xl font-bold text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400">
+                {item.name}
+              </a>
+            ))}
+            <a href="/tools" class="block text-2xl font-bold text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400">
+              Tools & Disclosures
+            </a>
+
+            <div class="pt-6 border-t border-gray-200 dark:border-gray-700">
+              <div class="flex space-x-8 text-3xl">
+                <a href="https://twitter.com/txchyon" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">X</a>
+                <a href="https://t.me/txchyon" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Telegram</a>
+                <a href="https://warpcast.com/txchyon" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Farcaster</a>
+              </div>
+            </div>
+
+            <a href="/subscribe" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-4 rounded-lg text-lg font-bold">
+              Get Weekly Alpha →
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- DARK MODE SCRIPT (unchanged) -->
+<!-- Alpine.js (add once in layout or head if missing) -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- Your original dark mode script — unchanged -->
 <script is:global>
   document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("theme-toggle");
     const html = document.documentElement;
-
     const setTheme = (theme) => {
       html.setAttribute("data-theme", theme);
       localStorage.theme = theme;
     };
-
     const saved = localStorage.theme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     setTheme(saved);
-
     btn?.addEventListener("click", () => {
       const newTheme = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
       setTheme(newTheme);
