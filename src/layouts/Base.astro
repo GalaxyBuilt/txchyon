@@ -5,7 +5,7 @@ import theme from "@/config/theme.json";
 import { plainify } from "@/lib/utils/textConverter";
 import Footer from "@/partials/Footer.astro";
 import Header from "@/partials/Header.astro";
-import FloatingBubble from "@/components/FloatingBubble.astro";   <!-- ← ADDED -->
+import FloatingBubble from "@/components/FloatingBubble.astro";
 import "@/styles/main.css";
 import { AstroFont } from "astro-font";
 import { ClientRouter } from "astro:transitions";
@@ -40,7 +40,7 @@ const finalCanonical = canonical ?? `${config.site.base_url}${Astro.url.pathname
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- GOOGLE ANALYTICS GA4 - LIVE -->
+    {/* GOOGLE ANALYTICS GA4 - LIVE */}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W77T47Y58P"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -48,6 +48,9 @@ const finalCanonical = canonical ?? `${config.site.base_url}${Astro.url.pathname
       gtag('js', new Date());
       gtag('config', 'G-W77T47Y58P');
     </script>
+
+    {/* Google Search Console verification placeholder */}
+    {/* <meta name="google-site-verification" content="your-code-here" /> */}
 
     <link rel="shortcut icon" href={config.site.favicon} />
     <meta name="theme-name" content="bookworm-light-astro" />
@@ -81,7 +84,6 @@ const finalCanonical = canonical ?? `${config.site.base_url}${Astro.url.pathname
       noindex={!!noindex}
     />
 
-    <!-- RSS + JSON Feed -->
     <link rel="alternate" type="application/rss+xml" title="Txchyon RSS" href="/rss.xml" />
     <link rel="alternate" type="application/feed+json" title="Txchyon JSON Feed" href="/feed.json" />
 
@@ -97,7 +99,6 @@ const finalCanonical = canonical ?? `${config.site.base_url}${Astro.url.pathname
     </main>
     <Footer />
 
-    <!-- ← FLOATING BUBBLE + ALPINE.JS -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <FloatingBubble client:load />
   </body>
