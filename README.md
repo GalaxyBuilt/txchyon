@@ -105,7 +105,7 @@ If you need a custom theme, theme customization, or complete website development
 to upload to git 
 
 git add .
-git commit -m "top 8 Dex"
+git commit -m "featured post"
 git push
 
 
