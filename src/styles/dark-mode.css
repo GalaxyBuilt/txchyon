@@ -163,3 +163,13 @@
 .dark .fixed .dark\\:border-gray-800 {
   border-color: #333333 !important;
 }
+
+/* CATCH-ALL FOR BLOG POST TEXT */
+.dark article * {
+  color: #e0e0e0 !important;
+}
+
+/* Override for specific text color classes that might be missing */
+.dark [class*='text-']:not(.text-white):not(.text-transparent) {
+  color: #e0e0e0 !important;
+}

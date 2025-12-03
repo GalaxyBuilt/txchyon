@@ -101,6 +101,70 @@ const finalCanonical = canonical ?? `${config.site.base_url}${Astro.url.pathname
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <FloatingBubble client:load />
-  </body>
+  
+
+<!-- Dark Mode Script -->
+<script is:global>
+  // Function to apply theme
+  const setTheme = (theme) => {
+    const html = document.documentElement;
+    html.setAttribute("data-theme", theme);
+    if (theme === "dark") {
+      html.classList.add("dark");
+    } else {
+      html.classList.remove("dark");
+    }
+    localStorage.theme = theme;
+  };
+
+  // Initialize theme on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("theme-toggle");
+    const saved = localStorage.theme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    
+    if (!localStorage.theme) {
+      localStorage.theme = saved;
+    }
+    
+    setTheme(saved);
+    
+    // Add click listener
+    btn?.addEventListener("click", () => {
+      const html = document.documentElement;
+      const newTheme = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      setTheme(newTheme);
+    });
+    
+    // Listen for system theme changes
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+      if (!localStorage.theme) {
+        const theme = e.matches ? "dark" : "light";
+        setTheme(theme);
+      }
+    });
+  });
+
+  // Handle Astro View Transitions (if enabled)
+  document.addEventListener("astro:page-load", () => {
+    // Re-apply theme after page transition
+    const savedTheme = localStorage.theme;
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+    
+    // Re-attach click listener (button might be recreated)
+    const btn = document.getElementById("theme-toggle");
+    if (btn) {
+      btn.addEventListener("click", () => {
+        const html = document.documentElement;
+        const newTheme = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        setTheme(newTheme);
+      });
+    }
+  });
+</script>
+</body>
 </html>
+
+
 
