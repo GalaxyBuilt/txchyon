@@ -21,6 +21,19 @@ const { title, description, authors, categories, image, date, tags } = post.data
 const siteUrl = "https://txchyon.com";
 const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
 const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/og-default.jpg`;
+
+// Safe author handling
+const getAuthorNames = () => {
+  if (!authors || !Array.isArray(authors)) return "NefuTrades";
+  
+  const names = authors
+    .map(a => a?.data?.name)
+    .filter(name => name && typeof name === 'string');
+  
+  return names.length > 0 ? names.join(", ") : "NefuTrades";
+};
+
+const authorNames = getAuthorNames();
 ---
 
 <!-- Add SEO component for social cards -->
@@ -31,7 +44,7 @@ const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/og-default.jpg`;
   canonical={canonicalUrl}
   type="article"
   publishedTime={date.toISOString()}
-  author={authors?.map(a => a.data.name).join(", ") || "NefuTrades"}
+  author={authorNames}
   section={categories?.[0] || "DeFi"}
 />
 
@@ -45,17 +58,17 @@ const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/og-default.jpg`;
       <div class="md:col-10 text-center">
         <h1 set:html={markdownify(title)} class="h2" />
         <ul class="mt-4 flex flex-wrap items-center justify-center text-text">
-          <!-- Author, Date, Categories – exactly as you had them -->
-          {authors && (
+          <!-- Author, Date, Categories – with safe handling -->
+          {authorNames !== "NefuTrades" && (
             <li class="mr-4 flex items-center">
-              {authors.map((author: any, i: number) => (
+              {authorNames.split(", ").map((name: string, i: number) => (
                 <span>
                   {i > 0 && ", "}
                   <a
-                    href={`/authors/${slugify(author.data.name)}`}
+                    href={`/authors/${slugify(name)}`}
                     class="ml-1 hover:text-primary"
                   >
-                    {author.data.name}
+                    {name}
                   </a>
                 </span>
               ))}
