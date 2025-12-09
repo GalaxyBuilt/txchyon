@@ -119,3 +119,20 @@ For Images
 ![Description of image](/images/your-image.jpg)
 
 ![Screenshot example](/screenshots/example.jpg)
+
+
+Front Matter for articles 
+
+---
+title: ""
+description: ""
+date: YYYY-MM-DD
+updatedDate: YYYY-MM-DD
+image: ""
+heroImageAlt: ""
+authors: ["Nefu"]
+authorTwitter: "Nefutrades"
+tags: [""]
+categories: ["", ""]
+draft: true
+---
