@@ -15,18 +15,21 @@ const isHomePage = url === '/' || url === '/index.html';
 
 <footer class="section bg-dark">
   <div class="container text-center">
-    {/* Footer menu */}
+    {/* Footer menu - Updated: removed Blog, added Services */}
     <ul class="mb-8 space-x-4">
       {
         menu.footer.map((item) => (
-          <li class="inline-block">
-            <a
-              href={item.url}
-              class="p-4 text-white/75 hover:text-white transition-all"
-            >
-              {item.name}
-            </a>
-          </li>
+          // Only show items that aren't "Blog"
+          item.name.toLowerCase() !== "blog" && (
+            <li class="inline-block">
+              <a
+                href={item.url}
+                class="p-4 text-white/75 hover:text-white transition-all"
+              >
+                {item.name}
+              </a>
+            </li>
+          )
         ))
       }
       <li class="inline-block">
@@ -35,6 +38,25 @@ const isHomePage = url === '/' || url === '/index.html';
           class="p-4 text-white/75 hover:text-white transition-all"
         >
           Toolkit
+        </a>
+      </li>
+      {/* Add Services link to TheReplyGuy */}
+      <li class="inline-block">
+        <a
+          href="https://replyguy.carrd.co"
+          target="_blank"
+          class="p-4 text-white/75 hover:text-white transition-all"
+        >
+          Services
+        </a>
+      </li>
+      {/* Add Contact Us to footer */}
+      <li class="inline-block">
+        <a
+          href="/contact"
+          class="p-4 text-white/75 hover:text-white transition-all"
+        >
+          Contact Us
         </a>
       </li>
     </ul>
