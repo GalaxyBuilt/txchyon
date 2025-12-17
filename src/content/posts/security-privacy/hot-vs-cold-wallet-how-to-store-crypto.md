@@ -12,7 +12,7 @@ categories:
   - "security-privacy"
   - "security-privacy/basics"
   # Keep: "security", "beginner"
-draft: false
+draft: true
 ---
 
 # 🧊 From Hot Wallets to Cold Storage: The Definitive Guide to Crypto Security

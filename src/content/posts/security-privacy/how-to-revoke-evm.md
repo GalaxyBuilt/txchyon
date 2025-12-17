@@ -12,7 +12,7 @@ categories:
   - "security-privacy"
   - "security-privacy/transaction-security"
   # Keep: "security", "beginner"
-draft: false
+draft: true
 ---
 
 # 🛑 Cut the Cord: Revoking Unlimited Token Allowances on EVM Chains

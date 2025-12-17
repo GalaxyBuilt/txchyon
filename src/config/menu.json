@@ -1,36 +1,49 @@
 {
   "main": [
     {
-      "name": "DeFi",
-      "url": "/categories/defi"
+      "name": "Getting Started",
+      "url": "/categories/getting-started"
     },
     {
-      "name": "Aster",
-      "url": "/categories/aster"
+      "name": "Trading",
+      "url": "/categories/trading-investing"
     },
     {
-      "name": "Solana",
-      "url": "/categories/solana"
+      "name": "DeFi & Yield",
+      "url": "/categories/defi-yield"
     },
     {
-      "name": "EVM",
-      "url": "/categories/evm"
-    },
-    {
-      "name": "Tutorials",
-      "url": "/categories/tutorial"
+      "name": "Security",
+      "url": "/categories/security-privacy"
     },
     {
       "name": "Research",
-      "url": "/categories/research"
+      "url": "/categories/research-analysis"
     },
     {
-      "name": "Airdrop",
-      "url": "/categories/airdrop"
-    },
-    {
-      "name": "Toolkit",
-      "url": "/tools"
+      "name": "More",
+      "dropdown": [
+        {
+          "name": "Airdrop Farming",
+          "url": "/categories/airdrop-farming"
+        },
+        {
+          "name": "Infrastructure",
+          "url": "/categories/infrastructure-tech"
+        },
+        {
+          "name": "Portfolio",
+          "url": "/categories/portfolio-management"
+        },
+        {
+          "name": "Regulatory & Tax",
+          "url": "/categories/regulatory-tax"
+        },
+        {
+          "name": "Tools & Automation",
+          "url": "/categories/tools-automation"
+        }
+      ]
     }
   ],
   "footer": [

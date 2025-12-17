@@ -12,7 +12,7 @@ categories:
   - "security-privacy"
   - "security-privacy/scam-prevention"
   # Keep: "security", "beginner", "awareness"
-draft: false
+draft: true
 ---
 
 # 🛡️ Stop Scams Before They Start: Your Essential 5-Minute Website Check

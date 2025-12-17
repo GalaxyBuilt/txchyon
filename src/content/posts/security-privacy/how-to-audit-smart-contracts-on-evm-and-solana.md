@@ -12,7 +12,7 @@ categories:
   - "security-privacy"
   - "security-privacy/transaction-security"
   # Keep: "security", "beginner"
-draft: false
+draft: true
 ---
 
 # 🕵️‍♀️ Don't Deploy, Verify: A Beginner's Guide to Smart Contract Audits (EVM & Solana)

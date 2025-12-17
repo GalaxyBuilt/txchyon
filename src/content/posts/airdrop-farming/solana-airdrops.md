@@ -11,7 +11,7 @@ tags: ["Airdrop", "Solana", "Tensor", "Parcl", "ZetaMarkets", "Pumpfun", "Farmin
 categories:
   - "airdrop-farming"
   # Keep existing tags: "airdrop", "research", "defi", "speculation", "solana", "security"
-draft: false
+draft: true
 ---
 
 # 🚀 The Solana Airdrop Snowball: Your Guide to 4 High-Value Token Rewards

@@ -12,7 +12,7 @@ categories:
   - "getting-started" 
   - "getting-started/first-purchase"
   # Keep: "defi", "crypto" if relevant
-draft: false
+draft: true
 ---
 
 ## 📊 Quick Comparison Table: Best Crypto Debit Cards 2026

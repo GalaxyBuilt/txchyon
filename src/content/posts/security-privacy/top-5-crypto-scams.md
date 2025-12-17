@@ -12,7 +12,7 @@ categories:
   - "security-privacy"
   - "security-privacy/scam-prevention"
   # Keep: "security", "beginner", "awareness"
-draft: false
+draft: true
 ---
 
 # 🚫 The Top 5 Scams That Cost Crypto Investors Billions

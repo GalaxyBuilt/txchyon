@@ -12,7 +12,7 @@ categories:
   - "defi-yield"
   - "defi-yield/structured-products"
   # Keep: "defi", "Founders", "tutorial", "solana", "DeFi", "Guides"
-draft: false
+draft: true
 ---
 
 # 💸 Launch Your Legacy: A Guide to Pump.fun Memecoin Creation

@@ -16,7 +16,11 @@ type PageData = {
 export const getSinglePage = async <C extends CollectionKey>(
   collectionName: C
 ): Promise<CollectionEntry<C>[]> => {
-  const allPages = await getCollection(collectionName);
+  const allPages = await getCollection(collectionName, ({ id }) => {
+    // This filter allows files in subfolders
+    // It includes files like "getting-started/how-to-buy-crypto.md"
+    return true; // Allow all files, including those in subfolders
+  });
 
   const removeIndex = allPages.filter((data) => data.id.match(/^(?!-)/));
 

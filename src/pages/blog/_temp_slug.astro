@@ -1,0 +1,29 @@
+﻿---
+import { getCollection } from "astro:content";
+import PostSingle from "@/layouts/partials/PostSingle.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", ({ data }) => !data.draft);
+  
+  return posts.map((post) => {
+    const postFilename = post.id.split('/').pop();
+    
+    return {
+      params: { 
+        slug: postFilename
+      },
+      props: { 
+        post: {
+          ...post,
+          slug: postFilename
+        },
+        slugArray: ["blog", postFilename]  // For breadcrumbs
+      }
+    };
+  });
+}
+
+const { post, slugArray } = Astro.props;
+---
+
+<PostSingle {post} {slugArray} />

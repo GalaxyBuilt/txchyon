@@ -12,7 +12,7 @@ categories:
   - "security-privacy"
   - "security-privacy/transaction-security"
   # Keep: "security", "beginner"
-draft: false
+draft: true
 ---
 
 # 🛑 Stop the Drain: A Step-by-Step Guide to Revoking Token Approvals on Solana

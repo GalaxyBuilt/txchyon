@@ -1,37 +1,97 @@
 ---
-import Posts from "@/components/Posts.astro";
+// src/pages/categories/[category].astro
+// Dynamic page for all 10 pillars
+
 import Base from "@/layouts/Base.astro";
-import { getSinglePage } from "@/lib/contentParser.astro";
-import { getTaxonomy } from "@/lib/taxonomyParser.astro";
-import { sortByDate } from "@/lib/utils/sortFunctions";
-import taxonomyFilter from "@/lib/utils/taxonomyFilter";
-import { humanize } from "@/lib/utils/textConverter";
+import { getCollection } from "astro:content";
 
+// Generate all 10 pillar pages at build time
 export async function getStaticPaths() {
-  const categories = await getTaxonomy("posts", "categories");
+  const pillars = [
+    "airdrop-farming",
+    "defi-yield",
+    "getting-started",
+    "infrastructure-tech",
+    "portfolio-management",
+    "regulatory-tax",
+    "research-analysis",
+    "security-privacy",
+    "tools-automation",
+    "trading-investing"
+  ];
 
-  return categories.map((category) => {
-    return {
-      params: { category },
-    };
-  });
+  console.log("Generating category pages for:", pillars);
+
+  return pillars.map((category) => ({
+    params: { category },
+  }));
 }
 
 const { category } = Astro.params;
 
-const posts = await getSinglePage("posts");
-const filterByCategory = taxonomyFilter(posts, "categories", category);
-const sortedPosts = sortByDate(filterByCategory);
+console.log("Loading category:", category);
 
-const title = humanize(category || "");
+// Get posts from this pillar's subfolder
+const posts = await getCollection("posts", ({ id, data }) => {
+  return !data.draft && id.startsWith(`${category}/`);
+});
+
+console.log(`Found ${posts.length} posts in ${category}`);
+
+posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const niceTitle = category
+  .split("-")
+  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(" ");
 ---
 
-<Base title={title || "Category"}>
-  <div class="section">
-    <div class="container">
+<Base title={`${niceTitle} - Txchyon Capital`}>
+  <section class="section py-12">
+    <div class="container max-w-7xl mx-auto px-4">
       <p class="text-center text-2xl mb-4">Showing Posts From</p>
-      <h1 class="h2 mb-16 text-center text-primary">{title}</h1>
-      <Posts posts={sortedPosts} fluid={false} />
+      <h1 class="h2 mb-16 text-center text-primary">{niceTitle}</h1>
+
+      {posts.length === 0 ? (
+        <div class="text-center py-20">
+          <p class="text-2xl text-gray-600">No posts yet in this category</p>
+          <p class="text-gray-500 mt-4">
+            Add .md files to src/content/posts/{category}/
+          </p>
+        </div>
+      ) : (
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <a
+              href={`/blog/${post.id}`}
+              class="group block bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300"
+            >
+              {post.data.image && (
+                <img
+                  src={post.data.image}
+                  alt={post.data.title}
+                  class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              )}
+              <div class="p-8">
+                <h2 class="text-2xl font-bold mb-3 group-hover:text-primary transition">
+                  {post.data.title}
+                </h2>
+                <p class="text-gray-600 mb-4 line-clamp-3">
+                  {post.data.description || "Read more..."}
+                </p>
+                <time class="text-sm text-gray-500 block">
+                  {new Date(post.data.date).toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric"
+                  })}
+                </time>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
     </div>
-  </div>
+  </section>
 </Base>

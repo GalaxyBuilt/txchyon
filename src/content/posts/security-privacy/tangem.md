@@ -12,7 +12,7 @@ categories:
   - "security-privacy"
   - "security-privacy/hardware-wallets"
   # Keep: "Security", "Beginner", "Guides", "Cryptocurrency"
-draft: false
+draft: true
 ---
 
 # 🛡️ Eliminating Risk: Setting Up Your Tangem Card Wallet
