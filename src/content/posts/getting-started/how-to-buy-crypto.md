@@ -1,9 +1,9 @@
 ---
 title: "How to Buy Cryptocurrency: Complete Step-by-Step Beginner's Guide"
 description: "Mastering your first crypto purchase doesn't need to be intimidating. This guide walks you through every click—from choosing a platform to securing your assets."
-date: 2025-12-15
-pubDate: 2025-12-15
-updatedDate: 2025-12-15
+date: 2025-12-08
+pubDate: 2025-12-08
+updatedDate: 2025-12-08
 image: "/images/posts/tokens.jpg"
 heroImageAlt: "Step-by-step visual guide showing smartphone, Coinbase interface, and crypto wallet security"
 authors: ["Nefu"]
