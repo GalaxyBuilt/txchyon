@@ -1,0 +1,72 @@
+---
+// src/components/SearchBar.astro
+interface Props {
+  client: "load" | "visible" | "idle";
+  searchList: any[];
+}
+
+const { client, searchList = [] } = Astro.props;
+
+// Convert searchList to JSON for JavaScript
+const searchListJson = JSON.stringify(searchList);
+---
+
+<div class="search-bar">
+  <input
+    type="text"
+    placeholder="Search articles..."
+    class="w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-700"
+    id="search-input"
+    aria-label="Search articles"
+  />
+  <div id="search-results" class="mt-4 hidden">
+    <!-- Results will be populated by JavaScript -->
+  </div>
+  
+  <script>
+    // Get searchList from data attribute
+    const searchListElement = document.currentScript.parentElement;
+    const searchListData = searchListElement.getAttribute('data-search-list');
+    const posts = JSON.parse(searchListData || '[]');
+    
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    if (searchInput && searchResults) {
+      searchInput.addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase().trim();
+        
+        if (query.length < 2) {
+          searchResults.classList.add('hidden');
+          return;
+        }
+        
+        const filtered = posts.filter(post => 
+          post.title && post.title.toLowerCase().includes(query) || 
+          (post.description && post.description.toLowerCase().includes(query))
+        );
+        
+        if (filtered.length > 0) {
+          searchResults.innerHTML = filtered.map(post => `
+            <div class="p-4 mb-2 border rounded-lg dark:bg-gray-800 dark:border-gray-700 hover:shadow-md transition-shadow">
+              <a href="/blog/${post.slug}" class="block">
+                <h3 class="font-semibold text-lg mb-1 text-gray-900 dark:text-white">${post.title}</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">${post.description || ''}</p>
+              </a>
+            </div>
+          `).join('');
+          searchResults.classList.remove('hidden');
+        } else {
+          searchResults.innerHTML = '<p class="text-gray-500 dark:text-gray-400 p-4">No results found. Try different keywords.</p>';
+          searchResults.classList.remove('hidden');
+        }
+      });
+    }
+  </script>
+</div>
+
+<!-- Store the searchList data in a data attribute -->
+<script is:inline>
+  // Set the searchList data on the parent div
+  document.currentScript.parentElement.setAttribute('data-search-list', ${searchListJson});
+</script>

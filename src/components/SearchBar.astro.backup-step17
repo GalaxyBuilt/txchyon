@@ -1,0 +1,135 @@
+---
+// src/components/SearchBar.astro - Fixed JavaScript syntax
+interface Props {
+  searchList: any[];
+}
+
+const { searchList = [] } = Astro.props;
+
+// Convert to JSON string for JavaScript
+const searchListJson = JSON.stringify(searchList);
+---
+
+<div class="search-bar">
+  <div class="relative">
+    <input
+      type="text"
+      placeholder="Start typing to search articles..."
+      class="w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-700"
+      id="search-input"
+      aria-label="Search articles"
+    />
+    <div class="absolute right-3 top-3">
+      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </div>
+  </div>
+  
+  <div id="search-results" class="mt-6">
+    <p class="text-gray-500 dark:text-gray-400">Start typing to search articles...</p>
+  </div>
+</div>
+
+<!-- Store the data in a script tag that sets a global variable -->
+<script is:inline>
+  // Set global variable with search data
+  window.searchListData = ${searchListJson};
+  console.log("Search data loaded:", window.searchListData.length, "posts");
+</script>
+
+<!-- Separate script for the search logic -->
+<script>
+  // Search function
+  function performSearch() {
+    console.log("performSearch called");
+    
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    
+    if (!searchInput || !searchResults) {
+      console.error("Search elements not found!");
+      return;
+    }
+    
+    const query = searchInput.value.toLowerCase().trim();
+    console.log("Query:", query);
+    
+    if (!query) {
+      searchResults.innerHTML = '<p class="text-gray-500 dark:text-gray-400">Start typing to search articles...</p>';
+      return;
+    }
+    
+    if (query.length < 2) {
+      searchResults.innerHTML = '<p class="text-gray-500 dark:text-gray-400 p-4">Please enter at least 2 characters...</p>';
+      return;
+    }
+    
+    // Use the global variable
+    const searchListData = window.searchListData || [];
+    
+    // Filter posts
+    const filtered = searchListData.filter(post => {
+      if (!post || !post.title) return false;
+      const inTitle = post.title.toLowerCase().includes(query);
+      const inDesc = post.description && post.description.toLowerCase().includes(query);
+      return inTitle || inDesc;
+    });
+    
+    console.log("Found", filtered.length, "results");
+    
+    // Display results
+    if (filtered.length > 0) {
+      searchResults.innerHTML = `
+        <div class="mb-4">
+          <p class="text-gray-600 dark:text-gray-300">
+            Found <span class="font-semibold">${filtered.length}</span> results
+          </p>
+        </div>
+        ${filtered.map(post => `
+          <div class="p-4 mb-3 border rounded-lg dark:bg-gray-800 dark:border-gray-700 hover:shadow-md transition-shadow">
+            <a href="/blog/${post.slug}" class="block">
+              <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-white">${post.title}</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">${post.description || ''}</p>
+            </a>
+          </div>
+        `).join('')}
+      `;
+    } else {
+      searchResults.innerHTML = '<p class="text-gray-500 dark:text-gray-400 p-4">No results found. Try different keywords.</p>';
+    }
+  }
+  
+  // Add event listener with debounce
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM loaded");
+    
+    const searchInput = document.getElementById('search-input');
+    
+    if (searchInput) {
+      console.log("Search input found, attaching events");
+      
+      let typingTimer;
+      
+      // Search while typing (with delay)
+      searchInput.addEventListener('input', function() {
+        console.log("Input event fired");
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(performSearch, 300); // Wait 300ms after typing stops
+      });
+      
+      // Also search on Enter key
+      searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          console.log("Enter key pressed");
+          clearTimeout(typingTimer);
+          performSearch();
+        }
+      });
+      
+      searchInput.focus();
+    } else {
+      console.error("Search input not found!");
+    }
+  });
+</script>

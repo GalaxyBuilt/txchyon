@@ -10,7 +10,6 @@ import "@/styles/main.css";
 import { AstroFont } from "astro-font";
 import { ClientRouter } from "astro:transitions";
 import SEO from "@/components/SEO.astro";
-import SearchBar from "@/components/SearchBar.astro";
 
 const pf = theme.fonts.font_family.primary;
 let fontPrimary;
@@ -20,21 +19,21 @@ if (theme.fonts.font_family.primary) {
     .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
 }
 
-// Glob all pages and guides
+const query = Astro.url.searchParams.get('q')?.trim() || '';
+
+// Same glob + content reading
 const pageModules = import.meta.glob('../pages/**/*.{astro,md,mdx}', { eager: true });
 const guideModules = import.meta.glob('../../../guides/**/*.{md,mdx}', { eager: true });
 
 const allModules = { ...pageModules, ...guideModules };
 
-const searchList = Object.values(allModules)
-  .filter(mod => mod.frontmatter?.title && mod.file)  // Must have title and file path
+const allContent = Object.values(allModules)
+  .filter(mod => mod.frontmatter?.title && mod.file)
   .map(mod => {
-    // Read raw file content safely
     let rawContent = '';
     try {
       rawContent = mod.rawContent?.() || mod.getRawContent?.() || '';
       if (!rawContent && mod.file) {
-        // Fallback: read from file system (works in dev/build)
         const fileContent = Deno.readTextFileSync(mod.file);
         rawContent = fileContent || '';
       }
@@ -42,14 +41,13 @@ const searchList = Object.values(allModules)
       console.warn(`Could not read content for ${mod.file}`);
     }
 
-    // Build clean URL
     let url = '/';
     if (mod.url) {
       url = mod.url;
     } else if (mod.file) {
       url = mod.file
-        .replace(/^.*src\/pages/, '')  // Remove path up to src/pages
-        .replace(/^.*guides/, '/guides')  // Map guides folder correctly
+        .replace(/^.*src\/pages/, '')
+        .replace(/^.*guides/, '/guides')
         .replace(/\/index\.(astro|md|mdx)$/, '/')
         .replace(/\.(astro|md|mdx)$/, '')
         .replace(/\/$/, '') || '/';
@@ -59,13 +57,26 @@ const searchList = Object.values(allModules)
     return {
       title: mod.frontmatter.title || 'Untitled',
       description: mod.frontmatter.description || '',
-      content: rawContent.toLowerCase(),  // Lowercase for faster search
+      content: rawContent.toLowerCase(),
       url: url,
     };
   });
 
-const title = "Search Documentation - Txchyon";
-const description = "Real-time search across all guides, tutorials, and documentation pages.";
+const results = query.length >= 2 
+  ? allContent.filter(item => {
+      const lowerQuery = query.toLowerCase();
+      return (
+        item.title.toLowerCase().includes(lowerQuery) ||
+        item.description.toLowerCase().includes(lowerQuery) ||
+        item.content.includes(lowerQuery)
+      );
+    })
+  : [];
+
+const title = query ? `Search Results for "${query}" - Txchyon` : "Search - Txchyon";
+const description = query 
+  ? `Search results for "${query}" across guides and documentation.`
+  : "Search through all guides, tutorials, and pages on Txchyon.";
 ---
 
 <!doctype html>
@@ -107,7 +118,7 @@ const description = "Real-time search across all guides, tutorials, and document
       title={title}
       description={description}
       image={`${config.site.base_url}${config.metadata.meta_image}`}
-      canonical={`${config.site.base_url}/search`}
+      canonical={`${config.site.base_url}${Astro.url.pathname}${Astro.url.search}`}
     />
 
     <link rel="alternate" type="application/rss+xml" title="Txchyon RSS" href="/rss.xml" />
@@ -123,52 +134,65 @@ const description = "Real-time search across all guides, tutorials, and document
 
     <main id="main-content" class="min-h-[60vh] py-12">
       <div class="container mx-auto px-4 max-w-4xl">
-        <div class="text-center mb-10">
-          <h1 class="text-4xl font-bold mb-4">Search Documentation</h1>
-          <p class="text-xl text-gray-600 dark:text-gray-300 mb-2">
-            Find guides, tutorials, and references
-          </p>
-          <p class="text-gray-500">
-            Currently indexing {searchList.length} pages
-          </p>
-        </div>
+        <h1 class="text-4xl font-bold mb-8 text-center">Search Results</h1>
         
-        <div class="mb-12">
-          <SearchBar searchList={searchList} client:load />
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div class="p-6 border rounded-lg dark:border-gray-700">
-            <h3 class="font-semibold text-lg mb-2">Quick Tips</h3>
-            <ul class="text-gray-600 dark:text-gray-300 space-y-1">
-              <li>• Use at least 2 characters</li>
-              <li>• Try different keywords</li>
-              <li>• Check spelling</li>
-            </ul>
-          </div>
-          
-          <div class="p-6 border rounded-lg dark:border-gray-700">
-            <h3 class="font-semibold text-lg mb-2">Search Features</h3>
-            <ul class="text-gray-600 dark:text-gray-300 space-y-1">
-              <li>• Searches titles & descriptions</li>
-              <li>• Full-text content search</li>
-              <li>• Real-time results</li>
-            </ul>
-          </div>
-          
-          <div class="p-6 border rounded-lg dark:border-gray-700">
-            <h3 class="font-semibold text-lg mb-2">Alternative Search</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-3">
-              Try our traditional search page:
-            </p>
-            <a 
-              href="/search-results" 
-              class="inline-block px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+        <div class="mb-10">
+          <form method="GET" action="/search-results" class="flex gap-3 max-w-2xl mx-auto">
+            <input
+              type="search"
+              name="q"
+              value={query}
+              placeholder="Search guides and pages..."
+              class="flex-1 p-4 text-lg border rounded-lg dark:bg-gray-800 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              autofocus
+            />
+            <button
+              type="submit"
+              class="px-8 py-4 bg-blue-600 text-white text-lg rounded-lg hover:bg-blue-700 transition-colors"
             >
-              Go to Search Page →
-            </a>
-          </div>
+              Search
+            </button>
+          </form>
         </div>
+        
+        {query.length < 2 ? (
+          <div class="text-center p-12 text-gray-500">
+            <p class="text-xl">Please enter at least 2 characters to search.</p>
+          </div>
+        ) : results.length === 0 ? (
+          <div class="text-center p-12">
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-3">
+              No results found for "<span class="font-semibold">{query}</span>"
+            </p>
+            <p class="text-gray-500">Try different keywords or check spelling.</p>
+          </div>
+        ) : (
+          <>
+            <p class="text-center text-lg text-gray-600 dark:text-gray-300 mb-8">
+              Found <span class="font-semibold">{results.length}</span> {results.length === 1 ? 'result' : 'results'} for "<span class="font-semibold">{query}</span>"
+            </p>
+            
+            <div class="space-y-8">
+              {results.map(item => (
+                <article class="p-8 border rounded-lg dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg transition-shadow">
+                  <a href={item.url} class="block group">
+                    <h2 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                      {item.title}
+                    </h2>
+                    {item.description && (
+                      <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                        {item.description}
+                      </p>
+                    )}
+                    <div class="text-sm text-gray-500">
+                      {item.url}
+                    </div>
+                  </a>
+                </article>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </main>
 
@@ -216,22 +240,5 @@ const description = "Real-time search across all guides, tutorials, and document
         }
       });
     </script>
-
-    <style>
-      .container {
-        animation: fadeIn 0.3s ease-out;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
   </body>
 </html>

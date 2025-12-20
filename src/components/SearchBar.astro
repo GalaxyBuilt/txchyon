@@ -1,0 +1,190 @@
+---
+// src/components/SearchBar.astro - FINAL FIXED VERSION
+interface Props {
+  searchList: any[];
+}
+
+const { searchList = [] } = Astro.props;
+---
+
+<div class="search-bar" id="search-container">
+  <div class="relative">
+    <input
+      type="text"
+      placeholder="Start typing to search articles..."
+      class="w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      id="search-input"
+      aria-label="Search articles"
+      autocomplete="off"
+    />
+    <div class="absolute right-3 top-3 pointer-events-none">
+      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </div>
+  </div>
+  
+  <div id="search-results" class="mt-4 hidden">
+    <!-- Results will appear here -->
+  </div>
+</div>
+
+<!-- Initialize search data -->
+<script is:inline>
+  window.searchIndex = {JSON.stringify(searchList)};
+  console.log("Search index loaded with", window.searchIndex?.length || 0, "items");
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log("Search component initialized");
+    
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const searchContainer = document.getElementById('search-container');  // ← THIS LINE WAS MISSING!
+    
+    if (!searchInput || !searchResults || !searchContainer) {
+      console.error("Search elements not found");
+      return;
+    }
+    
+    const searchData = window.searchIndex || [];
+    console.log("Available search items:", searchData.length);
+    
+    function searchPosts(query) {
+      if (!query || query.length < 2) return [];
+      const lowerQuery = query.toLowerCase();
+      return searchData.filter(item => {
+        if (!item) return false;
+        const inTitle = item.title?.toLowerCase().includes(lowerQuery);
+        const inDesc = item.description?.toLowerCase().includes(lowerQuery);
+        const inContent = item.content?.toLowerCase().includes(lowerQuery);
+        return inTitle || inDesc || inContent;
+      });
+    }
+    
+    function displayResults(results) {
+      if (!results || results.length === 0) {
+        searchResults.innerHTML = `
+          <div class="p-4 text-center text-gray-500 dark:text-gray-400 border rounded-lg bg-gray-50 dark:bg-gray-800">
+            No results found. Try different keywords.
+          </div>
+        `;
+        searchResults.classList.remove('hidden');
+        return;
+      }
+      
+      let html = `
+        <div class="mb-2 text-sm text-gray-600 dark:text-gray-300">
+          Found ${results.length} ${results.length === 1 ? 'result' : 'results'}
+        </div>
+      `;
+      
+      results.slice(0, 10).forEach(item => {
+        html += `
+          <a href="${item.url || '/'}" class="block p-4 mb-2 border rounded-lg dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group">
+            <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400">
+              ${escapeHtml(item.title || 'Untitled')}
+            </h3>
+            ${item.description ? `
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                ${escapeHtml(item.description.substring(0, 150))}${item.description.length > 150 ? '...' : ''}
+              </p>
+            ` : ''}
+          </a>
+        `;
+      });
+      
+      if (results.length > 10) {
+        html += `
+          <div class="text-center text-sm text-gray-500 dark:text-gray-400 mt-2">
+            ... and ${results.length - 10} more
+          </div>
+        `;
+      }
+      
+      searchResults.innerHTML = html;
+      searchResults.classList.remove('hidden');
+    }
+    
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+    
+    const performSearch = debounce(function() {
+      const query = searchInput.value.trim();
+      if (!query) {
+        searchResults.classList.add('hidden');
+        return;
+      }
+      if (query.length < 2) {
+        searchResults.innerHTML = `<div class="p-4 text-center text-gray-500 dark:text-gray-400">Please enter at least 2 characters...</div>`;
+        searchResults.classList.remove('hidden');
+        return;
+      }
+      const results = searchPosts(query);
+      displayResults(results);
+    }, 300);
+    
+    searchInput.addEventListener('input', performSearch);
+    searchInput.addEventListener('keydown', e => e.key === 'Escape' && (searchResults.classList.add('hidden'), searchInput.blur()));
+    
+    // ← FIXED: Now using the properly defined searchContainer
+    document.addEventListener('click', function(event) {
+      if (!searchContainer.contains(event.target)) {
+        searchResults.classList.add('hidden');
+      }
+    });
+    
+    searchInput.focus();
+  });
+</script>
+
+<style>
+  .search-bar {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  #search-results {
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  
+  #search-results::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #search-results::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .dark #search-results::-webkit-scrollbar-track {
+    background: #374151;
+  }
+  
+  #search-results::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  #search-results::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+</style>

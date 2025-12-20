@@ -1,0 +1,34 @@
+---
+// src/components/Social.astro
+import social from "@/config/social.json";
+
+type SocialLink = {
+  name: string;
+  icon: string;  // e.g. "FaXTwitter"
+  link: string;
+};
+
+const links = social?.main || [];
+---
+
+<div class="flex justify-center space-x-6">
+  {links?.map?.((link) => {
+    // Convert "FaXTwitter" ? "fa-x-twitter", "FaInstagram" ? "fa-instagram", etc.
+    const faClass = link?.icon
+      ?.replace(/^Fa/, 'fa-')           // FaXTwitter ? fa-XTwitter
+      ?.replace(/([A-Z])/g, '-$1')      // fa-XTwitter ? fa-x-twitter
+      ?.toLowerCase() || '';
+
+    return (
+      <a
+        href={link?.link || '#'}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-white/75 hover:text-white transition-colors"
+        aria-label={link?.name || 'Social'}
+      >
+        <i class={`fa-brands ${faClass} text-2xl`} aria-hidden="true"></i>
+      </a>
+    );
+  })}
+</div>
