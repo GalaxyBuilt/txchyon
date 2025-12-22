@@ -24,13 +24,20 @@ console.log("DEBUG: Current category param:", category);
 
 // 3. Get all posts (drafts already filtered out in config.ts)
 const allPosts = await getCollection('posts');
-console.log("DEBUG: Total NON-DRAFT posts loaded:", allPosts.length);
+console.log("DEBUG: Total posts loaded:", allPosts.length);
 
-// 4. Filter posts for this category (NO DRAFT CHECK NEEDED)
+// 4. Filter posts for this category (WITH DRAFT FILTER)
 const categoryPosts = allPosts
   .filter(post => {
+    // FIRST: Check if it's a draft - if yes, skip it
+    if (post.data.draft) {
+      console.log(`Post: ${post.id} is a DRAFT - skipping`);
+      return false;
+    }
+    
+    // THEN: Check category match
     const postCategory = post.data.category;
-    const matches = postCategory === category; // REMOVED: && !post.data.draft
+    const matches = postCategory === category;
     
     console.log(`Post: ${post.id}, Category: "${postCategory}", Looking for: "${category}", Matches: ${matches}`);
     
