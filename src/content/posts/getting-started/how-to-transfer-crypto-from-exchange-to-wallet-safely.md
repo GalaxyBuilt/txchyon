@@ -33,7 +33,7 @@ Never buy crypto before having a wallet ready.
 
 Popular beginner options:
 - MetaMask or Trust Wallet for multi-chain.
-- Phantom for Solana (see our [Phantom setup tutorial](/blog/getting-started/how-to-setup-phantom-wallet)).
+- Phantom for Solana (see our [Phantom setup tutorial](https://txchyon.com/blog/getting-started/how-to-setup-phantom-wallet)).
 - Hardware wallets like Ledger for larger amounts.
 
 ## Step-by-Step: Transferring Crypto from Exchange to Wallet
@@ -113,7 +113,7 @@ This prevents catastrophic loss from address errors.
 5. **Sending to Wrong Wallet Type**  
    Solution: Ensure your wallet supports the asset and network.
 
-See our full list in the [biggest crypto mistakes guide](/blog/getting-started/10-biggest-crypto-mistakes-beginners-make-in-2026).
+See our full list in the [biggest crypto mistakes guide](https://txchyon.com/blog/getting-started/biggest-crypto-mistakes).
 
 ## Fees Overview in 2026
 

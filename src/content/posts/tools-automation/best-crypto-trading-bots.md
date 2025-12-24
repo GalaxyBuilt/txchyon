@@ -131,8 +131,8 @@ They allow you to:
 - Auto-sell at profit targets
 
 These bots require a **Solana wallet**:
-- [How to Set Up Phantom Wallet](https://txchyon.com/how-to-setup-phantom-wallet)
-- [How to Transfer Crypto from Exchange to Wallet Safely](https://txchyon.com/how-to-transfer-crypto-from-exchange-to-wallet)
+- [How to Set Up Phantom Wallet](https://txchyon.com/blog/getting-started/how-to-setup-phantom-wallet/)
+- [How to Transfer Crypto from Exchange to Wallet Safely](https://txchyon.com)
 
 We’ll cover these in detail in a dedicated guide:
 - *Best Solana Trading Bots for Meme Coins* (coming soon)
@@ -176,7 +176,7 @@ To reduce risk:
 - Avoid “guaranteed profit” claims
 
 Also make sure your wallets are properly secured:
-- [Best Crypto Wallets for Beginners](https://txchyon.com/best-crypto-wallets-for-beginners)
+- [Best Crypto Wallets for Beginners](https://txchyon.com/)
 
 ---
 
@@ -206,8 +206,8 @@ A simple path:
 4. Scale only after proving profitability
 
 Helpful guides:
-- [How to Buy Bitcoin for Beginners](https://txchyon.com/how-to-buy-bitcoin-for-beginners)
-- [How to Buy Ethereum for Beginners](https://txchyon.com/how-to-buy-ethereum-for-beginners)
+- [How to Buy Bitcoin for Beginners](https://txchyon.com/)
+- [How to Buy Ethereum for Beginners](https://txchyon.com/)
 
 ---
 
