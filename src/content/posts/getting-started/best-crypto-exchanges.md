@@ -186,4 +186,6 @@ Happy trading — see you on the other side of $200k Bitcoin! If the Bullrun con
 
 **Disclosure:** CEX links are affiliate/referral links. DEX links are not affiliated. We only recommend what we personally use.
 
+Start with the basics in our [what is cryptocurrency guide](http://txchyon.com/blog/getting-started/what-is-cryptocurrency) and review common errors in our [10 biggest crypto mistakes article](http://txchyon.com/blog/getting-started/biggest-crypto-mistakes). For long-term security, plan to move funds to a personal wallet covered in our [best crypto wallets for beginners](http://txchyon.com/blog/getting-started/best-crypto-wallets-for-beginners).
+
 (Word count: ~2,600 with DEX section)
