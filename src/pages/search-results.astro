@@ -9,7 +9,7 @@ import FloatingBubble from "@/components/FloatingBubble.jsx";
 import "@/styles/main.css";
 import { AstroFont } from "astro-font";
 import { ClientRouter } from "astro:transitions";
-import SEO from "@/components/SEO.astro";
+import SEO from "@/layouts/components/SEO.astro";
 
 const pf = theme.fonts.font_family.primary;
 let fontPrimary;
@@ -77,6 +77,10 @@ const title = query ? `Search Results for "${query}" - Txchyon` : "Search - Txch
 const description = query 
   ? `Search results for "${query}" across guides and documentation.`
   : "Search through all guides, tutorials, and pages on Txchyon.";
+
+// FIXED: Add canonical logic to frontmatter
+const cleanPath = Astro.url.pathname.replace(/\/$/, ""); // Remove trailing slash
+const canonical = `${config.site.base_url}${cleanPath}`;
 ---
 
 <!doctype html>
@@ -114,11 +118,12 @@ const description = query
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 
+    <!-- FIXED: SEO component with proper props -->
     <SEO
       title={title}
       description={description}
       image={`${config.site.base_url}${config.metadata.meta_image}`}
-      canonical={`${config.site.base_url}${Astro.url.pathname}${Astro.url.search}`}
+      canonical={canonical}
     />
 
     <link rel="alternate" type="application/rss+xml" title="Txchyon RSS" href="/rss.xml" />
