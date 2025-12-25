@@ -3,14 +3,14 @@ title: "Crypto Tax-Loss Harvesting Explained (Save on Capital Gains)"
 description: "Learn how to perform crypto tax-loss harvesting to reduce your capital gains, optimize your portfolio, and take advantage of market downturns efficiently."
 date: 2025-12-26
 updatedDate: 2025-12-26
-image: "/images/posts/crypto-tax-loss-harvesting.jpg"
+image: "/images/posts/taxloss.jpg"
 heroImageAlt: "Crypto portfolio showing realized losses being applied to reduce taxes"
 authors: ["Nefu"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Tax-Loss Harvesting", "Capital Gains", "Tax Planning", "Bitcoin", "Ethereum"]
 category: "portfolio-management"
 subcategory: "tax-loss-harvesting"
-draft: true
+draft: false
 ---
 
 ## What Is Crypto Tax-Loss Harvesting?
@@ -23,7 +23,7 @@ Key benefits:
 - Improve long-term portfolio efficiency  
 
 If you’re not sure how your allocation affects this, review:  
-👉 **[Crypto Portfolio Allocation for Beginners (Simple, Low-Risk Framework)](https://txchyon.com/categories/portfolio-management/)**
+👉 **[Crypto Portfolio Allocation for Beginners](https://txchyon.com/categories/portfolio-management/crypto-portfolio-allocation-for-beginners)**
 
 ---
 
@@ -60,7 +60,7 @@ It’s a **legal and strategic tool**, not a loophole.
 2. **Check Allocation & Exposure**
    - Don’t let harvesting break your portfolio balance  
    - Use insights from:  
-     **[How to Rebalance a Crypto Portfolio (Simple Step-by-Step Guide)](https://txchyon.com/categories/portfolio-management/)**
+     **[How to Rebalance a Crypto Portfolio](https://txchyon.com/categories/portfolio-management/how-to-rebalance-a-crypto-portfolio)**
 
 3. **Sell Underperforming Assets**
    - Trigger losses legally
@@ -99,9 +99,13 @@ Correct execution keeps your **strategy intact while reducing taxes**.
 ## How Harvesting Fits Into Overall Portfolio Management
 
 - Links back to **allocation**: make sure your asset distribution is intact  
+  👉 **[Crypto Portfolio Allocation for Beginners](https://txchyon.com/categories/portfolio-management/crypto-portfolio-allocation-for-beginners)**  
 - Links back to **rebalancing**: reallocate after harvesting  
+  👉 **[How to Rebalance a Crypto Portfolio](https://txchyon.com/categories/portfolio-management/how-to-rebalance-a-crypto-portfolio)**  
 - Links back to **risk management**: ensure you’re not overexposed after selling losses  
+  👉 **[Crypto Portfolio Risk Management Explained](https://txchyon.com/categories/portfolio-management/crypto-portfolio-risk-management-explained)**  
 - Links back to **performance tracking**: measure net portfolio performance after harvesting  
+  👉 **[How to Track Crypto Portfolio Performance](https://txchyon.com/categories/portfolio-management/how-to-track-crypto-portfolio-performance)**
 
 ---
 
