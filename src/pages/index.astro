@@ -1,5 +1,5 @@
 ﻿---
-// src/pages/index.astro - UPDATED WITH ALL 11 PILLARS
+// src/pages/index.astro - FIXED VERSION (with corrected template syntax)
 import { getCollection } from 'astro:content';
 import Base from "@/layouts/Base.astro";
 import Posts from "@/layouts/components/Posts.astro";
@@ -29,7 +29,7 @@ function getPostReadTime(post) {
   if (post.data.readTime) return post.data.readTime;
   if (post.body) return calculateReadTime(post.body);
   
-  // Estimates for all 11 pillars
+  // Estimates for all 11 categories
   const estimates = {
     'getting-started': 8,
     'security-privacy': 10,
@@ -44,7 +44,7 @@ function getPostReadTime(post) {
     'prediction-markets': 14
   };
   
-  return estimates[post.data.pillar] || 10;
+  return estimates[post.data.category] || 10;
 }
 
 // Get all posts and add automatic readTime
@@ -67,26 +67,40 @@ const sortedPosts = allPosts.sort(
 const featuredPost = sortedPosts[0];
 
 // LATEST POSTS: Skip the first one (featured) and take next 7
-const latestPosts = sortedPosts.slice(1, 8); // Changed from slice(1, 7) to slice(1, 8)
+const latestPosts = sortedPosts.slice(1, 8);
 
-// Get posts by all 11 pillars
-const pillarPosts = {};
-Object.keys(CATEGORY_HIERARCHY).forEach(pillar => {
-  pillarPosts[pillar] = sortedPosts
-    .filter(p => p.data.pillar === pillar && p.slug !== featuredPost?.slug)
+// Get posts by all 11 categories WITH DEBUG
+const categoryPosts = {};
+const categoryPostCounts = {};
+
+Object.keys(CATEGORY_HIERARCHY).forEach(category => {
+  const allPostsInCategory = sortedPosts.filter(p => p.data.category === category);
+  
+  // Store total count
+  categoryPostCounts[category] = allPostsInCategory.length;
+  
+  // Store up to 3 posts (excluding featured post if it's in this category)
+  categoryPosts[category] = allPostsInCategory
+    .filter(p => p.slug !== featuredPost?.slug)
     .slice(0, 3);
+});
+
+// DEBUG: Check what we're finding
+console.log('=== DEBUG: Category Posts Counts ===');
+Object.keys(CATEGORY_HIERARCHY).forEach(category => {
+  console.log(`Category "${category}": ${categoryPostCounts[category]} total posts, ${categoryPosts[category]?.length || 0} display posts`);
 });
 
 // FIXED: Get "getting-started" posts for Quick Wins
 const gettingStartedPosts = sortedPosts
-  .filter(p => p.data.pillar === 'getting-started' && p.slug !== featuredPost?.slug);
+  .filter(p => p.data.category === 'getting-started' && p.slug !== featuredPost?.slug);
 
 // If we have enough getting-started posts, use them
 let quickWins;
 if (gettingStartedPosts.length >= 4) {
   quickWins = gettingStartedPosts.slice(0, 4);
 } else {
-  // Fallback: Get posts from any pillar, excluding featured
+  // Fallback: Get posts from any category, excluding featured
   const otherPosts = sortedPosts
     .filter(p => p.slug !== featuredPost?.slug)
     .slice(0, 4 - gettingStartedPosts.length);
@@ -359,7 +373,7 @@ const realisticStats = {
     </div>
   </section>
 
-  <!-- 🗺️ 11 PILLARS SECTION (Black boxes with color gradients) -->
+  <!-- 🗺️ 11 CATEGORIES SECTION (Black boxes with color gradients) -->
   <section class="py-20 bg-black">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
@@ -374,13 +388,13 @@ const realisticStats = {
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
-        {Object.entries(CATEGORY_HIERARCHY).slice(0, 8).map(([pillar, data]) => (
+        {Object.entries(CATEGORY_HIERARCHY).slice(0, 8).map(([category, data]) => (
           <div class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-6 hover:border-cyan-500/30 transition-all hover:-translate-y-1">
             <div class="flex items-start gap-4 mb-4">
               <div class="text-2xl">{data.icon}</div>
               <div>
                 <h3 class="text-lg font-bold text-white mb-1">{data.name}</h3>
-                <p class="text-gray-400 text-xs">{pillarPosts[pillar]?.length || 0} guides</p>
+                <p class="text-gray-400 text-xs">{categoryPostCounts[category] || 0} guides</p>
               </div>
             </div>
             
@@ -389,7 +403,7 @@ const realisticStats = {
             </p>
             
             <div class="space-y-3 mb-6">
-              {pillarPosts[pillar] && pillarPosts[pillar].length > 0 ? pillarPosts[pillar].slice(0, 2).map(post => (
+              {categoryPosts[category] && categoryPosts[category].length > 0 ? categoryPosts[category].slice(0, 2).map(post => (
                 <a href={`/blog/${post.slug}`} 
                    class="block p-3 bg-black/30 rounded-lg hover:bg-black/50 transition-colors group">
                   <div class="text-white text-sm group-hover:text-cyan-400 transition-colors line-clamp-1">
@@ -407,7 +421,7 @@ const realisticStats = {
               )}
             </div>
             
-            <a href={`/categories/${pillar}`} 
+            <a href={`/categories/${category}`} 
                class="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-cyan-400 transition-colors">
               Explore all {data.name.toLowerCase()} guides →
             </a>
@@ -415,13 +429,13 @@ const realisticStats = {
         ))}
       </div>
       
-      {/* Show remaining 3 pillars in a separate row */}
+      {/* Show remaining 3 categories in a separate row - FIXED SYNTAX */}
       {Object.entries(CATEGORY_HIERARCHY).slice(8, 11).length > 0 && (
         <div class="mt-12 max-w-4xl mx-auto">
           <h3 class="text-2xl font-bold text-white mb-8 text-center">More Specialized Areas</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {Object.entries(CATEGORY_HIERARCHY).slice(8, 11).map(([pillar, data]) => (
-              <a href={`/categories/${pillar}`}
+            {Object.entries(CATEGORY_HIERARCHY).slice(8, 11).map(([category, data]) => (
+              <a href={`/categories/${category}`}
                  class="group bg-gradient-to-br from-gray-900/50 to-black/50 border border-gray-800 rounded-2xl p-6 hover:border-purple-500/30 transition-all hover:-translate-y-1">
                 <div class="flex items-center gap-3 mb-4">
                   <div class="text-2xl">{data.icon}</div>
@@ -437,7 +451,7 @@ const realisticStats = {
                     Explore →
                   </span>
                   <span class="text-gray-500 text-xs">
-                    {pillarPosts[pillar]?.length || 0} guides
+                    {categoryPostCounts[category] || 0} guides
                   </span>
                 </div>
               </a>
@@ -448,7 +462,7 @@ const realisticStats = {
     </div>
   </section>
 
-    <!-- 📚 LATEST GUIDES SECTION -->
+  <!-- 📚 LATEST GUIDES SECTION -->
   <section class="py-20 bg-gradient-to-b from-gray-900 to-black">
     <div class="container mx-auto px-4">
       <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12 gap-6">
@@ -522,42 +536,233 @@ const realisticStats = {
     </div>
   </section>
 
-  <!-- Add the beautiful animations -->
-  <style>
-    @keyframes gradient {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+  <!-- NEWSLETTER POPUP - Fixed centering and improved scroll detection -->
+<dialog id="subscribe-popup" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; border: none; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); max-width: 500px; width: 90%; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; z-index: 9999; margin: 0;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-size: 48px; margin-bottom: 16px;">🚀</div>
+    <h2 style="font-size: 24px; font-weight: bold; margin-bottom: 12px; color: #60a5fa;">Stay Ahead in Crypto</h2>
+    <p style="color: #cbd5e1; margin-bottom: 20px; line-height: 1.5;">
+      Get exclusive DeFi insights, airdrop alerts & alpha directly to your inbox.<br>
+      <span style="color: #10b981; font-weight: 600;">No spam, just pure value.</span>
+    </p>
+    
+    <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+    <iframe 
+      src="https://subscribe-forms.beehiiv.com/62d85daa-7878-4a83-a78a-a15f6226c516" 
+      class="beehiiv-embed" 
+      data-test-id="beehiiv-embed" 
+      frameborder="0" 
+      scrolling="no" 
+      style="width: 508px; height: 198px; margin: 0; border-radius: 0px !important; background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;">
+    </iframe>
+    
+    <button id="close-popup" style="margin-top: 20px; padding: 10px 20px; background: #374151; color: #d1d5db; border: none; border-radius: 8px; cursor: pointer; font-weight: 500; transition: all 0.2s ease;">
+      No thanks, I'll miss out on alpha
+    </button>
+  </div>
+</dialog>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const popup = document.getElementById('subscribe-popup');
+    const closeButton = document.getElementById('close-popup');
+    
+    // Track if popup has been shown
+    let popupShown = false;
+    let scrollListenerAdded = false;
+    
+    // Function to calculate scroll percentage (FIXED)
+    function getScrollPercent() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = Math.max(
+        document.body.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight
+      );
+      const winHeight = window.innerHeight;
+      const scrollable = docHeight - winHeight;
+      
+      if (scrollable <= 0) return 0;
+      
+      const scrollPercent = (scrollTop / scrollable) * 100;
+      return scrollPercent;
     }
     
-    .animate-gradient {
-      background-size: 200% 200%;
-      animation: gradient 4s ease infinite;
+    // Debug scroll position
+    function debugScroll() {
+      const percent = getScrollPercent();
+      console.log(`Scroll: ${Math.round(percent)}%`);
     }
     
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+    // Function to show popup
+    function showPopup() {
+      if (!popupShown && !localStorage.getItem('popupShownToday')) {
+        console.log('Showing popup!');
+        popup.showModal();
+        popupShown = true;
+        
+        // Store in localStorage for 24 hours
+        const now = new Date();
+        localStorage.setItem('popupShownToday', now.toISOString());
+        
+        // Remove scroll listener after showing
+        if (scrollListenerAdded) {
+          window.removeEventListener('scroll', checkScrollForPopup);
+        }
+      }
     }
     
-    .animate-pulse {
-      animation: pulse 3s ease-in-out infinite;
+    // Check scroll position
+    function checkScrollForPopup() {
+      const scrollPercent = getScrollPercent();
+      debugScroll(); // Remove this in production
+      
+      if (scrollPercent >= 50 && !popupShown) {
+        console.log('50% scroll reached, showing popup');
+        showPopup();
+      }
     }
     
-    .animation-delay-2000 {
-      animation-delay: 2s;
+    // Add scroll listener
+    if (!scrollListenerAdded) {
+      window.addEventListener('scroll', checkScrollForPopup);
+      scrollListenerAdded = true;
+      
+      // Also check immediately in case page is already scrolled
+      setTimeout(checkScrollForPopup, 100);
     }
     
-    /* Smooth hover effects */
-    * {
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    // Fallback: Show after 30 seconds if not shown yet
+    const fallbackTimeout = setTimeout(() => {
+      if (!popupShown && !localStorage.getItem('popupShownToday')) {
+        console.log('30-second fallback, showing popup');
+        showPopup();
+      }
+    }, 30000);
+    
+    // Close button handler
+    closeButton.addEventListener('click', () => {
+      popup.close();
+      clearTimeout(fallbackTimeout);
+    });
+    
+    // Close on outside click
+    popup.addEventListener('click', (event) => {
+      if (event.target === popup) {
+        popup.close();
+        clearTimeout(fallbackTimeout);
+      }
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && popup.open) {
+        popup.close();
+        clearTimeout(fallbackTimeout);
+      }
+    });
+    
+    // Check localStorage expiry (clear after 24 hours)
+    const lastShown = localStorage.getItem('popupShownToday');
+    if (lastShown) {
+      const lastShownDate = new Date(lastShown);
+      const now = new Date();
+      const hoursDiff = (now - lastShownDate) / (1000 * 60 * 60);
+      
+      if (hoursDiff >= 24) {
+        localStorage.removeItem('popupShownToday');
+        console.log('Cleared 24-hour popup restriction');
+      }
     }
     
-    /* Line clamp utility */
-    .line-clamp-1 {
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 1;
+    // Debug: Force show for testing (remove in production)
+    // setTimeout(() => {
+    //   console.log('Debug: Forcing popup show');
+    //   showPopup();
+    // }, 2000);
+  });
+</script>
+
+<!-- Add the beautiful animations -->
+<style>
+  @keyframes gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 4s ease infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  .animate-pulse {
+    animation: pulse 3s ease-in-out infinite;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  /* Smooth hover effects */
+  * {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Line clamp utility */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  /* Newsletter popup styles - FIXED CENTERING */
+  #subscribe-popup {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+  }
+  
+  #subscribe-popup::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+  }
+  
+  #subscribe-popup {
+    animation: slideIn 0.3s ease;
+    border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  }
+  
+  #close-popup:hover {
+    background: #4b5563 !important;
+    transform: translateY(-1px);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { 
+      opacity: 0;
+      transform: translate(-50%, -40%) scale(0.95) !important;
     }
-  </style>
+    to { 
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1) !important;
+    }
+  }
+</style>
 </Base>

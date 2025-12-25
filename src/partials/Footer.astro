@@ -8,7 +8,7 @@ import { getArticleCount } from "@/lib/utils/articleCounter";
 
 const articleCount = await getArticleCount();
 
-// Get the current page URL to check if we're on the main page
+// Get the current page URL to check what type of page we're on
 const url = Astro.url.pathname;
 const isHomePage = url === '/' || url === '/index.html';
 ---
@@ -64,7 +64,7 @@ const isHomePage = url === '/' || url === '/index.html';
     {/* Social icons */}
     <Social class="social-icons mb-8" />
 
-    {/* Newsletter on home, Telegram on other pages */}
+    {/* Newsletter on home, nothing else on other pages */}
     {
       isHomePage ? (
         <div class="mb-8">
@@ -86,16 +86,8 @@ const isHomePage = url === '/' || url === '/index.html';
           ></iframe>
         </div>
       ) : (
-        <div class="mb-8">
-          <a
-            href="https://t.me/txchyon"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-all shadow-lg"
-          >
-            ?? Join Telegram Channel
-          </a>
-        </div>
+        /* Empty div to maintain spacing - Telegram removed */
+        <div class="mb-8"></div>
       )
     }
 
@@ -112,8 +104,6 @@ const isHomePage = url === '/' || url === '/index.html';
     </div>
 
     {/* Copyright */}
-    <p class="text-white/75">© 2025 Txchyon Capital</p>
+    <p class="text-white/75">Â© 2025 Txchyon Capital</p>
   </div>
 </footer>
-
-
