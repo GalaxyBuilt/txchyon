@@ -31,6 +31,8 @@ You can trade on events such as:
 - Pop culture  
 - Viral meme events  
 
+![polymarket screenshot](/screenshots/poly3.jpg)
+
 Each market has two possible outcomes:
 
 - **YES** – event happens  
@@ -48,6 +50,9 @@ Every market revolves around a **probability price**:
 - If it doesn’t → YES settles at **$0.00**.
 
 You are essentially buying and selling **probabilities**.
+
+
+![polymarket screenshot](/screenshots/poly1.jpg)
 
 ---
 
@@ -68,6 +73,12 @@ Yes — Polymarket operates as a legal **information market**, not a sportsbook.
 
 Anyone can sign up and begin trading.
 
+
+<div style="display: flex; justify-content: center;">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">BREAKING: Stephen Colbert now the #1 suspect in the Epstein Files.<br><br>97% chance he&#39;s in them. <a href="https://t.co/80bPtpJebq">pic.twitter.com/80bPtpJebq</a></p>&mdash; Polymarket (@Polymarket) <a href="https://twitter.com/Polymarket/status/2003469441942864123?ref_src=twsrc%5Etfw">December 23, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+
 ---
 
 ## Who Should Use Polymarket?
@@ -83,6 +94,8 @@ Polymarket is ideal for:
 If you’re good at spotting trends early, you can profit consistently.
 
 ---
+
+![polymarket screenshot](/screenshots/poly5.jpg)
 
 ## How to Start Trading on Polymarket (Step-by-Step)
 
@@ -111,6 +124,8 @@ Beginners can use debit/credit — no crypto required.
 
 ---
 
+![polymarket screenshot](/screenshots/poly6.jpg)
+
 ### **3. Choose a Market**
 Beginner-friendly markets include:
 
@@ -131,6 +146,9 @@ Beginner-friendly markets include:
 
 Pick markets you understand.
 
+
+![polymarket screenshot](/screenshots/poly4.jpg)
+
 ---
 
 ### **4. Buy YES or NO Shares**
@@ -147,6 +165,8 @@ You can:
 - Sell early for profit  
 - Hold until event settlement  
 - Exit early if market moves against you  
+
+![polymarket screenshot](/screenshots/poly7.jpg)
 
 Polymarket gives you full flexibility.
 
@@ -178,6 +198,10 @@ Yes — Polymarket uses:
 You trade directly with the market, not the platform.
 
 ---
+
+
+![polymarket screenshot](/screenshots/poly2.jpg)
+
 
 ## Beginner Tips (Read This First)
 
