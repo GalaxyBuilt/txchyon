@@ -16,7 +16,6 @@ tags:
 category: "airdrop-farming"
 subcategory: "points-systems"
 draft: false
-slug: "/airdrop-farming/airdrop-points-case-studies"
 ---
 
 ## Introduction
