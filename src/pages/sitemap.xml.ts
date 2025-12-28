@@ -1,4 +1,4 @@
-// src/pages/sitemap.xml.ts - CLEAN VERSION (NO TAGS)
+// src/pages/sitemap.xml.ts - WITHOUT NEWSLETTER PAGE
 import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
 
@@ -56,14 +56,13 @@ export const GET: APIRoute = async ({ site }) => {
     `)
     .join('\n');
 
-  // 4. Static pages - CLEAN & FOCUSED
+  // 4. Static pages - NEWSLETTER REMOVED
   const staticPages = [
     { loc: site.href, priority: 1.0, changefreq: 'daily' }, // Homepage
     { loc: '/blog', priority: 0.9, changefreq: 'daily' }, // Main blog page
     { loc: '/categories', priority: 0.8, changefreq: 'daily' }, // Categories overview
     { loc: '/services', priority: 0.9, changefreq: 'weekly' }, // Services (MONEY PAGE)
     { loc: '/tools', priority: 0.8, changefreq: 'weekly' }, // Tools
-    { loc: '/newsletter', priority: 0.8, changefreq: 'weekly' }, // Newsletter
     { loc: '/about', priority: 0.7, changefreq: 'monthly' }, // About
     { loc: '/authors/nefu', priority: 0.7, changefreq: 'weekly' }, // Author
     { loc: '/privacy', priority: 0.5, changefreq: 'yearly' }, // Privacy
@@ -82,7 +81,7 @@ export const GET: APIRoute = async ({ site }) => {
     `)
     .join('\n');
 
-  // 5. Final XML - Clean without tags
+  // 5. Final XML - Clean without newsletter
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${staticMap}
