@@ -1,4 +1,4 @@
-// src/pages/sitemap.xml.ts - CORRECTED WITH /authors/nefu/
+// src/pages/sitemap.xml.ts - CLEAN VERSION (NO TAGS)
 import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
 
@@ -14,6 +14,9 @@ export const GET: APIRoute = async ({ site }) => {
   const postsMap = posts
     .map((post) => {
       const lastModDate = post.data.updatedDate ?? post.data.date;
+      if (!lastModDate) {
+        console.warn(`Post ${post.slug} has no date field!`);
+      }
       const lastMod = lastModDate ? new Date(lastModDate).toISOString() : new Date().toISOString();
 
       return `
@@ -47,22 +50,25 @@ export const GET: APIRoute = async ({ site }) => {
       <url>
         <loc>${new URL(`/categories/${category}`, site).href}</loc>
         <lastmod>${new Date().toISOString()}</lastmod>
-        <priority>0.9</priority>
-        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <changefreq>weekly</changefreq>
       </url>
     `)
     .join('\n');
 
-  // 4. Static pages - UPDATED WITH CORRECT /authors/nefu/
+  // 4. Static pages - CLEAN & FOCUSED
   const staticPages = [
     { loc: site.href, priority: 1.0, changefreq: 'daily' }, // Homepage
     { loc: '/blog', priority: 0.9, changefreq: 'daily' }, // Main blog page
-    { loc: '/categories', priority: 0.8, changefreq: 'weekly' }, // Categories overview
-    { loc: '/tools', priority: 0.8, changefreq: 'weekly' },
-    { loc: '/about', priority: 0.7, changefreq: 'monthly' },
-    { loc: '/contact', priority: 0.6, changefreq: 'yearly' },
-    { loc: '/disclaimer', priority: 0.5, changefreq: 'yearly' }, // Optional
-    { loc: '/authors/nefu/', priority: 0.7, changefreq: 'weekly' }, // CORRECTED: /authors/nefu/
+    { loc: '/categories', priority: 0.8, changefreq: 'daily' }, // Categories overview
+    { loc: '/services', priority: 0.9, changefreq: 'weekly' }, // Services (MONEY PAGE)
+    { loc: '/tools', priority: 0.8, changefreq: 'weekly' }, // Tools
+    { loc: '/newsletter', priority: 0.8, changefreq: 'weekly' }, // Newsletter
+    { loc: '/about', priority: 0.7, changefreq: 'monthly' }, // About
+    { loc: '/authors/nefu', priority: 0.7, changefreq: 'weekly' }, // Author
+    { loc: '/privacy', priority: 0.5, changefreq: 'yearly' }, // Privacy
+    { loc: '/contact', priority: 0.6, changefreq: 'yearly' }, // Contact
+    { loc: '/disclaimer', priority: 0.5, changefreq: 'yearly' }, // Disclaimer
   ];
 
   const staticMap = staticPages
@@ -76,7 +82,7 @@ export const GET: APIRoute = async ({ site }) => {
     `)
     .join('\n');
 
-  // 5. Final XML
+  // 5. Final XML - Clean without tags
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${staticMap}
