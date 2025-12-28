@@ -1,0 +1,447 @@
+---
+import Base from "@/layouts/Base.astro";
+
+// Mock products data - in reality this would come from Supabase/API
+const products = [
+  {
+    id: 1,
+    slug: "pumpfun-guide",
+    title: "How I Turned $200 into $20K on Pump.fun",
+    description: "Complete memecoin trading blueprint with real examples and screenshots.",
+    price: 10,
+    category: "Trading",
+    features: ["45-page PDF", "Checklists", "Discord Access"],
+    badge: "🔥 BESTSELLER"
+  },
+  {
+    id: 2,
+    slug: "defi-arbitrage",
+    title: "Advanced DeFi Arbitrage Guide",
+    description: "Find and execute cross-DEX arbitrage opportunities with bots.",
+    price: 15,
+    category: "DeFi",
+    features: ["Bot configs", "Monitoring setup", "Risk framework"],
+    badge: "🔄 NEW"
+  },
+  {
+    id: 3,
+    slug: "airdrop-mastery",
+    title: "Airdrop Farming Mastery",
+    description: "Systematic approach to qualifying for major airdrops across chains.",
+    price: 12,
+    category: "Airdrops",
+    features: ["Portfolio tracker", "Wallet strategy", "Calendar"],
+    badge: "🎁 LIMITED"
+  },
+  {
+    id: 4,
+    slug: "security-playbook",
+    title: "Crypto Security Playbook",
+    description: "Protect your assets from hacks, scams, and phishing attacks.",
+    price: 8,
+    category: "Security",
+    features: ["Wallet setup", "2FA guide", "Recovery plan"],
+    badge: "🛡️ ESSENTIAL"
+  },
+  {
+    id: 5,
+    slug: "nft-flipping",
+    title: "NFT Flipping Formula",
+    description: "Buy low, sell high on bluechip NFT collections with timing strategies.",
+    price: 18,
+    category: "NFT",
+    features: ["Market analysis", "Floor strategies", "Toolkit"],
+    badge: "🖼️ ADVANCED"
+  },
+  {
+    id: 6,
+    slug: "yield-optimization",
+    title: "DeFi Yield Optimization",
+    description: "Maximize returns across lending, liquidity providing, and staking.",
+    price: 14,
+    category: "Yield",
+    features: ["APR calculator", "Risk scores", "Portfolio allocator"],
+    badge: "📈 PRO"
+  }
+];
+
+const categories = [
+  { id: "all", name: "All Products", count: products.length },
+  { id: "trading", name: "Trading", count: 1 },
+  { id: "defi", name: "DeFi", count: 2 },
+  { id: "airdrops", name: "Airdrops", count: 1 },
+  { id: "security", name: "Security", count: 1 },
+  { id: "nft", name: "NFT", count: 1 }
+];
+---
+
+<Base 
+  title="Txchyon Shop | Advanced DeFi Guides & Tools"
+  description="Premium digital products for advanced DeFi users. Trading guides, security playbooks, yield strategies, and more."
+>
+  
+  <!-- Hero -->
+  <section class="relative min-h-[50vh] bg-gradient-to-br from-gray-900 via-black to-blue-950 overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl top-1/4 left-1/4 animate-pulse"></div>
+      <div class="absolute w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-3xl bottom-1/4 right-1/4 animate-pulse animation-delay-2000"></div>
+    </div>
+    
+    <div class="container relative z-10 mx-auto px-4 py-20">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
+            Advanced DeFi Tools & Guides
+          </span>
+        </h1>
+        
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          Premium resources for serious crypto users. From trading blueprints to security playbooks.
+        </p>
+        
+        <div class="inline-flex flex-wrap gap-3 justify-center mb-12">
+          <div class="px-4 py-2 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-bold">
+            ⚡ Instant Digital Downloads
+          </div>
+          <div class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-bold">
+            🔒 Crypto & Card Payments
+          </div>
+          <div class="px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-bold">
+            🎯 30-Day Refund Guarantee
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Shop Content -->
+  <section class="py-16 bg-black">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-10">
+        <!-- Sidebar - Categories & Filters -->
+        <aside class="lg:w-1/4">
+          <div class="sticky top-24 space-y-8">
+            <!-- Categories -->
+            <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-6">
+              <h3 class="text-lg font-bold text-white mb-4">Categories</h3>
+              <div class="space-y-2">
+                {categories.map(cat => (
+                  <button 
+                    class="w-full flex items-center justify-between p-3 rounded-lg hover:bg-gray-800 transition-colors text-left group"
+                    data-category={cat.id}
+                  >
+                    <span class="text-gray-300 group-hover:text-white">{cat.name}</span>
+                    <span class="px-2 py-1 bg-gray-800 text-gray-400 text-xs rounded">
+                      {cat.count}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            
+            <!-- Payment Methods -->
+            <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-6">
+              <h3 class="text-lg font-bold text-white mb-4">Payment Options</h3>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3 p-3 bg-gray-800/30 rounded-lg">
+                  <div class="text-xl">💳</div>
+                  <div>
+                    <div class="text-white font-medium">Credit/Debit Card</div>
+                    <div class="text-gray-400 text-sm">Via Stripe</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 bg-gray-800/30 rounded-lg">
+                  <div class="text-xl">🪙</div>
+                  <div>
+                    <div class="text-white font-medium">Crypto (SOL)</div>
+                    <div class="text-green-400 text-sm">Save 5% fees</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Features -->
+            <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-6">
+              <h3 class="text-lg font-bold text-white mb-4">What You Get</h3>
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3 text-gray-300">
+                  <span class="text-green-400">✓</span>
+                  Instant digital download
+                </li>
+                <li class="flex items-center gap-3 text-gray-300">
+                  <span class="text-green-400">✓</span>
+                  Free updates forever
+                </li>
+                <li class="flex items-center gap-3 text-gray-300">
+                  <span class="text-green-400">✓</span>
+                  Community access
+                </li>
+                <li class="flex items-center gap-3 text-gray-300">
+                  <span class="text-green-400">✓</span>
+                  30-day refund guarantee
+                </li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+        
+        <!-- Main Products Grid -->
+        <main class="lg:w-3/4">
+          <!-- Product Count & Sort -->
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+            <div>
+              <h2 class="text-2xl font-bold text-white">All Products</h2>
+              <p class="text-gray-400">{products.length} premium guides available</p>
+            </div>
+            
+            <div class="flex items-center gap-4">
+              <div class="relative">
+                <select class="appearance-none bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white pr-10 focus:outline-none focus:border-cyan-500">
+                  <option>Sort by: Popular</option>
+                  <option>Price: Low to High</option>
+                  <option>Price: High to Low</option>
+                  <option>Newest First</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                  ▼
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Products Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+            {products.map(product => (
+              <article class="group bg-gradient-to-b from-gray-900 to-black border border-gray-800 rounded-2xl overflow-hidden hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-1">
+                {/* Product Image/Header */}
+                <div class="relative h-48 bg-gradient-to-br from-purple-900/30 to-blue-900/30">
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-5xl opacity-30">
+                      {product.category === 'Trading' && '📈'}
+                      {product.category === 'DeFi' && '🔄'}
+                      {product.category === 'Airdrops' && '🎁'}
+                      {product.category === 'Security' && '🛡️'}
+                      {product.category === 'NFT' && '🖼️'}
+                      {product.category === 'Yield' && '💰'}
+                    </div>
+                  </div>
+                  
+                  {/* Badge */}
+                  <div class="absolute top-4 left-4">
+                    <span class="px-3 py-1.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold rounded-full">
+                      {product.badge}
+                    </span>
+                  </div>
+                  
+                  {/* Category */}
+                  <div class="absolute top-4 right-4">
+                    <span class="px-3 py-1.5 bg-black/50 backdrop-blur-sm text-gray-300 text-xs rounded-lg">
+                      {product.category}
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Product Info */}
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                    {product.title}
+                  </h3>
+                  
+                  <p class="text-gray-400 text-sm mb-6 line-clamp-2">
+                    {product.description}
+                  </p>
+                  
+                  {/* Features */}
+                  <div class="flex flex-wrap gap-2 mb-6">
+                    {product.features.map(feature => (
+                      <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 text-xs rounded-lg">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  {/* Price & CTA */}
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div class="text-2xl font-bold text-white">${product.price}</div>
+                      <div class="text-gray-500 text-sm">One-time payment</div>
+                    </div>
+                    
+                    <a 
+                      href={`/shop/${product.slug}`}
+                      class="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/30 transition-all hover:scale-105 flex items-center gap-2"
+                    >
+                      <span>View Details</span>
+                      <span>→</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          
+          <!-- Empty State (if no products) -->
+          {products.length === 0 && (
+            <div class="text-center py-20">
+              <div class="text-6xl mb-6 text-gray-700">🛒</div>
+              <h3 class="text-2xl font-bold text-gray-400 mb-4">No products yet</h3>
+              <p class="text-gray-500 max-w-md mx-auto">
+                Our first premium guides are coming soon! Check back in a few days.
+              </p>
+            </div>
+          )}
+          
+          <!-- Bundle Offer -->
+          <div class="mt-16 bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-2xl border border-purple-500/30 p-8">
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+              <div class="lg:w-2/3">
+                <div class="inline-flex items-center gap-2 mb-4">
+                  <span class="text-2xl">🎁</span>
+                  <span class="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-bold text-sm">
+                    LIMITED BUNDLE
+                  </span>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-white mb-4">
+                  Complete DeFi Toolkit Bundle
+                </h3>
+                
+                <p class="text-gray-300 mb-6">
+                  Get all 6 guides at 40% off. Everything you need for trading, security, yield farming, and more.
+                </p>
+                
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="text-3xl font-bold text-white">$59</div>
+                  <div class="text-gray-400 line-through text-xl">$97</div>
+                  <div class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-bold">
+                    SAVE $38
+                  </div>
+                </div>
+                
+                <button class="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-xl hover:shadow-xl hover:shadow-purple-500/40 transition-all">
+                  🔥 Get Complete Bundle (40% Off)
+                </button>
+              </div>
+              
+              <div class="lg:w-1/3">
+                <div class="bg-black/50 backdrop-blur-sm rounded-xl p-6">
+                  <h4 class="text-white font-bold mb-4">Bundle Includes:</h4>
+                  <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-gray-300">
+                      <span class="text-green-400">✓</span>
+                      <span>All 6 premium guides</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-300">
+                      <span class="text-green-400">✓</span>
+                      <span>Private Discord channel</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-300">
+                      <span class="text-green-400">✓</span>
+                      <span>Monthly strategy calls</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-300">
+                      <span class="text-green-400">✓</span>
+                      <span>Lifetime updates</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">
+          Shop FAQ
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gray-900/50 rounded-2xl p-6 border border-gray-800">
+            <h3 class="text-lg font-bold text-white mb-3">How do digital downloads work?</h3>
+            <p class="text-gray-300 text-sm">
+              Immediately after payment, you get instant access to download the PDFs. You'll also receive an email with all files.
+            </p>
+          </div>
+          
+          <div class="bg-gray-900/50 rounded-2xl p-6 border border-gray-800">
+            <h3 class="text-lg font-bold text-white mb-3">Can I pay with cryptocurrency?</h3>
+            <p class="text-gray-300 text-sm">
+              Yes! We accept SOL via Helius Pay. You get a 5% discount for paying with crypto instead of credit card.
+            </p>
+          </div>
+          
+          <div class="bg-gray-900/50 rounded-2xl p-6 border border-gray-800">
+            <h3 class="text-lg font-bold text-white mb-3">Are there any recurring fees?</h3>
+            <p class="text-gray-300 text-sm">
+              No. All products are one-time payments with lifetime access. Free updates included forever.
+            </p>
+          </div>
+          
+          <div class="bg-gray-900/50 rounded-2xl p-6 border border-gray-800">
+            <h3 class="text-lg font-bold text-white mb-3">What if I'm not satisfied?</h3>
+            <p class="text-gray-300 text-sm">
+              30-day money back guarantee. Email us within 30 days for a full refund, no questions asked.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Support -->
+        <div class="mt-16 text-center">
+          <div class="bg-gray-900/30 rounded-2xl p-8 border border-gray-800 max-w-2xl mx-auto">
+            <div class="text-4xl mb-6">💬</div>
+            <h3 class="text-2xl font-bold text-white mb-4">Need Help Deciding?</h3>
+            <p class="text-gray-300 mb-6">
+              Not sure which guide is right for you? Email us and we'll help you choose.
+            </p>
+            <a 
+              href="mailto:shop@txchyon.com"
+              class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-xl hover:shadow-xl hover:shadow-cyan-500/30 transition-all"
+            >
+              ✉️ shop@txchyon.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .animate-pulse {
+      animation: pulse 3s ease-in-out infinite;
+    }
+    
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    
+    /* Line clamp utility */
+    .line-clamp-2 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    
+    /* Custom select styling */
+    select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-right: 2.5rem;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  </style>
+</Base>

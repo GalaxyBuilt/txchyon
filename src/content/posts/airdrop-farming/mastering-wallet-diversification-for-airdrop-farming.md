@@ -1,8 +1,8 @@
 ---
 title: "Mastering Wallet Diversification for Airdrop Farming"
 description: "Learn how to strategically diversify your crypto wallets to maximize airdrop eligibility, manage risk, and efficiently track rewards across multiple projects and blockchains."
-date: 2025-12-28
-updatedDate: 2025-12-28
+date: 2025-12-27
+updatedDate: 2025-12-27
 image: "/images/posts/mastering-wallet.jpg"
 heroImageAlt: "Multiple cryptocurrency wallets interconnected with digital coins and blockchain nodes"
 authors: ["Nefu"]

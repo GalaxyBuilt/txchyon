@@ -1,8 +1,8 @@
 ---
 title: "Cold vs Hot Wallets: Optimizing Security and Eligibility"
 description: "Learn how to balance security and convenience when farming crypto airdrops, using cold and hot wallets effectively to maximize eligibility and minimize risk."
-date: 2025-12-29
-updatedDate: 2025-12-29
+date: 2025-12-27
+updatedDate: 2025-12-27
 image: "/images/posts/hotandcold.jpg"
 heroImageAlt: "Cold and hot crypto wallets with icy and fiery visual themes, digital coins transferring safely"
 authors: ["Nefu"]
