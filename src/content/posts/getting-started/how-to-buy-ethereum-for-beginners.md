@@ -10,7 +10,7 @@ authorTwitter: "@txchyon"
 tags: ["How to Buy Ethereum", "Buy ETH Beginners", "Ethereum for Beginners", "First ETH Purchase", "Crypto Buying Guide"]
 category: "getting-started"
 subcategory: "first-purchase"
-draft: true
+draft: false
 ---
 
 ## Introduction: Buying Your First Ethereum in 2026

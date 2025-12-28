@@ -1,5 +1,5 @@
 ---
-title: "How to Set Up a Bitcoin Node on Raspberry Pi: Step-by-Step Guide for 2026"
+title: "How to Set Up a Bitcoin Node on Raspberry Pi: Step-by-Step Guide"
 description: "Learn how to easily set up a Bitcoin full node on a Raspberry Pi 5 in 2026. Affordable, energy-efficient, and perfect for beginners seeking privacy and network support."
 date: 2025-12-29
 updatedDate: 2025-12-29
