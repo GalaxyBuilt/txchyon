@@ -1,14 +1,14 @@
 ---
 title: "Your First 30 Days in Crypto: A Beginner Roadmap"
 description: "Confused where to start in crypto? This week-by-week roadmap guides absolute beginners through wallet setup, buying, tracking, and building safe habits in their first month."
-date: 2026-04-04
-updatedDate: 2026-04-04
-image: "/images/posts/first-30-days-crypto-roadmap.jpg"
+date: 2025-12-30
+updatedDate: 2025-12-30
+image: "/images/posts/beginners2.jpg"
 heroImageAlt: "A calendar showing a 30-day crypto journey with icons for wallets, coins, charts, and security"
 authors: ["Nefu"]
 authorTwitter: "@txchyon"
 tags: ["beginner-crypto", "crypto-roadmap", "wallet-setup", "first-purchase", "crypto-education"]
-category: "trading-investing"
+category: "getting-started"
 subcategory: "basics"
 draft: true
 ---

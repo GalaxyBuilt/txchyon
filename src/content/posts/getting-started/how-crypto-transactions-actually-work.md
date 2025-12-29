@@ -1,16 +1,16 @@
 ---
 title: "How Crypto Transactions Actually Work: From Click to Confirmation"
 description: "A beginner-friendly guide to understanding how crypto transactions move through the blockchain, from sending to confirmations, fees, and failed transactions."
-date: 2026-04-04
-updatedDate: 2026-04-04
-image: "/images/posts/crypto-transactions-explained.jpg"
+date: 2025-12-30
+updatedDate: 2025-12-30
+image: "/images/posts/howcryptowork.jpg"
 heroImageAlt: "A flowchart showing the path of a crypto transaction from wallet to blockchain confirmation"
 authors: ["Nefu"]
 authorTwitter: "@txchyon"
 tags: ["crypto-transactions", "blockchain-basics", "mempool", "gas-fees", "crypto-beginners"]
-category: "trading-investing"
+category: "getting-started"
 subcategory: "basics"
-draft: true
+draft: false
 ---
 
 # How Crypto Transactions Actually Work: From Click to Confirmation

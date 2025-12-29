@@ -1,16 +1,16 @@
 ---
 title: "Do I Need KYC to Use Crypto? Beginner's Guide"
 description: "Reduce beginner anxiety: Learn where KYC is required, when it's optional, and how to navigate crypto legally and safely."
-date: 2026-04-04
-updatedDate: 2026-04-04
-image: "/images/posts/kyc-crypto-beginners-2026.jpg"
+date: 2025-12-30
+updatedDate: 2025-12-30
+image: "/images/posts/doineedkyc.jpg"
 heroImageAlt: "Illustration of a crypto user facing KYC checkpoints with a shield for privacy"
 authors: ["Nefu"]
 authorTwitter: "@txchyon"
 tags: ["kyc", "crypto-privacy", "onboarding", "beginner-guide", "wallet-setup"]
 category: "getting-started"
 subcategory: "basics"
-draft: true
+draft: false
 ---
 
 # Do I Need KYC to Use Crypto? Beginner's Guide 2026

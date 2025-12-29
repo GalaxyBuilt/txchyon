@@ -1,16 +1,16 @@
 ---
 title: "Is Crypto Legal Where I Live? Beginner's Guide"
 description: "Worried about crypto legality? Learn in plain English where crypto is legal, what it means, and how to safely interact with crypto in your country."
-date: 2026-04-05
-updatedDate: 2026-04-05
-image: "/images/posts/crypto-legal-guide-2026.jpg"
+date: 2025-12-30
+updatedDate: 2025-12-30
+image: "/images/posts/cryptolegal.jpg"
 heroImageAlt: "Illustration of a globe with crypto symbols and legal checkmarks"
 authors: ["Nefu"]
 authorTwitter: "@txchyon"
 tags: ["crypto-legal", "regulations", "compliance", "beginner-guide", "getting-started"]
 category: "getting-started"
 subcategory: "basics"
-draft: true
+draft: false
 ---
 
 # Is Crypto Legal Where I Live? Beginner's Guide 2026

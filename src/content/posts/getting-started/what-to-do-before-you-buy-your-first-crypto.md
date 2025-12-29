@@ -1,16 +1,16 @@
 ---
 title: "What to Do Before You Buy Your First Crypto"
 description: "A step-by-step beginner’s guide to preparing your wallet, securing your funds, avoiding scams, and even exploring memecoins safely."
-date: 2026-04-05
-updatedDate: 2026-04-05
-image: "/images/posts/before-you-buy-crypto.jpg"
+date: 2025-12-30
+updatedDate: 2025-12-30
+image: "/images/posts/beginners.jpg"
 heroImageAlt: "A beginner planning their first crypto purchase, surrounded by wallets, guides, and security tools"
 authors: ["Nefu"]
 authorTwitter: "@txchyon"
 tags: ["crypto-basics", "first-purchase", "wallet-setup", "security", "memecoins"]
-category: "trading-investing"
+category: "getting-started"
 subcategory: "first-purchase"
-draft: true
+draft: false
 ---
 
 # What to Do Before You Buy Your First Crypto
