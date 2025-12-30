@@ -51,49 +51,54 @@ const pageSize = 12;
 const currentPage = 1; // You can add pagination logic later
 const paginatedPosts = sortedPosts.slice(0, pageSize);
 const totalPages = Math.ceil(allPosts.length / pageSize);
+
+// === ADDED: Blog listing OG image ===
+// Use a specific image for the blog listing page
+const blogOgImage = "/images/blog-listing-og.jpg"; // Make sure this exists in public/images/
 ---
 
 <Base 
   title="All Free DeFi Guides | Txchyon" 
   description="Browse all our premium-quality DeFi guides. 100% free. No gatekeeping, just actionable knowledge."
+  image={blogOgImage}  <!-- ADD THIS PROP -->
 >
-  <section class="min-h-screen bg-gradient-to-b from-black to-gray-900 py-20">
+  <section class="min-h-screen dark:bg-gradient-to-b dark:from-black dark:to-gray-900 bg-gradient-to-b from-white to-gray-100 py-20">
     <div class="container mx-auto px-4">
       {/* Hero Header */}
       <div class="text-center mb-16">
-        <div class="inline-flex items-center gap-2 bg-black/40 backdrop-blur-sm border border-cyan-500/30 rounded-full px-6 py-3 mb-8">
-          <span class="text-cyan-400">📚</span>
-          <span class="text-cyan-300 font-medium">
+        <div class="inline-flex items-center gap-2 dark:bg-black/40 bg-white/80 backdrop-blur-sm dark:border border-cyan-500/30 border-cyan-400/30 rounded-full px-6 py-3 mb-8">
+          <span class="text-cyan-500 dark:text-cyan-400">📚</span>
+          <span class="text-cyan-600 dark:text-cyan-300 font-medium">
             ALL GUIDES • 100% FREE • NO SIGNUP REQUIRED
           </span>
         </div>
         
-        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+        <h1 class="text-4xl md:text-6xl font-bold dark:text-white text-gray-900 mb-6">
           Every Guide We've Published
         </h1>
         
-        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+        <p class="text-xl dark:text-gray-400 text-gray-600 max-w-3xl mx-auto">
           No paywalls. No "premium content" hidden away. Everything we create is free, forever.
         </p>
         
         {/* Stats */}
         <div class="flex flex-wrap justify-center gap-8 mt-10">
           <div class="text-center">
-            <div class="text-3xl font-bold text-white">{allPosts.length}</div>
-            <div class="text-gray-400">Total Guides</div>
+            <div class="text-3xl font-bold dark:text-white text-gray-900">{allPosts.length}</div>
+            <div class="dark:text-gray-400 text-gray-600">Total Guides</div>
           </div>
           <div class="text-center">
-            <div class="text-3xl font-bold text-white">1,200+</div>
-            <div class="text-gray-400">Active Readers</div>
+            <div class="text-3xl font-bold dark:text-white text-gray-900">1,200+</div>
+            <div class="dark:text-gray-400 text-gray-600">Active Readers</div>
           </div>
           <div class="text-center">
-            <div class="text-3xl font-bold text-green-400">$0</div>
-            <div class="text-gray-400">Everything Costs</div>
+            <div class="text-3xl font-bold text-green-500 dark:text-green-400">$0</div>
+            <div class="dark:text-gray-400 text-gray-600">Everything Costs</div>
           </div>
         </div>
       </div>
 
-      {/* Category Filter (Optional - can add later) */}
+      {/* Category Filter */}
       <div class="flex flex-wrap gap-4 mb-12 justify-center">
         <a href="/categories/getting-started" 
            class="px-5 py-2.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition-all">
@@ -126,9 +131,9 @@ const totalPages = Math.ceil(allPosts.length / pageSize);
       )}
 
       {/* CTA */}
-      <div class="bg-gradient-to-r from-gray-900/50 to-black/50 backdrop-blur-sm rounded-3xl border border-cyan-500/30 p-8 max-w-2xl mx-auto text-center">
-        <h2 class="text-2xl font-bold text-white mb-4">Missing Something?</h2>
-        <p class="text-gray-400 mb-6">
+      <div class="dark:bg-gradient-to-r dark:from-gray-900/50 dark:to-black/50 bg-gradient-to-r from-white/50 to-gray-100/50 backdrop-blur-sm rounded-3xl dark:border border-cyan-500/30 border-cyan-400/30 p-8 max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl font-bold dark:text-white text-gray-900 mb-4">Missing Something?</h2>
+        <p class="dark:text-gray-400 text-gray-600 mb-6">
           Have a DeFi topic you want us to cover? We're building this in public and take community requests.
         </p>
         <a href="https://twitter.com/txchyon" target="_blank" 
