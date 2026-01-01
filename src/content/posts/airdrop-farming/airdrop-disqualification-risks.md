@@ -16,6 +16,7 @@ tags:
 category: "airdrop-farming"
 subcategory: "eligibility-optimization"
 draft: false
+hasGatedContent: true  # <-- ADD THIS
 ---
 
 ## Why Following Guides Isn't Always Enough
@@ -62,6 +63,8 @@ Even "good" wallets can trip the following flags:
 > Tip: Review [Cold vs Hot Wallets: Optimizing Security and Eligibility](/blog/airdrop-farming/cold-vs-hot-wallets-optimizing-security-and-eligibility/) to avoid these issues
 
 ---
+
+<GatedContent>  <!-- GATE STARTS HERE - 60% of content below -->
 
 ### 4. Transaction Timing & Volume Red Flags
 - Perfectly uniform transaction timing across multiple wallets  
@@ -129,3 +132,5 @@ When implemented correctly, this step **converts potential failures into guarant
 - [How Airdrop Eligibility Is Really Determined](/blog/airdrop-farming/airdrop-eligibility-criteria/)  
 - [Minimum Activity Thresholds: What Actually Qualifies for Airdrops](/blog/airdrop-farming/airdrop-minimum-activity-thresholds/)  
 - [How to Avoid Disqualification After Doing Everything Right](/blog/airdrop-farming/airdrop-disqualification-risks/)
+
+</GatedContent>  <!-- GATE ENDS HERE -->

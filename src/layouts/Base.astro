@@ -25,9 +25,21 @@ export interface Props {
   image?: string;
   noindex?: boolean;
   canonical?: string;
+  // NEW: Add these optional props for gating flexibility
+  isFullyGated?: boolean;      // For completely gated articles
+  hasGatedContent?: boolean;   // For partially gated articles
 }
 
-const { title, meta_title, description, image, noindex, canonical } = Astro.props;
+const { 
+  title, 
+  meta_title, 
+  description, 
+  image, 
+  noindex, 
+  canonical,
+  isFullyGated = false,
+  hasGatedContent = false 
+} = Astro.props;
 
 const escapeHtml = (text) => {
   if (!text) return '';
@@ -103,6 +115,41 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
       noindex={!!noindex}
       type="website"
     />
+
+    <!-- FLEXIBLE SCHEMA: Choose your gating strategy per article -->
+    {title && (
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "{finalTitle}",
+          "description": "{finalDescription}",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{Astro.url.origin}{Astro.url.pathname}"
+          }
+          {isFullyGated ? `,
+          "isAccessibleForFree": "false",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Txchyon",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://yourdomain.com/logo.png"
+            }
+          }` : hasGatedContent ? `,
+          "isAccessibleForFree": "true",
+          "hasPart": {
+            "@type": "WebPageElement",
+            "isAccessibleForFree": "false",
+            "cssSelector": ".locked-content",
+            "name": "Premium Content",
+            "description": "Step-by-step technical instructions requiring newsletter subscription"
+          }` : `,
+          "isAccessibleForFree": "true"`}
+        }
+      </script>
+    )}
 
     <link rel="alternate" type="application/rss+xml" title="Txchyon RSS" href="/rss.xml" />
     <link rel="alternate" type="application/feed+json" title="Txchyon JSON Feed" href="/feed.json" />

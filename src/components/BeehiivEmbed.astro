@@ -1,0 +1,33 @@
+---
+// src/components/BeehiivEmbed.astro
+const BEEHIIV_EMBED_ID = import.meta.env.PUBLIC_BEEHIIV_EMBED_ID || 'your-id';
+---
+
+<iframe 
+  src={`https://embeds.beehiiv.com/${BEEHIIV_EMBED_ID}?slim=1`}
+  data-test-id="beehiiv-embed" 
+  height="52" 
+  frameborder="0" 
+  scrolling="no" 
+  style="margin: 0; border-radius: 0px !important; background-color: transparent; width: 100%;"
+  onload="handleBeehiivLoad()"
+></iframe>
+
+<script>
+  function handleBeehiivLoad() {
+    // Listen for Beehiiv success messages
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.type === 'beehiiv:subscription:success') {
+        unlockContent();
+        
+        // Send to analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'newsletter_signup', {
+            'event_category': 'Conversion',
+            'event_label': 'Beehiiv Gate'
+          });
+        }
+      }
+    });
+  }
+</script>
