@@ -18,19 +18,19 @@ subcategory: "eligibility-optimization"
 draft: false
 ---
 
-## Why “Doing the Right Actions” Still Gets You Zero Airdrops
+## Why "Doing the Right Actions" Still Gets You Zero Airdrops
 
 One of the most common frustrations in airdrop farming is this:
 
-> *“I used the protocol, I earned points, I followed the guide… and still got nothing.”*
+> *"I used the protocol, I earned points, I followed the guide… and still got nothing."*
 
-That’s because **airdrop eligibility is not a checklist**.
+That's because **airdrop eligibility is not a checklist**.
 
-Projects don’t simply ask *what* you did — they evaluate **how**, **why**, **how often**, and **how your behavior compares to real users**. Eligibility is the invisible filter that sits *above* points systems, activity tracking, and wallet history.
+Projects don't simply ask *what* you did — they evaluate **how**, **why**, **how often**, and **how your behavior compares to real users**. Eligibility is the invisible filter that sits *above* points systems, activity tracking, and wallet history.
 
 This guide breaks down **how eligibility is really determined**, what signals matter most, and how to structure your farming so your wallet looks valuable — not extractive.
 
-> Tip: To understand exactly which actions earn points, read [What Actions Actually Earn Airdrop Points (And What Doesn’t)](/blog/airdrop-farming/points-systems)
+> Tip: To understand exactly which actions earn points, read [What Actions Actually Earn Airdrop Points (And What Doesn't)](/blog/airdrop-farming/what-actions-earn-airdrop-points/)
 
 ---
 
@@ -47,9 +47,9 @@ You can earn points and still be excluded if:
 
 Think of eligibility as a **gate**, and points as **weight inside the gate**.
 
-If your wallet never passes the gate, points don’t matter.
+If your wallet never passes the gate, points don't matter.
 
-> Tip: Learn how to track points across multiple wallets to stay eligible: [How to Track Airdrop Points Across Multiple Wallets](/blog/airdrop-farming/points-systems)
+> Tip: Learn how to track points across multiple wallets to stay eligible: [How to Track Airdrop Points Across Multiple Wallets](/blog/airdrop-farming/how-to-track-airdrop-points/)
 
 ---
 
@@ -66,13 +66,13 @@ Projects favor wallets that:
 
 Fresh wallets created solely to farm are not automatically disqualified — but they are **heavily scrutinized**.
 
-> Tip: For proper wallet hygiene and risk management, see [Avoiding Red Flags: Wallet Hygiene and Compliance in Airdrop Farming](/blog/airdrop-farming/wallet-strategy)
+> Tip: For proper wallet hygiene and risk management, see [Avoiding Red Flags: Wallet Hygiene and Compliance in Airdrop Farming](/blog/airdrop-farming/avoiding-red-flags-wallet-hygiene-and-compliance/)
 
 ---
 
 ### 2. Meaningful Protocol Usage (Not Just Transactions)
 
-Eligibility algorithms don’t just count interactions — they analyze **intent**.
+Eligibility algorithms don't just count interactions — they analyze **intent**.
 
 High-quality signals include:
 - Repeated usage over time  
@@ -81,7 +81,7 @@ High-quality signals include:
 - Taking normal user risk (impermanent loss, market exposure, fees)
 
 Low-quality signals include:
-- One-time “touch and go” interactions  
+- One-time "touch and go" interactions  
 - Identical transaction sizing across wallets  
 - Perfectly timed, repetitive behavior
 
@@ -98,7 +98,7 @@ Many airdrops quietly enforce:
 
 This is why last-minute farming often fails.
 
-> Tip: Check out [Minimum Activity Thresholds: What Actually Qualifies for Airdrops](/blog/airdrop-farming/airdrop-minimum-activity-thresholds) to see how to plan activity over time
+> Tip: Check out [Minimum Activity Thresholds: What Actually Qualifies for Airdrops](/blog/airdrop-farming/airdrop-minimum-activity-thresholds/) to see how to plan activity over time
 
 ---
 
@@ -112,13 +112,13 @@ Example:
 
 What matters is **contextual commitment**, not absolute dollars.
 
-> Tip: Learn to optimize gas and activity for different chains in [Gas Optimization for Airdrop Farming](/blog/airdrop-farming/airdrop-gas-optimization) (coming soon)
+> Tip: Learn to optimize gas and activity for different chains in Gas Optimization for Airdrop Farming (coming soon)
 
 ---
 
 ### 5. Sybil Risk Scoring (The Silent Killer)
 
-Even if a project never says “Sybil,” assume they are running:
+Even if a project never says "Sybil," assume they are running:
 - Wallet clustering analysis  
 - Transaction similarity detection  
 - Timing correlation models  
@@ -152,20 +152,20 @@ Eligibility is about **believability**. If a human reviewer looked at your walle
 
 Eligibility optimization sits at the center of the entire strategy:
 
-- **Wallet Strategy** → ensures baseline trust ([Cold vs Hot Wallets](/blog/airdrop-farming/wallet-strategy))  
-- **Points Systems** → determine scoring after eligibility ([Optimizing Airdrop Points Without Overfarming](/blog/airdrop-farming/points-systems))  
+- **Wallet Strategy** → ensures baseline trust ([Cold vs Hot Wallets](/blog/airdrop-farming/cold-vs-hot-wallets-optimizing-security-and-eligibility/))  
+- **Points Systems** → determine scoring after eligibility ([How Crypto Airdrop Points Systems Really Work](/blog/airdrop-farming/airdrop-points-case-studies/))  
 - **Gas Optimization** → ensures cost efficiency without signaling low intent  
 - **Multi-Chain Farming** → expands reach without duplicating patterns  
-- **Tools & Tracking** → monitor activity safely ([How to Track Airdrop Points Across Multiple Wallets](/blog/airdrop-farming/points-systems))
+- **Tools & Tracking** → monitor activity safely ([How to Track Airdrop Points Across Multiple Wallets](/blog/airdrop-farming/how-to-track-airdrop-points/))
 
 Ignoring eligibility leaks alpha from every other cluster.
 
 ---
 
-## What’s Next in This Cluster
+## What's Next in This Cluster
 
 After this foundational guide, the next step is:  
-- [Minimum Activity Thresholds: What Actually Qualifies for Airdrops](/blog/airdrop-farming/airdrop-minimum-activity-thresholds)  
-- Followed by [How to Avoid Disqualification After Doing Everything Right](/blog/airdrop-farming/airdrop-disqualification-risks)  
+- [Minimum Activity Thresholds: What Actually Qualifies for Airdrops](/blog/airdrop-farming/airdrop-minimum-activity-thresholds/)  
+- Followed by [How to Avoid Disqualification After Doing Everything Right](/blog/airdrop-farming/airdrop-disqualification-risks/)  
 
 Building your airdrop farming foundation this way ensures every wallet is **eligible, points-optimized, and safe**.

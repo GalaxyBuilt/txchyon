@@ -24,12 +24,12 @@ Earning points is only half the battle. Projects often enforce **minimum activit
 
 Without meeting these thresholds, your wallet may:
 - Earn points but never qualify  
-- Trigger automated filters as “low-value”  
+- Trigger automated filters as "low-value"  
 - Be deprioritized for retroactive or bonus airdrops  
 
 Think of thresholds as **the invisible eligibility bar** — high enough to weed out bots and low-effort wallets, but not so high that reasonable users are excluded.
 
-> Tip: For a complete understanding of how eligibility is determined, check out our foundational guide [How Airdrop Eligibility Is Really Determined](/blog/airdrop-farming/airdrop-eligibility-criteria).
+> Tip: For a complete understanding of how eligibility is determined, check out our foundational guide [How Airdrop Eligibility Is Really Determined](/blog/airdrop-farming/airdrop-eligibility-criteria/).
 
 ---
 
@@ -52,7 +52,7 @@ While each project is different, these are the **most common minimum activity si
 - Example: staking + trading + governance voting  
 - Single-feature activity often triggers low eligibility weighting
 
-> Tip: To see exactly which actions earn points and which don’t, read [What Actions Actually Earn Airdrop Points (And What Doesn’t)](/blog/airdrop-farming/points-systems)
+> Tip: To see exactly which actions earn points and which don't, read [What Actions Actually Earn Airdrop Points (And What Doesn't)](/blog/airdrop-farming/what-actions-earn-airdrop-points/)
 
 ### 4. Volume / Capital Commitment
 - Some airdrops factor relative dollar value or token holdings  
@@ -63,7 +63,7 @@ While each project is different, these are the **most common minimum activity si
 - Prior usage of related products or similar projects increases eligibility  
 - Projects reward early or long-term users even with lower activity in the latest campaign
 
-> Tip: Learn how to track points across multiple wallets effectively: [How to Track Airdrop Points Across Multiple Wallets](/blog/airdrop-farming/points-systems)
+> Tip: Learn how to track points across multiple wallets effectively: [How to Track Airdrop Points Across Multiple Wallets](/blog/airdrop-farming/how-to-track-airdrop-points/)
 
 ---
 
@@ -89,7 +89,7 @@ This ensures you hit the bar **without triggering red flags**.
 | Pump.fun | Transaction Count | Mix swaps, mints, and staking; avoid identical sizes |
 | Polymarket | Feature Diversity | Participate in both trading and prediction markets |
 
-Notice the common thread: **quality beats quantity**, and consistency beats “one big push.”
+Notice the common thread: **quality beats quantity**, and consistency beats "one big push."
 
 ---
 
@@ -97,10 +97,10 @@ Notice the common thread: **quality beats quantity**, and consistency beats “o
 
 Minimum thresholds link directly to your overall eligibility strategy:
 
-- **Wallet Strategy** → ensures you have enough diversified wallets to distribute activity ([Wallet Hygiene & Compliance](/blog/airdrop-farming/wallet-strategy))  
-- **Points Systems** → make sure each wallet earns points efficiently while hitting thresholds ([Optimizing Airdrop Points Without Overfarming](/blog/airdrop-farming/points-systems))  
+- **Wallet Strategy** → ensures you have enough diversified wallets to distribute activity ([Avoiding Red Flags: Wallet Hygiene and Compliance in Airdrop Farming](/blog/airdrop-farming/avoiding-red-flags-wallet-hygiene-and-compliance/))  
+- **Points Systems** → make sure each wallet earns points efficiently while hitting thresholds ([Optimizing Airdrop Points Without Overfarming or Getting Flagged](/blog/airdrop-farming/optimizing-airdrop-points-safely/))  
 - **Gas Optimization** → manage cost while meeting minimum interactions  
-- **Tools & Tracking** → track activity across wallets ([How to Track Airdrop Points Across Multiple Wallets](/blog/airdrop-farming/points-systems))
+- **Tools & Tracking** → track activity across wallets ([How to Track Airdrop Points Across Multiple Wallets](/blog/airdrop-farming/how-to-track-airdrop-points/))
 
 The more structured your approach, the easier it is to scale across chains and projects.
 
@@ -111,10 +111,10 @@ The more structured your approach, the easier it is to scale across chains and p
 1. Minimum thresholds are often invisible but critical  
 2. Consistency, diversity, and context matter more than sheer volume  
 3. Overfarming or uniform actions can hurt eligibility  
-4. Track, measure, and optimize — don’t guess
+4. Track, measure, and optimize — don't guess
 
 Meeting these thresholds transforms **points-earned wallets** into **fully eligible wallets**, unlocking the alpha in your airdrop farming strategy.
 
 ---
 
-*Next article in this cluster: [How to Avoid Disqualification After Doing Everything Right](/blog/airdrop-farming/airdrop-disqualification-risks)*  
+*Next article in this cluster: [How to Avoid Disqualification After Doing Everything Right](/blog/airdrop-farming/airdrop-disqualification-risks/)*

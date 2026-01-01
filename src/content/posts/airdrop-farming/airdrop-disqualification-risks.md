@@ -18,15 +18,15 @@ subcategory: "eligibility-optimization"
 draft: false
 ---
 
-## Why Following Guides Isn’t Always Enough
+## Why Following Guides Isn't Always Enough
 
 Many airdrop farmers think:
 
-> *“I followed all the steps — I used multiple wallets, earned points, and interacted over time. I should get the reward.”*
+> *"I followed all the steps — I used multiple wallets, earned points, and interacted over time. I should get the reward."*
 
 Yet, disqualifications still happen.
 
-Why? Projects are increasingly sophisticated in **detecting subtle red flags**, often analyzing patterns, funding sources, timing, and wallet behavior in ways that aren’t public.  
+Why? Projects are increasingly sophisticated in **detecting subtle red flags**, often analyzing patterns, funding sources, timing, and wallet behavior in ways that aren't public.  
 
 Understanding these hidden triggers is **the final piece of eligibility optimization**.
 
@@ -34,14 +34,14 @@ Understanding these hidden triggers is **the final piece of eligibility optimiza
 
 ## Common Disqualification Triggers
 
-Even “good” wallets can trip the following flags:
+Even "good" wallets can trip the following flags:
 
 ### 1. Sybil and Clustering Risks
 - Multiple wallets funded from the same source  
 - Identical transaction sequences or timing across wallets  
 - Reusing the same addresses or smart contracts in multiple wallets
 
-> Tip: For foundational knowledge on Sybil risk, see [How Airdrop Eligibility Is Really Determined](/blog/airdrop-farming/airdrop-eligibility-criteria)
+> Tip: For foundational knowledge on Sybil risk, see [How Airdrop Eligibility Is Really Determined](/blog/airdrop-farming/airdrop-eligibility-criteria/)
 
 ---
 
@@ -50,7 +50,7 @@ Even “good” wallets can trip the following flags:
 - Performing the same actions across wallets in identical order  
 - Last-minute farming before a snapshot
 
-> Tip: Learn safe points optimization strategies here: [Optimizing Airdrop Points Without Overfarming](/blog/airdrop-farming/points-systems)
+> Tip: Learn safe points optimization strategies here: [Optimizing Airdrop Points Without Overfarming or Getting Flagged](/blog/airdrop-farming/optimizing-airdrop-points-safely/)
 
 ---
 
@@ -59,7 +59,7 @@ Even “good” wallets can trip the following flags:
 - Failing to separate hot/cold wallets properly  
 - Linking wallets in a way that reveals a single controlling entity
 
-> Tip: Review [Cold vs Hot Wallets: Optimizing Security and Eligibility](/blog/airdrop-farming/wallet-strategy) to avoid these issues
+> Tip: Review [Cold vs Hot Wallets: Optimizing Security and Eligibility](/blog/airdrop-farming/cold-vs-hot-wallets-optimizing-security-and-eligibility/) to avoid these issues
 
 ---
 
@@ -68,7 +68,7 @@ Even “good” wallets can trip the following flags:
 - Identical transaction sizes repeated across chains  
 - Extreme activity spikes right before snapshots
 
-> Tip: For minimum activity guidance without triggering red flags, see [Minimum Activity Thresholds: What Actually Qualifies for Airdrops](/blog/airdrop-farming/airdrop-minimum-activity-thresholds)
+> Tip: For minimum activity guidance without triggering red flags, see [Minimum Activity Thresholds: What Actually Qualifies for Airdrops](/blog/airdrop-farming/airdrop-minimum-activity-thresholds/)
 
 ---
 
@@ -76,7 +76,7 @@ Even “good” wallets can trip the following flags:
 - Some airdrops require certain token holdings, governance participation, or staking  
 - Not all rules are obvious; failure to comply can disqualify your wallet regardless of points or activity
 
-> Tip: Always read project-specific guides like [The Solana Airdrop Snowball: 4 Confirmed Farm Strategies](/blog/airdrop-farming/points-systems) for context
+> Tip: Always read project-specific guides like [🪂 The Solana Airdrop Snowball: 4 Confirmed Farm Strategies to Claim Free Tokens](/blog/airdrop-farming/solana-airdrops/) for context
 
 ---
 
@@ -92,7 +92,7 @@ Even “good” wallets can trip the following flags:
    Use multiple protocol features rather than repeating a single action.
 
 4. **Monitor Your Wallets**  
-   Track points and activity using dashboards ([How to Track Airdrop Points Across Multiple Wallets](/blog/airdrop-farming/points-systems)).
+   Track points and activity using dashboards ([How to Track Airdrop Points Across Multiple Wallets](/blog/airdrop-farming/how-to-track-airdrop-points/)).
 
 5. **Keep Transactions Human-Like**  
    Vary sizes, intervals, and interaction order. Avoid perfect patterns.
@@ -108,7 +108,7 @@ Disqualification avoidance ties all clusters together:
 
 - **Wallet Strategy** → ensures baseline safety  
 - **Points Systems** → prevent overfarming and detect red flags early  
-- **Eligibility Optimization** → the foundation ([Air Eligibility Guide](/blog/airdrop-farming/airdrop-eligibility-criteria))  
+- **Eligibility Optimization** → the foundation ([How Airdrop Eligibility Is Really Determined](/blog/airdrop-farming/airdrop-eligibility-criteria/))  
 - **Gas Optimization** → avoid cheap bulk transactions that look suspicious  
 - **Tools & Tracking** → monitor activity, points, and risk across wallets
 
@@ -126,6 +126,6 @@ When implemented correctly, this step **converts potential failures into guarant
 ---
 
 *This completes the Eligibility Optimization cluster.*  
-- [How Airdrop Eligibility Is Really Determined](/blog/airdrop-farming/airdrop-eligibility-criteria)  
-- [Minimum Activity Thresholds: What Actually Qualifies for Airdrops](/blog/airdrop-farming/airdrop-minimum-activity-thresholds)  
-- [How to Avoid Disqualification After Doing Everything Right](/blog/airdrop-farming/airdrop-disqualification-risks)
+- [How Airdrop Eligibility Is Really Determined](/blog/airdrop-farming/airdrop-eligibility-criteria/)  
+- [Minimum Activity Thresholds: What Actually Qualifies for Airdrops](/blog/airdrop-farming/airdrop-minimum-activity-thresholds/)  
+- [How to Avoid Disqualification After Doing Everything Right](/blog/airdrop-farming/airdrop-disqualification-risks/)
