@@ -11,6 +11,8 @@ tags: ["Crypto Portfolio", "Tax-Loss Harvesting", "Capital Gains", "Tax Planning
 category: "portfolio-management"
 subcategory: "tax-loss-harvesting"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 ## What Is Crypto Tax-Loss Harvesting?

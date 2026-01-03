@@ -11,6 +11,8 @@ tags: ["prediction-markets", "trading-strategies", "crypto"]
 category: "prediction-markets"
 subcategory: "event-strategies"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 # Top 10 Prediction Market Strategies That Actually Work (Election, Crypto & Sports Edition)

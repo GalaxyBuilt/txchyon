@@ -17,6 +17,8 @@ tags:
 category: "research-analysis"
 subcategory: "due-diligence-framework"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 ## Introduction: Why Due Diligence Matters in Crypto

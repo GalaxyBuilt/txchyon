@@ -11,6 +11,8 @@ tags: ["Crypto Portfolio", "Estate Planning", "Inheritance", "Trusts", "Multi-Ge
 category: "portfolio-management"
 subcategory: "estate-planning"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 ## The Wake-Up Call: A Crypto Inheritance Gone Wrong

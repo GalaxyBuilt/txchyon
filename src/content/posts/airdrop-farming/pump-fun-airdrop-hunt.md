@@ -12,6 +12,8 @@ category: "airdrop-farming"
 subcategory: "points-systems"
   # Keep existing tags: "airdrop", "research", "defi", "speculation", "solana", "security"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 # 💸 Farming for Free Funds: Your Strategy for a Potential Pump.fun Airdrop
@@ -53,7 +55,7 @@ Based on a standard airdrop model (like the JUP airdrop), where rewards are tier
 | **High-Tier User** (>$2,500 Volume, creator status) | 5,000 - 10,000+ $PUMP tokens | $2,500 - $5,000+ |
 
 > **Note:** These numbers are purely speculative and based on the historical distribution models of similar, highly anticipated projects. The final value depends entirely on the launch price of the $PUMP token.
-
+<!-- GATE-START -->
 ### B. Tracking Your Volume with Dune Analytics
 
 Professional airdrop hunters rely on decentralized analytics platforms like Dune to benchmark their activity against the total community.

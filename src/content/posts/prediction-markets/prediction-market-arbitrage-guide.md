@@ -11,6 +11,8 @@ tags: ["prediction-markets", "arbitrage", "trading"]
 category: "prediction-markets"
 subcategory: "arbitrage-opportunities"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 # Prediction Market Arbitrage Guide: How to Find & Execute Risk-Free Profits Across Platforms

@@ -11,6 +11,8 @@ tags: ["bitcoin", "bitcoin node", "hardware", "full node", "reviews"]
 category: "infrastructure-tech"
 subcategory: "layer-1s"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 Choosing the right hardware is key to a smooth Bitcoin node experience. This article expands on the hardware section in [What Is a Bitcoin Node and Why You Need One](https://txchyon.com/blog/infrastructure-tech/what-is-a-bitcoin-node-and-why-you-need-one), providing in-depth reviews.

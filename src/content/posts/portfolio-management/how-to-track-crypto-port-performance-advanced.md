@@ -11,6 +11,8 @@ tags: ["Crypto Portfolio", "Performance Tracking", "Benchmarking", "Returns", "R
 category: "portfolio-management"
 subcategory: "performance-tracking"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 ## Why Most Crypto Investors Misread Their Own Performance

@@ -12,6 +12,8 @@ category: "airdrop-farming"
 subcategory: "points-systems"
   # Keep existing tags: "airdrop", "research", "defi", "speculation", "solana", "security"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 # Preparing for the Polymarket Airdrop: A Step-by-Step Guide (2025–2026)

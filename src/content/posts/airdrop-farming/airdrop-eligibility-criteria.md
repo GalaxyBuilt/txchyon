@@ -16,6 +16,8 @@ tags:
 category: "airdrop-farming"
 subcategory: "eligibility-optimization"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 ## Why "Doing the Right Actions" Still Gets You Zero Airdrops

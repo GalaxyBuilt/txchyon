@@ -1,5 +1,5 @@
 ---
-// src/pages/blog/[...slug].astro - FIXED
+// src/pages/blog/[...slug].astro - COMPLETE GATING VERSION
 
 import Base from "@/layouts/Base.astro";
 import PostSingle from "@/partials/PostSingle.astro";
@@ -38,7 +38,17 @@ if (!post) {
   throw Astro.redirect('/404');
 }
 
-const { title, meta_title, image, description } = post.data;
+// GET ALL PROPS INCLUDING GATING FIELDS
+const { 
+  title, 
+  meta_title, 
+  image, 
+  description, 
+  hasGatedContent,
+  isFullyGated,
+  noindex,
+  canonical 
+} = post.data;
 
 // === FIX: Escape HTML in description ===
 const escapeHtml = (text) => {
@@ -60,7 +70,11 @@ const escapedDescription = escapeHtml(description);
   title={title}
   meta_title={meta_title}
   image={String(postImage)}
-  description={escapedDescription}  <!-- Pass ESCAPED description -->
+  description={escapedDescription}
+  hasGatedContent={hasGatedContent}
+  isFullyGated={isFullyGated}
+  noindex={noindex}
+  canonical={canonical}
 >
   <PostSingle post={post} />
 </Base>

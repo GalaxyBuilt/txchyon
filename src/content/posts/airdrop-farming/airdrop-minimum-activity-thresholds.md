@@ -16,6 +16,8 @@ tags:
 category: "airdrop-farming"
 subcategory: "eligibility-optimization"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 ## Why Minimum Activity Thresholds Matter

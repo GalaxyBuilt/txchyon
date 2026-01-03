@@ -1,8 +1,3 @@
-# 1. DELETE the corrupted file completely
-Remove-Item src/components/SimilarPosts.astro -Force
-
-# 2. Create NEW SIMPLE version that CAN'T fail
-@'
 <!-- src/components/SimilarPosts.astro - SIMPLE WORKING VERSION -->
 ---
 const { posts = [] } = Astro.props;
@@ -38,4 +33,3 @@ const similarPosts = posts;
     </div>
   </div>
 )}
-'@ | Set-Content src/components/SimilarPosts.astro -Encoding UTF8

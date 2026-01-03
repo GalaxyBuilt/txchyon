@@ -16,6 +16,8 @@ tags:
 category: "airdrop-farming"
 subcategory: "wallet-strategy"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 # Avoiding Red Flags: Wallet Hygiene and Compliance in Airdrop Farming

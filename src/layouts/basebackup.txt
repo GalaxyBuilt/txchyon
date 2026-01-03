@@ -1,0 +1,634 @@
+---
+import TwSizeIndicator from "@/components/TwSizeIndicator.astro";
+import config from "@/config/config.json";
+import theme from "@/config/theme.json";
+import Footer from "@/partials/Footer.astro";
+import Header from "@/partials/Header.astro";
+import FloatingBubble from "@/components/FloatingBubble.jsx";
+import "@/styles/main.css";
+import { AstroFont } from "astro-font";
+import { ClientRouter } from "astro:transitions";
+import SEO from "@/layouts/components/SEO.astro";
+
+// ======================
+// SIMPLE GATE CONTROL - NO DUPLICATE VARIABLES
+// ======================
+
+// Hardcoded backup arrays
+const hardcodedPartialGated = [
+  '/blog/airdrop-farming/airdrop-disqualification-risks',
+];
+
+const hardcodedFullyGated = [];
+
+const currentPath = Astro.url.pathname;
+
+// Get props once
+const { 
+  title, 
+  meta_title, 
+  description, 
+  image, 
+  noindex, 
+  canonical,
+  hasGatedContent: frontmatterHasGatedContent = false,
+  isFullyGated: frontmatterIsFullyGated = false
+} = Astro.props;
+
+// Check gating type
+const fromHardcodedPartial = hardcodedPartialGated.includes(currentPath);
+const fromHardcodedFull = hardcodedFullyGated.includes(currentPath);
+
+// Determine final gating type
+const articleIsFullyGated = frontmatterIsFullyGated || fromHardcodedFull;
+const hasGatedContent = frontmatterHasGatedContent || fromHardcodedPartial || articleIsFullyGated;
+
+console.log('🎯 GATE SYSTEM:', {
+  path: currentPath,
+  'Frontmatter - Partial': frontmatterHasGatedContent,
+  'Frontmatter - Full': frontmatterIsFullyGated,
+  'Hardcoded - Partial': fromHardcodedPartial,
+  'Hardcoded - Full': fromHardcodedFull,
+  'Final - Has Gate': hasGatedContent,
+  'Final - Is Full': articleIsFullyGated
+});
+
+const pf = theme.fonts.font_family.primary;
+let fontPrimary;
+if (theme.fonts.font_family.primary) {
+  fontPrimary = theme.fonts.font_family.primary
+    .replace(/\+/g, " ")
+    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
+}
+
+export interface Props {
+  title?: string;
+  meta_title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  canonical?: string;
+  // Gating fields
+  hasGatedContent?: boolean;
+  isFullyGated?: boolean;
+}
+
+const finalTitle = meta_title ?? title ?? config.site.title;
+const finalDescription = description ?? config.metadata.meta_description;
+
+const finalImage = image && typeof image === 'string' && image.trim()
+  ? `${config.site.base_url}${image.startsWith("/") ? "" : "/"}${image}`
+  : `${config.site.base_url}${config.metadata.meta_image}`;
+
+const cleanPath = Astro.url.pathname.replace(/\/$/, "");
+const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W77T47Y58P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W77T47Y58P');
+    </script>
+
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="BM9NrhHESqRca7xP0Vuqeg" async></script>
+
+    <link rel="shortcut icon" href={config.site.favicon} />
+    <meta name="theme-name" content="bookworm-light-astro" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="generator" content={Astro.generator} />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <AstroFont
+      config={[
+        {
+          src: [],
+          preload: false,
+          display: "swap",
+          name: fontPrimary!,
+          fallback: "sans-serif",
+          cssVariable: "font-primary",
+          googleFontsURL: `https://fonts.googleapis.com/css2?family=${pf}&display=swap`,
+        },
+      ]}
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+    <SEO
+      title={finalTitle}
+      description={finalDescription}
+      image={finalImage}
+      canonical={finalCanonical}
+      noindex={!!noindex}
+      type="website"
+    />
+
+    <!-- SCHEMA MARKUP -->
+    {title && (
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "{finalTitle}",
+          "description": "{finalDescription}",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{Astro.url.origin}{Astro.url.pathname}"
+          },
+          "isAccessibleForFree": true,
+          "hasPart": {
+            "@type": "WebPageElement",
+            "isAccessibleForFree": false,
+            "cssSelector": ".locked-content",
+            "name": "Premium Content",
+            "description": "Step-by-step technical instructions requiring newsletter subscription"
+          }
+        }
+      </script>
+    )}
+
+    <link rel="alternate" type="application/rss+xml" title="Txchyon RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/feed+json" title="Txchyon JSON Feed" href="/feed.json" />
+
+    <ClientRouter />
+    <meta name="author" content={config.metadata.meta_author} />
+    
+    <!-- GATE STYLES -->
+    {hasGatedContent && (
+      <style>
+        .locked-content {
+          filter: blur(12px);
+          pointer-events: none;
+          user-select: none;
+          opacity: 0.5;
+          transition: filter 0.4s ease, opacity 0.4s ease;
+        }
+        
+        .locked-content.unlocked {
+          filter: blur(0);
+          pointer-events: auto;
+          user-select: auto;
+          opacity: 1;
+        }
+      </style>
+    )}
+    
+    <!-- Pass gating config to JavaScript - FIXED -->
+    <script>
+      {hasGatedContent && `window.txchyonGateConfig = ${JSON.stringify({isFullyGated: articleIsFullyGated})};`}
+    </script>
+    
+    <!-- SIMPLE THEME SCRIPT -->
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#000000');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#ffffff');
+        }
+        
+        if (!savedTheme) {
+          localStorage.setItem('theme', prefersDark ? 'dark' : 'light');
+        }
+      })();
+    </script>
+    
+    <style>
+      * {
+        transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+      }
+    </style>
+  </head>
+
+  <body class="bg-body text-text font-primary font-normal leading-relaxed dark:bg-dark dark:text-light">
+    <TwSizeIndicator />
+    <Header />
+    <main id="main-content" class="min-h-[60vh]">
+      <slot />
+    </main>
+    <Footer />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <FloatingBubble client:load />
+  
+    <!-- COMPLETE GATE LOGIC - SUPPORTS PARTIAL & FULL GATING -->
+    {hasGatedContent && (
+      <script>
+        console.log('🎯 GATE SYSTEM: Loading for', window.location.pathname);
+        
+        // Configuration
+        const STORAGE_KEY = 'txchyon_subscriber';
+        const IS_FULLY_GATED = window.txchyonGateConfig?.isFullyGated || false;
+        
+        console.log('🔧 Gate Config:', { IS_FULLY_GATED });
+        
+        // Check if already subscribed
+        function isSubscribed() {
+          return localStorage.getItem(STORAGE_KEY) === 'true';
+        }
+        
+        // Unlock content function
+        function unlockContent() {
+          console.log('🔓 Unlocking content');
+          localStorage.setItem(STORAGE_KEY, 'true');
+          localStorage.setItem('unlock_timestamp', Date.now());
+          
+          // Remove gate overlay
+          const overlay = document.getElementById('gate-overlay');
+          if (overlay) {
+            overlay.style.opacity = '0';
+            overlay.style.transition = 'opacity 0.3s ease';
+            setTimeout(() => overlay.remove(), 300);
+          }
+          
+          // Unlock blurred content
+          document.querySelectorAll('.locked-content').forEach(el => {
+            el.classList.add('unlocked');
+          });
+          
+          // Show hidden elements
+          document.querySelectorAll('[data-gate-hidden]').forEach(el => {
+            el.style.display = '';
+            el.removeAttribute('data-gate-hidden');
+          });
+          
+          // Analytics
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'content_unlocked', {
+              'event_category': 'Subscription',
+              'event_label': window.location.pathname
+            });
+          }
+        }
+        
+        // Create partial gate (first 40% visible)
+        function createPartialGate() {
+          console.log('⏸️ Creating partial gate');
+          const main = document.querySelector('main');
+          if (!main) return createFullGate();
+          
+          const contentElements = main.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
+          if (contentElements.length < 4) return createFullGate();
+          
+          const gatePosition = Math.max(2, Math.floor(contentElements.length * 0.4));
+          const gateElement = contentElements[gatePosition];
+          if (!gateElement) return createFullGate();
+          
+          console.log(`📍 Gating after element ${gatePosition}:`, gateElement.tagName);
+          
+          // Create locked container
+          const lockedContainer = document.createElement('div');
+          lockedContainer.className = 'locked-content';
+          lockedContainer.style.cssText = `
+            position: relative;
+            min-height: 400px;
+            margin: 2rem 0;
+          `;
+          
+          // Hide elements after gate point
+          let currentElement = gateElement.nextElementSibling;
+          let lockedCount = 0;
+          
+          while (currentElement) {
+            const clone = currentElement.cloneNode(true);
+            lockedContainer.appendChild(clone);
+            currentElement.setAttribute('data-gate-hidden', 'true');
+            currentElement.style.display = 'none';
+            currentElement = currentElement.nextElementSibling;
+            lockedCount++;
+          }
+          
+          console.log(`🔒 Locked ${lockedCount} elements after gate`);
+          
+          // Insert locked container
+          gateElement.parentNode.insertBefore(lockedContainer, gateElement.nextSibling);
+          
+          // Create overlay
+          createGateOverlay(lockedContainer, false);
+        }
+        
+        // Create full gate (entire article)
+        function createFullGate() {
+          console.log('🚫 Creating full gate');
+          const main = document.querySelector('main');
+          if (!main) return createFullscreenGate();
+          
+          // Create wrapper for all content
+          const lockedContainer = document.createElement('div');
+          lockedContainer.className = 'locked-content';
+          lockedContainer.style.cssText = `
+            position: relative;
+            min-height: 600px;
+          `;
+          
+          // Move all main children into locked container
+          const mainChildren = Array.from(main.children);
+          let lockedCount = 0;
+          
+          mainChildren.forEach(child => {
+            if (!child.classList.contains('locked-content')) {
+              const clone = child.cloneNode(true);
+              lockedContainer.appendChild(clone);
+              child.setAttribute('data-gate-hidden', 'true');
+              child.style.display = 'none';
+              lockedCount++;
+            }
+          });
+          
+          console.log(`🔒 Locked ${lockedCount} total elements`);
+          
+          // Insert at beginning
+          main.insertBefore(lockedContainer, main.firstChild);
+          
+          // Create overlay
+          createGateOverlay(lockedContainer, true);
+        }
+        
+        // Create gate overlay
+        function createGateOverlay(container, isFullGate) {
+          console.log(`🏗️ Creating ${isFullGate ? 'full' : 'partial'} gate overlay`);
+          
+          const overlay = document.createElement('div');
+          overlay.id = 'gate-overlay';
+          overlay.style.cssText = `
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.95);
+            z-index: 2147483647;
+            display: flex;
+            justify-content: center;
+            align-items: ${isFullGate ? 'center' : 'flex-start'};
+            padding-top: ${isFullGate ? '0' : '50px'};
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          `;
+          
+          const message = isFullGate 
+            ? "This exclusive guide is reserved for our newsletter community. Join 12,000+ builders to get your Free Txchyon Library Card."
+            : "You've read the intro. The technical steps and visual walkthroughs are reserved for our community. Join 12,000+ builders to get your Free Txchyon Library Card.";
+          
+          const title = isFullGate ? '🔒 Exclusive Member-Only Guide' : '🔒 Unlock the Full Guide';
+          const buttonText = isFullGate ? 'Subscribe & Unlock Guide' : 'Subscribe & Unlock Rest of Guide';
+          
+          overlay.innerHTML = `
+            <div style="
+              background: white;
+              padding: 2.5rem;
+              border: 3px solid #000;
+              box-shadow: 10px 10px 0px #000;
+              max-width: 500px;
+              width: 90%;
+              text-align: center;
+              margin-top: ${isFullGate ? '0' : '1rem'};
+            ">
+              <h3 style="margin-top: 0; font-size: 1.5rem;">${title}</h3>
+              <p style="margin: 1rem 0; line-height: 1.5;">${message}</p>
+              
+              <div style="margin: 2rem 0;">
+                <input type="email" placeholder="Enter your email" style="
+                  width: 100%;
+                  padding: 12px;
+                  margin-bottom: 12px;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  font-size: 1rem;
+                ">
+                <button onclick="window.txchyonUnlock()" style="
+                  width: 100%;
+                  padding: 12px;
+                  background: #000;
+                  color: white;
+                  border: none;
+                  border-radius: 4px;
+                  font-weight: bold;
+                  cursor: pointer;
+                  font-size: 1rem;
+                ">
+                  ${buttonText}
+                </button>
+              </div>
+              
+              <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #eee;">
+                <button onclick="window.txchyonUnlock()" style="
+                  background: transparent;
+                  color: #000;
+                  border: 1px solid #000;
+                  padding: 10px 20px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  font-weight: 600;
+                ">
+                  Already subscribed? Click here
+                </button>
+              </div>
+              
+              <p style="font-size: 0.8rem; color: #666; margin-top: 1.5rem;">
+                By subscribing, you agree to our <a href="/privacy" style="color: #000; text-decoration: underline;">Privacy Policy</a>
+              </p>
+            </div>
+          `;
+          
+          container.appendChild(overlay);
+          console.log(`✅ ${isFullGate ? 'Full' : 'Partial'} gate created`);
+        }
+        
+        // Fallback fullscreen gate
+        function createFullscreenGate() {
+          console.log('🔄 Creating fallback fullscreen gate');
+          
+          const overlay = document.createElement('div');
+          overlay.id = 'gate-overlay';
+          overlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.98);
+            z-index: 2147483647;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          `;
+          
+          overlay.innerHTML = `
+            <div style="
+              background: white;
+              padding: 2.5rem;
+              border: 3px solid #000;
+              box-shadow: 10px 10px 0px #000;
+              max-width: 500px;
+              width: 90%;
+              text-align: center;
+            ">
+              <h3 style="margin-top: 0; font-size: 1.5rem;">🔒 Unlock This Guide</h3>
+              <p style="margin: 1rem 0; line-height: 1.5;">This article is reserved for our newsletter community. Join 12,000+ builders to get your Free Txchyon Library Card.</p>
+              
+              <div style="margin: 2rem 0;">
+                <input type="email" placeholder="Enter your email" style="
+                  width: 100%;
+                  padding: 12px;
+                  margin-bottom: 12px;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  font-size: 1rem;
+                ">
+                <button onclick="window.txchyonUnlock()" style="
+                  width: 100%;
+                  padding: 12px;
+                  background: #000;
+                  color: white;
+                  border: none;
+                  border-radius: 4px;
+                  font-weight: bold;
+                  cursor: pointer;
+                  font-size: 1rem;
+                ">
+                  Subscribe & Unlock
+                </button>
+              </div>
+              
+              <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #eee;">
+                <button onclick="window.txchyonUnlock()" style="
+                  background: transparent;
+                  color: #000;
+                  border: 1px solid #000;
+                  padding: 10px 20px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  font-weight: 600;
+                ">
+                  Already subscribed? Click here
+                </button>
+              </div>
+              
+              <p style="font-size: 0.8rem; color: #666; margin-top: 1.5rem;">
+                By subscribing, you agree to our <a href="/privacy" style="color: #000; text-decoration: underline;">Privacy Policy</a>
+              </p>
+            </div>
+          `;
+          
+          document.body.appendChild(overlay);
+          console.log('✅ Fullscreen gate overlay created');
+        }
+        
+        // Make unlock function available
+        window.txchyonUnlock = unlockContent;
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+          console.log('📄 DOM loaded, checking subscription');
+          
+          if (isSubscribed()) {
+            console.log('✅ Already subscribed, no gate needed');
+            return;
+          }
+          
+          setTimeout(() => {
+            if (IS_FULLY_GATED) {
+              createFullGate();
+            } else {
+              createPartialGate();
+            }
+          }, 200);
+        });
+        
+        // Debug function
+        window.debugResetGate = function() {
+          localStorage.removeItem(STORAGE_KEY);
+          localStorage.removeItem('unlock_timestamp');
+          console.log('🔄 Gate reset, reloading...');
+          location.reload();
+        };
+        
+        // Debug button
+        if (window.location.hostname === 'localhost') {
+          document.addEventListener('DOMContentLoaded', function() {
+            const debugBtn = document.createElement('button');
+            debugBtn.textContent = '🔧 Reset Gate';
+            debugBtn.style.cssText = `
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              z-index: 2147483647;
+              padding: 10px 15px;
+              background: #dc2626;
+              color: white;
+              border: none;
+              border-radius: 6px;
+              cursor: pointer;
+              font-weight: bold;
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            `;
+            debugBtn.onclick = window.debugResetGate;
+            document.body.appendChild(debugBtn);
+          });
+        }
+        
+        console.log('✅ Gate system loaded');
+      </script>
+    )}
+  
+    <!-- Theme toggle -->
+    <script>
+      function toggleDarkMode() {
+        const html = document.documentElement;
+        const isDark = html.classList.contains('dark');
+        const newTheme = isDark ? 'light' : 'dark';
+        
+        if (newTheme === 'dark') {
+          html.classList.add('dark');
+          html.setAttribute('data-theme', 'dark');
+          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#000000');
+        } else {
+          html.classList.remove('dark');
+          html.setAttribute('data-theme', 'light');
+          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#ffffff');
+        }
+        
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcons();
+      }
+      
+      function updateThemeIcons() {
+        const sunIcon = document.getElementById('theme-icon-sun');
+        const moonIcon = document.getElementById('theme-icon-moon');
+        const isDark = document.documentElement.classList.contains('dark');
+        
+        if (sunIcon) sunIcon.classList.toggle('hidden', isDark);
+        if (moonIcon) moonIcon.classList.toggle('hidden', !isDark);
+      }
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        const toggleBtn = document.getElementById('theme-toggle');
+        if (toggleBtn) {
+          toggleBtn.addEventListener('click', toggleDarkMode);
+        }
+        updateThemeIcons();
+      });
+      
+      document.addEventListener('astro:page-load', () => {
+        const toggleBtn = document.getElementById('theme-toggle');
+        if (toggleBtn) {
+          toggleBtn.addEventListener('click', toggleDarkMode);
+        }
+        updateThemeIcons();
+      });
+    </script>
+  </body>
+</html>

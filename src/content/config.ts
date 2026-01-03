@@ -18,9 +18,6 @@ const blogCategories = [
 const blogCollection = defineCollection({
   type: 'content',
   
-  // REMOVE the filter from here - handle filtering in components
-  // filter: ({ data }) => !data.draft, ← DELETE THIS LINE
-  
   schema: z.object({
     // Required fields with defaults
     title: z.string(),
@@ -34,6 +31,13 @@ const blogCollection = defineCollection({
     // Tags & draft
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
+    
+    // ======================
+    // GATING FIELDS - ADDED
+    // ======================
+    hasGatedContent: z.boolean().default(false),
+    isFullyGated: z.boolean().default(false),
+    // ======================
     
     // Image fields
     image: z.string().optional(),

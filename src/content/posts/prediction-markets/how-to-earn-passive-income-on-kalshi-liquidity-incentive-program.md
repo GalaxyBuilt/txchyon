@@ -11,6 +11,8 @@ tags: ["prediction-markets", "passive-income", "liquidity", "kalshi"]
 category: "prediction-markets"
 subcategory: "liquidity-providing"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 # How to Earn Passive Income on Kalshi: Liquidity Incentive Program Guide

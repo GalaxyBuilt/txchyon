@@ -1,0 +1,9 @@
+﻿---
+// src/components/TestGate.astro
+console.log("🚨 TEST GATE LOADED for:", Astro.url.pathname);
+---
+
+<div style="border: 5px solid red; padding: 2rem; background: yellow;">
+  <h1 style="color: red;">🚨 TEST GATE IS WORKING! 🚨</h1>
+  <slot />
+</div>

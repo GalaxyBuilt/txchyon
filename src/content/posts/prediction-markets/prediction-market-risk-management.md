@@ -11,6 +11,8 @@ tags: ["prediction-markets", "risk-management", "trading"]
 category: "prediction-markets"
 subcategory: "bankroll-management"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 # Prediction Market Bankroll Management: How to Size Positions & Avoid Going Broke

@@ -11,6 +11,8 @@ tags: ["crypto-basics", "first-purchase", "wallet-setup", "security", "memecoins
 category: "getting-started"
 subcategory: "first-purchase"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 # What to Do Before You Buy Your First Crypto

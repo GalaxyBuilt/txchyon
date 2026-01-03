@@ -11,6 +11,8 @@ tags: ["Crypto Portfolio", "Risk Management", "Drawdowns", "Bitcoin", "Ethereum"
 category: "portfolio-management"
 subcategory: "risk-management"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 ## What Is Crypto Portfolio Risk Management?

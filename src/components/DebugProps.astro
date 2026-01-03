@@ -1,0 +1,23 @@
+﻿---
+// src/components/DebugProps.astro
+console.log("=== DEBUG PROPS ===");
+console.log("URL:", Astro.url.pathname);
+console.log("All Astro.props keys:", Object.keys(Astro.props));
+console.log("Full Astro.props:", JSON.stringify(Astro.props, null, 2));
+
+// Try to get the post data directly
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
+const currentPost = allPosts.find(post => 
+  `/blog/${post.slug}` === Astro.url.pathname || 
+  `/blog/${post.slug}/` === Astro.url.pathname
+);
+console.log("Found in collection?", !!currentPost);
+if (currentPost) {
+  console.log("Post data from collection:", currentPost.data);
+  console.log("hasGatedContent from collection:", currentPost.data.hasGatedContent);
+}
+console.log("=== END DEBUG ===");
+---
+
+<div style="display: none;">Debug component loaded</div>

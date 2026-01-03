@@ -11,6 +11,8 @@ tags: ["Crypto Portfolio", "Rebalancing", "Risk Management", "Bitcoin", "Ethereu
 category: "portfolio-management"
 subcategory: "rebalancing-methods"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 ## What Is Crypto Portfolio Rebalancing? (with Joe’s Story)

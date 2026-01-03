@@ -10,6 +10,26 @@ import { AstroFont } from "astro-font";
 import { ClientRouter } from "astro:transitions";
 import SEO from "@/layouts/components/SEO.astro";
 
+const currentPath = Astro.url.pathname;
+
+// Get frontmatter props
+const { 
+  title, 
+  meta_title, 
+  description, 
+  image, 
+  noindex, 
+  canonical,
+  hasGatedContent = false,
+  gateType = 'partial'
+} = Astro.props;
+
+console.log('🎯 Gate Configuration:', {
+  path: currentPath,
+  hasGatedContent,
+  gateType
+});
+
 const pf = theme.fonts.font_family.primary;
 let fontPrimary;
 if (theme.fonts.font_family.primary) {
@@ -25,44 +45,12 @@ export interface Props {
   image?: string;
   noindex?: boolean;
   canonical?: string;
-  // NEW: Add these optional props for gating flexibility
-  isFullyGated?: boolean;      // For completely gated articles
-  hasGatedContent?: boolean;   // For partially gated articles
+  hasGatedContent?: boolean;
+  gateType?: 'partial' | 'full';
 }
 
-const { 
-  title, 
-  meta_title, 
-  description, 
-  image, 
-  noindex, 
-  canonical,
-  isFullyGated = false,
-  hasGatedContent = false 
-} = Astro.props;
-
-const escapeHtml = (text) => {
-  if (!text) return '';
-  
-  let processed = text.toString()
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#039;/g, "'")
-    .replace(/&nbsp;/g, ' ');
-  
-  return processed
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;')
-    .trim();
-};
-
-const finalTitle = escapeHtml(meta_title ?? title ?? config.site.title);
-const finalDescription = escapeHtml(description ?? config.metadata.meta_description);
+const finalTitle = meta_title ?? title ?? config.site.title;
+const finalDescription = description ?? config.metadata.meta_description;
 
 const finalImage = image && typeof image === 'string' && image.trim()
   ? `${config.site.base_url}${image.startsWith("/") ? "" : "/"}${image}`
@@ -116,7 +104,7 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
       type="website"
     />
 
-    <!-- FLEXIBLE SCHEMA: Choose your gating strategy per article -->
+    <!-- SCHEMA MARKUP -->
     {title && (
       <script type="application/ld+json">
         {
@@ -128,47 +116,293 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
             "@type": "WebPage",
             "@id": "{Astro.url.origin}{Astro.url.pathname}"
           }
-          {isFullyGated ? `,
-          "isAccessibleForFree": "false",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Txchyon",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://yourdomain.com/logo.png"
-            }
-          }` : hasGatedContent ? `,
-          "isAccessibleForFree": "true",
-          "hasPart": {
-            "@type": "WebPageElement",
-            "isAccessibleForFree": "false",
-            "cssSelector": ".locked-content",
-            "name": "Premium Content",
-            "description": "Step-by-step technical instructions requiring newsletter subscription"
-          }` : `,
-          "isAccessibleForFree": "true"`}
         }
       </script>
     )}
 
     <link rel="alternate" type="application/rss+xml" title="Txchyon RSS" href="/rss.xml" />
-    <link rel="alternate" type="application/feed+json" title="Txchyon JSON Feed" href="/feed.json" />
+    <link rel="alternate" type="application/feed+json" title="Txchyon Research Hub JSON Feed" href="/feed.json" />
 
     <ClientRouter />
     <meta name="author" content={config.metadata.meta_author} />
     
-    <!-- SIMPLE, RELIABLE THEME SCRIPT -->
+    <!-- GATE STYLES - PARTIAL GATE VERSION -->
+    {hasGatedContent && (
+      <style>
+        /* Gate Overlay - PARTIAL POSITIONING */
+        .txchyon-gate-overlay {
+          position: absolute !important; /* NOT fixed - moves with content */
+          top: 0 !important;
+          left: 0 !important;
+          width: 100vw !important;
+          height: 100vh !important;
+          background: rgba(255, 255, 255, 0.95) !important;
+          backdrop-filter: blur(15px) !important;
+          -webkit-backdrop-filter: blur(15px) !important;
+          z-index: 2147483647 !important; /* Maximum z-index */
+          display: none !important;
+          justify-content: center !important;
+          align-items: center !important;
+          opacity: 0 !important;
+          transition: opacity 0.4s ease !important;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+          pointer-events: auto !important;
+        }
+        
+        .txchyon-gate-overlay.active {
+          opacity: 1 !important;
+          display: flex !important;
+        }
+        
+        /* Gate Modal */
+        .txchyon-gate-modal {
+          background: white !important;
+          border: 2px solid #000 !important;
+          box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.2) !important;
+          padding: 3rem !important;
+          max-width: 520px !important;
+          width: 90% !important;
+          text-align: center !important;
+          border-radius: 8px !important;
+          position: relative !important;
+          animation: modalSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+          transform-origin: center !important;
+          z-index: 2147483647 !important;
+          pointer-events: auto !important;
+        }
+        
+        @keyframes modalSlideUp {
+          from {
+            opacity: 0;
+            transform: translateY(40px) scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        
+        /* Gate Header */
+        .gate-header {
+          margin-bottom: 1.5rem !important;
+        }
+        
+        .gate-icon {
+          font-size: 3.5rem !important;
+          margin-bottom: 1rem !important;
+          display: block !important;
+          animation: float 3s ease-in-out infinite !important;
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          25% { transform: translateY(-8px) rotate(5deg); }
+          75% { transform: translateY(-4px) rotate(-5deg); }
+        }
+        
+        .gate-title {
+          font-size: 2rem !important;
+          font-weight: 900 !important;
+          margin: 0 0 0.5rem 0 !important;
+          color: #000 !important;
+          letter-spacing: -0.5px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .gate-subtitle {
+          font-size: 1.15rem !important;
+          color: #4b5563 !important;
+          margin: 0 !important;
+          line-height: 1.6 !important;
+          font-weight: 400 !important;
+        }
+        
+        /* Gate Form */
+        .gate-form {
+          margin: 2rem 0 !important;
+        }
+        
+        .gate-input {
+          width: 100% !important;
+          padding: 1rem 1.25rem !important;
+          font-size: 1.05rem !important;
+          border: 2px solid #d1d5db !important;
+          border-radius: 8px !important;
+          margin-bottom: 1rem !important;
+          box-sizing: border-box !important;
+          transition: all 0.3s ease !important;
+          font-family: inherit !important;
+          background: white !important;
+        }
+        
+        .gate-input:focus {
+          outline: none !important;
+          border-color: #000 !important;
+          box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1) !important;
+          transform: translateY(-2px) !important;
+        }
+        
+        .gate-button {
+          width: 100% !important;
+          padding: 1.1rem 1.25rem !important;
+          background: linear-gradient(135deg, #000 0%, #333 100%) !important;
+          color: white !important;
+          border: none !important;
+          font-size: 1.1rem !important;
+          font-weight: 800 !important;
+          border-radius: 8px !important;
+          cursor: pointer !important;
+          transition: all 0.3s ease !important;
+          font-family: inherit !important;
+          letter-spacing: -0.2px !important;
+          text-transform: uppercase !important;
+          letter-spacing: 1px !important;
+        }
+        
+        .gate-button:hover {
+          background: linear-gradient(135deg, #111 0%, #444 100%) !important;
+          transform: translateY(-3px) !important;
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+        }
+        
+        .gate-button:active {
+          transform: translateY(-1px) !important;
+        }
+        
+        /* Gate Footer */
+        .gate-footer {
+          margin-top: 2rem !important;
+          padding-top: 1.5rem !important;
+          border-top: 2px solid #e5e7eb !important;
+        }
+        
+        .gate-alternative {
+          background: transparent !important;
+          color: #000 !important;
+          border: 2px solid #000 !important;
+          padding: 0.85rem 1.75rem !important;
+          font-weight: 700 !important;
+          border-radius: 8px !important;
+          cursor: pointer !important;
+          transition: all 0.3s ease !important;
+          font-size: 1rem !important;
+          font-family: inherit !important;
+          width: 100% !important;
+          margin-bottom: 1rem !important;
+        }
+        
+        .gate-alternative:hover {
+          background: #000 !important;
+          color: white !important;
+          transform: translateY(-2px) !important;
+        }
+        
+        .gate-legal {
+          font-size: 0.85rem !important;
+          color: #6b7280 !important;
+          margin-top: 1rem !important;
+          line-height: 1.5 !important;
+        }
+        
+        .gate-legal a {
+          color: #000 !important;
+          text-decoration: underline !important;
+          font-weight: 600 !important;
+        }
+        
+        /* Content Blur Effect - FOR PARTIAL GATE */
+        .gate-blur {
+          filter: blur(8px) !important;
+          pointer-events: none !important;
+          user-select: none !important;
+          opacity: 0.6 !important;
+          transition: filter 0.5s ease, opacity 0.5s ease !important;
+        }
+        
+        /* Keep first 40% clear */
+        .gate-clear {
+          filter: blur(0) !important;
+          opacity: 1 !important;
+          pointer-events: auto !important;
+        }
+        
+        /* Close Button */
+        .gate-close {
+          position: absolute !important;
+          top: 1.2rem !important;
+          right: 1.2rem !important;
+          background: #f3f4f6 !important;
+          border: 2px solid #d1d5db !important;
+          font-size: 1.8rem !important;
+          cursor: pointer !important;
+          color: #374151 !important;
+          padding: 0.5rem !important;
+          border-radius: 50% !important;
+          transition: all 0.3s ease !important;
+          width: 3rem !important;
+          height: 3rem !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          line-height: 1 !important;
+          z-index: 2147483647 !important;
+        }
+        
+        .gate-close:hover {
+          color: #000 !important;
+          background: #e5e7eb !important;
+          border-color: #9ca3af !important;
+          transform: rotate(90deg) !important;
+        }
+        
+        /* Success State */
+        .gate-success .gate-icon {
+          color: #10b981 !important;
+          animation: none !important;
+        }
+        
+        .gate-success .gate-button {
+          background: #10b981 !important;
+        }
+        
+        /* Force all elements to be visible */
+        .txchyon-gate-overlay * {
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+        
+        /* Responsive */
+        @media (max-width: 640px) {
+          .txchyon-gate-modal {
+            padding: 2rem 1.5rem !important;
+            width: 95% !important;
+            margin: 1rem !important;
+          }
+          
+          .gate-title {
+            font-size: 1.7rem !important;
+          }
+          
+          .gate-subtitle {
+            font-size: 1.05rem !important;
+          }
+          
+          .gate-icon {
+            font-size: 2.8rem !important;
+          }
+        }
+      </style>
+    )}
+    
+    <!-- SIMPLE THEME SCRIPT -->
     <script>
-      // Check for saved theme or use system preference
       (function() {
         const savedTheme = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         
-        // Apply theme immediately to prevent flash
         if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
           document.documentElement.classList.add('dark');
           document.documentElement.setAttribute('data-theme', 'dark');
-          // Update theme-color meta tag
           document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#000000');
         } else {
           document.documentElement.classList.remove('dark');
@@ -176,7 +410,6 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
           document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#ffffff');
         }
         
-        // Save default theme if not set
         if (!savedTheme) {
           localStorage.setItem('theme', prefersDark ? 'dark' : 'light');
         }
@@ -201,9 +434,355 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <FloatingBubble client:load />
   
-    <!-- Theme toggle functionality -->
+    <!-- PARTIAL GATE IMPLEMENTATION - FINAL VERSION -->
+    {hasGatedContent && (
+      <>
+        <!-- Gate HTML Structure -->
+        <div id="txchyon-gate" class="txchyon-gate-overlay">
+          <div class="txchyon-gate-modal">
+            <button class="gate-close" aria-label="Close gate">×</button>
+            
+            <div class="gate-header">
+              <span class="gate-icon">🔐</span>
+              <h2 class="gate-title">Unlock All Our Full Guides</h2>
+              <p class="gate-subtitle">Join 12,000+ traders and investors in the Txchyon Research Hub to access step-by-step instructions, visual walkthroughs, how to's, AI prompts, tools, and more.</p>
+            </div>
+            
+            <div class="gate-form">
+              <input type="email" class="gate-input" placeholder="your.email@example.com" id="gate-email-input" required>
+              <button class="gate-button">
+                Get Your Txchyon Tesseract Pass
+              </button>
+            </div>
+            
+            <div class="gate-footer">
+              <button class="gate-alternative">
+                Already a subscriber? Click to unlock
+              </button>
+              <p class="gate-legal">
+                By subscribing, you agree to our <a href="/privacy">Privacy Policy</a> and consent to receive occasional updates.
+                You can unsubscribe anytime. No spam, ever.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gate JavaScript - PARTIAL GATE VERSION -->
+        <script>
+          console.log('🔐 PARTIAL GATE SYSTEM: Loading...');
+          
+          // Configuration - PARTIAL GATE
+          const GATE_CONFIG = {
+            isPartialGate: true, // THIS IS PARTIAL
+            scrollThreshold: 0.4, // 40% scroll
+            showAfterSeconds: 60, // 60 seconds timeout
+            forceShow: false // Set to true for testing
+          };
+          
+          console.log(`📋 Gate Type: ${GATE_CONFIG.isPartialGate ? 'Partial (40% visible)' : 'Full'}`);
+          
+          // Main function
+          function initGate() {
+            console.log('⚡ Initializing PARTIAL gate...');
+            
+            // Check if already subscribed
+            const hasAccess = localStorage.getItem('txchyon_subscriber') === 'true';
+            if (hasAccess && !GATE_CONFIG.forceShow) {
+              console.log('✅ Already subscribed');
+              return;
+            }
+            
+            // Setup button listeners
+            setupButtons();
+            
+            // FORCE SHOW FOR TESTING - REMOVE LATER
+            if (GATE_CONFIG.forceShow) {
+              console.log('🧪 FORCE SHOWING GATE FOR TESTING');
+              setTimeout(() => {
+                showGateWithBlur();
+              }, 1000);
+            }
+            
+            if (GATE_CONFIG.isPartialGate) {
+              console.log('⏸️ Partial gate: monitoring scroll (40% threshold)...');
+              setupPartialGate();
+            } else {
+              console.log('🚫 Full gate: showing immediately');
+              showGateWithBlur();
+            }
+          }
+          
+          // Setup button event listeners
+          function setupButtons() {
+            console.log('🔧 Setting up buttons...');
+            
+            // Unlock button
+            const unlockBtn = document.querySelector('.gate-button');
+            if (unlockBtn) {
+              unlockBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                unlockGate();
+              });
+            }
+            
+            // Alternative button
+            const altBtn = document.querySelector('.gate-alternative');
+            if (altBtn) {
+              altBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                unlockGate();
+              });
+            }
+            
+            // Close button
+            const closeBtn = document.querySelector('.gate-close');
+            if (closeBtn) {
+              closeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                closeGate();
+              });
+            }
+            
+            // Email input enter key
+            const emailInput = document.getElementById('gate-email-input');
+            if (emailInput) {
+              emailInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  unlockGate();
+                }
+              });
+            }
+          }
+          
+          // Setup partial gate (scroll detection)
+          function setupPartialGate() {
+            let gateShown = false;
+            
+            function checkScroll() {
+              if (gateShown) return;
+              
+              const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+              console.log(`📊 Scroll: ${scrollPercent.toFixed(1)}%`);
+              
+              if (scrollPercent >= (GATE_CONFIG.scrollThreshold * 100)) {
+                gateShown = true;
+                console.log('🎯 Reached 40%, showing PARTIAL gate!');
+                showGateWithBlur();
+                window.removeEventListener('scroll', checkScroll);
+              }
+            }
+            
+            window.addEventListener('scroll', checkScroll);
+            
+            // Also show after timeout
+            setTimeout(() => {
+              if (!gateShown) {
+                gateShown = true;
+                console.log('⏰ 60 seconds passed, showing gate!');
+                showGateWithBlur();
+              }
+            }, GATE_CONFIG.showAfterSeconds * 1000);
+          }
+          
+          // Show PARTIAL gate with blur effect (40% visible, 60% blurred)
+          function showGateWithBlur() {
+            console.log('🚀 Showing PARTIAL gate with blur (40% visible, 60% blurred)...');
+            
+            // DEBUG: Check if gate exists
+            const gate = document.getElementById('txchyon-gate');
+            console.log('🔍 Gate element exists:', !!gate);
+            
+            if (!gate) {
+              console.error('❌ CRITICAL: Gate element not found in DOM!');
+              console.error('❌ hasGatedContent is probably false for this page');
+              return;
+            }
+            
+            // 1. Calculate where to place the gate (at 40% scroll position)
+            const viewportHeight = window.innerHeight;
+            const contentHeight = document.body.scrollHeight;
+            const fortyPercentHeight = contentHeight * 0.4;
+            
+            console.log('📏 Partial gate positioning:', {
+              viewportHeight,
+              contentHeight,
+              fortyPercentHeight: Math.round(fortyPercentHeight),
+              currentScroll: Math.round(window.scrollY)
+            });
+            
+            // 2. Blur only the bottom 60% of content
+            const mainContent = document.querySelector('main');
+            if (!mainContent) {
+              console.error('❌ No main content found');
+              return;
+            }
+            
+            // Find all content sections and blur only those below 40%
+            const allElements = mainContent.querySelectorAll('*');
+            let blurredElements = 0;
+            let clearElements = 0;
+            
+            allElements.forEach(element => {
+              const rect = element.getBoundingClientRect();
+              const elementTop = rect.top + window.scrollY;
+              
+              // If element is BELOW 40% mark, blur it
+              if (elementTop > fortyPercentHeight) {
+                element.classList.add('gate-blur');
+                element.classList.remove('gate-clear');
+                blurredElements++;
+              } else {
+                // Element is in top 40%, keep it clear
+                element.classList.remove('gate-blur');
+                element.classList.add('gate-clear');
+                clearElements++;
+              }
+            });
+            
+            console.log(`🌫️ Partial blur applied: ${blurredElements} elements blurred (bottom 60%), ${clearElements} elements clear (top 40%)`);
+            
+            // 3. Position and show the gate at 40% scroll point
+            console.log('🛠️ Positioning gate at 40% mark...');
+            
+            // Calculate gate position (center it in viewport when user reaches 40%)
+            const gateTopPosition = Math.max(fortyPercentHeight - (viewportHeight / 2), 100);
+            
+            // Apply inline styles for PARTIAL gate (positioned at 40% point)
+            gate.style.cssText = `
+              display: flex !important;
+              opacity: 1 !important;
+              visibility: visible !important;
+              position: absolute !important;
+              top: ${gateTopPosition}px !important;
+              left: 0 !important;
+              width: 100vw !important;
+              height: 100vh !important;
+              background: rgba(255, 255, 255, 0.95) !important;
+              backdrop-filter: blur(15px) !important;
+              -webkit-backdrop-filter: blur(15px) !important;
+              z-index: 2147483647 !important;
+              align-items: center !important;
+              justify-content: center !important;
+              pointer-events: auto !important;
+              transition: opacity 0.4s ease !important;
+            `;
+            
+            // Add active class for animations
+            setTimeout(() => {
+              gate.classList.add('active');
+              console.log('✅ Partial gate overlay shown at 40% position');
+              
+              // Focus email input
+              const emailInput = document.getElementById('gate-email-input');
+              if (emailInput) {
+                setTimeout(() => {
+                  emailInput.focus();
+                  console.log('📧 Email input focused');
+                }, 100);
+              }
+              
+              // Scroll to show the gate smoothly
+              window.scrollTo({
+                top: gateTopPosition - 100,
+                behavior: 'smooth'
+              });
+              
+              console.log('📍 Gate positioned at:', gateTopPosition, 'px (40% of content)');
+              
+            }, 10);
+          }
+          
+          // Unlock PARTIAL gate
+          function unlockGate() {
+            console.log('🔓 Unlocking PARTIAL gate...');
+            
+            const emailInput = document.getElementById('gate-email-input');
+            const email = emailInput ? emailInput.value.trim() : '';
+            
+            if (email && !email.includes('@')) {
+              alert('Please enter a valid email address.');
+              if (emailInput) emailInput.focus();
+              return;
+            }
+            
+            // Save subscription
+            localStorage.setItem('txchyon_subscriber', 'true');
+            if (email) {
+              localStorage.setItem('txchyon_subscriber_email', email);
+            }
+            
+            // Hide gate
+            const gate = document.getElementById('txchyon-gate');
+            if (gate) {
+              gate.style.opacity = '0';
+              setTimeout(() => {
+                gate.style.display = 'none';
+                console.log('🎭 Gate hidden');
+              }, 400);
+            }
+            
+            // Remove ALL blur from content (unlock everything)
+            document.querySelectorAll('.gate-blur').forEach(el => {
+              el.classList.remove('gate-blur');
+            });
+            
+            // Remove clear classes
+            document.querySelectorAll('.gate-clear').forEach(el => {
+              el.classList.remove('gate-clear');
+            });
+            
+            // Show success
+            const gateIcon = document.querySelector('.gate-icon');
+            const gateButton = document.querySelector('.gate-button');
+            if (gateIcon && gateButton) {
+              gateIcon.textContent = '✅';
+              gateButton.textContent = 'Access Granted!';
+              gateButton.disabled = true;
+              gateButton.style.background = '#10b981 !important';
+            }
+            
+            alert('🎉 Welcome! All content is now unlocked.');
+          }
+          
+          // Close gate
+          function closeGate() {
+            console.log('🚪 Closing gate...');
+            const gate = document.getElementById('txchyon-gate');
+            if (gate) {
+              gate.style.opacity = '0';
+              setTimeout(() => {
+                gate.style.display = 'none';
+                console.log('🎭 Gate closed');
+              }, 400);
+            }
+          }
+          
+          // Reset function
+          window.txchyonResetGate = function() {
+            console.log('🔄 Resetting gate...');
+            localStorage.removeItem('txchyon_subscriber');
+            localStorage.removeItem('txchyon_subscriber_email');
+            location.reload();
+          };
+          
+          // Manual test function
+          window.testGate = function() {
+            console.log('🧪 Manual gate test');
+            showGateWithBlur();
+          };
+          
+          // Start
+          document.addEventListener('DOMContentLoaded', function() {
+            console.log('📄 DOM loaded, starting PARTIAL gate system...');
+            setTimeout(initGate, 500);
+          });
+        </script>
+      </>
+    )}
+  
+    <!-- Theme toggle -->
     <script>
-      // Toggle function
       function toggleDarkMode() {
         const html = document.documentElement;
         const isDark = html.classList.contains('dark');
@@ -220,12 +799,9 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
         }
         
         localStorage.setItem('theme', newTheme);
-        
-        // Update theme icons
         updateThemeIcons();
       }
       
-      // Update theme icons
       function updateThemeIcons() {
         const sunIcon = document.getElementById('theme-icon-sun');
         const moonIcon = document.getElementById('theme-icon-moon');
@@ -235,25 +811,19 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
         if (moonIcon) moonIcon.classList.toggle('hidden', !isDark);
       }
       
-      // Attach click handler
       document.addEventListener('DOMContentLoaded', () => {
         const toggleBtn = document.getElementById('theme-toggle');
         if (toggleBtn) {
           toggleBtn.addEventListener('click', toggleDarkMode);
         }
-        
-        // Initialize icons
         updateThemeIcons();
       });
       
-      // Re-attach on page navigation
       document.addEventListener('astro:page-load', () => {
         const toggleBtn = document.getElementById('theme-toggle');
         if (toggleBtn) {
           toggleBtn.addEventListener('click', toggleDarkMode);
         }
-        
-        // Update icons
         updateThemeIcons();
       });
     </script>

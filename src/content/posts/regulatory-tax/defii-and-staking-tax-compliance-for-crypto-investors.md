@@ -11,6 +11,8 @@ tags: ["defi tax compliance", "staking rewards tax", "crypto income reporting", 
 category: "regulatory-tax"
 subcategory: "tax-reporting"
 draft: true
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 # 📘 DeFi and Staking Tax Compliance for Crypto Investors

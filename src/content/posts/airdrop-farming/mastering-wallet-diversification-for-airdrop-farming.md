@@ -16,6 +16,8 @@ tags:
 category: "airdrop-farming"
 subcategory: "wallet-strategy"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 # Mastering Wallet Diversification for Airdrop Farming

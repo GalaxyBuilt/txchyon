@@ -15,7 +15,7 @@ tags:
   - Sybil Risk
 category: "airdrop-farming"
 subcategory: "eligibility-optimization"
-draft: false
+draft: true
 hasGatedContent: true
 gateType: 'partial'
 ---

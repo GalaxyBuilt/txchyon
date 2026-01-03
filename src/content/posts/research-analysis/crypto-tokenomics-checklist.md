@@ -16,6 +16,8 @@ tags:
 category: "research-analysis"
 subcategory: "tokenomics-analysis"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 ## Introduction: Why a Tokenomics Checklist is Essential

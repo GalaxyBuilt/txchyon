@@ -211,6 +211,7 @@ partially gated content schema
 ---
 title: "Hybrid Guide"
 hasGatedContent: true
+gateType: 'partial'
 ---
 
 Free intro content...
@@ -231,3 +232,34 @@ isFullyGated: true
 <GatedContent>
 All content is gated...
 </GatedContent>
+
+
+updated gated logic
+
+// ======================
+// DUAL GATE CONTROL: Frontmatter + Hardcoded Backup
+// ======================
+
+// Hardcoded backup array (for testing/emergencies)
+const hardcodedGatedArticles = [
+  '/blog/airdrop-farming/airdrop-disqualification-risks',
+  // Add more URLs here if needed
+];
+
+const currentPath = Astro.url.pathname;
+
+// Method 1: Frontmatter (primary)
+const fromFrontmatter = Astro.props.hasGatedContent === true;
+
+// Method 2: Hardcoded backup
+const fromHardcoded = hardcodedGatedArticles.includes(currentPath);
+
+// Final decision: Gate if EITHER method says yes
+const hasGatedContent = fromFrontmatter || fromHardcoded;
+
+console.log('🎯 GATE CONTROL:', {
+  path: currentPath,
+  frontmatter: fromFrontmatter,
+  hardcoded: fromHardcoded,
+  final: hasGatedContent
+});

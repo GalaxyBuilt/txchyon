@@ -11,6 +11,8 @@ tags: ["Crypto Portfolio", "Performance Tracking", "Metrics", "Bitcoin", "Ethere
 category: "portfolio-management"
 subcategory: "performance-tracking"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 ## Why Tracking Portfolio Performance Matters

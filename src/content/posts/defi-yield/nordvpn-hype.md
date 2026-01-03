@@ -12,6 +12,8 @@ category: "defi-yield"
 subcategory: "yield-aggregators"
   # Keep: "defi", "research", "solana", "evm"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 # How to Use NordVPN with Hyperliquid – The Exact 5-Minute Setup I Run Before Every Perps Trade in 2025

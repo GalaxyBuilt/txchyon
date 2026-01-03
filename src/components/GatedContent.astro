@@ -1,7 +1,13 @@
----
+﻿---
 // src/components/GatedContent.astro
-import { useState } from 'preact/hooks'; // If using Preact
 const BEEHIIV_FORM_ID = "62d85daa-7878-4a83-a78a-a15f6226c516";
+
+// ======================
+// SERVER-SIDE DEBUG LOGS (SHOWS IN TERMINAL)
+// ======================
+console.log("GATEDCONTENT: Component loaded for page:", Astro.url.pathname);
+console.log("  - Build time:", new Date().toISOString());
+console.log("  - Has slot content?:", Astro.slots.has("default"));
 ---
 
 <div class="gate-wrapper">
@@ -12,7 +18,7 @@ const BEEHIIV_FORM_ID = "62d85daa-7878-4a83-a78a-a15f6226c516";
 
   <div class="gate-overlay">
     <div class="gate-box">
-      <h3>Unlock the Full Guide 🔓</h3>
+      <h3>Unlock the Full Guide</h3>
       <p>Pepe, the technical steps and visual walkthroughs are reserved for our community. Join 12,000+ builders to get your Free Txchyon Library Card.</p>
       
       <!-- YOUR Beehiiv Embedded Form -->
@@ -133,179 +139,38 @@ const BEEHIIV_FORM_ID = "62d85daa-7878-4a83-a78a-a15f6226c516";
 </style>
 
 <script>
-  // Function to unlock content
+  // SIMPLE VERSION - Just basic functionality
+  console.log("GATEDCONTENT: Client-side script loaded");
+  
   function unlockContent() {
-    const content = document.querySelector('.locked-content');
-    const overlay = document.querySelector('.gate-overlay');
+    console.log("GATEDCONTENT: Unlocking content");
+    
+    const content = document.querySelector(".locked-content");
+    const overlay = document.querySelector(".gate-overlay");
     
     if (content) {
-      content.classList.add('unlocked');
-      // Save to localStorage
-      localStorage.setItem('txchyon_subscriber', 'true');
-      localStorage.setItem('unlock_timestamp', Date.now());
-      localStorage.setItem('unlock_method', 'manual_click');
+      content.classList.add("unlocked");
+      localStorage.setItem("txchyon_subscriber", "true");
+      localStorage.setItem("unlock_timestamp", Date.now());
     }
     
     if (overlay) {
-      overlay.style.display = 'none';
-    }
-    
-    // Track in analytics
-    try {
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'content_unlocked', {
-          'event_category': 'Subscription',
-          'event_label': 'Manual Unlock',
-          'value': window.location.pathname
-        });
-      }
-    } catch (e) {
-      console.log('Analytics error:', e);
+      overlay.style.display = "none";
     }
   }
-
-  // Check if user is already a subscriber
-  function checkSubscriptionStatus() {
-    const isSubscriber = localStorage.getItem('txchyon_subscriber');
-    const unlockTime = localStorage.getItem('unlock_timestamp');
-    const thirtyDaysAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
-    
-    // Check if subscription is still valid (30 days)
-    if (isSubscriber === 'true' && unlockTime && parseInt(unlockTime) > thirtyDaysAgo) {
+  
+  // Check if already subscribed
+  function checkSubscription() {
+    const isSubscriber = localStorage.getItem("txchyon_subscriber");
+    if (isSubscriber === "true") {
+      console.log("GATEDCONTENT: User is already subscribed");
       unlockContent();
-      return true;
-    }
-    return false;
-  }
-
-  // Method 1: Listen for Beehiiv messages
-  window.addEventListener('message', function(event) {
-    // Check if message is from Beehiiv domain
-    if (event.origin === 'https://subscribe-forms.beehiiv.com') {
-      console.log('Beehiiv message received:', event.data);
-      
-      // Beehiiv sends various messages - look for success indicators
-      if (event.data && 
-          (event.data.type === 'beehiiv:subscription:success' || 
-           event.data.success === true ||
-           event.data.message?.includes('subscribed') ||
-           event.data.message?.includes('success'))) {
-        
-        console.log('Beehiiv subscription success detected');
-        unlockContent();
-        
-        // Send to analytics
-        try {
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'newsletter_signup', {
-              'event_category': 'Conversion',
-              'event_label': 'Beehiiv Gate',
-              'value': window.location.pathname
-            });
-          }
-        } catch (e) {
-          console.log('Analytics error:', e);
-        }
-      }
-    }
-  });
-
-  // Method 2: Check URL for Beehiiv success parameters
-  function checkUrlForSuccess() {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('beehiiv_success') || urlParams.has('subscription') || urlParams.has('success')) {
-      console.log('URL indicates subscription success');
-      unlockContent();
-      
-      // Clean URL
-      const cleanUrl = window.location.pathname;
-      window.history.replaceState({}, document.title, cleanUrl);
     }
   }
-
-  // Method 3: Poll the iframe for success (fallback)
-  function setupIframeObserver() {
-    const iframe = document.querySelector('.beehiiv-embed');
-    if (!iframe) return;
-    
-    // Listen for iframe load
-    iframe.addEventListener('load', function() {
-      console.log('Beehiiv iframe loaded');
-      
-      // Try to access iframe content (may be blocked by CORS)
-      try {
-        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-        // Look for success indicators in iframe
-        setTimeout(() => {
-          try {
-            // Check for thank you message or success indicators
-            const iframeBody = iframeDoc.body;
-            if (iframeBody.innerHTML.includes('Thank you') || 
-                iframeBody.innerHTML.includes('subscribed') ||
-                iframeBody.innerHTML.includes('success')) {
-              console.log('Success detected in iframe content');
-              unlockContent();
-            }
-          } catch (e) {
-            // CORS issue, can't access iframe content
-            console.log('Cannot access iframe content due to CORS');
-          }
-        }, 2000);
-      } catch (e) {
-        console.log('Cannot access iframe:', e);
-      }
-    });
-  }
-
-  // Method 4: Redirect-based detection (most reliable)
-  function setupRedirectDetection() {
-    // Beehiiv often redirects after success
-    // We'll listen for beforeunload as indicator of redirect
-    window.addEventListener('beforeunload', function(e) {
-      const iframe = document.querySelector('.beehiiv-embed');
-      if (iframe && document.activeElement === iframe) {
-        // User is interacting with Beehiiv iframe when page unloads
-        // Likely they submitted form and are being redirected
-        console.log('Beehiiv interaction detected, setting cookie');
-        
-        // Set a temporary cookie that lasts 5 minutes
-        document.cookie = "beehiiv_pending=1; path=/; max-age=300";
-      }
-    });
-    
-    // Check for that cookie on page load
-    if (document.cookie.includes('beehiiv_pending=1')) {
-      console.log('Beehiiv pending subscription detected');
-      unlockContent();
-      // Clear the cookie
-      document.cookie = "beehiiv_pending=1; path=/; max-age=0";
-    }
-  }
-
-  // Initialize everything
-  document.addEventListener('DOMContentLoaded', function() {
-    // First, check if already subscribed
-    if (checkSubscriptionStatus()) {
-      console.log('User is already a subscriber');
-      return;
-    }
-    
-    // Check URL for success parameters
-    checkUrlForSuccess();
-    
-    // Setup iframe observer
-    setupIframeObserver();
-    
-    // Setup redirect detection
-    setupRedirectDetection();
-    
-    // Also re-check after page transitions
-    document.addEventListener('astro:page-load', function() {
-      checkSubscriptionStatus();
-      checkUrlForSuccess();
-    });
-  });
-
-  // Expose unlock function globally for manual calls
+  
+  // Initialize on page load
+  document.addEventListener("DOMContentLoaded", checkSubscription);
+  
+  // Make function available globally
   window.unlockContent = unlockContent;
 </script>

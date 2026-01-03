@@ -11,6 +11,8 @@ tags: ["Crypto Portfolio", "Risk Management", "Stop-Loss", "Drawdowns", "Hedging
 category: "portfolio-management"
 subcategory: "risk-management"
 draft: false
+hasGatedContent: true
+gateType: 'partial'
 ---
 
 ## Risk Management Is What Keeps You Alive Long Enough to Win
