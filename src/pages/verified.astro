@@ -1,0 +1,41 @@
+---
+// Page users land on after Beehiiv magic link subscription
+---
+
+<script>
+// This page loads after user subscribes via magic link
+console.log('✅ Magic Link redirect - user subscribed');
+
+// Get email from URL
+const urlParams = new URLSearchParams(window.location.search);
+const email = urlParams.get('email');
+
+if (email) {
+  // Grant FULL access (they completed subscription)
+  localStorage.setItem('txchyon_subscriber', 'true');
+  localStorage.setItem('txchyon_subscriber_email', email);
+  localStorage.setItem('txchyon_beehiiv_verified', 'true');
+  
+  console.log('🔓 Full access granted to:', email);
+  
+  // Redirect back to where they came from
+  const returnTo = localStorage.getItem('txchyon_return_to') || '/';
+  setTimeout(() => {
+    window.location.href = returnTo + '?subscribed=true';
+  }, 2000);
+} else {
+  // No email in URL, ask for it
+  const userEmail = prompt('Welcome! Please enter your email to verify subscription:');
+  if (userEmail) {
+    localStorage.setItem('txchyon_subscriber', 'true');
+    localStorage.setItem('txchyon_subscriber_email', userEmail);
+    window.location.href = '/?verified=true';
+  }
+}
+</script>
+
+<div style="text-align: center; padding: 4rem;">
+  <h1>🎉 Successfully Subscribed!</h1>
+  <p>Granting you access to all content...</p>
+  <p>Redirecting in 2 seconds...</p>
+</div>
