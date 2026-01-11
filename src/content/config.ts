@@ -1,6 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 
-// Your 11 pillar categories
+// Your 13 pillar categories (updated with both new pillars)
 const blogCategories = [
   'getting-started',
   'security-privacy', 
@@ -12,7 +12,9 @@ const blogCategories = [
   'research-analysis',
   'regulatory-tax',
   'portfolio-management',
-  'prediction-markets'
+  'prediction-markets',
+  'alpha-insider',           // NEW: Added this pillar
+  'web3-gaming-metaverse'    // NEW: Added this pillar
 ] as const;
 
 const blogCollection = defineCollection({
@@ -24,7 +26,7 @@ const blogCollection = defineCollection({
     description: z.string(),
     date: z.coerce.date(),
     
-    // Category system
+    // Category system (now includes all 13 pillars)
     category: z.enum(blogCategories),
     subcategory: z.string().optional(),
     

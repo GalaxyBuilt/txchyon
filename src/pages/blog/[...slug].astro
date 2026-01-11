@@ -1,8 +1,10 @@
 ---
-// src/pages/blog/[...slug].astro - COMPLETE GATING VERSION
+// src/pages/blog/[...slug].astro - WITH GATE-AWARE AD PLACEMENT
 
 import Base from "@/layouts/Base.astro";
 import PostSingle from "@/partials/PostSingle.astro";
+import ReadingModeToggle from "@/components/ReadingModeToggle.astro";
+import GoogleAd from "@/components/ads/GoogleAd.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -64,6 +66,10 @@ const escapeHtml = (text) => {
 
 const postImage = image || `/images/posts/default-og.jpg`;
 const escapedDescription = escapeHtml(description);
+
+// Calculate if we should show middle ad
+const shouldShowMiddleAd = hasGatedContent || isFullyGated;
+// For gated content, we ALWAYS show middle ad before the gate
 ---
 
 <Base
@@ -76,5 +82,415 @@ const escapedDescription = escapeHtml(description);
   noindex={noindex}
   canonical={canonical}
 >
-  <PostSingle post={post} />
+  <div class="blog-post-container">
+    {/* Reading progress bar */}
+    <div class="reading-progress-bar">
+      <div class="reading-progress-fill"></div>
+    </div>
+    
+    {/* Top Ad - Desktop only */}
+    <div class="ad-section ad-top hidden lg:block">
+      <GoogleAd position="top" />
+    </div>
+    
+    {/* Main post content wrapper */}
+    <div class="post-content-wrapper">
+      <PostSingle post={post} />
+      
+      {/* 
+        MIDDLE AD - CRITICAL POSITIONING:
+        For gated content, this ad appears RIGHT BEFORE the gate
+        For regular content, it appears at 40% scroll point
+      */}
+      
+      {/* Gate Preview Ad - Only for gated content */}
+      {hasGatedContent && !isFullyGated && (
+        <div class="gate-preview-ad-section" id="gate-preview-ad">
+          <div class="gate-preview-notice">
+            <div class="gate-preview-icon">🔒</div>
+            <div class="gate-preview-text">
+              <h3>Premium Content Ahead</h3>
+              <p>Support free crypto education by viewing this ad. Then continue to the exclusive content below.</p>
+            </div>
+          </div>
+          <GoogleAd position="middle" />
+          <div class="gate-cta">
+            <span class="gate-arrow">👇</span>
+            <span class="gate-text">Continue reading after ad</span>
+          </div>
+        </div>
+      )}
+      
+      {/* Regular Middle Ad - For non-gated or fully gated content */}
+      {(!hasGatedContent || isFullyGated) && (
+        <div class="ad-section ad-middle my-10" id="regular-middle-ad">
+          <div class="ad-separator">
+            <span>📚 Continue Reading Below</span>
+          </div>
+          <GoogleAd position="middle" />
+        </div>
+      )}
+    </div>
+    
+    {/* Bottom Ad */}
+    <div class="ad-section ad-bottom mt-12">
+      <GoogleAd position="bottom" />
+    </div>
+    
+    {/* Reading mode toggle */}
+    <ReadingModeToggle />
+    
+    {/* Ad disclosure */}
+    <div class="ad-disclosure-note">
+      <p class="text-xs dark:text-gray-500 text-gray-400">
+        <span class="font-medium">Ads keep Txchyon 100% free.</span> 
+        Use <span class="text-cyan-500 dark:text-cyan-400">Reading Mode</span> to hide ads when concentrating.
+        {hasGatedContent && " Premium content supported by ads."}
+      </p>
+    </div>
+  </div>
 </Base>
+
+<style>
+  .blog-post-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Reading progress bar */
+  .reading-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    z-index: 1000;
+  }
+  
+  .reading-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    transition: width 0.1s ease;
+    
+    .dark & {
+      background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    }
+  }
+  
+  /* Ad sections */
+  .ad-section {
+    transition: opacity 0.3s ease;
+    margin: 2rem 0;
+  }
+  
+  .ad-top {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .ad-middle {
+    position: relative;
+    margin: 3rem 0;
+  }
+  
+  .ad-bottom {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* GATE PREVIEW AD - Special styling for pre-gate ads */
+  .gate-preview-ad-section {
+    margin: 3rem 0;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, 
+      rgba(139, 92, 246, 0.1) 0%, 
+      rgba(59, 130, 246, 0.1) 100%);
+    border: 2px solid rgba(139, 92, 246, 0.3);
+    position: relative;
+    overflow: hidden;
+    
+    .dark & {
+      background: linear-gradient(135deg, 
+        rgba(139, 92, 246, 0.15) 0%, 
+        rgba(59, 130, 246, 0.15) 100%);
+      border-color: rgba(139, 92, 246, 0.4);
+    }
+  }
+  
+  .gate-preview-notice {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    
+    .dark & {
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  .gate-preview-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+  
+  .gate-preview-text h3 {
+    font-weight: bold;
+    color: #7c3aed;
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+    
+    .dark & {
+      color: #a78bfa;
+    }
+  }
+  
+  .gate-preview-text p {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin: 0;
+    
+    .dark & {
+      color: #9ca3af;
+    }
+  }
+  
+  .gate-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    border: 1px dashed rgba(139, 92, 246, 0.4);
+    
+    .dark & {
+      background: rgba(0, 0, 0, 0.2);
+      border-color: rgba(139, 92, 246, 0.6);
+    }
+  }
+  
+  .gate-arrow {
+    font-size: 1.25rem;
+    animation: bounce 2s infinite;
+  }
+  
+  .gate-text {
+    color: #7c3aed;
+    font-weight: 600;
+    font-size: 0.95rem;
+    
+    .dark & {
+      color: #a78bfa;
+    }
+  }
+  
+  /* Ad separator for regular middle ad */
+  .ad-separator {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .ad-separator span {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 30px;
+    color: #3b82f6;
+    font-size: 0.875rem;
+    font-weight: 500;
+    
+    .dark & {
+      background: rgba(96, 165, 250, 0.1);
+      border-color: rgba(96, 165, 250, 0.3);
+      color: #60a5fa;
+    }
+  }
+  
+  .ad-separator::before,
+  .ad-separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, currentColor);
+  }
+  
+  .ad-separator::before {
+    left: 0;
+    background: linear-gradient(90deg, currentColor, transparent);
+  }
+  
+  .ad-separator::after {
+    right: 0;
+  }
+  
+  /* Ad disclosure note */
+  .ad-disclosure-note {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(241, 245, 249, 0.3);
+    
+    .dark & {
+      background: rgba(30, 41, 59, 0.3);
+    }
+  }
+  
+  /* Hide ads in reading mode */
+  body.reading-mode .ad-section,
+  body.reading-mode .gate-preview-ad-section {
+    opacity: 0.3 !important;
+    pointer-events: none !important;
+  }
+  
+  body.reading-mode .ad-section .ad-container,
+  body.reading-mode .gate-preview-ad-section .ad-container {
+    display: none !important;
+  }
+  
+  /* Bounce animation for gate arrow */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-5px);
+    }
+    60% {
+      transform: translateY(-3px);
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .blog-post-container {
+      padding: 0 0.75rem;
+    }
+    
+    .ad-section {
+      margin: 1.5rem 0;
+    }
+    
+    .ad-top {
+      margin-bottom: 2rem;
+    }
+    
+    .gate-preview-ad-section {
+      padding: 1rem;
+      margin: 2rem 0;
+    }
+    
+    .gate-preview-notice {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.75rem;
+    }
+    
+    .gate-preview-icon {
+      font-size: 1.75rem;
+    }
+    
+    .ad-separator::before,
+    .ad-separator::after {
+      width: 25%;
+    }
+  }
+  
+  /* Print styles - hide ads when printing */
+  @media print {
+    .ad-section,
+    .gate-preview-ad-section,
+    .reading-mode-toggle,
+    .ad-disclosure-note {
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Progress bar
+    const progressBar = document.querySelector('.reading-progress-fill');
+    
+    if (progressBar) {
+      window.addEventListener('scroll', () => {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight - windowHeight;
+        const scrolled = window.scrollY;
+        
+        const progress = (scrolled / documentHeight) * 100;
+        progressBar.style.width = `${progress}%`;
+      });
+    }
+    
+    // Gate preview ad positioning
+    const gatePreviewAd = document.getElementById('gate-preview-ad');
+    if (gatePreviewAd) {
+      // Find the gate element (you'll need to update this selector based on your actual gate)
+      const gateElement = document.querySelector('[data-gate]') || 
+                          document.querySelector('.gated-content') ||
+                          document.querySelector('[class*="gate"]');
+      
+      if (gateElement && gateElement.previousElementSibling !== gatePreviewAd) {
+        // Insert the ad right before the gate
+        gateElement.parentNode.insertBefore(gatePreviewAd, gateElement);
+      }
+      
+      // Track when users view the pre-gate ad
+      const gateAdObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            console.log('Pre-gate ad viewed - user about to see gated content');
+            // Good place for analytics: "user engaged with pre-gate ad"
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      gateAdObserver.observe(gatePreviewAd);
+    }
+    
+    // Regular middle ad positioning (40% scroll)
+    const regularMiddleAd = document.getElementById('regular-middle-ad');
+    if (regularMiddleAd && !document.getElementById('gate-preview-ad')) {
+      // For non-gated content, position ad at 40% of content
+      const contentWrapper = document.querySelector('.post-content-wrapper');
+      if (contentWrapper) {
+        const contentHeight = contentWrapper.offsetHeight;
+        const targetPosition = contentHeight * 0.4; // 40% mark
+        
+        // Find a good break point (after a heading or between sections)
+        const headings = contentWrapper.querySelectorAll('h2, h3, .content-break');
+        let insertPoint = null;
+        
+        for (let heading of headings) {
+          const rect = heading.getBoundingClientRect();
+          const relativePosition = rect.top - contentWrapper.getBoundingClientRect().top;
+          
+          if (relativePosition >= targetPosition - 100 && relativePosition <= targetPosition + 100) {
+            insertPoint = heading;
+            break;
+          }
+        }
+        
+        // Insert ad at found position or default to middle
+        if (insertPoint && insertPoint.nextElementSibling) {
+          insertPoint.parentNode.insertBefore(regularMiddleAd, insertPoint.nextElementSibling);
+        }
+      }
+    }
+  });
+</script>

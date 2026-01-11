@@ -1,0 +1,42 @@
+---
+// src/pages/test-post.astro - DEBUG FILE
+import { getCollection } from "astro:content";
+
+// Get a test post
+const posts = await getCollection("posts", ({ data }) => !data.draft);
+const testPost = posts[0];
+---
+
+<html>
+<head>
+  <title>Debug Post</title>
+</head>
+<body>
+  <h1>Debugging Post Content</h1>
+  
+  <h2>Post Data:</h2>
+  <pre>{JSON.stringify(testPost.data, null, 2)}</pre>
+  
+  <h2>Post Body (raw):</h2>
+  <div style="border: 1px solid #ccc; padding: 20px; margin: 20px;">
+    {testPost.body}
+  </div>
+  
+  <h2>Post Body as string:</h2>
+  <div style="border: 1px solid #ccc; padding: 20px; margin: 20px;">
+    {String(testPost.body)}
+  </div>
+  
+  <h2>Does it have render() method?</h2>
+  <pre>{testPost.render ? 'YES' : 'NO'}</pre>
+  
+  {testPost.render && (
+    <>
+      <h2>Rendered Content:</h2>
+      <div style="border: 1px solid green; padding: 20px; margin: 20px;">
+        {testPost.render()}
+      </div>
+    </>
+  )}
+</body>
+</html>

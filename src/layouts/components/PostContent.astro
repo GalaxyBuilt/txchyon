@@ -1,0 +1,184 @@
+---
+// src/components/PostContent.astro
+import GoogleAd from './ads/GoogleAd.astro';
+
+const { post } = Astro.props;
+
+// Function to inject ads into content
+const injectAds = (content, adPositions = [2, 4]) => {
+  if (!content) return content;
+  
+  // Convert to string if needed
+  const contentStr = String(content);
+  
+  // Split by paragraphs or headings
+  const paragraphs = contentStr.split(/(?=<[ph])/i);
+  
+  let result = [];
+  let adCount = 0;
+  
+  paragraphs.forEach((para, index) => {
+    result.push(para);
+    
+    // Inject ad after specified paragraphs
+    if (adPositions.includes(index + 1)) {
+      result.push(`
+        <div class="ad-injection-point ad-${adCount + 1}">
+          <!-- Ad will be inserted here via JavaScript -->
+        </div>
+      `);
+      adCount++;
+    }
+  });
+  
+  return result.join('');
+};
+---
+
+<div class="post-content-wrapper">
+  <!-- Hero section (no ads) -->
+  <header class="post-header mb-10">
+    <h1 class="text-4xl md:text-5xl font-bold dark:text-white text-gray-900 mb-4">
+      {post.data.title}
+    </h1>
+    
+    <div class="flex flex-wrap items-center gap-4 mb-6 text-sm">
+      <span class="text-cyan-500 dark:text-cyan-400 font-medium">
+        {new Date(post.data.date).toLocaleDateString('en-US', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        })}
+      </span>
+      <span class="dark:text-gray-400 text-gray-600">
+        ⏱️ {post.data.readTime || 10} min read
+      </span>
+      {post.data.category && (
+        <a href={`/categories/${post.data.category}`}
+           class="px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-bold rounded-full">
+          {post.data.category.replace('-', ' ')}
+        </a>
+      )}
+    </div>
+    
+    {post.data.image && (
+      <div class="rounded-2xl overflow-hidden mb-8">
+        <img
+          src={post.data.image}
+          alt={post.data.title}
+          class="w-full h-auto"
+          loading="eager"
+        />
+      </div>
+    )}
+  </header>
+  
+  <!-- Ad before content (desktop) -->
+  <div class="hidden lg:block mb-8">
+    <GoogleAd position="top" />
+  </div>
+  
+  <!-- Main content area -->
+  <article class="prose prose-lg dark:prose-invert max-w-none mb-8">
+    {post.body ? (
+      <div set:html={post.body} />
+    ) : post.render ? (
+      post.render()
+    ) : (
+      <p>Content loading...</p>
+    )}
+  </article>
+  
+  <!-- Middle ad (always visible) -->
+  <div class="my-10">
+    <GoogleAd position="middle" />
+  </div>
+  
+  <!-- Continue with content if split -->
+  <article class="prose prose-lg dark:prose-invert max-w-none">
+    <!-- Additional content if we split it -->
+  </article>
+  
+  <!-- Bottom ad -->
+  <div class="mt-12">
+    <GoogleAd position="bottom" />
+  </div>
+  
+  <!-- Tags -->
+  {post.data.tags && post.data.tags.length > 0 && (
+    <div class="mt-12 pt-8 border-t dark:border-gray-800 border-gray-200">
+      <h3 class="text-lg font-bold dark:text-white text-gray-900 mb-4">Tags</h3>
+      <div class="flex flex-wrap gap-2">
+        {post.data.tags.map(tag => (
+          <a href={`/tags/${tag}`}
+             class="px-4 py-2 dark:bg-gray-800 bg-gray-100 dark:text-gray-300 text-gray-700 rounded-lg hover:dark:bg-gray-700 hover:bg-gray-200 text-sm">
+            #{tag}
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+</div>
+
+<style>
+  .post-content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .prose {
+    /* Tailwind prose styles */
+    color: inherit;
+  }
+  
+  .dark .prose {
+    --tw-prose-body: #d1d5db;
+    --tw-prose-headings: #f3f4f6;
+    --tw-prose-links: #60a5fa;
+  }
+  
+  /* Ad injection styling */
+  .ad-injection-point {
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+    margin: 2rem 0;
+    
+    .dark & {
+      background: rgba(255, 255, 255, 0.02);
+    }
+  }
+</style>
+
+<script>
+  // Dynamically inject ads into content
+  document.addEventListener('DOMContentLoaded', () => {
+    // Find ad injection points
+    const adPoints = document.querySelectorAll('.ad-injection-point');
+    
+    adPoints.forEach((point, index) => {
+      if (!point.querySelector('.ad-container')) {
+        // Create ad container
+        const adHtml = `
+          <div class="ad-container ad-injected">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6121972957488905" crossorigin="anonymous"><\/script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6121972957488905"
+                 data-ad-slot="INJECTED_${index + 1}"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"><\/ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            <\/script>
+          </div>
+        `;
+        
+        point.innerHTML = adHtml;
+      }
+    });
+  });
+</script>
