@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://txchyon.com/sitemap-index.xml
-
-# Ads.txt directive (optional but good)
-Sitemap: https://txchyon.com/ads.txt
