@@ -4,7 +4,6 @@ import config from "@/config/config.json";
 import theme from "@/config/theme.json";
 import Footer from "@/partials/Footer.astro";
 import Header from "@/partials/Header.astro";
-import FloatingBubble from "@/components/FloatingBubble.jsx";
 import "@/styles/main.css";
 import { AstroFont } from "astro-font";
 import { ClientRouter } from "astro:transitions";
@@ -440,7 +439,6 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
     <Footer />
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <FloatingBubble client:load />
   
     <!-- PARTIAL GATE IMPLEMENTATION - WITH HYBRID BEEHIV/MAGIC LINK -->
     {hasGatedContent && (
