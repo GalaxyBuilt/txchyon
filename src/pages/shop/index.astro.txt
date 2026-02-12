@@ -1,0 +1,469 @@
+---
+import Base from "@/layouts/Base.astro";
+
+// Product catalog - Placeholder data
+const products = {
+  playbooks: [
+    {
+      id: "pump-fun-playbook",
+      slug: "pump-fun-memecoin-playbook",
+      title: "Pump.fun Memecoin Playbook",
+      description: "Systematic approach to Solana memecoin trading. Learn entry signals, position sizing, and exit strategies that actually work.",
+      price: 15,
+      priceSol: 0.15,
+      tag: "🚀 MOST REQUESTED",
+      icon: "📈",
+      whoItsFor: "Traders who've already lost money on memecoins and want a systematic approach",
+      problemSolved: "Random aping without strategy, FOMO entries, and holding too long",
+      systemSnapshot: {
+        inputs: "Volume spikes, holder distribution, dev wallet activity",
+        rules: "Entry at 50% pullback, 2% position size max, 3x take profit",
+        behavior: "Disciplined entries, systematic exits, emotion-free trading"
+      },
+      features: [
+        "Entry signal checklist",
+        "Position sizing calculator",
+        "Exit strategy framework",
+        "Risk management rules"
+      ],
+      stripeLink: "#", // Replace with actual Stripe payment link
+    },
+    {
+      id: "airdrop-farming",
+      slug: "airdrop-farming-blueprint",
+      title: "Airdrop Farming Blueprint",
+      description: "Step-by-step portfolio strategy to qualify for major airdrops. Stop wasting gas on activities that don't count.",
+      price: 12,
+      priceSol: 0.12,
+      tag: "🎁 HIGH ROI",
+      icon: "💰",
+      whoItsFor: "DeFi users who missed major airdrops and want to position for the next wave",
+      problemSolved: "Wasting gas on non-qualifying activities, missing eligibility criteria",
+      systemSnapshot: {
+        inputs: "Protocol selection criteria, minimum qualifying actions",
+        rules: "Multi-chain diversification, activity frequency, wallet hygiene",
+        behavior: "Strategic positioning across 10-15 protocols, documented activity"
+      },
+      features: [
+        "Protocol selection matrix",
+        "Minimum qualifying actions",
+        "Multi-wallet strategy",
+        "Activity tracking system"
+      ],
+      stripeLink: "#",
+    },
+    {
+      id: "crypto-security",
+      slug: "crypto-security-playbook",
+      title: "Crypto Security Playbook",
+      description: "Protect your assets from hacks, scams, and phishing attacks. Essential security practices every crypto user needs.",
+      price: 10,
+      priceSol: 0.10,
+      tag: "🛡️ ESSENTIAL",
+      icon: "🔒",
+      whoItsFor: "Anyone who's been phished, hacked, or wants to prevent it from happening",
+      problemSolved: "Losing funds to preventable attacks, poor wallet hygiene, transaction mistakes",
+      systemSnapshot: {
+        inputs: "Wallet setup, transaction verification, backup procedures",
+        rules: "Hardware wallet for large amounts, test transactions, verify addresses",
+        behavior: "Paranoid security mindset, systematic verification, zero trust"
+      },
+      features: [
+        "Wallet hygiene checklist",
+        "Transaction verification process",
+        "Recovery procedures",
+        "Common scam patterns"
+      ],
+      stripeLink: "#",
+    },
+    {
+      id: "defi-arbitrage",
+      slug: "defi-arbitrage-system",
+      title: "DeFi Arbitrage System",
+      description: "Cross-DEX arbitrage strategies with high win rates. Manual execution guide with automation logic included.",
+      price: 20,
+      priceSol: 0.20,
+      tag: "⚡ ADVANCED",
+      icon: "🔄",
+      whoItsFor: "Experienced traders ready to exploit price inefficiencies across DEXs",
+      problemSolved: "Missing arbitrage opportunities, slow execution, high gas costs eating profits",
+      systemSnapshot: {
+        inputs: "Price feeds from multiple DEXs, gas price monitoring, liquidity depth",
+        rules: "Minimum 2% spread after gas, execute within 12 seconds, max 5 ETH per trade",
+        behavior: "Systematic scanning, rapid execution, profit-taking discipline"
+      },
+      features: [
+        "DEX comparison framework",
+        "Gas optimization strategies",
+        "Execution timing guide",
+        "Automation logic (Python)"
+      ],
+      stripeLink: "#",
+    },
+    {
+      id: "yield-optimization",
+      slug: "yield-optimization-framework",
+      title: "Yield Optimization Framework",
+      description: "Maximize DeFi yields while managing risk. Portfolio rotation strategies for changing market conditions.",
+      price: 18,
+      priceSol: 0.18,
+      tag: "🏦 ADVANCED",
+      icon: "📊",
+      whoItsFor: "DeFi users with capital deployed who want better risk-adjusted returns",
+      problemSolved: "Chasing high APYs into risky protocols, poor diversification, rug pulls",
+      systemSnapshot: {
+        inputs: "Protocol TVL, audit status, token emissions, impermanent loss risk",
+        rules: "Max 20% in any single protocol, rotate based on risk/reward, monthly rebalancing",
+        behavior: "Systematic protocol evaluation, disciplined rotation, risk-first mindset"
+      },
+      features: [
+        "Protocol evaluation matrix",
+        "Risk scoring system",
+        "Rotation triggers",
+        "IL calculator"
+      ],
+      stripeLink: "#",
+    }
+  ],
+  bundles: [
+    {
+      id: "starter-pack",
+      title: "Txchyon Starter Access",
+      description: "Choose any 3 playbooks and save 20%",
+      originalPrice: 45,
+      price: 29,
+      priceSol: 0.29,
+      features: [
+        "Any 3 playbooks of your choice",
+        "Immediate download access",
+        "Lifetime updates",
+        "Email support"
+      ],
+      stripeLink: "#",
+    },
+    {
+      id: "operator-pack",
+      title: "Txchyon Operator Pack",
+      description: "Complete access to all playbooks and systems",
+      originalPrice: 95,
+      price: 59,
+      priceSol: 0.59,
+      features: [
+        "All 5 playbooks included",
+        "Future playbooks (free)",
+        "Priority email support",
+        "Private Discord access (coming soon)"
+      ],
+      stripeLink: "#",
+      recommended: true
+    }
+  ]
+};
+
+// SOL wallet for manual payments
+const solWallet = "6j1JUMN8qHBtbZxkauLtPJx8V1J9xPiyK2d9RjwVLn8M";
+const shopEmail = "shop@txchyon.com";
+---
+
+<Base 
+  title="Txchyon Shop | Access Institutional-Grade Crypto Playbooks"
+  description="Systematic trading frameworks and execution playbooks for serious crypto traders. Built for those who survived one cycle and don't plan on losing the next."
+  canonical="/shop/"
+>
+  
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] overflow-hidden dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-purple-950 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+    <!-- Space Background for Dark Mode -->
+    <div class="absolute inset-0 bg-black hidden dark:block">
+      <div class="absolute inset-0">
+        <!-- Nebula Effects -->
+        <div class="absolute w-[800px] h-[800px] bg-gradient-to-r from-purple-500/5 via-cyan-500/5 to-pink-500/5 rounded-full blur-3xl top-1/4 left-1/4 animate-pulse-slow"></div>
+        <div class="absolute w-[600px] h-[600px] bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5 rounded-full blur-3xl bottom-1/4 right-1/4 animate-pulse-slower"></div>
+      </div>
+    </div>
+    
+    <div class="container relative z-10 mx-auto px-4 pt-28 pb-16">
+      <div class="max-w-5xl mx-auto text-center">
+        
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 dark:bg-black/40 bg-white/80 backdrop-blur-sm dark:border border-cyan-500/30 border-cyan-400/30 rounded-full px-5 py-2.5 mb-8">
+          <span class="text-cyan-500 dark:text-cyan-400">⚡</span>
+          <span class="text-cyan-600 dark:text-cyan-300 font-medium text-sm">
+            INSTITUTIONAL PLAYBOOKS • CRYPTO-NATIVE PAYMENTS
+          </span>
+        </div>
+        
+        <!-- Main Headline -->
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-center mb-8 leading-tight">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 dark:from-cyan-400 dark:via-purple-400 dark:to-pink-400">
+            Access Institutional-Grade
+          </span>
+          <br />
+          <span class="dark:text-white text-gray-900 text-3xl md:text-5xl lg:text-6xl">
+            Crypto Playbooks
+          </span>
+        </h1>
+        
+        <!-- Subheadline -->
+        <p class="text-xl md:text-2xl dark:text-gray-300 text-gray-700 mb-10 max-w-3xl mx-auto">
+          Built for traders who already survived one cycle and don't plan on losing the next.
+        </p>
+        
+        <!-- CTA -->
+        <div class="flex flex-col sm:flex-row gap-5 justify-center mb-12">
+          <a href="#playbooks" 
+             class="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-cyan-500/40 transition-all duration-300 transform hover:-translate-y-1 text-center text-lg">
+            <span class="relative z-10">🔓 Unlock Access</span>
+            <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 blur opacity-50 group-hover:opacity-70 transition-opacity"></div>
+          </a>
+          <a href="#how-it-works" 
+             class="px-8 py-4 dark:bg-black/50 bg-white/50 backdrop-blur-sm border-2 border-cyan-500/30 dark:text-white text-gray-900 font-bold rounded-xl hover:bg-cyan-500/10 hover:border-cyan-500 transition-all duration-300 text-center text-lg">
+            💡 How It Works
+          </a>
+        </div>
+        
+        <!-- Trust Indicators -->
+        <div class="dark:bg-black/30 bg-white/50 backdrop-blur-sm rounded-2xl dark:border border-gray-800 border-gray-200 p-6 max-w-3xl mx-auto">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="text-3xl font-bold dark:text-white text-gray-900 mb-2">5</div>
+              <div class="dark:text-gray-400 text-gray-600 text-sm">PLAYBOOKS</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold dark:text-white text-gray-900 mb-2">$10-20</div>
+              <div class="dark:text-gray-400 text-gray-600 text-sm">ENTRY PRICE</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold dark:text-white text-gray-900 mb-2">SOL/Card</div>
+              <div class="text-cyan-400 text-sm">PAYMENT OPTIONS</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold dark:text-white text-gray-900 mb-2">Instant</div>
+              <div class="text-green-400 text-sm">DELIVERY</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Playbooks Section -->
+  <section id="playbooks" class="py-20 dark:bg-black bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold dark:text-white text-gray-900 mb-6">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-400 dark:to-pink-400">
+            Operational Playbooks
+          </span>
+        </h2>
+        <p class="text-xl dark:text-gray-400 text-gray-600 max-w-2xl mx-auto">
+          Systematic frameworks for execution. Not theory—actionable systems you can implement today.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {products.playbooks.map((product) => (
+          <div class="group dark:bg-gradient-to-br dark:from-gray-900 dark:to-black bg-gradient-to-br from-white to-gray-50 dark:border border-gray-800 border-gray-200 rounded-2xl overflow-hidden hover:border-cyan-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col">
+            <!-- Header -->
+            <div class="p-6 border-b dark:border-gray-800 border-gray-200">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="text-4xl group-hover:scale-110 transition-transform">
+                  {product.icon}
+                </div>
+                <div class="flex-1">
+                  <span class="inline-block px-3 py-1.5 bg-gradient-to-r from-purple-600/20 to-pink-600/20 text-purple-300 text-xs font-bold rounded-full mb-3">
+                    {product.tag}
+                  </span>
+                  <h3 class="text-xl font-bold dark:text-white text-gray-900 mb-2 group-hover:text-cyan-400 transition-colors">
+                    {product.title}
+                  </h3>
+                </div>
+              </div>
+              <p class="dark:text-gray-400 text-gray-600 text-sm">
+                {product.description}
+              </p>
+            </div>
+            
+            <!-- Features -->
+            <div class="p-6 flex-1">
+              <div class="space-y-3">
+                {product.features.map((feature) => (
+                  <div class="flex items-start gap-2">
+                    <span class="text-cyan-400 mt-0.5">✓</span>
+                    <span class="dark:text-gray-300 text-gray-700 text-sm">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <!-- Price & CTA -->
+            <div class="p-6 border-t dark:border-gray-800 border-gray-200">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <div class="text-3xl font-bold dark:text-white text-gray-900">${product.price}</div>
+                  <div class="text-sm dark:text-gray-500 text-gray-400">{product.priceSol} SOL</div>
+                </div>
+                <a href={`/shop/${product.slug}`} 
+                   class="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/30 transition-all">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Access Packs (Bundles) -->
+  <section class="py-20 dark:bg-gradient-to-b dark:from-gray-900 dark:to-black bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold dark:text-white text-gray-900 mb-6">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500 dark:from-cyan-400 dark:to-purple-400">
+            Access Packs
+          </span>
+        </h2>
+        <p class="text-xl dark:text-gray-400 text-gray-600 max-w-2xl mx-auto">
+          Unlock multiple playbooks and save. Immediate access to the Txchyon research stack.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {products.bundles.map((bundle) => (
+          <div class={`relative dark:bg-gradient-to-br dark:from-gray-900 dark:to-black bg-gradient-to-br from-white to-gray-50 dark:border border-gray-800 border-gray-200 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-1 ${bundle.recommended ? 'scale-105 dark:border-purple-500/50 border-purple-400/50' : ''}`}>
+            {bundle.recommended && (
+              <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span class="px-4 py-1.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-bold rounded-full">
+                  ⭐ RECOMMENDED
+                </span>
+              </div>
+            )}
+            
+            <div class="mb-6">
+              <h3 class="text-2xl font-bold dark:text-white text-gray-900 mb-2">{bundle.title}</h3>
+              <p class="dark:text-gray-400 text-gray-600">{bundle.description}</p>
+            </div>
+            
+            <div class="mb-6">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="text-4xl font-bold dark:text-white text-gray-900">${bundle.price}</span>
+                <span class="text-2xl line-through dark:text-gray-600 text-gray-400">${bundle.originalPrice}</span>
+              </div>
+              <div class="text-sm dark:text-gray-500 text-gray-400">{bundle.priceSol} SOL</div>
+            </div>
+            
+            <ul class="space-y-3 mb-8">
+              {bundle.features.map((feature) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-400 mt-0.5">✓</span>
+                  <span class="dark:text-gray-300 text-gray-700 text-sm">{feature}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <button class="w-full py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-xl hover:shadow-xl hover:shadow-purple-500/30 transition-all">
+              Unlock {bundle.title}
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="py-20 dark:bg-black bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold dark:text-white text-gray-900 mb-6">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500 dark:from-cyan-400 dark:to-purple-400">
+              How It Works
+            </span>
+          </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Crypto Payment -->
+          <div class="dark:bg-gradient-to-br dark:from-gray-900 dark:to-black bg-gradient-to-br from-white to-gray-50 dark:border border-cyan-500/30 border-cyan-400/30 rounded-2xl p-8">
+            <div class="text-4xl mb-4">⚡</div>
+            <h3 class="text-2xl font-bold dark:text-white text-gray-900 mb-4">Pay with SOL</h3>
+            <div class="space-y-3 dark:text-gray-300 text-gray-700">
+              <p class="text-sm"><span class="font-bold text-cyan-400">1.</span> Choose your playbook</p>
+              <p class="text-sm"><span class="font-bold text-cyan-400">2.</span> Send SOL to provided wallet</p>
+              <p class="text-sm"><span class="font-bold text-cyan-400">3.</span> Email transaction hash to {shopEmail}</p>
+              <p class="text-sm"><span class="font-bold text-cyan-400">4.</span> Receive download link (within 24h)</p>
+            </div>
+            <div class="mt-6 p-4 dark:bg-black/40 bg-gray-100/50 rounded-lg">
+              <div class="text-xs dark:text-gray-500 text-gray-400 mb-1">Wallet Address:</div>
+              <div class="font-mono text-xs dark:text-cyan-400 text-cyan-600 break-all">{solWallet}</div>
+            </div>
+          </div>
+          
+          <!-- Card Payment -->
+          <div class="dark:bg-gradient-to-br dark:from-gray-900 dark:to-black bg-gradient-to-br from-white to-gray-50 dark:border border-purple-500/30 border-purple-400/30 rounded-2xl p-8">
+            <div class="text-4xl mb-4">💳</div>
+            <h3 class="text-2xl font-bold dark:text-white text-gray-900 mb-4">Pay with Card</h3>
+            <div class="space-y-3 dark:text-gray-300 text-gray-700">
+              <p class="text-sm"><span class="font-bold text-purple-400">1.</span> Choose your playbook</p>
+              <p class="text-sm"><span class="font-bold text-purple-400">2.</span> Click "Pay with Card"</p>
+              <p class="text-sm"><span class="font-bold text-purple-400">3.</span> Complete Stripe checkout</p>
+              <p class="text-sm"><span class="font-bold text-purple-400">4.</span> Instant download link via email</p>
+            </div>
+            <div class="mt-6 p-4 dark:bg-black/40 bg-gray-100/50 rounded-lg">
+              <div class="text-sm dark:text-gray-400 text-gray-600">
+                ✓ Secure Stripe payment<br/>
+                ✓ Instant automated delivery<br/>
+                ✓ Email receipt included
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 dark:bg-gradient-to-r dark:from-black dark:via-purple-900/20 dark:to-cyan-900/20 bg-gradient-to-r from-gray-50 via-blue-50 to-cyan-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="dark:bg-black/40 bg-white/50 backdrop-blur-sm rounded-3xl dark:border border-cyan-500/30 border-cyan-400/30 p-10">
+          <div class="text-5xl mb-6">🚀</div>
+          
+          <h2 class="text-3xl md:text-4xl font-bold dark:text-white text-gray-900 mb-6">
+            Ready to Level Up?
+          </h2>
+          
+          <p class="dark:text-gray-300 text-gray-700 text-lg mb-8">
+            Stop learning from YouTube gurus. Start executing with institutional-grade playbooks.
+          </p>
+          
+          <a href="#playbooks" 
+             class="inline-block px-10 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-cyan-500/40 transition-all duration-300 transform hover:-translate-y-1 text-lg">
+            Browse Playbooks
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.03; }
+      50% { opacity: 0.08; }
+    }
+    
+    @keyframes pulse-slower {
+      0%, 100% { opacity: 0.02; }
+      50% { opacity: 0.05; }
+    }
+    
+    .animate-pulse-slow {
+      animation: pulse-slow 6s ease-in-out infinite;
+    }
+    
+    .animate-pulse-slower {
+      animation: pulse-slower 8s ease-in-out infinite;
+    }
+  </style>
+</Base>
