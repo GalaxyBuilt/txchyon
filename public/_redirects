@@ -12,6 +12,7 @@
 # Note: 'free-airdrops' doesn't seem to exist as a file
 # Redirect /blog/slug to /blog/category/slug
 # Top-level redirects
+/shop/* https://txchyon-shop.pages.dev/shop/:splat 200
 /airdrop /blog/airdrop-farming 301
 /airdrop /categories/airdrop-farming 301
 /airdrop-farming /blog/airdrop-farming 301

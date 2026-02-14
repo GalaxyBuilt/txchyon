@@ -4,39 +4,33 @@
     "base_url": "https://txchyon.com",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
+    "favicon": "/images/favicon.ico",
     "logo": false,
     "logo_width": "200",
     "logo_height": "34",
     "logo_text": "Txchyon"
   },
-
   "settings": {
     "pagination": 6
   },
-
   "metadata": {
     "meta_author": "NefuTrades",
-    "meta_image": "/images/txchyafinal.jpg",
+    "meta_image": "/images/logo.png",
     "meta_description": "Raw data. Real alpha. Live Aster positions and Solana infra bets."
   },
-
   "google_tag_manager": {
     "enable": false,
     "gtm_id": ""
   },
-
   "params": {
     "contact_form_action": "https://formspree.io/f/xzznjdnr",
     "copyright": "© 2025 Txchyon Capital"
   },
-
   "contactinfo": {
     "address": "Scottsdale, AZ",
     "email": "contact@txchyon.com",
     "phone": "+63 9613092580"
   },
-
   "social": {
     "twitter": "https://twitter.com/txchyon",
     "telegram": "https://t.me/txchyon",
@@ -46,14 +40,12 @@
     "youtube": "",
     "instagram": ""
   },
-
   "author": {
     "name": "NefuTrades",
     "bio": "Trading, building, and writing in public.",
     "avatar": "/images/avatar.jpg",
     "twitter": "https://twitter.com/nefutrades"
   },
-
   "branding": {
     "blog_name": "Txchyon",
     "tagline": "Signal in the noise.",
