@@ -15,7 +15,7 @@
   },
   "metadata": {
     "meta_author": "NefuTrades",
-    "meta_image": "/images/logo.png",
+    "meta_image": "https://txchyon.com/images/logo.png",
     "meta_description": "Raw data. Real alpha. Live Aster positions and Solana infra bets."
   },
   "google_tag_manager": {
@@ -24,7 +24,7 @@
   },
   "params": {
     "contact_form_action": "https://formspree.io/f/xzznjdnr",
-    "copyright": "© 2025 Txchyon Capital"
+    "copyright": "© 2026 Txchyon Capital"
   },
   "contactinfo": {
     "address": "Scottsdale, AZ",
