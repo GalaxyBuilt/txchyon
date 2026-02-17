@@ -13,6 +13,8 @@
 # Redirect /blog/slug to /blog/category/slug
 # Top-level redirects
 /shop/* https://txchyon-shop.pages.dev/shop/:splat 200
+/authors/nefu /authors/galaxy 301
+/authors/nefu/ /authors/galaxy 301
 /airdrop /blog/airdrop-farming 301
 /airdrop /categories/airdrop-farming 301
 /airdrop-farming /blog/airdrop-farming 301
