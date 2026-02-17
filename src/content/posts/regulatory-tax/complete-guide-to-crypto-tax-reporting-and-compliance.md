@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/crypto-tax-reporting-guide.jpg"
 heroImageAlt: "Crypto tax dashboard showing gains, losses, and reporting tools"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto tax reporting", "cryptocurrency taxable events", "crypto tax software", "crypto compliance", "crypto tax guide"]
 category: "regulatory-tax"

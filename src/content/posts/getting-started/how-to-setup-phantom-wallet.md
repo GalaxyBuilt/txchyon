@@ -5,8 +5,8 @@ date: 2025-12-03
 updatedDate: 2025-12-03
 image: "/images/posts/phantom.jpg"
 heroImageAlt: "Phantom Wallet interface showing both Solana and Ethereum networks with cryptocurrency icons and security lock"
-authors: ["Nefu"]
-authorTwitter: "@nefutrades"
+authors: ["Galaxy"]
+authorTwitter: "@galaxybuilt"
 tags: ["phantom-wallet", "solana", "ethereum", "crypto-wallet", "web3", "defi", "nft", "crypto-security", "step-by-step", "beginners-guide"]
 category: "getting-started"
 subcategory: "wallet-setup"

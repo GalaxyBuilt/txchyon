@@ -5,7 +5,7 @@ date: 2025-12-24
 updatedDate: 2025-12-24
 image: "/images/posts/crypto-phishing-attacks-2026.jpg"
 heroImageAlt: "A digital illustration of a fishing hook pulling a crypto wallet from a computer screen amid warning alerts"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Phishing", "Crypto Scams", "Wallet Drainer", "Security", "Deepfake", "Prevention", "Beginner Guide"]
 category: "security-privacy"

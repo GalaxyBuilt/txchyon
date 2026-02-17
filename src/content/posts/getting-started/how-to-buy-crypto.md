@@ -5,7 +5,7 @@ date: 2025-12-08
 updatedDate: 2025-12-08
 image: "/images/posts/tokens.jpg"
 heroImageAlt: "Step-by-step visual guide showing smartphone, Coinbase interface, and crypto wallet security"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["cryptocurrency", "beginners-guide", "how-to-buy-crypto", "Solana", "Bitcoin", "Ethereum", "Coinbase", "Phantom-Wallet", "crypto-security", "step-by-step"]
 # CORRECT FORMAT - ONE categories array with multiple values

@@ -5,7 +5,7 @@ date: 2025-12-29
 updatedDate: 2025-12-29
 image: "/images/posts/bitcoin-node.jpg"
 heroImageAlt: "Bitcoin full node syncing the blockchain on a dedicated computer"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["bitcoin", "bitcoin node", "full node", "privacy", "self-sovereignty"]
 category: "infrastructure-tech"

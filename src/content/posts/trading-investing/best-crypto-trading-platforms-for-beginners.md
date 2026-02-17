@@ -5,7 +5,7 @@ date: 2026-03-27
 updatedDate: 2026-03-27
 image: "/images/posts/best-crypto-trading-platforms-beginners-2026.jpg"
 heroImageAlt: "Comparison dashboard on a laptop showing three different crypto exchange interfaces side by side"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto-exchange", "trading-platform", "beginners-guide", "crypto-fees", "demo-trading"]
 category: "trading-investing"  # CHANGED from "making-money"

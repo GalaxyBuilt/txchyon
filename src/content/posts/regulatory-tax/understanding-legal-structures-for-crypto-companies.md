@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/crypto-legal-structures.jpg"
 heroImageAlt: "Illustration of legal documents and crypto assets representing business structures"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto legal structures", "LLC vs corporation", "DAO legal recognition", "crypto business formation", "international crypto structures"]
 category: "regulatory-tax"

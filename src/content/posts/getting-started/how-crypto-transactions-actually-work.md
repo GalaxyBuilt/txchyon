@@ -5,7 +5,7 @@ date: 2025-12-30
 updatedDate: 2025-12-30
 image: "/images/posts/howcryptowork.jpg"
 heroImageAlt: "A flowchart showing the path of a crypto transaction from wallet to blockchain confirmation"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto-transactions", "blockchain-basics", "mempool", "gas-fees", "crypto-beginners"]
 category: "getting-started"

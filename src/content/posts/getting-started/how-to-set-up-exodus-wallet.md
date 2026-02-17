@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/exodus3.jpg"
 heroImageAlt: "Exodus Wallet interface showing portfolio overview with multiple cryptocurrencies"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["exodus-wallet", "multi-asset-wallet", "desktop-wallet", "mobile-wallet", "non-custodial-wallet", "crypto-portfolio"]
 category: "getting-started"

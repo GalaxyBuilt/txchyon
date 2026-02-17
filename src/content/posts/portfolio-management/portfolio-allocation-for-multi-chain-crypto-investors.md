@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/allocation4.jpg"
 heroImageAlt: "Multi-chain crypto portfolio allocation chart showing different blockchain assets"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Multi-Chain Allocation", "Risk Management", "Bitcoin", "Ethereum", "Solana"]
 category: "portfolio-management"

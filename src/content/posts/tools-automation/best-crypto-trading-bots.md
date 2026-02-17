@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/tradingbot.jpg"
 heroImageAlt: "Crypto trading bots dashboard showing automated trades across exchanges"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto trading bots", "automated trading", "DCA bots", "grid trading", "Solana bots", "crypto automation"]
 category: "tools-automation"

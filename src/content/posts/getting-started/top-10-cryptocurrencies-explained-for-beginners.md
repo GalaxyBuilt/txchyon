@@ -5,7 +5,7 @@ date: 2025-12-22
 updatedDate: 2025-12-22
 image: "/images/posts/top10crypto.jpg"
 heroImageAlt: "A clean grid layout showing the logos of the top 10 cryptocurrencies with simple icons representing their main use cases"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Top Cryptocurrencies", "Crypto for Beginners", "Best Crypto 2026", "Bitcoin", "Ethereum", "Altcoins Explained"]
 category: "getting-started"

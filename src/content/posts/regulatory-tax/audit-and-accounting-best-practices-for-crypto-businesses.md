@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/crypto-audit-accounting.jpg"
 heroImageAlt: "Accounting dashboard showing crypto transactions and audit reports"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto audit accounting", "crypto accounting software", "audit-ready crypto business", "tax reporting", "crypto bookkeeping"]
 category: "regulatory-tax"

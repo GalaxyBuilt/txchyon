@@ -5,7 +5,7 @@ date: 2026-1-10
 updatedDate: 2026-1-10
 image: "/images/posts/blockchain-bot.jpg"
 heroImageAlt: "Visualization of multiple blockchains connected with trading arrows showing arbitrage flows"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Alpha & Insider Strategies

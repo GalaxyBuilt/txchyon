@@ -5,7 +5,7 @@ date: 2025-12-03
 updatedDate: 2025-12-03
 image: "/images/posts/rg2.jpg"
 heroImageAlt: "X (Twitter) algorithm visualization showing replies outperforming follower count in 2026"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Token Launch", "X Algorithm", "Reply Guy Strategy", "TGE", "Crypto Marketing", "Web3 Growth", "Engagement Hacking", "Solana", "DeFi"]
 category: "defi-yield"

@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/estateplanningbasics.jpg"
 heroImageAlt: "Diagram of crypto estate planning showing secure wallets and inheritance paths"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Estate Planning", "Inheritance", "Wills", "Trusts", "Bitcoin", "Ethereum"]
 category: "portfolio-management"

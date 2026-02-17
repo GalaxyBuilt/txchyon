@@ -5,7 +5,7 @@ date: 2025-12-29
 updatedDate: 2025-12-29
 image: "/images/posts/bitcoin-node3.jpg"
 heroImageAlt: "Various hardware setups for Bitcoin nodes including Pi, NUC, and servers"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["bitcoin", "bitcoin node", "hardware", "full node", "reviews"]
 category: "infrastructure-tech"

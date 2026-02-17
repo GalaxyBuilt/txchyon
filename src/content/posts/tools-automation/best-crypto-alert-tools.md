@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/best-crypto-alert-tools-2026.jpg"
 heroImageAlt: "Crypto alert dashboard showing price alerts, wallet notifications, and market movements"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto alert tools", "price alerts", "wallet monitoring", "whale tracking", "smart money alerts"]
 category: "tools-automation"

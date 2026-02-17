@@ -5,7 +5,7 @@ date: 2025-11-24
 updatedDate: 2025-12-02 
 image: "/images/posts/28-percent-yield.jpg"
 heroImageAlt: "Aster perpetuals funding rate chart showing +0.076% paid to shorts with delta-neutral setup"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Aster", "Funding Rate", "Delta Neutral", "Yield", "DeFi", "Solana", "Perps", "Arbitrage"]
 category: "trading-investing"

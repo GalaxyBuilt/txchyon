@@ -5,7 +5,7 @@ date: 2026-1-1
 updatedDate: 2026-1-1
 image: "/images/posts/framework.jpg"
 heroImageAlt: "Crypto investor analyzing blockchain data, token metrics, and on-chain activity"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Crypto Due Diligence

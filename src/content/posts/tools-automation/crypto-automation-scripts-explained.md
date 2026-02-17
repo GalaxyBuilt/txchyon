@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/crypto-automation-scripts-2026.jpg"
 heroImageAlt: "Crypto automation workflow showing scripts, bots, APIs, and alerts connected together"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto automation", "automation scripts", "crypto bots", "webhooks", "no-code automation", "API automation"]
 category: "tools-automation"

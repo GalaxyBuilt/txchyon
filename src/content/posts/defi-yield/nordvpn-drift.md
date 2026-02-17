@@ -5,7 +5,7 @@ date: 2025-11-27
 updatedDate: 2025-12-02 
 image: "/images/posts/drift1.jpg"
 heroImageAlt: "NordVPN connected to Singapore server with Drift.trade open and Phantom wallet connected"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["NordVPN", "Drift Protocol", "Solana", "Perps", "DeFi Security", "Privacy", "VPN", "Anonymity", "Trading Guide"]
 category: "defi-yield"
@@ -67,7 +67,7 @@ These are my personally tested servers (Nov 2025):
 
 ### 5. Test & Start Trading
 1. Visit [whatismyipaddress.com](https://whatismyipaddress.com) — should show your VPN server, not your real IP  
-2. Open [app.drift.trade](https://app.drift.trade/ref/nefutrades) → connect Phantom → place a tiny test position  
+2. Open [app.drift.trade](https://app.drift.trade/ref/galaxybuilt) → connect Phantom → place a tiny test position  
 3. Watch the latency in the bottom-right of Drift — should stay under 60 ms even during pumps
 
 You’re now completely shielded.
@@ -84,7 +84,7 @@ Drop a comment if you want the same guide for Hyperliquid, Aster, or GMX — alr
 
 Stay safe out there.
 
-— Nefu (@nefutrades)  
+— Galaxy (@galaxybuilt)  
 txchyon.com
 
 *(When you’re ready to grab NordVPN, use my link again — it’s the cheapest you’ll ever see it and keeps these guides coming.)*

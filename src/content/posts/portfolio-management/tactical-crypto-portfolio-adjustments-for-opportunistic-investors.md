@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/tactical.jpg"
 heroImageAlt: "Crypto portfolio with tactical allocation adjustments highlighted"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Tactical Allocation", "Risk Management", "Bitcoin", "Ethereum"]
 category: "portfolio-management"

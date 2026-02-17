@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/crypto-entity-formation.jpg"
 heroImageAlt: "Business paperwork and digital wallet representing crypto entity formation"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto entity formation", "LLC crypto business", "crypto corporation setup", "legal structures", "crypto business compliance"]
 category: "regulatory-tax"

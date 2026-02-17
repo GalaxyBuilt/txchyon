@@ -5,8 +5,8 @@ date: 2025-11-25
 updatedDate: 2025-12-02 
 image: "/images/posts/iopn.jpg"
 heroImageAlt: "iopn Network OPN Chain — the sovereign EVM L1 powering AI agents and digital citizenship"
-authors: ["Nefu"]
-authorTwitter: "@nefutrades"
+authors: ["Galaxy"]
+authorTwitter: "@galaxybuilt"
 tags: ["iopn", "opn-chain", "evm", "solana", "ai-agents", "rwa", "infrastructure"]
 category: "infrastructure-tech"
 subcategory: "layer-2s-rollups"

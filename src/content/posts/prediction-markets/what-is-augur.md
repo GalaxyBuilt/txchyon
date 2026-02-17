@@ -5,7 +5,7 @@ date: 2025-12-27
 updatedDate: 2025-12-27
 image: "/images/posts/augur1.jpg"
 heroImageAlt: "Augur prediction market platform interface or logo"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "txchyon"
 tags: ["prediction-markets", "ethereum", "decentralized"]
 category: "prediction-markets"

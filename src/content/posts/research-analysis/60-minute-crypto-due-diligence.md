@@ -5,7 +5,7 @@ date: 2026-1-1
 updatedDate: 2026-1-1
 image: "/images/posts/60minutes.jpg"
 heroImageAlt: "Crypto investor quickly analyzing project fundamentals and token metrics"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Crypto Due Diligence

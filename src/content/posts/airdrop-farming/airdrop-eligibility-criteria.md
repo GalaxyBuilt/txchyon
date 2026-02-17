@@ -5,7 +5,7 @@ date: 2026-1-2
 updatedDate: 2026-1-2
 image: "/images/posts/airdrops2.jpg"
 heroImageAlt: "Blockchain analytics dashboard evaluating wallet activity and eligibility signals"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Airdrop Farming

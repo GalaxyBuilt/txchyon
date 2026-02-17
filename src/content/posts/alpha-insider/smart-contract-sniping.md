@@ -5,7 +5,7 @@ date: 2026-1-08
 updatedDate: 2026-1-08
 image: "/images/posts/bots.jpg"
 heroImageAlt: "Visualization of smart contracts with alert signals for newly deployed contracts"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Alpha & Insider Strategies

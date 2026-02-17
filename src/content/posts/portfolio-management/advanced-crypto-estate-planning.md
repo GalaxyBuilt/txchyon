@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/advancedestateplanning.jpg"
 heroImageAlt: "Crypto estate planning with digital assets, legal documents, and secure storage"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Estate Planning", "Inheritance", "Trusts", "Multi-Generational Wealth", "Risk Management"]
 category: "portfolio-management"

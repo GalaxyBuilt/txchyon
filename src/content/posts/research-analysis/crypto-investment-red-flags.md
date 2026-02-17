@@ -5,7 +5,7 @@ date: 2026-1-1
 updatedDate: 2026-1-1
 image: "/images/posts/cryptoredflags.jpg"
 heroImageAlt: "Crypto investor reviewing red flags and warning signs before investing"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Crypto Red Flags

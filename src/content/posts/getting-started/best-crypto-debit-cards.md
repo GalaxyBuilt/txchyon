@@ -5,8 +5,8 @@ date: 2025-12-15
 updatedDate: 2025-12-15
 image: "/images/posts/triadebitcrop.jpg"
 heroImageAlt: "debitcard"
-authors: ["Nefu"]
-authorTwitter: "@nefutrades"
+authors: ["Galaxy"]
+authorTwitter: "@galaxybuilt"
 tags: ["crypto", "debit card", "crypto debit card", "rewards", "beginner guide"]
 category: "getting-started"
 subcategory: "first-purchase"
@@ -19,7 +19,7 @@ draft: false
 | Card | Rewards | Type | Pros | Cons | Link |
 |------|--------|------|------|------|------|
 | **Tria Card** | Up to 6% TRIA | Self-custodial | Global support, high cashback, stablecoin-friendly | Newer product, token-denominated rewards | [Tria Card](https://tinyurl.com/trianef) |
-| **Coinbase Card** | Up to 4% crypto | Exchange-linked | Beginner-friendly, widely accepted, no annual fee | Conversion fees, occasional support issues | [Coinbase Card](https://tinyurl.com/coinbnefu) |
+| **Coinbase Card** | Up to 4% crypto | Exchange-linked | Beginner-friendly, widely accepted, no annual fee | Conversion fees, occasional support issues | [Coinbase Card](https://tinyurl.com/coinbgalaxy) |
 | **Gnosis Pay Card** | Up to 5% GNO | Self-custodial | No FX fees, strong decentralization | Limited global availability, Web3-heavy interface | [Gnosis Pay Card](https://gnosispay.com/) |
 | **Ready Metal Card** | ~3% partner tokens | Premium metal | Premium feel, European support | Region-locked, token-denominated rewards | [Ready Metal Card](https://www.ready.co/card) |
 | **Bybit Card** | 4–10% crypto | Exchange-linked | High rewards for traders, multi-crypto | Reward tiers tied to usage, occasional volatility | [Bybit Card](https://tinyurl.com/bybitnef) |
@@ -66,7 +66,7 @@ The **Tria Card** is a self-custodial Visa card supporting over 1,000 cryptocurr
 The **Coinbase Card** integrates seamlessly with your Coinbase wallet, allowing you to spend crypto or fiat and earn up to **4% crypto rewards**. It’s beginner-friendly, widely accepted, and has no annual fees.  
 **Pros:** Trusted brand, simple onboarding, multiple reward options, no annual fee  
 **Cons:** Conversion fees (~2.49%), occasional support issues, regional limitations  
-[Coinbase Card →](https://tinyurl.com/coinbnefu)
+[Coinbase Card →](https://tinyurl.com/coinbgalaxy)
 
 ---
 

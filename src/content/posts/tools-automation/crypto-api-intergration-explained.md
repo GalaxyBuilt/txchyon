@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/crypto-api-integration-explained.jpg"
 heroImageAlt: "Crypto API integration diagram connecting trading bots to exchanges"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto API", "API integration", "trading bot API", "crypto automation", "exchange API"]
 category: "tools-automation"

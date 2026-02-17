@@ -5,7 +5,7 @@ date: 2025-12-11
 updatedDate: 2025-12-11
 image: "/images/posts/Ledger_VictorMalecot-163.jpg"
 heroImageAlt: "A Ledger Nano device on a desk next to a paper sheet with the 24-word recovery phrase written down"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Ledger", "Cold Storage", "Hardware Wallet", "Security", "Seed Phrase", "BIP39", "Crypto Safety", "Cryptocurrency", "Blockchain", "Self-Custody"]
 category: "security-privacy"

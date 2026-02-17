@@ -5,7 +5,7 @@ date: 2025-12-27
 updatedDate: 2025-12-27
 image: "/images/posts/walletorg.jpg"
 heroImageAlt: "Organized crypto wallets on a sleek digital dashboard with charts and labels"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Airdrop Farming

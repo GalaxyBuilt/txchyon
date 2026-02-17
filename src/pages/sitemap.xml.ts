@@ -64,7 +64,7 @@ export const GET: APIRoute = async ({ site }) => {
     { loc: '/services', priority: 0.9, changefreq: 'weekly' }, // Services (MONEY PAGE)
     { loc: '/tools', priority: 0.8, changefreq: 'weekly' }, // Tools
     { loc: '/about', priority: 0.7, changefreq: 'monthly' }, // About
-    { loc: '/authors/nefu', priority: 0.7, changefreq: 'weekly' }, // Author
+    { loc: '/authors/galaxy', priority: 0.7, changefreq: 'weekly' }, // Author
     { loc: '/privacy', priority: 0.5, changefreq: 'yearly' }, // Privacy
     { loc: '/contact', priority: 0.6, changefreq: 'yearly' }, // Contact
     { loc: '/disclaimer', priority: 0.5, changefreq: 'yearly' }, // Disclaimer

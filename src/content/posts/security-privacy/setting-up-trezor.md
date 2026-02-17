@@ -5,7 +5,7 @@ date: 2025-12-16
 updatedDate: 2025-12-16
 image: "/images/posts/trezor1.jpg"
 heroImageAlt: "A Trezor hardware wallet connected to a computer running the Trezor Suite application"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Trezor", "Cold Storage", "Hardware Wallet", "Security", "Seed Phrase", "Passphrase", "BIP39"]
 category: "security-privacy"

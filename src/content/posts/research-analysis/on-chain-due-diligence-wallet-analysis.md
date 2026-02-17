@@ -5,7 +5,7 @@ date: 2026-1-1
 updatedDate: 2026-1-1
 image: "/images/posts/onchaindd.jpg"
 heroImageAlt: "Crypto investor analyzing blockchain wallet data and token transactions"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - On-Chain Analysis

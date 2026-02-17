@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/bitcoin-ordinals-brc20-runes.jpg"
 heroImageAlt: "Visual representation of Bitcoin Ordinals inscription, BRC-20 token, and Runes etching on the Bitcoin blockchain"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["bitcoin-ordinals", "brc-20", "brc-2.0", "runes-protocol", "bitcoin-nfts", "fungible-tokens", "bitcoin-defi"]
 category: "getting-started"

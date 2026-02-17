@@ -5,7 +5,7 @@ date: 2025-12-30
 updatedDate: 2025-12-30
 image: "/images/posts/lightningnode.jpg"
 heroImageAlt: "Lightning Network node interface showing channels and payments"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["bitcoin", "lightning network", "bitcoin node", "layer-2", "payments"]
 category: "infrastructure-tech"

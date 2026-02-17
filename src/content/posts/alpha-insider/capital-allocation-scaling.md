@@ -5,7 +5,7 @@ date: 2026-1-5
 updatedDate: 2026-1-5
 image: "/images/posts/capital-allocation-scaling.jpg"
 heroImageAlt: "Trader dashboard showing capital allocation across multiple DEX trades"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Alpha & Insider Strategies

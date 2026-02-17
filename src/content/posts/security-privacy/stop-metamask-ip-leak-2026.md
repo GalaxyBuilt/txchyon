@@ -5,8 +5,8 @@ date: 2025-12-08
 updatedDate: 2025-12-08
 image: "/images/posts/metamask.jpg"
 heroImageAlt: "MetaMask settings screen showing Infura RPC with red warning overlay"
-authors: ["Nefu"]
-authorTwitter: "@nefutrades"
+authors: ["Galaxy"]
+authorTwitter: "@galaxybuilt"
 tags: ["MetaMask", "Privacy", "IP Leak", "RPC", "VPN", "Rabby Wallet", "Ethereum", "DeFi Security"]
 category: "security-privacy"
 subcategory: "privacy-tools"
@@ -27,7 +27,7 @@ Here are the three best fixes in December 2026 — ranked from brain-dead easy t
 I've been on NordVPN for years. One click and literally everything (MetaMask, browser, torrents, whatever) is hidden.
 
 My referral (cheapest price + 3–4 months free + 30-day money-back):  
-→ https://tinyurl.com/nordnefu
+→ https://tinyurl.com/nordgalaxy
 
 (ProtonVPN free tier works too if you want zero cost.)
 
@@ -77,5 +77,5 @@ Pick any one of the three and you're invisible again in under five minutes.
 
 See you on-chain (anonymously).
 
-— Nefu (@nefutrades)  
+— Galaxy (@galaxybuilt)  
 Say gm → news@txchyon.com

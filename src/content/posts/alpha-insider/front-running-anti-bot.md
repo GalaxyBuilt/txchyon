@@ -5,7 +5,7 @@ date: 2026-1-10
 updatedDate: 2026-1-10
 image: "/images/posts/front-running-anti-bot.jpg"
 heroImageAlt: "Visualization of bots monitoring the mempool with warning signals"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Alpha & Insider Strategies

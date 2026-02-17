@@ -5,7 +5,7 @@ date: 2025-12-31
 updatedDate: 2025-12-31
 image: "/images/posts/pmliquidity.jpg"
 heroImageAlt: "Liquidity pools visualization with yes/no shares"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "txchyon"
 tags: ["prediction-markets", "passive-income", "liquidity", "kalshi"]
 category: "prediction-markets"
@@ -44,7 +44,7 @@ Polymarket combines an order book with AMM pools for high-volume markets. Its li
 
 *   **Best For**: Patient capital seeking institutional-grade volume.
 *   **Current Opportunity**: Fee-sharing pools around major geopolitical or crypto events.
-*   **Getting Started**: You can join the platform via <a href="https://tinyurl.com/polynefu" target="_blank" rel="noopener noreferrer">this link</a> and monitor their official channels for program announcements.
+*   **Getting Started**: You can join the platform via <a href="https://tinyurl.com/polygalaxy" target="_blank" rel="noopener noreferrer">this link</a> and monitor their official channels for program announcements.
 
 ### 🐛 Worm.wtf (Bonding Curve AMM)
 Built on Solana, Worm.wtf uses bonding curves where early liquidity providers can get in at lower prices. Rewards come from **creator-set fees** on trades.

@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/allocation1.jpg"
 heroImageAlt: "Crypto portfolio allocation chart using factors like momentum and volatility"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Factor Investing", "Allocation", "Risk Management", "Bitcoin", "Ethereum"]
 category: "portfolio-management"

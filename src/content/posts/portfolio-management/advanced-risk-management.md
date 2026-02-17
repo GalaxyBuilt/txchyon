@@ -5,7 +5,7 @@ date: 2025-12-26
 updatedDate: 2025-12-26
 image: "/images/posts/advancedriskman.jpg"
 heroImageAlt: "Crypto portfolio dashboard showing risk controls, drawdowns, and protective measures"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Risk Management", "Stop-Loss", "Drawdowns", "Hedging", "VaR", "Correlation"]
 category: "portfolio-management"

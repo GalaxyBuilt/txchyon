@@ -5,7 +5,7 @@ date: 2026-1-4
 updatedDate: 2026-1-4
 image: "/images/posts/airdrops1.jpg"
 heroImageAlt: "Wallet being analyzed for eligibility with warning signals and flags"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Airdrop Farming

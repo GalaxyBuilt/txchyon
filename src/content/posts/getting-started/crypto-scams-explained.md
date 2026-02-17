@@ -5,7 +5,7 @@ date: 2025-12-30
 updatedDate: 2025-12-30
 image: "/images/posts/cryptoscam.jpg"
 heroImageAlt: "Illustration showing common crypto scams and traps for beginners"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto-scams", "phishing", "airdrops", "security", "crypto-beginners"]
 category: "getting-started"

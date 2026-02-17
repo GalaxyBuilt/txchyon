@@ -5,7 +5,7 @@ date: 2025-12-31
 updatedDate: 2025-12-31
 image: "/images/posts/defi.jpg"
 heroImageAlt: "A visual metaphor showing traditional bank buildings being replaced by transparent, interconnected blockchain nodes and smart contract icons"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["defi", "decentralized-finance", "web3", "beginner-guide", "crypto-basics"]
 category: "getting-started"

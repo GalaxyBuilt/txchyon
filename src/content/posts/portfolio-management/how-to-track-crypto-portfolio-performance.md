@@ -5,7 +5,7 @@ date: 2025-12-26
 updatedDate: 2025-12-26
 image: "/images/posts/cryptoperform.jpg"
 heroImageAlt: "Crypto portfolio dashboard showing returns, allocation drift, and risk metrics"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Performance Tracking", "Metrics", "Bitcoin", "Ethereum", "Investing"]
 category: "portfolio-management"

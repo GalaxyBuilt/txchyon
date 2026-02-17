@@ -5,7 +5,7 @@ date: 2025-12-05
 updatedDate: 2025-12-05
 image: "/images/posts/pumpfun.jpg"
 heroImageAlt: "A rocket launching from a crypto chart with a parachuting airdrop symbol, representing a pump.fun token launch"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Pumpfun", "Airdrop", "Solana", "Memecoin", "Tokenomics", "Farming Strategy", "Crypto Speculation"]
 category: "airdrop-farming"

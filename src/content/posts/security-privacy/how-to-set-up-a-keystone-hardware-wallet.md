@@ -5,7 +5,7 @@ date: 2025-12-24
 updatedDate: 2025-12-24
 image: "/images/posts/keystone-wallet-setup-2026.jpg"
 heroImageAlt: "Keystone Pro hardware wallet displaying a transaction QR code next to a smartphone"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Keystone Wallet", "Hardware Wallet", "Air-Gapped", "Setup Guide", "Cold Storage", "Multisig", "Crypto Security"]
 category: "security-privacy"

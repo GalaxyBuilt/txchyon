@@ -5,7 +5,7 @@ date: 2025-12-21
 updatedDate: 2025-12-21
 image: "/images/posts/glossary1.jpg"
 heroImageAlt: "A clean digital illustration of interconnected blockchain nodes with key crypto terms floating around them"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Basics", "Terminology", "Glossary", "Blockchain", "Bitcoin", "Beginner Guide", "DeFi", "Wallet"]
 category: "getting-started"

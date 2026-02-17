@@ -5,7 +5,7 @@ date: 2025-12-29
 updatedDate: 2025-12-29
 image: "/images/posts/kalshi1.jpg"
 heroImageAlt: "Kalshi platform screenshot showing event contracts"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "txchyon"
 tags: ["prediction-markets", "regulated", "cftc"]
 category: "prediction-markets"

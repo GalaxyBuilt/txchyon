@@ -5,7 +5,7 @@ date: 2025-12-26
 updatedDate: 2025-12-26
 image: "/images/posts/globalcryptoreg.jpg"
 heroImageAlt: "World map showing crypto regulations and compliance across countries"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["global crypto regulations", "crypto compliance laws", "AML KYC crypto", "cryptocurrency regulations", "international crypto rules"]
 category: "regulatory-tax"

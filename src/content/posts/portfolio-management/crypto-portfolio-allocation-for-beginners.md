@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/cryptoallocation.jpg"
 heroImageAlt: "Crypto portfolio allocation chart showing bitcoin, ethereum, altcoins, and stablecoins"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Asset Allocation", "Bitcoin", "Ethereum", "Altcoins", "Risk Management", "Investing"]
 category: "portfolio-management"

@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/crypto-compliance-tools.jpg"
 heroImageAlt: "Crypto compliance dashboard with AML/KYC monitoring"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto compliance tools", "AML software", "KYC solutions", "crypto business compliance", "audit-ready crypto tools"]
 category: "regulatory-tax"

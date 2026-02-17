@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/hardware-wallet-recovery-guide.jpg"
 heroImageAlt: "Illustration of recovering crypto using a seed phrase on a new hardware wallet"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["hardware wallet", "seed phrase", "crypto recovery", "wallet security", "lost wallet"]
 category: "security-privacy"

@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/best-vpns-crypto-trading-2026.jpg"
 heroImageAlt: "VPN connection securing crypto wallet and exchange transactions"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["vpn", "crypto privacy", "ip protection", "metamask", "transaction security"]
 category: "security-privacy"

@@ -5,7 +5,7 @@ date: 2025-12-27
 updatedDate: 2025-12-27
 image: "/images/posts/howtobuyeth.jpg"
 heroImageAlt: "A step-by-step illustration of buying Ethereum on a mobile device with secure platform icons"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["How to Buy Ethereum", "Buy ETH Beginners", "Ethereum for Beginners", "First ETH Purchase", "Crypto Buying Guide"]
 category: "getting-started"

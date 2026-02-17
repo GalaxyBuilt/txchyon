@@ -5,8 +5,8 @@ date: 2025-12-20
 updatedDate: 2025-12-20
 image: "/images/posts/coldwallet.jpg"
 heroImageAlt: "A physical hardware wallet (cold storage) next to a computer screen showing a digital software wallet (hot storage)"
-authors: ["Nefu"]
-authorTwitter: "@nefutrades"
+authors: ["Galaxy"]
+authorTwitter: "@galaxybuilt"
 tags: ["Wallet Security", "Hardware Wallet", "Cold Storage", "Solana", "Phantom", "Solflare", "Ledger", "Trezor", "Keystone", "Tangem"]
 category: "security-privacy"
 subcategory: "hardware-wallets"
@@ -94,7 +94,7 @@ Every serious investor should own a hardware wallet. They integrate seamlessly w
 | **Ledger** | Industry standard, Secure Element chip. | USB / Bluetooth | [Secure Your Crypto with a Ledger Device Today](https://tinyurl.com/ledgernef) |
 | **Trezor** | Fully open-source firmware, strong community trust. | USB | [Explore Trezor's Secure Hardware Wallets](https://tinyurl.com/trezor99) |
 | **Keystone** | Fully air-gapped security (no cables, only QR codes). | QR Code | [Check out the Air-Gapped Keystone Wallet](https://tinyurl.com/keystonenef) |
-| **Tangem** | Credit card-like, battery-free, *seedless* option. | NFC (Mobile Tap) | [Discover the Simple, Seedless Tangem Wallet](https://tinyurl.com/tangemnefu) |
+| **Tangem** | Credit card-like, battery-free, *seedless* option. | NFC (Mobile Tap) | [Discover the Simple, Seedless Tangem Wallet](https://tinyurl.com/tangemgalaxy) |
 
 > **Disclaimer:** Using the links above helps support our blog, and we only recommend devices we personally trust for cold storage. 
 ---

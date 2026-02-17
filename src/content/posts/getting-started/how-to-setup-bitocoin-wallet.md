@@ -5,7 +5,7 @@ date: 2025-11-27
 updatedDate: 2025-12-02 
 image: "/images/posts/bitcoin.jpg"
 heroImageAlt: "Bitcoin hardware wallet (Ledger) connected to phone and laptop showing BTC accumulation via dollar-cost averaging chart"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: ""
 tags: ["bitcoin", "wallet", "self-custody", "dca", "dollar-cost-averaging", "ledger", "electrum", "coinbase", "kraken", "swan-bitcoin", "beginner-guide"]
 category: "getting-started"

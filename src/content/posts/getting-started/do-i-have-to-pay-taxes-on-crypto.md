@@ -5,7 +5,7 @@ date: 2025-12-30
 updatedDate: 2025-12-30
 image: "/images/posts/cryptotax.jpg"
 heroImageAlt: "Illustration showing crypto tax forms and reporting concepts for beginners"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto-taxes", "tax-basics", "crypto-beginners", "reporting"]
 category: "getting-started"

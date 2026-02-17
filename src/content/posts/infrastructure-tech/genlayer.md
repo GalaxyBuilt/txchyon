@@ -5,7 +5,7 @@ date: 2025-12-01
 updatedDate: 2025-12-02 
 image: "/images/posts/genlayer3.jpg"
 heroImageAlt: "Genlayer architecture diagram showing blockchain + traditional oracles + Genlayer as the decentralized AI brain with zkML verification"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Genlayer", "EVM", "AI", "DeFi", "Prediction Markets", "Autonomous Agents", "Web3 AI", "Zero-Knowledge"]
 category: "infrastructure-tech"
@@ -107,7 +107,7 @@ This isn't just something to read about—it's something you can participate in 
 Here’s everything you need:
 
 **Join the Rally.Fun waitlist with my invite (gives you priority + bonus points):**  
-https://waitlist.rally.fun/joinme/NefuTrades
+https://waitlist.rally.fun/joinme/GalaxyBuilt
 
 **Get a fast, audited VPN (use my link for the best deal + extra months free):**  
 https://refer-nordvpn.com/emkOgYiYuRS
@@ -126,7 +126,7 @@ Genlayer isn't just another protocol; it's the **missing layer** for a truly int
 Ready to be part of it?
 
 **1. Grab your VPN →** https://refer-nordvpn.com/emkOgYiYuRS  
-**2. Join Rally.Fun with my link →** https://waitlist.rally.fun/joinme/NefuTrades
+**2. Join Rally.Fun with my link →** https://waitlist.rally.fun/joinme/GalaxyBuilt
 
 The future of blockchain won't be built by code alone. It will be built by code that can think — and the people who get in early.
 

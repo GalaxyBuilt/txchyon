@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/rabby.jpg"
 heroImageAlt: "Rabby Wallet browser extension interface showing address details, assets, and security features"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["rabby-wallet", "evm-wallet", "defi-wallet", "browser-extension-wallet", "multi-chain-wallet", "non-custodial-wallet"]
 category: "getting-started"

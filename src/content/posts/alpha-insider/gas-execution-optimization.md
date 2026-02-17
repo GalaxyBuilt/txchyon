@@ -5,7 +5,7 @@ date: 2026-1-10
 updatedDate: 2026-1-10
 image: "/images/posts/gas-execution-optimization.jpg"
 heroImageAlt: "Ethereum transaction being prioritized in the mempool"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Alpha & Insider Strategies

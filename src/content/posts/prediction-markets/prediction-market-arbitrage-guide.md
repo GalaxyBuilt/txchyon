@@ -5,7 +5,7 @@ date: 2025-12-31
 updatedDate: 2025-12-31
 image: "/images/posts/pmarbitrage.jpg"
 heroImageAlt: "Multiple prediction market screens showing price differences"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "txchyon"
 tags: ["prediction-markets", "arbitrage", "trading"]
 category: "prediction-markets"

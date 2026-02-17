@@ -5,8 +5,8 @@ date: 2025-12-09
 updatedDate: 2025-12-09
 image: "/images/posts/polymarket.png"
 heroImageAlt: "Polymarket Beginner Guide"
-authors: ["Nefu"]
-authorTwitter: "Nefutrades"
+authors: ["Galaxy"]
+authorTwitter: "Galaxytrades"
 tags: ["Polymarket", "Prediction Markets", "DeFi", "Beginner Guides"]
 category: "prediction-markets"
 subcategory: "platform-guides"    # Subcategory (use one from the list above)
@@ -105,7 +105,7 @@ If you’re good at spotting trends early, you can profit consistently.
 Sign up takes under one minute.
 
 👉 **Use my Polymarket link here:**  
-**[https://tinyurl.com/polynefu]**
+**[https://tinyurl.com/polygalaxy]**
 
 This supports the Txchyon blog & future DeFi research.
 
@@ -236,7 +236,7 @@ Yes — if you enjoy:
 Polymarket is one of the most fun and educational platforms in Web3.
 
 👉 **Start here with my Polymarket partner link:**  
-**[https://tinyurl.com/polynefu]**
+**[https://tinyurl.com/polygalaxy]**
 
 This supports the Txchyon blog & helps fund future content and DeFi guides. Check out the rest of our [Prediction Markets](https://txchyon.com/categories/prediction-markets/) category for deep dives on other platforms. Next up: more guides to help you navigate this growing space.
 

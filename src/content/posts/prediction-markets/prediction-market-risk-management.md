@@ -5,7 +5,7 @@ date: 2025-12-31
 updatedDate: 2025-12-31
 image: "/images/posts/pmbankroll.jpg"
 heroImageAlt: "Bankroll growth chart with risk controls"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "txchyon"
 tags: ["prediction-markets", "risk-management", "trading"]
 category: "prediction-markets"

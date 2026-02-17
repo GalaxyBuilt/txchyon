@@ -5,7 +5,7 @@ date: 2025-12-27
 updatedDate: 2025-12-27
 image: "/images/posts/airdrop3.jpg"
 heroImageAlt: "Crypto dashboard visualizing time-based vs volume-based scoring for wallets"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Airdrop Farming

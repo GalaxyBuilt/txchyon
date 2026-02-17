@@ -5,7 +5,7 @@ date: 2025-12-30
 updatedDate: 2025-12-30
 image: "/images/posts/beginners.jpg"
 heroImageAlt: "A beginner planning their first crypto purchase, surrounded by wallets, guides, and security tools"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto-basics", "first-purchase", "wallet-setup", "security", "memecoins"]
 category: "getting-started"

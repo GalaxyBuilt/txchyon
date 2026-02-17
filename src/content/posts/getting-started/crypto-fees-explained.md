@@ -5,7 +5,7 @@ date: 2025-12-30
 updatedDate: 2025-12-30
 image: "/images/posts/networkfees.jpg"
 heroImageAlt: "Illustration showing different types of crypto fees like gas, swap fees, and network fees"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto-fees", "gas", "network-fees", "slippage", "crypto-beginners"]
 category: "getting-started"

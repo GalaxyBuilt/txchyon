@@ -5,7 +5,7 @@ date: 2025-12-30
 updatedDate: 2025-12-30
 image: "/images/posts/beginners2.jpg"
 heroImageAlt: "A calendar showing a 30-day crypto journey with icons for wallets, coins, charts, and security"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["beginner-crypto", "crypto-roadmap", "wallet-setup", "first-purchase", "crypto-education"]
 category: "getting-started"

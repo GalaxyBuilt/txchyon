@@ -5,7 +5,7 @@ date: 2025-12-27
 updatedDate: 2025-12-27
 image: "/images/posts/airdrop6.jpg"
 heroImageAlt: "Crypto dashboard showing multiple wallets and point tracking analytics"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Airdrop Farming

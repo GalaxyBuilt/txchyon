@@ -5,8 +5,8 @@ date: 2025-11-28
 updatedDate: 2025-12-02 
 image: "/images/posts/poly.jpg"
 heroImageAlt: "Polymarket logo and prediction market interface with USDC bets on Polygon"
-authors: ["Nefu"]
-authorTwitter: "@nefutrades"
+authors: ["Galaxy"]
+authorTwitter: "@galaxybuilt"
 tags: ["polymarket", "poly", "airdrop", "prediction-markets", "polygon", "gpoly", "crypto-guide"]
 category: "airdrop-farming"
 subcategory: "points-systems"
@@ -29,7 +29,7 @@ Aim for **$100–$200** in total activity to hit basic thresholds, but scale up 
 Here’s how to get set up and maximize your chances without risking capital unnecessarily.
 
 ## 1. Set Up Your Account and Wallet
-- Sign up on [polymarket.com](https://tinyurl.com/polynefu) → create an account using email or social login (no KYC for most regions; U.S. beta live via QCX).
+- Sign up on [polymarket.com](https://tinyurl.com/polygalaxy) → create an account using email or social login (no KYC for most regions; U.S. beta live via QCX).
 - Connect a Polygon-compatible wallet (MetaMask, Bitget Wallet, etc.). Your linked wallet will receive the $POLY airdrop.
   - Pro tip: Keep ~$5–10 in MATIC for gas.
 - Deposit USDC on Polygon ($50–$100 is plenty to start) via Polygon Bridge, Coinbase, or any major exchange.

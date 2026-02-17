@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/bullbear.jpg"
 heroImageAlt: "Crypto portfolio rebalancing chart for bull and bear market scenarios"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Rebalancing", "Bull Market", "Bear Market", "Risk Management", "Allocation"]
 category: "portfolio-management"

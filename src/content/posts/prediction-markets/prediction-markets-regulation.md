@@ -5,7 +5,7 @@ date: 2025-12-31
 updatedDate: 2025-12-31
 image: "/images/posts/pmregulation.jpg"
 heroImageAlt: "Gavel over prediction market interface"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "txchyon"
 tags: ["prediction-markets", "regulation", "legal"]
 category: "prediction-markets"

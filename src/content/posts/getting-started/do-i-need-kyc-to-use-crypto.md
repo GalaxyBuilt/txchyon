@@ -5,7 +5,7 @@ date: 2025-12-30
 updatedDate: 2025-12-30
 image: "/images/posts/doineedkyc.jpg"
 heroImageAlt: "Illustration of a crypto user facing KYC checkpoints with a shield for privacy"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["kyc", "crypto-privacy", "onboarding", "beginner-guide", "wallet-setup"]
 category: "getting-started"

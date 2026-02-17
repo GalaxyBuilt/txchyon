@@ -5,7 +5,7 @@ date: 2025-12-22
 updatedDate: 2025-12-22
 image: "/images/posts/ethereum3.jpg"
 heroImageAlt: "Illustration of cryptocurrency moving securely from an exchange icon to a personal wallet icon via a protected arrow"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Transfer Crypto", "Exchange to Wallet", "Withdraw Crypto", "Crypto Security", "Beginner Guide", "Self Custody"]
 category: "getting-started"

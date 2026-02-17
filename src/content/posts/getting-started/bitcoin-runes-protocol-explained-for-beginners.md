@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/bitcoin-runes-protocol.jpg"
 heroImageAlt: "Illustration of Bitcoin Runes protocol etching a fungible token on the Bitcoin blockchain"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["bitcoin-runes", "runes-protocol", "fungible-tokens", "bitcoin-memecoins", "bitcoin-defi", "utxo-model"]
 category: "getting-started"

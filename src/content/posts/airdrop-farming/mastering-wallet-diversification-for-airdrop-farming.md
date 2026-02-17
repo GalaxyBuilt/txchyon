@@ -5,7 +5,7 @@ date: 2025-12-27
 updatedDate: 2025-12-27
 image: "/images/posts/mastering-wallet.jpg"
 heroImageAlt: "Multiple cryptocurrency wallets interconnected with digital coins and blockchain nodes"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Airdrop Farming

@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/common-transaction-scams-guide.jpg"
 heroImageAlt: "Warning icons over wallet transaction screens representing common crypto scams"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto scams", "transaction security", "phishing", "drainers", "scam prevention"]
 category: "security-privacy"

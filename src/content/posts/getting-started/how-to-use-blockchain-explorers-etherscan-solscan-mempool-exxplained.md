@@ -5,7 +5,7 @@ date: 2025-12-27
 updatedDate: 2025-12-27
 image: "/images/posts/blockchains.jpg"
 heroImageAlt: "Collage of Mempool.space, Etherscan, and Solscan interfaces showing transaction and wallet details"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["blockchain-explorers", "etherscan", "solscan", "mempool-space", "bitcoin-explorer", "transaction-tracking", "verify-transactions", "wallet-contents"]
 category: "getting-started"

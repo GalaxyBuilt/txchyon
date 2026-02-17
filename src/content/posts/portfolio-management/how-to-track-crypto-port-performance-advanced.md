@@ -5,7 +5,7 @@ date: 2025-12-26
 updatedDate: 2025-12-26
 image: "/images/posts/trackingcryptoadvanced.jpg"
 heroImageAlt: "Crypto portfolio dashboard showing benchmarks, returns, and performance metrics"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Performance Tracking", "Benchmarking", "Returns", "Risk Management", "Allocation"]
 category: "portfolio-management"

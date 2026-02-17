@@ -5,7 +5,7 @@ date: 2025-12-22
 updatedDate: 2025-12-22
 image: "/images/posts/cryptopsychology.jpg"
 heroImageAlt: "A split image showing a calm investor on one side and chaotic price charts with emotional reactions on the other"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Psychology", "Investing Mindset", "FOMO", "Panic Selling", "Emotional Trading", "Beginner Tips", "Discipline"]
 category: "getting-started"

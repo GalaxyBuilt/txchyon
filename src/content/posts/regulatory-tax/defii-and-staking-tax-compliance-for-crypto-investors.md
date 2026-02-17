@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/defi-staking-tax-compliance.jpg"
 heroImageAlt: "Crypto DeFi dashboard showing staking rewards and transaction tracking"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["defi tax compliance", "staking rewards tax", "crypto income reporting", "decentralized finance taxes", "crypto tax strategy"]
 category: "regulatory-tax"

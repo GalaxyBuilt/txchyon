@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/dollarcostaverage.jpg"
 heroImageAlt: "A line chart showing steady DCA purchases smoothing out volatile crypto price swings over time"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Dollar Cost Averaging", "DCA Crypto", "Crypto Investing Strategy", "Beginner Strategy", "Reduce Volatility", "Long Term Investing"]
 category: "getting-started"

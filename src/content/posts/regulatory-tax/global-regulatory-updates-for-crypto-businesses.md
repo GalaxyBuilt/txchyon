@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/global-crypto-regulations.jpg"
 heroImageAlt: "World map with crypto compliance icons"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["global crypto regulations", "crypto compliance", "international crypto rules", "crypto business reporting", "crypto laws worldwide"]
 category: "regulatory-tax"

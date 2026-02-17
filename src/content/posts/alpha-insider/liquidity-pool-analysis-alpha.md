@@ -5,7 +5,7 @@ date: 2026-1-10
 updatedDate: 2026-1-10
 image: "/images/posts/mempool2.jpg"
 heroImageAlt: "Visualization of a DEX liquidity pool with token ratios and depth charts"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Alpha & Insider Strategies

@@ -5,7 +5,7 @@ date: 2025-12-30
 updatedDate: 2025-12-30
 image: "/images/posts/trackcryptoportfolio.jpg"
 heroImageAlt: "A simple dashboard showing crypto portfolio tracking for beginners"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["portfolio-tracking", "crypto-beginners", "wallets", "apps", "privacy"]
 category: "getting-started"

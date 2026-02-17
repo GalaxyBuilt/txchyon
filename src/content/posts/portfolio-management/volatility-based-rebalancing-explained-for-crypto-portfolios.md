@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/rebalancing2.jpg"
 heroImageAlt: "Crypto portfolio chart adjusting asset weights based on volatility"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Volatility Rebalancing", "Risk Management", "Allocation", "Performance Tracking"]
 category: "portfolio-management"

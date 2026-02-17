@@ -5,7 +5,7 @@ date: 2025-12-03
 updatedDate: 2025-12-29
 image: "/images/posts/raydium.jpg"
 heroImageAlt: "Conceptual image of blockchain technology, coins, and charts representing decentralized finance and cryptocurrency trading"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["DEX", "DeFi", "Yield Farming", "Liquidity Pool", "Trading Fees", "Uniswap", "PancakeSwap", "Curve Finance"]
 category: "trading-investing"

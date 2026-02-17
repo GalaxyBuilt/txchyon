@@ -5,7 +5,7 @@ date: 2025-12-26
 updatedDate: 2025-12-26
 image: "/images/posts/riskmanagement.jpg"
 heroImageAlt: "Crypto risk management diagram showing position sizing, diversification, and drawdown control"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Risk Management", "Drawdowns", "Bitcoin", "Ethereum", "Investing"]
 category: "portfolio-management"

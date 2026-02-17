@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/algorithmic.jpg"
 heroImageAlt: "Automated crypto rebalancing dashboard showing portfolio allocations and trades"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Algorithmic Rebalancing", "Automation", "Risk Management", "Allocation"]
 category: "portfolio-management"

@@ -5,7 +5,7 @@ date: 2026-1-2
 updatedDate: 2026-1-2
 image: "/images/posts/kalshi2.jpg"
 heroImageAlt: "Liquidity pools visualization with yes/no shares"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "txchyon"
 tags: ["prediction-markets", "passive-income", "liquidity", "kalshi"]
 category: "prediction-markets"

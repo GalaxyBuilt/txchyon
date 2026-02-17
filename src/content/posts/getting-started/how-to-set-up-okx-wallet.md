@@ -5,7 +5,7 @@ date: 2025-12-24
 updatedDate: 2025-12-24
 image: "/images/posts/okx.jpg"
 heroImageAlt: "OKX Wallet dashboard showing multi-chain assets and balance overview"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["okx-wallet", "multi-chain-wallet", "defi-wallet", "nft-wallet", "non-custodial-wallet", "web3-wallet"]
 category: "getting-started"

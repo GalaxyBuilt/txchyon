@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/crypto-banking-solutions.jpg"
 heroImageAlt: "Business banking dashboard with crypto integration"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto banking solutions", "crypto-friendly banks", "stablecoin payments", "crypto business banking", "international crypto banking"]
 category: "regulatory-tax"

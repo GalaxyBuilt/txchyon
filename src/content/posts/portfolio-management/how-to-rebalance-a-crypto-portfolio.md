@@ -5,7 +5,7 @@ date: 2025-12-26
 updatedDate: 2025-12-26
 image: "/images/posts/howtorebalance.jpg"
 heroImageAlt: "Crypto portfolio rebalancing chart showing asset weights returning to target allocation"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Rebalancing", "Risk Management", "Bitcoin", "Ethereum", "Investing"]
 category: "portfolio-management"

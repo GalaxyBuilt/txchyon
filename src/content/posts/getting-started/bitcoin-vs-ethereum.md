@@ -5,7 +5,7 @@ date: 2025-12-22
 updatedDate: 2025-12-22
 image: "/images/posts/bitcoinvsethereum.jpg"
 heroImageAlt: "Side-by-side illustration of Bitcoin and Ethereum logos with a balanced scale in the background"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Bitcoin vs Ethereum", "BTC vs ETH", "Crypto for Beginners", "Which Crypto to Buy First", "Blockchain Comparison"]
 category: "getting-started"

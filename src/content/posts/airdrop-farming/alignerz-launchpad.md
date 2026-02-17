@@ -5,8 +5,8 @@ date: 2025-11-26
 updatedDate: 2025-12-02
 image: "/images/posts/alignerz.jpg"
 heroImageAlt: "AlignerZ logo with IWO pools, TVS NFTs, and Wallchain Quacks leaderboard"
-authors: ["Nefu"]
-authorTwitter: "@nefutrades"
+authors: ["Galaxy"]
+authorTwitter: "@galaxybuilt"
 tags: ["AlignerZ", "A26Z", "Launchpad", "IWO", "TVS", "Wallchain", "Airdrop", "Polygon", "AttentionFi"]
 sticky: true
 category: "airdrop-farming"
@@ -17,9 +17,9 @@ draft: false
 
 # AlignerZ Launchpad: The First Truly Aligned Launchpad — Why This Changes Everything in Web3
 
-**Author:** NefuTrades  
+**Author:** GalaxyBuilt  
 **Date:** November 25, 2025  
-**Follow me on X:** [@nefutrades](https://x.com/nefutrades)  
+**Follow me on X:** [@galaxybuilt](https://x.com/galaxybuilt)  
 
 ## The Problem With Every Launchpad You’ve Ever Used
 
@@ -74,7 +74,7 @@ Total supply: **26,000,000** $A26Z (fixed)
 This is one of the most generous and fair airdrops of 2025.
 
 **Join here with my referral (helps both of us climb the leaderboard):**  
-[https://quacks.app/?ref=NefuTrades](https://quacks.app/?ref=NefuTrades)
+[https://quacks.app/?ref=GalaxyBuilt](https://quacks.app/?ref=GalaxyBuilt)
 
 Just connect your X account → start posting about AlignerZ → watch your Quacks stack.
 
@@ -100,12 +100,12 @@ CEX listing targeted at ~$0.50.
 Get in the airdrop now while it’s still early.
 
 **Your move:**  
-1. Click → [https://quacks.app/?ref=NefuTrades](https://quacks.app/?ref=NefuTrades)  
+1. Click → [https://quacks.app/?ref=GalaxyBuilt](https://quacks.app/?ref=GalaxyBuilt)  
 2. Start quacking  
-3. Follow [@nefutrades](https://x.com/nefutrades) for daily updates  
+3. Follow [@galaxybuilt](https://x.com/galaxybuilt) for daily updates  
 4. Share this post so more people discover real alignment
 
 Let’s build the future that actually lasts.
 
 Get my weekly watchlist + 48h yield alerts → [[Beehiiv subscribe link](https://tinyurl.com/txchyonnewsletter)]
-– Nefu
+– Galaxy

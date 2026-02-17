@@ -5,7 +5,7 @@ date: 2026-01-02
 updatedDate: 2026-01-02
 image: "/images/posts/tokenomics.jpg"
 heroImageAlt: "Crypto token metrics, charts, and supply analysis on a futuristic digital interface"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Crypto Tokenomics

@@ -5,7 +5,7 @@ date: 2025-12-26
 updatedDate: 2025-12-26
 image: "/images/posts/taxloss.jpg"
 heroImageAlt: "Crypto portfolio showing realized losses being applied to reduce taxes"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Tax-Loss Harvesting", "Capital Gains", "Tax Planning", "Bitcoin", "Ethereum"]
 category: "portfolio-management"

@@ -5,7 +5,7 @@ date: 2026-1-09
 updatedDate: 2026-1-09
 image: "/images/posts/spot-new-dex-pairs.jpg"
 heroImageAlt: "DEX interface highlighting newly added trading pairs"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Alpha & Insider Strategies

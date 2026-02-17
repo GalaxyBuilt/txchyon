@@ -5,7 +5,7 @@ date: 2025-12-06
 updatedDate: 2025-12-06
 image: "/images/posts/solana_revoke_approvals_hero.jpg"
 heroImageAlt: "A digital lock being broken by a computer interface, symbolizing the revocation of permissions"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Security", "Wallet Hygiene", "Token Approvals", "Solana", "Scam Prevention", "Phantom"]
 category: "security-privacy"

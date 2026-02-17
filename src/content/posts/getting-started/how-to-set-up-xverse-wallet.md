@@ -5,7 +5,7 @@ date: 2025-12-26
 updatedDate: 2025-12-26
 image: "/images/posts/xverse.jpg"
 heroImageAlt: "Xverse Wallet app interface showing Bitcoin balance and assets"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["bitcoin-wallet", "xverse", "ordinals", "runes", "stacks", "bitcoin-defi", "non-custodial-wallet"]
 category: "getting-started"

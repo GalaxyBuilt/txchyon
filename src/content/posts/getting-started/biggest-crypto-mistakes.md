@@ -5,7 +5,7 @@ date: 2025-12-18
 updatedDate: 2025-12-18
 image: "/images/posts/mistakescrop.jpg"
 heroImageAlt: "A beginner investor looking worried at a crashing crypto chart on a screen, with warning symbols around"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Mistakes", "Beginner Errors", "Common Pitfalls", "Crypto Investing", "Avoid Losses", "Security Tips", "Trading Psychology"]
 category: "getting-started"

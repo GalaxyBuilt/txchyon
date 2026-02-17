@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/best-crypto-analytics-platforms-2026.jpg"
 heroImageAlt: "Crypto analytics dashboard showing wallet tracking and smart money signals"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto analytics", "on-chain analytics", "wallet tracking", "smart money", "blockchain tools"]
 category: "tools-automation"

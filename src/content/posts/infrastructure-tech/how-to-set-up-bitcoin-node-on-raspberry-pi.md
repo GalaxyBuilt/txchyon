@@ -5,7 +5,7 @@ date: 2025-12-29
 updatedDate: 2025-12-29
 image: "/images/posts/bitcoin-node2.jpg"
 heroImageAlt: "Raspberry Pi running Bitcoin Core with blockchain syncing"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["bitcoin", "bitcoin node", "raspberry pi", "full node", "diy setup"]
 category: "infrastructure-tech"

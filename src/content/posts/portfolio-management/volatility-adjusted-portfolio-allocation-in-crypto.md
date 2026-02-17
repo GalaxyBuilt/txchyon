@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/allocation2.jpg"
 heroImageAlt: "Crypto portfolio allocation chart adjusting weights based on volatility"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Volatility", "Allocation", "Risk Management", "Bitcoin", "Ethereum"]
 category: "portfolio-management"

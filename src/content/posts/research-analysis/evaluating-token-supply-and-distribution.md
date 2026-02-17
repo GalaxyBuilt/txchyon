@@ -5,7 +5,7 @@ date: 2026-01-02
 updatedDate: 2026-01-02
 image: "/images/posts/tokensupply.jpg"
 heroImageAlt: "Crypto investor analyzing token supply and distribution charts on a digital dashboard"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Crypto Tokenomics

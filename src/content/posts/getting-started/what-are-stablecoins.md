@@ -5,7 +5,7 @@ date: 2025-12-30
 updatedDate: 2025-12-30
 image: "/images/posts/whatarestablecoins.jpg"
 heroImageAlt: "Stablecoins illustrated as stable platforms supporting crypto users"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["stablecoins", "usdc", "usdt", "crypto-beginners", "parking-funds"]
 category: "getting-started"

@@ -5,7 +5,7 @@ date: 2025-12-21
 updatedDate: 2025-12-21
 image: "/images/posts/revokecash2.jpg"
 heroImageAlt: "A digital lock with multiple chains (Ethereum, BNB, Arbitrum logos) connected, symbolizing multi-chain security management"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["EVM", "Ethereum", "Arbitrum", "BSC", "Security", "Token Allowance", "Revoke.cash", "DeFi"]
 category: "security-privacy"

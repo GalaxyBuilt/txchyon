@@ -5,8 +5,8 @@ date: 2025-11-27
 updatedDate: 2025-12-02 
 image: "/images/posts/iopn2.jpg"
 heroImageAlt: "Txchyon Capital logo glowing on a dark asteroid field with Aster and Bitcoin charts in the background"
-authors: ["Nefu"]
-authorTwitter: "@nefutrades"
+authors: ["Galaxy"]
+authorTwitter: "@galaxybuilt"
 tags: ["Txchyon", "Txchyon Capital", "Aster", "Bitcoin", "On-Chain Alpha", "Research", "Media", "DeFi", "Private Fund"]
 sticky: true
 category: "research-analysis"
@@ -79,7 +79,7 @@ I’m planting my flag:
 
 ## How to Stay in the Loop
 
-- Follow me on X: [@nefutrades](https://twitter.com/@nefutrades)  
+- Follow me on X: [@galaxybuilt](https://twitter.com/@galaxybuilt)  
  Bookmark the research blog: https://txchyon.com
  Turn on notifications — new alpha drops 2–4× per week  
 
@@ -95,6 +95,6 @@ Welcome to Txchyon Capital.
 
 Let’s build something real.
 
-— Nefu  
+— Galaxy  
 Sole Owner & Operator, Txchyon Capital  
 26 Nov 2025

@@ -5,7 +5,7 @@ date: 2025-11-21
 updatedDate: 2025-12-02 
 image: "/images/posts/aster-rocket.jpg"
 heroImageAlt: "Aster, Drift, and Hyperliquid logos with live volume, funding, and OI comparison"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Aster", "Drift", "Hyperliquid", "Solana", "Perps", "Funding", "Liquidity", "Smart Money"]
 category: "trading-investing"

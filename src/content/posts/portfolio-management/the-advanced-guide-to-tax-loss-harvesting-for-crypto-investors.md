@@ -5,7 +5,7 @@ date: 2025-12-26
 updatedDate: 2025-12-26
 image: "/images/posts/taxloss.jpg"
 heroImageAlt: "Crypto portfolio showing tax-loss harvesting strategies and realized losses"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Tax-Loss Harvesting", "Tax Optimization", "Rebalancing", "Risk Management", "Multi-Chain"]
 category: "portfolio-management"

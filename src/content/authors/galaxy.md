@@ -1,7 +1,7 @@
 ---
 title: Galaxy
 meta_title: "Galaxy"
-image: /images/authors/nefutrades.jpg
+image: /images/authors/galaxy.jpg
 description: Founder of Txchyon
 social:
   

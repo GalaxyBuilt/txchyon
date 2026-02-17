@@ -5,7 +5,7 @@ date: 2025-12-29
 updatedDate: 2025-12-29
 image: "/images/posts/trust.jpg"
 heroImageAlt: "Trust Wallet mobile app dashboard showing multi-chain assets and portfolio overview"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["trust-wallet", "mobile-wallet", "multi-chain-wallet", "defi-wallet", "nft-wallet", "non-custodial-wallet"]
 category: "getting-started"

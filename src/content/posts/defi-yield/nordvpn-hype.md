@@ -5,7 +5,7 @@ date: 2025-11-28
 updatedDate: 2025-12-02 
 image: "/images/posts/hyperliquid.jpg"
 heroImageAlt: "NordVPN connected to New York server with Hyperliquid dashboard open and MetaMask connected"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["NordVPN", "Hyperliquid", "Arbitrum", "Perps", "DeFi Security", "Privacy", "VPN", "Anonymity", "Trading Guide"]
 category: "defi-yield"
@@ -84,7 +84,7 @@ Drop a comment if you want the same guide for Drift, Aster, GMX, or Bybit — al
 
 Stay safe out there.
 
-— Nefu (@nefutrades)  
+— Galaxy (@galaxybuilt)  
 txchyon.com
 
 *(When you’re ready to grab NordVPN, use my link again — it’s the cheapest you’ll ever see it and keeps these guides coming.)*

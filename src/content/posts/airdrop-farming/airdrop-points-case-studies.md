@@ -5,7 +5,7 @@ date: 2025-12-29
 updatedDate: 2025-12-29
 image: "/images/posts/airdrop1.jpg"
 heroImageAlt: "Blockchain dashboard visualizing crypto airdrop points and user activity scoring"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Airdrop Farming

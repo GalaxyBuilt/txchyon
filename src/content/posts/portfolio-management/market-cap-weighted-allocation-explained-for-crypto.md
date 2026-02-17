@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/marketcapweighted.jpg"
 heroImageAlt: "Crypto portfolio chart showing market cap weighted allocation among Bitcoin, Ethereum, and altcoins"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Market Cap Allocation", "Risk Management", "Bitcoin", "Ethereum"]
 category: "portfolio-management"

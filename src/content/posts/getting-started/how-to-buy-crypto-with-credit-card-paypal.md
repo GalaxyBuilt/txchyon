@@ -5,7 +5,7 @@ date: 2025-12-21
 updatedDate: 2025-12-21
 image: "/images/posts/paypal.jpg"
 heroImageAlt: "A credit card and PayPal logo next to Bitcoin and Ethereum coins on a secure payment background"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Buy Crypto Credit Card", "Buy Crypto PayPal", "Fast Crypto Purchase", "Beginner Guide", "Payment Methods", "Crypto Exchanges"]
 category: "getting-started"

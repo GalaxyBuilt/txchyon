@@ -5,7 +5,7 @@ date: 2025-12-24
 updatedDate: 2025-12-24
 image: "/images/posts/tangem-wallet-setup-2026.jpg"
 heroImageAlt: "A hand holding a Tangem hardware wallet card tapping on a smartphone during setup"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Tangem Wallet", "Hardware Wallet", "Setup Guide", "Cold Storage", "Crypto Security", "Beginner Tutorial", "NFC Wallet"]
 category: "security-privacy"

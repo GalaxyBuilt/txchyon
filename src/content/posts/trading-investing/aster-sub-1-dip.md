@@ -5,8 +5,8 @@ date: 2025-11-20
 updatedDate: 2025-12-02 
 image: "/images/posts/aster.jpg"
 heroImageAlt: "ASTER price chart wicked below $1 with explosive OI, funding, and Meteora inflows"
-authors: ["Nefu"]
-authorTwitter: "@nefutrades"
+authors: ["Galaxy"]
+authorTwitter: "@galaxybuilt"
 tags: ["ASTER", "Solana", "Perps", "Funding", "Accumulation", "Price Target"]
 category: "trading-investing"
 subcategory: "market-analysis"

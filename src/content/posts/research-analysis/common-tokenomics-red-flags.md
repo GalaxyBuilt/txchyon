@@ -5,7 +5,7 @@ date: 2026-01-02
 updatedDate: 2026-01-02
 image: "/images/posts/redflags2.jpg"
 heroImageAlt: "Crypto warning signs with charts and tokens, highlighting red flags"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Crypto Tokenomics

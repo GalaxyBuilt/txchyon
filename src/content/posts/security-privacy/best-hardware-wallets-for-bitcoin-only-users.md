@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/best-bitcoin-only-hardware-wallets-2026.jpg"
 heroImageAlt: "Top Bitcoin-only hardware wallets: Coldcard, Passport, Jade, and Trezor Safe 3"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["bitcoin only", "hardware wallet", "coldcard", "foundation passport", "blockstream jade", "trezor safe 3", "bitcoin security"]
 category: "security-privacy"

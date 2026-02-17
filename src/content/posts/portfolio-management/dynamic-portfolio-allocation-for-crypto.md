@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/allocation3.jpg"
 heroImageAlt: "Dynamic crypto portfolio allocation chart adjusting percentages for market conditions"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Dynamic Allocation", "Risk Management", "Bitcoin", "Ethereum", "Investing"]
 category: "portfolio-management"

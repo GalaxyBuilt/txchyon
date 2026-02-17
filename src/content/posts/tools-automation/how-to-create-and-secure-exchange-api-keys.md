@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/how-to-create-secure-exchange-api-keys.jpg"
 heroImageAlt: "Exchange API key creation and security settings dashboard"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["exchange API keys", "crypto API security", "trading bot API", "crypto automation", "API permissions"]
 category: "tools-automation"

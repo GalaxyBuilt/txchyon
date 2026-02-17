@@ -5,7 +5,7 @@ date: 2025-12-21
 updatedDate: 2025-12-21
 image: "/images/posts/4yearcycle.jpg"
 heroImageAlt: "Historical Bitcoin price chart illustrating 4-year cycles and halvings"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["bitcoin-cycle", "halving", "bull-run", "bear-market", "altcoins", "crypto-cycles", "market-psychology"]
 category: "getting-started"

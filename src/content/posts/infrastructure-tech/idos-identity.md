@@ -5,7 +5,7 @@ date: 2025-11-25
 updatedDate: 2025-12-02 
 image: "/images/posts/idos.jpg"
 heroImageAlt: "idOS decentralized identity vault connected to Ethereum, Solana, NEAR, Starknet, Arbitrum, Cosmos"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["idOS", "decentralized-identity", "zk", "kyc", "sybil-resistance", "airdrop", "wallchain"]
 category: "infrastructure-tech"

@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/best-solana-trading-bots-2026.jpg"
 heroImageAlt: "Solana meme coin trading bots executing fast on-chain transactions"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Solana trading bots", "meme coin bots", "Telegram trading bots", "Solana sniping bots", "Jupiter bots"]
 category: "tools-automation"

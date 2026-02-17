@@ -5,7 +5,7 @@ date: 2026-1-3
 updatedDate: 2026-1-3
 image: "/images/posts/airdrops3.jpg"
 heroImageAlt: "Crypto wallet dashboard showing activity metrics and eligibility scores"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Airdrop Farming

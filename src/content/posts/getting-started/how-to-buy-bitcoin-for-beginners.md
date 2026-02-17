@@ -5,7 +5,7 @@ date: 2025-12-24
 updatedDate: 2025-12-24
 image: "/images/posts/bitcoincrop.jpg"
 heroImageAlt: "A beginner-friendly step-by-step flowchart showing the process of buying Bitcoin on a phone and laptop screen"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["How to Buy Bitcoin", "Buy BTC Beginners", "Bitcoin for Beginners", "First Bitcoin Purchase", "Crypto Buying Guide"]
 category: "getting-started"

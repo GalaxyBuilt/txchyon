@@ -5,7 +5,7 @@ date: 2025-12-19
 updatedDate: 2025-12-19
 image: "/images/posts/solana1.jpg"
 heroImageAlt: "Four different logos representing crypto projects on Solana (NFT, DeFi, Derivatives) arranged like a snowball"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Airdrop", "Solana", "Tensor", "Pumpfun", "Farming Strategy", "Crypto Rewards", "Security"]
 category: airdrop-farming

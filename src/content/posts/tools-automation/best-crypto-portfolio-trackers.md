@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/best-crypto-portfolio-trackers-2026.jpg"
 heroImageAlt: "Crypto portfolio tracker dashboard showing multiple wallets, tokens, and NFT assets"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto portfolio trackers", "DeFi tracking", "NFT tracking", "wallet tracking", "multi-wallet dashboards"]
 category: "tools-automation"

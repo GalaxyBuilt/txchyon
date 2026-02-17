@@ -5,7 +5,7 @@ date: 2025-12-23
 updatedDate: 2025-12-23
 image: "/images/posts/what-are-memecoins-beginners.jpg"
 heroImageAlt: "Collage of popular memecoin logos including Dogecoin, Shiba Inu, and PEPE"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["memecoins", "dogecoin", "shiba-inu", "pepe-coin", "meme-cryptocurrency", "crypto-risks"]
 category: "getting-started"

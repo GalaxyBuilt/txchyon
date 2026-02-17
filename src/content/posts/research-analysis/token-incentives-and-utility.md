@@ -5,7 +5,7 @@ date: 2026-01-02
 updatedDate: 2026-01-02
 image: "/images/posts/tokenincentives.jpg"
 heroImageAlt: "Crypto ecosystem with token rewards, staking, and blockchain activity visualized digitally"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags:
   - Crypto Tokenomics

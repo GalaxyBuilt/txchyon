@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/timebased.jpg"
 heroImageAlt: "Crypto portfolio chart showing time-based vs threshold rebalancing methods"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Rebalancing", "Risk Management", "Allocation", "Performance Tracking"]
 category: "portfolio-management"

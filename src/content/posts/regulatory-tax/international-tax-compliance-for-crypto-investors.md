@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/international-crypto-tax.jpg"
 heroImageAlt: "World map with crypto coins and tax forms overlay"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["international crypto tax", "cross-border crypto reporting", "crypto tax compliance", "global crypto regulations", "crypto tax strategy"]
 category: "regulatory-tax"

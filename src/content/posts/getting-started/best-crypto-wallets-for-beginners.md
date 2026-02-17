@@ -5,7 +5,7 @@ date: 2025-12-22
 updatedDate: 2025-12-22
 image: "/images/posts/ledgerhero.jpg"
 heroImageAlt: "A selection of popular crypto wallets displayed on devices, including hardware wallets like Ledger and Trezor alongside mobile apps"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Wallets", "Best Wallets 2026", "Beginner Wallets", "Hardware Wallet", "Software Wallet", "Wallet Reviews", "Security"]
 category: "getting-started"

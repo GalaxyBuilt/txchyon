@@ -5,7 +5,7 @@ date: 2025-12-24
 updatedDate: 2025-12-24
 image: "/images/posts/best-hardware-wallets-2026.jpg"
 heroImageAlt: "A collection of popular hardware crypto wallets including Ledger Nano X, Trezor Model T, and Tangem cards arranged on a secure background"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Hardware Wallet", "Cold Storage", "Crypto Security", "Ledger", "Trezor", "Tangem", "Best Wallet 2026", "Beginner Guide"]
 category: "security-privacy"

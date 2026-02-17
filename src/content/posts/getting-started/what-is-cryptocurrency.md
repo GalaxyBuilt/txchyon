@@ -5,7 +5,7 @@ date: 2025-12-22
 updatedDate: 2025-12-22
 image: "/images/posts/whatiscrypto4crop.jpg"
 heroImageAlt: "A visual representation of a blockchain as interconnected digital blocks secured by cryptographic locks, with Bitcoin and Ethereum symbols"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["What is Cryptocurrency", "Blockchain Explained", "Crypto Basics", "Beginner Guide", "Bitcoin", "Ethereum", "Decentralization"]
 category: "getting-started"

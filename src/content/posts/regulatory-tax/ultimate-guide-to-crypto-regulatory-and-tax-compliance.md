@@ -5,7 +5,7 @@ date: 2025-12-27
 updatedDate: 2025-12-27
 image: "/images/posts/taxesguide.jpg"
 heroImageAlt: "Crypto compliance dashboard showing tax reports, banking solutions, and regulatory tools"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto tax reporting", "global crypto regulations", "crypto compliance tools", "entity formation", "banking solutions", "audit and accounting"]
 category: "regulatory-tax"

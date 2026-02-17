@@ -5,7 +5,7 @@ date: 2026-01-01
 updatedDate: 2026-01-01
 image: "/images/posts/cryptoanalytics.jpg"
 heroImageAlt: "Crypto analytics dashboard showing on-chain metrics and wallet activity"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["crypto analytics", "on-chain data", "wallet tracking", "token analytics", "crypto tools"]
 category: "tools-automation"

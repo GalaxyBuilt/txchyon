@@ -5,7 +5,7 @@ date: 2025-12-25
 updatedDate: 2025-12-25
 image: "/images/posts/rebalancing.jpg"
 heroImageAlt: "Crypto portfolio rebalancing chart highlighting tax optimization"
-authors: ["Nefu"]
+authors: ["Galaxy"]
 authorTwitter: "@txchyon"
 tags: ["Crypto Portfolio", "Tax-Efficient Rebalancing", "Tax-Loss Harvesting", "Allocation", "Risk Management"]
 category: "portfolio-management"
