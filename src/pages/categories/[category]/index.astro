@@ -55,44 +55,55 @@ const categoryData = CATEGORY_HIERARCHY[category];
   title={`${categoryData?.name || category} // Repository // Txchyon OS`}
   description={`Institutional-grade research and systematic alpha for ${categoryData?.name || category}. Private intelligence for professional capital.`}
 >
-  <div class="container mx-auto px-4 py-8">
-    <header class="mb-12">
-      <div class="flex items-center gap-4 mb-4">
-        <span class="text-4xl">{categoryData?.icon || '📁'}</span>
-        <h1 class="text-4xl font-bold dark:text-white text-gray-900">
-          {categoryData?.name || category}
-        </h1>
-      </div>
-      
-      {categoryData?.description && (
-        <p class="text-xl dark:text-gray-400 text-gray-600 max-w-3xl">
-          {categoryData.description}
-        </p>
-      )}
-      
-      <div class="mt-8">
-        <p class="text-lg dark:text-white text-gray-900">
-          <span class="font-semibold">{categoryPosts.length}</span> 
-          {categoryPosts.length === 1 ? ' post' : ' posts'} in this category
-        </p>
-      </div>
-    </header>
+  <section class="min-h-screen dark:bg-black bg-white py-24 relative overflow-hidden">
+    {/* Background Accents */}
+    <div class="absolute inset-0 dark:bg-[radial-gradient(#ffffff05_1px,transparent_1px)] bg-[radial-gradient(#00000005_1px,transparent_1px)] [background-size:32px_32px]"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      {/* Category Header */}
+      <header class="max-w-4xl mb-20">
+        <div class="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-8">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></span>
+          <span class="text-[10px] font-black text-cyan-500 uppercase tracking-[0.2em]">Cluster_Node_Active</span>
+        </div>
+        
+        <div class="flex items-center gap-6 mb-8">
+          <span class="text-6xl filter drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">{categoryData?.icon || '📁'}</span>
+          <h1 class="text-5xl md:text-7xl font-black dark:text-white text-gray-900 italic tracking-tighter uppercase leading-none">
+            {categoryData?.name || category}<span class="text-cyan-500">_</span>
+          </h1>
+        </div>
+        
+        {categoryData?.description && (
+          <p class="text-xl md:text-2xl dark:text-gray-400 text-gray-600 font-medium italic leading-relaxed max-w-2xl">
+            {categoryData.description}
+          </p>
+        )}
+        
+        <div class="mt-12 flex items-center gap-4 text-[11px] font-black text-gray-400 dark:text-gray-600 uppercase tracking-widest border-t border-gray-100 dark:border-white/5 pt-8">
+          <span class="text-cyan-500">{categoryPosts.length}</span> 
+          <span>Active_Intels_Found</span>
+          <div class="h-px w-24 bg-gradient-to-r from-cyan-500/30 to-transparent"></div>
+        </div>
+      </header>
 
-    {categoryPosts.length > 0 ? (
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {categoryPosts.map(post => (
-          <PostCard post={post} />
-        ))}
-      </div>
-    ) : (
-      <div class="text-center py-12">
-        <div class="text-6xl mb-4">📭</div>
-        <h2 class="text-2xl font-semibold mb-2 dark:text-white text-gray-900">No posts found</h2>
-        <p class="dark:text-gray-400 text-gray-600 max-w-md mx-auto">
-          No posts in the "{categoryData?.name || category}" category yet.
-          Check back soon or browse other categories.
-        </p>
-      </div>
-    )}
-  </div>
+      {/* Posts Grid */}
+      {categoryPosts.length > 0 ? (
+        <div class="mb-24">
+          <Posts posts={categoryPosts} className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3" fluid={false} />
+        </div>
+      ) : (
+        <div class="relative py-24 rounded-[3rem] border border-dashed border-gray-200 dark:border-white/10 text-center max-w-2xl mx-auto">
+          <div class="text-6xl mb-6 opacity-30 italic font-black text-gray-400">000_</div>
+          <h2 class="text-2xl font-black mb-3 dark:text-white text-gray-900 uppercase italic">No_Data_Streams</h2>
+          <p class="dark:text-gray-400 text-gray-600 font-medium italic mb-8">
+            No intelligence briefings found in the "{categoryData?.name || category}" cluster yet.
+          </p>
+          <a href="/blog" class="inline-flex items-center gap-2 text-[10px] font-black uppercase text-cyan-500 tracking-widest hover:gap-4 transition-all">
+            Return_To_Repository_Base <span>→</span>
+          </a>
+        </div>
+      )}
+    </div>
+  </section>
 </BaseLayout>

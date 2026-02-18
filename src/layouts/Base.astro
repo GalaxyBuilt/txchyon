@@ -52,8 +52,8 @@ const finalTitle = meta_title ?? title ?? config.site.title;
 const finalDescription = description ?? config.metadata.meta_description;
 
 const finalImage = image && typeof image === 'string' && image.trim()
-  ? `${config.site.base_url}${image.startsWith("/") ? "" : "/"}${image}`
-  : `${config.site.base_url}${config.metadata.meta_image}`;
+  ? (image.startsWith("http") ? image : `${config.site.base_url}${image.startsWith("/") ? "" : "/"}${image}`)
+  : config.metadata.meta_image;
 
 const cleanPath = Astro.url.pathname.replace(/\/$/, "");
 const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;

@@ -27,23 +27,54 @@ const title = humanize(tag || "");
 ---
 
 <Base title={`Alpha Node: ${title || "Tag"} // Txchyon OS`}>
-  <div class="section">
-    <div class="container">
-      <p class="text-center text-2xl mb-4">Showing Posts From</p>
-      <h1 class="h2 mb-16 text-center text-primary">{title}</h1>
+  <section class="min-h-screen dark:bg-black bg-white py-24 relative overflow-hidden">
+    {/* Background Accents */}
+    <div class="absolute inset-0 dark:bg-[radial-gradient(#ffffff05_1px,transparent_1px)] bg-[radial-gradient(#00000005_1px,transparent_1px)] [background-size:32px_32px]"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      {/* Tag Header */}
+      <header class="max-w-4xl mb-20 text-center md:text-left">
+        <div class="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 mb-8 mx-auto md:mx-0">
+          <span class="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse"></span>
+          <span class="text-[10px] font-black text-purple-500 uppercase tracking-[0.2em]">Alpha_Node_Active</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-black dark:text-white text-gray-900 italic tracking-tighter uppercase mb-6 leading-none">
+          {title}<span class="text-purple-500">_</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl dark:text-gray-400 text-gray-600 font-medium italic leading-relaxed max-w-2xl mx-auto md:mx-0">
+          Filtering protocol intelligence by the <span class="text-purple-500 font-black">#{title}</span> taxonomic cluster.
+        </p>
 
-      <!-- Posts Grid using your original PostCard design -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="mt-12 flex items-center justify-center md:justify-start gap-4 text-[11px] font-black text-gray-400 dark:text-gray-600 uppercase tracking-widest border-t border-gray-100 dark:border-white/5 pt-8">
+          <span class="text-purple-500">{sortedPosts.length}</span> 
+          <span>Active_Intels_Mapped</span>
+          <div class="h-px w-24 bg-gradient-to-r from-purple-500/30 to-transparent"></div>
+        </div>
+      </header>
+
+      {/* Posts Grid */}
+      <div class="mb-24">
         {sortedPosts.length > 0 ? (
-          sortedPosts.map(post => (
-            <PostCard post={post} />
-          ))
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {sortedPosts.map(post => (
+              <PostCard post={post} />
+            ))}
+          </div>
         ) : (
-          <p class="col-span-full text-center text-gray-500 py-12">
-            No posts found with this tag.
-          </p>
+          <div class="relative py-24 rounded-[3rem] border border-dashed border-gray-200 dark:border-white/10 text-center max-w-2xl mx-auto">
+            <div class="text-6xl mb-6 opacity-30 italic font-black text-gray-400">000_</div>
+            <h2 class="text-2xl font-black mb-3 dark:text-white text-gray-900 uppercase italic">No_Intel_Mapped</h2>
+            <p class="dark:text-gray-400 text-gray-600 font-medium italic mb-8">
+              No active data streams match this taxonomic cluster yet.
+            </p>
+            <a href="/blog" class="inline-flex items-center gap-2 text-[10px] font-black uppercase text-purple-500 tracking-widest hover:gap-4 transition-all text-center">
+              Return_To_Repository_Base <span>→</span>
+            </a>
+          </div>
         )}
       </div>
     </div>
-  </div>
+  </section>
 </Base>

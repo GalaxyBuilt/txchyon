@@ -5,11 +5,11 @@
       "dropdown": [
         {
           "name": "Project Omega (SOL)",
-          "url": "https://omega.txchyon.com"
+          "url": "/omega"
         },
         {
           "name": "Project Ultima (Intel)",
-          "url": "https://ultima.txchyon.com"
+          "url": "/ultima"
         },
         {
           "name": "Project Genesis (BTC)",
@@ -45,7 +45,11 @@
           "url": "/categories/web3-gaming-metaverse"
         },
         {
-          "name": "View All Research",
+          "name": "View Pillars",
+          "url": "/categories"
+        },
+        {
+          "name": "Research Cache",
           "url": "/blog"
         }
       ]
@@ -56,7 +60,7 @@
     },
     {
       "name": "Shop",
-      "url": "https://shop.txchyon.com"
+      "url": "/shop"
     }
   ],
   "footer": [
