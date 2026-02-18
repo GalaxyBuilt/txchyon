@@ -1,54 +1,56 @@
-// Find similar posts based on SINGULAR category and tags
+// Find similar posts based on category and date-series flow
 const similarItems = (currentItem: any, allItems: any, currentSlug: string) => {
-  // Get current post's SINGULAR category and tags
-  const currentCategory = currentItem.data.category; // SINGULAR
+  const currentCategory = currentItem.data.category;
   const currentTags = currentItem.data.tags || [];
-  
-  // Safety checks
-  if (!currentCategory && currentTags.length === 0) {
-    return []; // No data to compare
-  }
+  const currentDate = new Date(currentItem.data.date);
 
   // Filter out current post and drafts
   const otherItems = allItems.filter(
-    (item: any) => 
-      item.slug !== currentSlug && 
-      !item.data.draft
+    (item: any) => item.slug !== currentSlug && !item.data.draft
   );
 
-  let similar = [];
-  
-  // 1. First try: Same category (most important)
-  if (currentCategory) {
-    const sameCategory = otherItems.filter(
-      (item: any) => item.data.category === currentCategory
-    );
-    similar = [...similar, ...sameCategory];
+  // 1. Get all items in the same category, sorted by date (oldest to newest)
+  const categoryItems = otherItems
+    .filter((item: any) => item.data.category === currentCategory)
+    .sort((a: any, b: any) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
+
+  let recommended = [];
+
+  // 2. Find the "Next" article in this category by date
+  const nextInSeries = categoryItems.find(
+    (item: any) => new Date(item.data.date).getTime() > currentDate.getTime()
+  );
+
+  if (nextInSeries) {
+    recommended.push({ ...nextInSeries, isNext: true });
   }
-  
-  // 2. Second try: Same tags (if we need more)
-  if (similar.length < 3 && currentTags.length > 0) {
-    const sameTags = otherItems
-      .filter((item: any) => {
-        if (similar.some(s => s.slug === item.slug)) return false; // Skip already added
-        const itemTags = item.data.tags || [];
-        return itemTags.some((tag: string) => currentTags.includes(tag));
-      })
-      .slice(0, 3 - similar.length); // Only take as many as needed
-    
-    similar = [...similar, ...sameTags];
+
+  // 3. Fill remaining slots with other category items (most recent first)
+  const remainingCategoryItems = categoryItems
+    .filter((item: any) => item.slug !== (nextInSeries?.slug || ''))
+    .sort((a: any, b: any) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+  recommended = [...recommended, ...remainingCategoryItems];
+
+  // 4. Fallback to same tags if we still don't have 3
+  if (recommended.length < 3 && currentTags.length > 0) {
+    const sameTags = otherItems.filter((item: any) => {
+      if (recommended.some((r: any) => r.slug === item.slug)) return false;
+      const itemTags = item.data.tags || [];
+      return itemTags.some((tag: string) => currentTags.includes(tag));
+    });
+    recommended = [...recommended, ...sameTags];
   }
-  
-  // 3. Last resort: Random posts from same category or any
-  if (similar.length < 3) {
-    const remaining = otherItems
-      .filter((item: any) => !similar.some(s => s.slug === item.slug))
-      .slice(0, 3 - similar.length);
-    
-    similar = [...similar, ...remaining];
+
+  // 5. Absolute fallback: Just most recent posts
+  if (recommended.length < 3) {
+    const fallback = otherItems
+      .filter((item: any) => !recommended.some((r: any) => r.slug === item.slug))
+      .sort((a: any, b: any) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+    recommended = [...recommended, ...fallback];
   }
-  
-  return similar.slice(0, 3); // Max 3 similar posts
+
+  return recommended.slice(0, 3);
 };
 
 export default similarItems;

@@ -242,12 +242,9 @@ const authorNames = getAuthorNames();
   </div>
 </section>
 
-<!-- Similar posts – untouched -->
-{similarPosts.length > 0 && (
-  <section class="section pt-0">
-    <div class="container">
-      <h2 class="mb-8 text-center h3">Similar Posts</h2>
-      <!-- SimilarPosts disabled temporarily -->
-    </div>
-  </section>
-)}
+        <!-- High-Fidelity Read Next Section -->
+        <SimilarPosts posts={similarPosts} />
+      </div>
+    </article>
+  </div>
+</section>
