@@ -243,19 +243,45 @@ const main = menu.main;
   /* Sticky blurring fix */
   header {
     -webkit-backdrop-filter: blur(20px);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  /* Light Mode Scrolled */
   header.scrolled {
-    background-color: rgba(255, 255, 255, 0.95) !important;
-    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.05) !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
   }
-  /* .dark is on <html>, so we need :is(.dark) to target header inside it */
-  :is(.dark) header.scrolled {
-    background-color: rgba(0, 0, 0, 0.95) !important;
-    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+
+  /* Dark Mode Scrolled - Using html.dark for maximum reliability */
+  html.dark header.scrolled {
+    background-color: #0d0d0d !important;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.7);
     border-color: rgba(255, 255, 255, 0.08) !important;
   }
+
+  /* Ensure text colors are forced for readability in scrolled state */
+  header.scrolled nav a, 
+  header.scrolled nav button {
+    color: #374151 !important; /* gray-700 */
+  }
+  html.dark header.scrolled nav a, 
+  html.dark header.scrolled nav button {
+    color: #e5e7eb !important; /* gray-200 */
+  }
+
+  header.scrolled .text-xl {
+    color: #000000 !important;
+  }
+  html.dark header.scrolled .text-xl {
+    color: #ffffff !important;
+  }
+
 </style>
 
 <script>
