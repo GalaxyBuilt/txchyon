@@ -16,7 +16,7 @@
   "metadata": {
     "meta_author": "GalaxyBuilt",
     "meta_image": "https://txchyon.com/images/og-txchyon.png",
-    "meta_description": "Institutional DeFi Operating System. Open-source research, systematic alpha, and multi-protocol execution terminals."
+    "meta_description": "Institutional DeFi Operating System. Private research, systematic alpha, and multi-protocol execution terminals."
   },
   "google_tag_manager": {
     "enable": false,
@@ -48,7 +48,7 @@
   },
   "branding": {
     "blog_name": "Txchyon OS",
-    "tagline": "Institutional Infrastructure. Open-Source Intel.",
+    "tagline": "Institutional Infrastructure. Private Intelligence.",
     "twitter_handle": "@txchyon"
   }
 }
