@@ -1,186 +1,326 @@
 ---
 /**
  * TxchyaChat.astro
- * Floating cyberpunk AI assistant widget.
+ * Futuristic cyberpunk AI assistant widget for Txchyon Ecosystem.
  */
+import { Image } from 'astro:assets';
+
+// Default Logo handling - fallback to text if image fails
+const TXCHYA_LOGO = "/images/txchya-logo.jpg";
 ---
 
-<div id="txchya-wrapper" class="fixed bottom-6 right-6 z-[9999] font-primary">
-  <!-- Chat Bubble -->
+<div id="txchya-wrapper" class="fixed bottom-6 right-6 z-[9999] font-mono isolate scale-90 sm:scale-100 origin-bottom-right">
+  <!-- Chat Bubble (Closed State) -->
   <button 
     id="txchya-bubble" 
-    class="relative w-16 h-16 rounded-full bg-black border-2 border-[#00f3ff] shadow-[0_0_20px_rgba(0,243,255,0.4)] flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95 group overflow-hidden"
-    aria-label="Talk to Txchya"
+    class="relative w-16 h-16 rounded-full bg-black border border-cyan-500/50 shadow-[0_0_30px_rgba(6,182,212,0.3)] flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-[0_0_50px_rgba(168,85,247,0.5)] group overflow-hidden active:scale-95"
+    aria-label="Initialize Txchya AI"
   >
-    <div class="absolute inset-0 bg-gradient-to-tr from-[#00f3ff22] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-    <!-- Mini Galaxy Icon / Avatar -->
-    <span class="text-2xl group-hover:rotate-12 transition-transform">🌌</span>
+    <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 via-purple-500/20 to-transparent"></div>
     
-    <!-- Pulse Effect -->
-    <div class="absolute inset-0 rounded-full border-2 border-[#00f3ff] animate-ping opacity-20"></div>
+    <!-- Pulse Ring -->
+    <div class="absolute inset-0 rounded-full border border-cyan-400 opacity-20 animate-ping"></div>
+    <div class="absolute inset-0 rounded-full border border-purple-500 opacity-20 animate-ping" style="animation-delay: 0.5s"></div>
+
+    <!-- Inner Logo -->
+    <div class="relative w-full h-full rounded-full overflow-hidden border-2 border-black/50">
+       <img src={TXCHYA_LOGO} alt="Txchya AI" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+    </div>
   </button>
 
-  <!-- Chat Window -->
+  <!-- Chat Window (Open State) -->
   <div 
     id="txchya-window" 
-    class="absolute bottom-20 right-0 w-[350px] sm:w-[400px] h-[500px] bg-[#0a0a0a]/90 backdrop-blur-xl border border-[#00f3ff44] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col transition-all duration-500 transform translate-y-10 opacity-0 pointer-events-none"
+    class="absolute bottom-20 right-0 w-[340px] h-[500px] bg-[#050505]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col transition-all duration-500 transform translate-y-10 opacity-0 pointer-events-none scale-95 origin-bottom-right"
   >
     <!-- Header -->
-    <div class="p-4 border-b border-[#ffffff11] bg-gradient-to-r from-[#00f3ff11] to-transparent flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-black border border-[#00f3ff] flex items-center justify-center text-xs">🌌</div>
+    <div class="p-4 border-b border-white/10 bg-gradient-to-r from-cyan-500/10 via-purple-500/5 to-transparent flex justify-between items-center relative overflow-hidden">
+      <!-- Glow Line -->
+      <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-cyan-500 via-purple-500 to-transparent opacity-50"></div>
+      
+      <div class="flex items-center gap-3 z-10">
+        <div class="w-8 h-8 rounded-lg bg-black/50 border border-white/10 overflow-hidden relative group">
+          <img src={TXCHYA_LOGO} alt="Txchya" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-cyan-500/20 mix-blend-overlay"></div>
+        </div>
         <div>
-          <h3 class="text-[#00f3ff] font-bold text-sm tracking-widest uppercase">Txchya OS</h3>
+          <h3 class="text-white font-black text-xs tracking-[0.2em] uppercase italic bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">Txchya_OS</h3>
           <div class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#00f3ff] animate-pulse"></span>
-            <span class="text-[10px] text-[#00f3ff]/60 uppercase tracking-tighter">Systems Online</span>
+            <span class="relative flex h-1.5 w-1.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-cyan-500"></span>
+            </span>
+            <span class="text-[9px] text-gray-500 font-bold uppercase tracking-widest">Neural_Link_Active</span>
           </div>
         </div>
       </div>
-      <button id="txchya-close" class="text-white/40 hover:text-white transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      <button id="txchya-close" class="text-gray-500 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
     </div>
 
-    <!-- Chat Messages -->
+    <!-- Chat Messages Area -->
     <div id="txchya-messages" class="flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth">
-      <div class="flex flex-col items-start max-w-[85%]">
-        <div class="bg-[#111] border border-[#00f3ff22] text-[#00f3ff] px-4 py-2 rounded-2xl rounded-tl-none text-sm">
-          <b>Txchya:</b> Booting up... Systems online. How can I assist you in the ecosystem today?
+      <div class="flex flex-col items-start max-w-[90%] animate-fade-in-up">
+        <div class="flex items-center gap-2 mb-1 pl-1">
+            <span class="text-[9px] text-cyan-500 font-black uppercase tracking-widest">SYSTEM</span>
+            <span class="text-[8px] text-gray-600 font-mono">v3.1</span>
+        </div>
+        <div class="bg-white/5 border border-white/5 text-gray-300 px-4 py-3 rounded-2xl rounded-tl-none text-xs leading-relaxed shadow-lg backdrop-blur-sm">
+          <p class="mb-2"><span class="text-cyan-400 font-bold">Protocol Sync Complete.</span></p>
+          I am Txchya. Ready to assist with DeFi intelligence, market analysis, and navigation. 
         </div>
       </div>
     </div>
 
     <!-- Input Area -->
-    <div class="p-4 border-top border-[#ffffff11] bg-black">
-      <div class="relative">
+    <div class="p-4 border-t border-white/5 bg-black/80 relative">
+      <div class="relative group">
+        <div class="absolute -inset-0.5 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
         <input 
           type="text" 
           id="txchya-input" 
-          placeholder="Type a message..." 
-          class="w-full bg-[#111] border border-[#333] text-white text-sm px-4 py-3 pr-12 rounded-xl focus:outline-none focus:border-[#00f3ff] transition-all"
+          placeholder="Enter command or query..." 
+          class="relative w-full bg-[#0a0a0a] border border-white/10 text-white text-xs px-4 py-3.5 pr-12 rounded-xl focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/20 transition-all font-mono placeholder:text-gray-700"
         />
         <button 
           id="txchya-send" 
-          class="absolute right-2 top-1/2 -translate-y-1/2 text-[#00f3ff] hover:scale-110 transition-transform disabled:opacity-50"
+          class="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-gray-500 hover:text-cyan-400 hover:scale-110 transition-all disabled:opacity-50 z-10"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
         </button>
+      </div>
+      <div class="text-[8px] text-center mt-3 text-gray-700 font-mono tracking-widest uppercase opacity-50">
+        Powered by OpenAI // Txchyon Neural Net
       </div>
     </div>
   </div>
 </div>
 
 <style>
+  /* Cyber Scrollbar */
   #txchya-messages::-webkit-scrollbar {
     width: 4px;
+  }
+  #txchya-messages::-webkit-scrollbar-track {
+    background: transparent;
   }
   #txchya-messages::-webkit-scrollbar-thumb {
     background: #333;
     border-radius: 10px;
   }
   #txchya-messages::-webkit-scrollbar-thumb:hover {
-    background: #00f3ff44;
+    background: #06b6d4; /* cyan-500 */
   }
 
-  /* Chat window visibility */
+  /* Transition States */
   #txchya-window.open {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     opacity: 1;
     pointer-events: auto;
   }
 
+  /* Message Bubbles */
   .user-bubble {
-    background: #222;
-    color: #eee;
-    border: 1px solid #444;
+    background: linear-gradient(135deg, #1e1e1e 0%, #111 100%);
+    color: #fff;
+    border: 1px solid #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
 
   .txchya-bubble {
-    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
-    color: #00f3ff;
-    border: 1px solid #00f3ff44;
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.05);
+    background: linear-gradient(135deg, rgba(6,182,212,0.05) 0%, rgba(168,85,247,0.05) 100%);
+    color: #e5e5e5;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 12px rgba(6,182,212,0.05);
+  }
+  
+  .cursor-blink {
+    animation: blink 1s step-end infinite;
+  }
+  
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.3s ease-out forwards;
   }
 </style>
 
 <script>
-  const BACKEND_URL = 'http://localhost:3000/chat'; // Update to production URL when available
+  // Configuration
+  const API_ENDPOINT = 'https://txchya.com/api/chat';
+  const SITE_CONTEXT = 'Txchyon.com';
 
+  // DOM Elements
   const bubble = document.getElementById('txchya-bubble');
-  const window_el = document.getElementById('txchya-window');
+  const windowEl = document.getElementById('txchya-window');
   const closeBtn = document.getElementById('txchya-close');
   const input = document.getElementById('txchya-input');
   const sendBtn = document.getElementById('txchya-send');
   const messagesBox = document.getElementById('txchya-messages');
 
+  // State
+  let isOpen = false;
+  let isTyping = false;
+
+  // Toggle Chat
   function toggleChat() {
-    window_el.classList.toggle('open');
-    if (window_el.classList.contains('open')) {
-      input.focus();
+    isOpen = !isOpen;
+    if (isOpen) {
+      windowEl.classList.add('open');
+      setTimeout(() => input?.focus(), 100);
+    } else {
+      windowEl.classList.remove('open');
     }
   }
 
-  bubble.addEventListener('click', toggleChat);
-  closeBtn.addEventListener('click', () => window_el.classList.remove('open'));
+  // Event Listeners
+  bubble?.addEventListener('click', toggleChat);
+  closeBtn?.addEventListener('click', () => {
+    isOpen = false;
+    windowEl.classList.remove('open');
+  });
 
-  async function sendMessage() {
-    const text = input.value.trim();
-    if (!text) return;
-
-    appendMessage('You', text, 'user-bubble', 'end');
-    input.value = '';
-    
-    // Typing indicator
-    const loadingId = appendMessage('Txchya', '...', 'txchya-bubble', 'start');
-
-    try {
-      const response = await fetch(BACKEND_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          message: text,
-          site: window.location.hostname
-        })
-      });
-      
-      const data = await response.json();
-      if (data.reply) {
-        updateMessage(loadingId, data.reply);
-      } else {
-        updateMessage(loadingId, data.error || 'The neural link is flickering. Systems unstable.');
-      }
-    } catch (err) {
-      updateMessage(loadingId, 'Connection link unstable. Please retry, Operator.');
-    }
-  }
-
-  function appendMessage(sender, text, classes, align) {
-    const id = 'txchya-msg-' + Date.now();
-    const wrapper = document.createElement('div');
-    wrapper.className = `flex flex-col items-${align === 'end' ? 'end' : 'start'} w-full`;
-    
-    wrapper.innerHTML = `
-      <div id="${id}" class="${classes} max-w-[85%] px-4 py-2 rounded-2xl ${align === 'end' ? 'rounded-tr-none' : 'rounded-tl-none'} text-sm leading-relaxed">
-        <b>${sender}:</b> ${text}
-      </div>
-    `;
-    
-    messagesBox.appendChild(wrapper);
-    messagesBox.scrollTop = messagesBox.scrollHeight;
-    return id;
-  }
-
-  function updateMessage(id, text) {
-    const el = document.getElementById(id);
-    if (el) {
-      el.innerHTML = `<b>Txchya:</b> ${text}`;
+  // Auto-scroll
+  function scrollToBottom() {
+    if (messagesBox) {
       messagesBox.scrollTop = messagesBox.scrollHeight;
     }
   }
 
-  sendBtn.addEventListener('click', sendMessage);
-  input.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') sendMessage();
+  // Add Message to UI
+  function addMessage(text, sender) {
+    if (!messagesBox) return;
+
+    const isUser = sender === 'user';
+    const wrapper = document.createElement('div');
+    wrapper.className = `flex flex-col items-${isUser ? 'end' : 'start'} max-w-[90%] animate-fade-in-up`;
+    
+    // Header for message
+    const headerHtml = isUser 
+      ? `<div class="flex items-center gap-2 mb-1 pr-1 justify-end w-full">
+           <span class="text-[8px] text-gray-500 font-mono tracking-widest uppercase">YOU</span>
+         </div>`
+      : `<div class="flex items-center gap-2 mb-1 pl-1">
+           <span class="text-[9px] text-cyan-500 font-black uppercase tracking-widest">TXCHYA</span>
+         </div>`;
+
+    // Bubble styles
+    const bubbleClass = isUser 
+      ? "bg-[#1a1a1a] border border-white/10 text-white rounded-tr-none" 
+      : "bg-white/5 border border-white/5 text-gray-300 rounded-tl-none";
+
+    // Allow HTML in AI responses for formatting (basic bold/italics)
+    // For user input, treat as text to prevent XSS (though sanitized on retrieval usually)
+    const contentHtml = isUser ? text : formatAIResponse(text);
+
+    wrapper.innerHTML = `
+      ${headerHtml}
+      <div class="${bubbleClass} px-4 py-3 rounded-2xl text-xs leading-relaxed shadow-lg backdrop-blur-sm">
+        ${contentHtml}
+      </div>
+    `;
+
+    messagesBox.appendChild(wrapper);
+    scrollToBottom();
+  }
+
+  function formatAIResponse(text) {
+    // Basic formatting for AI responses
+    // Replace **text** with <strong>text</strong>
+    return text
+      .replace(/\*\*(.*?)\*\*/g, '<span class="text-cyan-400 font-bold">$1</span>')
+      .replace(/`(.*?)`/g, '<code class="bg-black/30 px-1 py-0.5 rounded text-purple-400 font-mono text-[10px]">$1</code>')
+      .replace(/\n/g, '<br>');
+  }
+
+  // Add Typing Indicator
+  function addLoadingIndicator() {
+    if (!messagesBox) return null;
+    
+    const id = 'loading-' + Date.now();
+    const wrapper = document.createElement('div');
+    wrapper.id = id;
+    wrapper.className = `flex flex-col items-start max-w-[90%] animate-fade-in-up`;
+    
+    wrapper.innerHTML = `
+      <div class="flex items-center gap-2 mb-1 pl-1">
+           <span class="text-[9px] text-cyan-500 font-black uppercase tracking-widest">TXCHYA</span>
+      </div>
+      <div class="bg-white/5 border border-white/5 text-gray-400 px-4 py-3 rounded-2xl rounded-tl-none text-xs flex items-center gap-1">
+        <span class="w-1 h-1 bg-cyan-500 rounded-full animate-bounce"></span>
+        <span class="w-1 h-1 bg-cyan-500 rounded-full animate-bounce" style="animation-delay: 0.1s"></span>
+        <span class="w-1 h-1 bg-cyan-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></span>
+      </div>
+    `;
+    
+    messagesBox.appendChild(wrapper);
+    scrollToBottom();
+    return id;
+  }
+
+  function removeLoadingIndicator(id) {
+    const el = document.getElementById(id);
+    if (el) el.remove();
+  }
+
+  // Send Logic
+  async function handleSend() {
+    if (isTyping || !input.value.trim()) return;
+    
+    const message = input.value.trim();
+    input.value = '';
+    isTyping = true;
+    
+    // 1. Show User Message
+    addMessage(message, 'user');
+    
+    // 2. Show Loading
+    const loadingId = addLoadingIndicator();
+
+    try {
+      // 3. API Call
+      const res = await fetch(API_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            message: message,
+            site: SITE_CONTEXT
+        })
+      });
+      
+      const data = await res.json();
+      
+      // 4. Handle Response
+      removeLoadingIndicator(loadingId);
+      
+      if (data.error) {
+        addMessage(`SYSTEM ERROR: ${data.error}`, 'ai');
+      } else {
+        addMessage(data.reply, 'ai');
+      }
+      
+    } catch (err) {
+      removeLoadingIndicator(loadingId);
+      addMessage("⚠️ Neural Link Unstable. Connection Failed.", 'ai');
+      console.error(err);
+    } finally {
+      isTyping = false;
+      input.focus();
+    }
+  }
+
+  // Bind Send Events
+  sendBtn?.addEventListener('click', handleSend);
+  input?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handleSend();
   });
+
 </script>
