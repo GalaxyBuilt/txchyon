@@ -973,8 +973,9 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
         const moonIcon = document.getElementById('theme-icon-moon');
         const isDark = document.documentElement.classList.contains('dark');
         
-        if (sunIcon) sunIcon.classList.toggle('hidden', isDark);
-        if (moonIcon) moonIcon.classList.toggle('hidden', !isDark);
+        if (sunIcon) sunIcon.classList.toggle('hidden', !isDark);  // show sun in dark mode
+        if (moonIcon) moonIcon.classList.toggle('hidden', isDark);  // show moon in light mode
+
       }
       
       document.addEventListener('DOMContentLoaded', () => {
