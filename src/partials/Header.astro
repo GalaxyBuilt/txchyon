@@ -164,9 +164,9 @@ const main = menu.main;
           <!-- Terminal Background Pattern -->
           <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.07] pointer-events-none" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>
           
-          <div class="relative z-10 p-8 flex flex-col h-full">
+          <div class="relative z-10 p-5 flex flex-col h-full">
             <!-- Mobile Header Meta -->
-            <div class="flex justify-between items-center mb-10 pb-6 border-b border-gray-100 dark:border-white/5">
+            <div class="flex justify-between items-center mb-4 pb-4 border-b border-gray-100 dark:border-white/5">
                 <div class="flex items-center gap-2">
                     <div class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                     <span class="text-[10px] font-black text-green-500 uppercase tracking-widest italic">OS_Mainnet_Active</span>
@@ -178,41 +178,49 @@ const main = menu.main;
                 </button>
             </div>
 
-            <div class="space-y-10 flex-1">
-              {main.map((item, index) => (
-                <div class="space-y-4">
-                  <div class="flex items-center gap-3">
-                    <span class="text-[8px] font-black text-cyan-500 font-mono tracking-widest px-2 py-0.5 border border-cyan-500/20 rounded">NODE_0{index + 1}</span>
-                    <div class="text-[10px] font-black text-gray-400 uppercase tracking-[0.4em] italic">{item.name}</div>
-                  </div>
-                  <div class="grid grid-cols-1 gap-1">
+            <!-- Compact Nav Links -->
+            <nav class="flex-1 overflow-y-auto">
+              <div class="space-y-1">
+                {main.map((item, index) => (
+                  <div>
                     {item.dropdown ? (
-                      item.dropdown.map(sub => (
-                        <a href={sub.url} class="group flex items-center justify-between py-3 px-4 rounded-xl hover:bg-black/[0.03] dark:hover:bg-white/[0.03] transition-all border border-transparent hover:border-gray-100 dark:hover:border-white/5">
-                          <span class="text-lg font-black text-gray-800 dark:text-gray-200 group-hover:text-cyan-500 transition-colors italic tracking-tighter">{sub.name}_</span>
-                          <span class="text-cyan-500/30 group-hover:text-cyan-500 transition-colors">→</span>
-                        </a>
-                      ))
+                      <div class="mb-3">
+                        <div class="text-[8px] font-black text-cyan-500 uppercase tracking-[0.3em] px-3 py-2 flex items-center gap-2">
+                          <span class="opacity-50">#{String(index + 1).padStart(2,'0')}</span>
+                          <span>{item.name}</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-1 px-1">
+                          {item.dropdown.map(sub => (
+                            <a href={sub.url} class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 hover:bg-black/5 dark:hover:bg-white/5 transition-all truncate">
+                              <span class="text-cyan-500/40">›</span>
+                              <span class="truncate">{sub.name}</span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     ) : (
-                      <a href={item.url} class="group flex items-center justify-between py-3 px-4 rounded-xl hover:bg-black/[0.03] dark:hover:bg-white/[0.03] transition-all border border-transparent hover:border-gray-100 dark:hover:border-white/5">
-                        <span class="text-lg font-black text-gray-800 dark:text-gray-200 group-hover:text-cyan-500 transition-colors italic tracking-tighter">View_{item.name}_</span>
-                        <span class="text-cyan-500/30 group-hover:text-cyan-500 transition-colors">→</span>
+                      <a href={item.url} class="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-black text-gray-800 dark:text-gray-200 hover:text-cyan-500 dark:hover:text-cyan-400 hover:bg-black/5 dark:hover:bg-white/5 transition-all italic">
+                        <span>{item.name}_</span>
+                        <span class="text-cyan-500/30 text-xs">→</span>
                       </a>
                     )}
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </nav>
+
 
             <!-- Mobile Footer Utils -->
-            <div class="mt-auto pt-8 border-t border-gray-100 dark:border-white/5 space-y-4">
-               <!-- Genesis Demo - prominent on mobile -->
-               <a href="https://genesis.txchyon.com" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-center font-black uppercase text-xs tracking-[0.2em] rounded-2xl shadow-xl italic transition-transform active:scale-95">
-                 <span>₿</span> View Genesis Platform_
-               </a>
-               <a href="https://shop.txchyon.com" class="block w-full py-4 bg-gradient-to-r from-purple-600 to-cyan-500 text-white text-center font-black uppercase text-xs tracking-[0.3em] rounded-2xl shadow-xl italic transition-transform active:scale-95">
-                 Unlock_Access_Passes ⚡
-               </a>
+            <div class="pt-4 border-t border-gray-100 dark:border-white/5 space-y-2">
+               <!-- CTAs side by side -->
+               <div class="grid grid-cols-2 gap-2">
+                 <a href="https://genesis.txchyon.com" target="_blank" rel="noopener" class="flex items-center justify-center gap-1 py-2.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-center font-black uppercase text-[9px] tracking-widest rounded-xl italic transition-transform active:scale-95">
+                   ₿ Genesis
+                 </a>
+                 <a href="https://shop.txchyon.com" class="flex items-center justify-center py-2.5 bg-gradient-to-r from-purple-600 to-cyan-500 text-white text-center font-black uppercase text-[9px] tracking-widest rounded-xl italic transition-transform active:scale-95">
+                   Passes ⚡
+                 </a>
+               </div>
                
                <div class="flex justify-between items-center px-2">
                   <div class="flex gap-4">
