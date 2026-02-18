@@ -109,32 +109,34 @@ const matrixCategories = [...new Set(allPostsRaw.map(p => p.data.category))].sli
 
   <!-- 🕹️ EXECUTION HUB (FULL SCALE V3 MATRIX) -->
   <section class="py-32 dark:bg-black bg-white selection:bg-cyan-500 selection:text-black font-mono relative overflow-hidden border-y border-gray-100 dark:border-white/5">
-    <!-- Solana Background Glows -->
-    <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20 dark:opacity-40">
-        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-600/20 blur-[120px] rounded-full"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-600/20 blur-[120px] rounded-full"></div>
+    <!-- Tier 3: Dot Grid Background + Solana Glows -->
+    <div class="absolute inset-0 pointer-events-none z-0" style="background-image: radial-gradient(circle, #9333ea 1px, transparent 1px); background-size: 32px 32px; opacity: 0.06;"></div>
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-10 dark:opacity-40 z-0">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-600/30 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-600/30 blur-[120px] rounded-full"></div>
     </div>
 
     <div class="container mx-auto px-4 relative z-10">
       <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-8">
-        <div>
+        <div class="animate-fade-in-up" style="animation-delay: 0.1s;">
+          <!-- Tier 2: Gradient Text on Section Header -->
           <h2 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter uppercase italic leading-[0.85] dark:text-white text-gray-900">
-            The <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-cyan-500 to-green-400">Execution</span><br/>Hub_
+            The <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-cyan-500 to-green-400">Execution</span><br/>Hub<span class="blinking-cursor">_</span>
           </h2>
           <div class="h-1.5 w-32 bg-gradient-to-r from-purple-500 to-cyan-500 mb-4"></div>
           <p class="text-[10px] font-bold text-gray-500 dark:text-gray-400 tracking-[0.4em] uppercase">System Access // Multi-Protocol Interface</p>
         </div>
         
-        <!-- Live System Stats -->
-        <div class="flex gap-8 text-[10px] font-black items-center text-gray-400 uppercase tracking-widest border border-gray-100 dark:border-white/10 p-6 rounded-2xl bg-gray-50/50 dark:bg-white/5 backdrop-blur-md">
+        <!-- Tier 1: Counter Animation on Stats -->
+        <div class="flex gap-8 text-[10px] font-black items-center text-gray-400 uppercase tracking-widest border border-gray-100 dark:border-white/10 p-6 rounded-2xl bg-gray-50/50 dark:bg-white/5 backdrop-blur-md animate-fade-in-up" style="animation-delay: 0.2s;">
           <div class="flex flex-col gap-1">
              <span class="opacity-50">Memory</span>
-             <span class="text-purple-500">128TB_USED</span>
+             <span class="text-purple-500" data-counter-target="128">0</span><span class="text-purple-500">TB_USED</span>
           </div>
           <div class="w-px h-8 bg-gray-200 dark:bg-white/10"></div>
           <div class="flex flex-col gap-1">
              <span class="opacity-50">Network</span>
-             <span class="text-cyan-500">10GBIT/S</span>
+             <span class="text-cyan-500" data-counter-target="10">0</span><span class="text-cyan-500">GBIT/S</span>
           </div>
           <div class="w-px h-8 bg-gray-200 dark:bg-white/10"></div>
           <div class="flex flex-col gap-1">
@@ -144,24 +146,31 @@ const matrixCategories = [...new Set(allPostsRaw.map(p => p.data.category))].sli
         </div>
       </div>
 
+      <!-- Tier 2: Glassmorphism Cards with Hover Lift -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         <!-- Mission 01: Execute (Labs) -->
-        <div class="group relative overflow-hidden bg-gray-50/50 dark:bg-[#080808] border border-gray-100 dark:border-white/10 p-10 hover:bg-gray-100 dark:hover:border-cyan-500/50 transition-all cursor-pointer rounded-[2rem] shadow-xl dark:shadow-cyan-500/5">
-          <div class="absolute top-0 right-0 p-6 opacity-20 text-[10px] dark:text-white text-gray-900 font-black">PROTOCOL_EXE_001</div>
-          <div class="flex flex-col h-full justify-between min-h-[320px]">
-            <div>
-              <div class="text-cyan-500 text-[10px] font-black mb-4 tracking-[0.3em]">LAYER_01 // INFRASTRUCTURE</div>
-              <h3 class="text-4xl font-black mb-6 italic dark:text-white text-gray-900 group-hover:text-cyan-500 transition-colors">EXECUTE</h3>
-              <p class="text-sm dark:text-gray-400 text-gray-600 leading-relaxed italic">Institutional-grade research and execution terminals for Solomon and Bitcoin natives.</p>
-            </div>
-            <div class="flex flex-col gap-4">
-              <a href="https://labs.txchyon.com" class="inline-block w-fit px-8 py-4 bg-gray-900 dark:bg-white dark:text-black text-white font-black text-xs uppercase tracking-widest hover:bg-gradient-to-r from-purple-500 to-cyan-500 dark:hover:text-white transition-colors rounded-xl shadow-lg">Launch Terminals</a>
+        <div class="group relative overflow-hidden bg-gray-50/50 dark:bg-[#080808] border border-gray-100 dark:border-white/10 p-10 hover:bg-gray-100 dark:hover:border-cyan-500/50 transition-all cursor-pointer rounded-[2rem] shadow-xl dark:shadow-cyan-500/5 backdrop-blur-md hover:-translate-y-2 animate-fade-in-up" style="animation-delay: 0.3s;">
+          <!-- Tier 1: Animated Gradient Border on EXECUTE card -->
+          <div class="absolute inset-0 rounded-[2rem] p-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 animate-spin-slow"></div>
+          </div>
+          <div class="relative z-10">
+            <div class="absolute top-0 right-0 p-6 opacity-20 text-[10px] dark:text-white text-gray-900 font-black">PROTOCOL_EXE_001</div>
+            <div class="flex flex-col h-full justify-between min-h-[320px]">
+              <div>
+                <div class="text-cyan-500 text-[10px] font-black mb-4 tracking-[0.3em]">LAYER_01 // INFRASTRUCTURE</div>
+                <h3 class="text-4xl font-black mb-6 italic dark:text-white text-gray-900 group-hover:text-cyan-500 transition-colors">EXECUTE</h3>
+                <p class="text-sm dark:text-gray-400 text-gray-600 leading-relaxed italic">Institutional-grade research and execution terminals for Solomon and Bitcoin natives.</p>
+              </div>
+              <div class="flex flex-col gap-4">
+                <a href="https://labs.txchyon.com" class="inline-block w-fit px-8 py-4 bg-gray-900 dark:bg-white dark:text-black text-white font-black text-xs uppercase tracking-widest hover:bg-gradient-to-r from-purple-500 to-cyan-500 dark:hover:text-white transition-colors rounded-xl shadow-lg">Launch Terminals</a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Mission 02: Grow (Services) -->
-        <div class="group relative overflow-hidden bg-gray-50/50 dark:bg-[#080808] border border-gray-100 dark:border-white/10 p-10 hover:bg-gray-100 dark:hover:border-purple-500/50 transition-all cursor-pointer rounded-[2rem] shadow-xl dark:shadow-purple-500/5">
+        <div class="group relative overflow-hidden bg-gray-50/50 dark:bg-[#080808] border border-gray-100 dark:border-white/10 p-10 hover:bg-gray-100 dark:hover:border-purple-500/50 transition-all cursor-pointer rounded-[2rem] shadow-xl dark:shadow-purple-500/5 backdrop-blur-md hover:-translate-y-2 animate-fade-in-up" style="animation-delay: 0.4s;">
           <div class="absolute top-0 right-0 p-6 opacity-20 text-[10px] dark:text-white text-gray-900 font-black">PROTOCOL_SRV_088</div>
           <div class="flex flex-col h-full justify-between min-h-[320px]">
              <div>
@@ -174,7 +183,7 @@ const matrixCategories = [...new Set(allPostsRaw.map(p => p.data.category))].sli
         </div>
 
         <!-- Mission 03: Access (Shop) -->
-        <div class="group relative overflow-hidden bg-gray-50/50 dark:bg-[#080808] border border-gray-100 dark:border-white/10 p-10 hover:bg-gray-100 dark:hover:border-orange-500/50 transition-all cursor-pointer rounded-[2rem] shadow-xl dark:shadow-orange-500/5">
+        <div class="group relative overflow-hidden bg-gray-50/50 dark:bg-[#080808] border border-gray-100 dark:border-white/10 p-10 hover:bg-gray-100 dark:hover:border-orange-500/50 transition-all cursor-pointer rounded-[2rem] shadow-xl dark:shadow-orange-500/5 backdrop-blur-md hover:-translate-y-2 animate-fade-in-up" style="animation-delay: 0.5s;">
           <div class="absolute top-0 right-0 p-6 opacity-20 text-[10px] dark:text-white text-gray-900 font-black">PROTOCOL_PASS_003</div>
           <div class="flex flex-col h-full justify-between min-h-[320px]">
              <div>
@@ -187,7 +196,7 @@ const matrixCategories = [...new Set(allPostsRaw.map(p => p.data.category))].sli
         </div>
 
         <!-- Mission 04: Alpha (Insider) -->
-        <div class="group relative overflow-hidden bg-gray-50/50 dark:bg-[#080808] border border-gray-100 dark:border-white/10 p-10 hover:bg-gray-100 dark:hover:border-yellow-500/50 transition-all cursor-pointer rounded-[2rem] shadow-xl dark:shadow-yellow-500/5">
+        <div class="group relative overflow-hidden bg-gray-50/50 dark:bg-[#080808] border border-gray-100 dark:border-white/10 p-10 hover:bg-gray-100 dark:hover:border-yellow-500/50 transition-all cursor-pointer rounded-[2rem] shadow-xl dark:shadow-yellow-500/5 backdrop-blur-md hover:-translate-y-2 animate-fade-in-up" style="animation-delay: 0.6s;">
           <div class="absolute top-0 right-0 p-6 opacity-20 text-[10px] dark:text-white text-gray-900 font-black">PROTOCOL_ALPH_99</div>
           <div class="flex flex-col h-full justify-between min-h-[320px]">
             <div>
@@ -200,7 +209,7 @@ const matrixCategories = [...new Set(allPostsRaw.map(p => p.data.category))].sli
         </div>
 
         <!-- Mission 05: Tools (Automation) -->
-        <div class="group relative overflow-hidden bg-gray-50/50 dark:bg-[#080808] border border-gray-100 dark:border-white/10 p-10 hover:bg-gray-100 dark:hover:border-green-500/50 transition-all cursor-pointer rounded-[2rem] shadow-xl dark:shadow-green-500/5">
+        <div class="group relative overflow-hidden bg-gray-50/50 dark:bg-[#080808] border border-gray-100 dark:border-white/10 p-10 hover:bg-gray-100 dark:hover:border-green-500/50 transition-all cursor-pointer rounded-[2rem] shadow-xl dark:shadow-green-500/5 backdrop-blur-md hover:-translate-y-2 animate-fade-in-up" style="animation-delay: 0.7s;">
           <div class="absolute top-0 right-0 p-6 opacity-20 text-[10px] dark:text-white text-gray-900 font-black">PROTOCOL_TOOL_404</div>
           <div class="flex flex-col h-full justify-between min-h-[320px]">
             <div>
@@ -213,7 +222,7 @@ const matrixCategories = [...new Set(allPostsRaw.map(p => p.data.category))].sli
         </div>
 
         <!-- Mission 06: Master (Academy) -->
-        <div class="group relative overflow-hidden bg-gray-50/50 dark:bg-[#080808] border border-gray-100 dark:border-white/10 p-10 hover:bg-gray-100 dark:hover:border-blue-500/50 transition-all cursor-pointer rounded-[2rem] shadow-xl dark:shadow-blue-500/5">
+        <div class="group relative overflow-hidden bg-gray-50/50 dark:bg-[#080808] border border-gray-100 dark:border-white/10 p-10 hover:bg-gray-100 dark:hover:border-blue-500/50 transition-all cursor-pointer rounded-[2rem] shadow-xl dark:shadow-blue-500/5 backdrop-blur-md hover:-translate-y-2 animate-fade-in-up" style="animation-delay: 0.8s;">
           <div class="absolute top-0 right-0 p-6 opacity-20 text-[10px] dark:text-white text-gray-900 font-black">PROTOCOL_EDU_011</div>
           <div class="flex flex-col h-full justify-between min-h-[320px]">
             <div>
@@ -226,6 +235,82 @@ const matrixCategories = [...new Set(allPostsRaw.map(p => p.data.category))].sli
         </div>
       </div>
     </div>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+        opacity: 0; /* Start hidden */
+      }
+
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 8s linear infinite;
+      }
+
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+      .blinking-cursor {
+        animation: blink 1s step-end infinite;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Counter animation
+              const counters = entry.target.querySelectorAll('[data-counter-target]');
+              counters.forEach(counter => {
+                const target = parseInt(counter.dataset.counterTarget);
+                let current = 0;
+                const increment = target / 100; // Adjust for smoother animation
+                const updateCounter = () => {
+                  if (current < target) {
+                    current += increment;
+                    counter.textContent = Math.ceil(current);
+                    requestAnimationFrame(updateCounter);
+                  } else {
+                    counter.textContent = target;
+                  }
+                };
+                updateCounter();
+              });
+
+              // Fade-in-up animation
+              entry.target.querySelectorAll('.animate-fade-in-up').forEach(el => {
+                el.style.opacity = '0'; // Ensure it starts hidden
+                el.style.animationPlayState = 'running';
+              });
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        const section = document.querySelector('section.py-32'); // Target the Execution Hub section
+        if (section) {
+          observer.observe(section);
+        }
+      });
+    </script>
   </section>
 
   <!-- 🧠 INTEL DATABASE (PROTOCOL_DOCS) -->
