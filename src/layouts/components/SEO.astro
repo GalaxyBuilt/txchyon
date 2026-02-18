@@ -7,31 +7,37 @@ const {
   image,
   canonical,
   noindex = false,
-  type = "website", // 'website' or 'article'
+  type = "website",
   publishedTime,
   author = "GalaxyBuilt",
-  section = "DeFi", // Changed from "Crypto" to "DeFi"
+  section = "Crypto",
 } = Astro.props;
 
-// Simple, direct image URL - NO DOUBLE BASE_URL!
-const finalTitle = title ? `${title} // Txchyon OS` : "Txchyon OS // Institutional DeFi Operating System";
-const finalDescription = description && description !== "true" ? description : "Institutional-grade research, systematic alpha, and multi-protocol execution terminals. Private intelligence for elite capital.";
-// Use provided image OR fall back to default
-const finalImage = image ? image : "https://txchyon.com/images/og-txchyon.png";
+const BASE = "https://txchyon.com";
 
-// FIXED: Normalize canonical URL - remove trailing slash
-const cleanPath = Astro.url.pathname.replace(/\/$/, ""); // Remove trailing slash
-const finalCanonical = canonical ?? `https://txchyon.com${cleanPath}`;
+const finalTitle = title
+  ? `${title} // Txchyon OS`
+  : "Txchyon OS — Institutional Research, Execution Terminals & Alpha Intelligence";
+
+const finalDescription = description && description !== "true"
+  ? description
+  : "Txchyon OS: Institutional-grade research terminals, systematic alpha, marketing services, access passes, and the Genesis BTC platform. Built for serious capital.";
+
+// Always use absolute URL so crawlers (Twitter, Facebook, LinkedIn) can fetch it
+const finalImage = image
+  ? (image.startsWith('http') ? image : `${BASE}${image}`)
+  : `${BASE}/images/og-txchyon.png`;
+
+const cleanPath = Astro.url.pathname.replace(/\/$/, "");
+const finalCanonical = canonical ?? `${BASE}${cleanPath}`;
 ---
-
-<!-- Simple, reliable social meta tags -->
-{!noindex && <meta name="robots" content="index, follow" />}
-{noindex && <meta name="robots" content="noindex, nofollow" />}
 
 <!-- Primary Meta Tags -->
 <title>{finalTitle}</title>
 <meta name="title" content={finalTitle} />
 <meta name="description" content={finalDescription} />
+<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+<meta name="author" content={author} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />
@@ -39,12 +45,15 @@ const finalCanonical = canonical ?? `https://txchyon.com${cleanPath}`;
 <meta property="og:title" content={finalTitle} />
 <meta property="og:description" content={finalDescription} />
 <meta property="og:image" content={finalImage} />
+<meta property="og:image:secure_url" content={finalImage} />
+<meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content={finalTitle} />
-<meta property="og:site_name" content="Txchyon" />
+<meta property="og:image:alt" content="Txchyon OS — Institutional Research & Execution Platform" />
+<meta property="og:site_name" content="Txchyon OS" />
+<meta property="og:locale" content="en_US" />
 
-<!-- Additional Open Graph tags for articles -->
+<!-- Article-specific Open Graph -->
 {type === 'article' && (
   <>
     {publishedTime && <meta property="article:published_time" content={publishedTime} />}
@@ -52,21 +61,22 @@ const finalCanonical = canonical ?? `https://txchyon.com${cleanPath}`;
     <meta property="article:section" content={section} />
     <meta property="article:tag" content="DeFi" />
     <meta property="article:tag" content="Crypto" />
+    <meta property="article:tag" content="Bitcoin" />
+    <meta property="article:tag" content="Alpha" />
     <meta property="article:tag" content="Blockchain" />
-    <meta property="article:tag" content="Airdrops" />
+    <meta property="article:tag" content="Web3" />
   </>
 )}
 
-<!-- Twitter - FIXED SYNTAX -->
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content={finalCanonical} />
 <meta name="twitter:title" content={finalTitle} />
 <meta name="twitter:description" content={finalDescription} />
 <meta name="twitter:image" content={finalImage} />
-<meta name="twitter:image:alt" content={finalTitle} />
-<meta name="twitter:site" content="@GalaxyBuilt" />
-<meta name="twitter:creator" content="@GalaxyBuilt" />
+<meta name="twitter:image:alt" content="Txchyon OS — Institutional Research & Execution Platform" />
+<meta name="twitter:site" content="@txchyon" />
+<meta name="twitter:creator" content="@txchyon" />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={finalCanonical} />
-
