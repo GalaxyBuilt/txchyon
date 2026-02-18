@@ -136,10 +136,21 @@ const main = menu.main;
 
       <!-- CTA (Terminal Access) -->
       <a href="/shop" class="hidden sm:flex px-6 py-2.5 bg-black dark:bg-white text-white dark:text-black text-xs font-black uppercase tracking-widest rounded-xl hover:scale-105 active:scale-95 transition-all shadow-xl dark:shadow-white/10 italic">
-        Access Passes
       </a>
-
+      
+      <!-- Mobile Menu Toggle -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-btn" class="p-2.5 text-gray-500 hover:text-black dark:hover:text-white transition-colors hover:bg-black/5 dark:hover:bg-white/5 rounded-xl border border-transparent active:border-cyan-500/20">
+          <svg id="mobile-icon-hamburger" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+          <svg id="mobile-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
+
+    </div>
 
       <!-- 📱 MOBILE OVERLAY SYSTEM (Moved outside utility container for stacking context safety) -->
       <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-md z-[60] hidden transition-opacity duration-300"></div>
