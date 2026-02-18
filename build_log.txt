@@ -1,0 +1,1768 @@
+
+> bookworm-light-astro@3.2.0 build
+> astro build
+
+[33m[1m22:52:42[22m [WARN][39m Unsupported file type [1mC:\Users\NefuTrades\txchyon\src\pages\index.astro.backup[22m found. Prefix filename with an underscore (`_`) to ignore.
+[33m[1m22:52:42[22m [WARN][39m Unsupported file type [1mC:\Users\NefuTrades\txchyon\src\pages\shop.astro.txt[22m found. Prefix filename with an underscore (`_`) to ignore.
+[33m[1m22:52:42[22m [WARN][39m Unsupported file type [1mC:\Users\NefuTrades\txchyon\src\pages\shop\index-backup-comingsoon.astro.txt[22m found. Prefix filename with an underscore (`_`) to ignore.
+[33m[1m22:52:42[22m [WARN][39m Unsupported file type [1mC:\Users\NefuTrades\txchyon\src\pages\shop\index.astro.txt[22m found. Prefix filename with an underscore (`_`) to ignore.
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: about, blog, contact, pages
+
+[2m22:52:43[22m [34m[content][39m Syncing content
+[33m[1m22:52:43[22m [WARN] [glob-loader][39m No files found matching "**/*{.md,.mdx},!**/_*/**/*{.md,.mdx},!**/_*{.md,.mdx}" in directory "src\content\blog"
+[2m22:52:43[22m [34m[content][39m Synced content
+[2m22:52:43[22m [34m[types][39m Generated [2m363ms[22m
+[2m22:52:43[22m [34m[build][39m output: [34m"static"[39m
+[2m22:52:43[22m [34m[build][39m mode: [34m"static"[39m
+[2m22:52:43[22m [34m[build][39m directory: [34mC:\Users\NefuTrades\txchyon\dist\[39m
+[2m22:52:43[22m [34m[build][39m Collecting build info...
+[2m22:52:43[22m [34m[build][39m [32mΓ£ô Completed in 395ms.[39m
+[2m22:52:43[22m [34m[build][39m Building static entrypoints...
+[33m[1m22:52:45[22m [WARN] [vite][39m [33m"matchHostname", "matchPathname", "matchPort" and "matchProtocol" are imported from external module "@astrojs/internal-helpers/remote" but never used in "node_modules/astro/dist/assets/utils/remotePattern.js".[39m
+[33m[1m22:52:45[22m [WARN] [vite][39m [33m"parseISO" is imported from external module "date-fns" but never used in "src/lib/utils/dateFormat.ts".[39m
+[2m22:52:46[22m [34m[vite][39m [32mΓ£ô built in 2.96s[39m
+[2m22:52:46[22m [34m[build][39m [32mΓ£ô Completed in 3.00s.[39m
+
+[42m[30m building client (vite) [39m[49m
+[2m22:52:46[22m [34m[vite][39m transforming...
+[2m22:52:46[22m [34m[vite][39m [32mΓ£ô[39m 50 modules transformed.
+[2m22:52:46[22m [34m[vite][39m rendering chunks...
+[2m22:52:46[22m [34m[vite][39m computing gzip size...
+[2m22:52:46[22m [34m[vite][39m [2mdist/[22m[36m_astro/Base.astro_astro_type_script_index_1_lang.Dj7444Vu.js          [39m[1m[2m  8.21 kB[22m[1m[22m[2m Γöé gzip:  3.13 kB[22m
+[2m22:52:46[22m [34m[vite][39m [2mdist/[22m[36m_astro/ClientRouter.astro_astro_type_script_index_0_lang.QW52Ox2j.js  [39m[1m[2m 15.33 kB[22m[1m[22m[2m Γöé gzip:  5.27 kB[22m
+[2m22:52:46[22m [34m[vite][39m [2mdist/[22m[36m_astro/client.EAUERNtn.js                                             [39m[1m[2m194.63 kB[22m[1m[22m[2m Γöé gzip: 60.99 kB[22m
+[2m22:52:46[22m [34m[vite][39m [32mΓ£ô built in 586ms[39m
+
+[42m[30m generating static routes [39m[49m
+[2m22:52:46[22m [32mΓû╢[39m src/pages/404.astro
+[2m22:52:46[22m   [34mΓööΓöÇ[39m [2m/404.html[22m≡ƒÄ» Gate Configuration: { path: '/404', hasGatedContent: false, gateType: 'partial' }
+ [2m(+226ms)[22m 
+[2m22:52:47[22m [32mΓû╢[39m src/pages/about.astro
+[2m22:52:47[22m   [34mΓööΓöÇ[39m [2m/about/index.html[22m≡ƒÄ» Gate Configuration: { path: '/about', hasGatedContent: false, gateType: 'partial' }
+ [2m(+148ms)[22m 
+[2m22:52:47[22m [32mΓû╢[39m src/pages/authors/page/[slug].astro
+[2m22:52:48[22m [32mΓû╢[39m src/pages/authors/[single].astro
+[2m22:52:48[22m   [34mΓö£ΓöÇ[39m [2m/authors/-index/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/authors/-index',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+73ms)[22m 
+[2m22:52:48[22m   [34mΓö£ΓöÇ[39m [2m/authors/mark-dinn/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/authors/mark-dinn',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+139ms)[22m 
+[2m22:52:48[22m   [34mΓööΓöÇ[39m [2m/authors/galaxy/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/authors/galaxy',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+114ms)[22m 
+[2m22:52:48[22m [32mΓû╢[39m src/pages/authors/index.astro
+[2m22:52:48[22m   [34mΓööΓöÇ[39m [2m/authors/index.html[22m≡ƒÄ» Gate Configuration: { path: '/authors', hasGatedContent: false, gateType: 'partial' }
+ [2m(+62ms)[22m 
+[2m22:52:48[22m [32mΓû╢[39m src/pages/blog.astro
+[2m22:52:48[22m   [34mΓööΓöÇ[39m [2m/blog/index.html[22m≡ƒÄ» Gate Configuration: { path: '/blog', hasGatedContent: false, gateType: 'partial' }
+ [2m(+76ms)[22m 
+[2m22:52:49[22m [32mΓû╢[39m src/pages/blog/[...slug].astro
+[2m22:52:49[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/airdrop-disqualification-risks/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/airdrop-disqualification-risks',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+70ms)[22m 
+[2m22:52:49[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/airdrop-eligibility-criteria/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/airdrop-eligibility-criteria',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+70ms)[22m 
+[2m22:52:49[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/airdrop-points-case-studies/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/airdrop-points-case-studies',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+207ms)[22m 
+[2m22:52:49[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/alignerz-launchpad/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/alignerz-launchpad',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+215ms)[22m 
+[2m22:52:49[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/cold-vs-hot-wallets-optimizing-security-and-eligibility/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/cold-vs-hot-wallets-optimizing-security-and-eligibility',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:49[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/airdrop-minimum-activity-thresholds/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/airdrop-minimum-activity-thresholds',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+68ms)[22m 
+[2m22:52:49[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/avoiding-red-flags-wallet-hygiene-and-compliance/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/avoiding-red-flags-wallet-hygiene-and-compliance',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+70ms)[22m 
+[2m22:52:49[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/how-projects-detect-sybil-wallets/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/how-projects-detect-sybil-wallets',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+98ms)[22m 
+[2m22:52:49[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/how-to-track-airdrop-points/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/how-to-track-airdrop-points',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:52:49[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/preparing-for-the-polymarket-airdrop/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/preparing-for-the-polymarket-airdrop',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+140ms)[22m 
+[2m22:52:50[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/wallet-management-best-practices-for-airdrop-farmers/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/wallet-management-best-practices-for-airdrop-farmers',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+102ms)[22m 
+[2m22:52:50[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/optimizing-airdrop-points-safely/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/optimizing-airdrop-points-safely',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:50[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/mastering-wallet-diversification-for-airdrop-farming/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/mastering-wallet-diversification-for-airdrop-farming',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:52:50[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/time-vs-volume-points-systems/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/time-vs-volume-points-systems',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:52:50[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/solana-airdrops/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/solana-airdrops',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+122ms)[22m 
+[2m22:52:50[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/capital-allocation-scaling/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/capital-allocation-scaling',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+101ms)[22m 
+[2m22:52:50[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/pump-fun-airdrop-hunt/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/pump-fun-airdrop-hunt',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+97ms)[22m 
+[2m22:52:50[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/what-actions-earn-airdrop-points/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/what-actions-earn-airdrop-points',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:52:50[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/cross-chain-early-arbitrage/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/cross-chain-early-arbitrage',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:50[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/liquidity-pool-analysis-alpha/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/liquidity-pool-analysis-alpha',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+82ms)[22m 
+[2m22:52:50[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/gas-execution-optimization/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/gas-execution-optimization',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:50[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/front-running-anti-bot/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/front-running-anti-bot',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+139ms)[22m 
+[2m22:52:51[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/smart-contract-sniping/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/smart-contract-sniping',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:51[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/spot-new-dex-pairs/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/spot-new-dex-pairs',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+143ms)[22m 
+[2m22:52:51[22m   [34mΓö£ΓöÇ[39m [2m/blog/defi-yield/nordvpn-drift/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/defi-yield/nordvpn-drift',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+101ms)[22m 
+[2m22:52:51[22m   [34mΓö£ΓöÇ[39m [2m/blog/defi-yield/liquidity-uniswap-guide/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/defi-yield/liquidity-uniswap-guide',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+69ms)[22m 
+[2m22:52:51[22m   [34mΓö£ΓöÇ[39m [2m/blog/defi-yield/vooi-tge-research/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/defi-yield/vooi-tge-research',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:51[22m   [34mΓö£ΓöÇ[39m [2m/blog/defi-yield/how-to-launch-a-memecoin-on-pumpfun/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/defi-yield/how-to-launch-a-memecoin-on-pumpfun',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+73ms)[22m 
+[2m22:52:51[22m   [34mΓö£ΓöÇ[39m [2m/blog/defi-yield/nordvpn-hype/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/defi-yield/nordvpn-hype',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+105ms)[22m 
+[2m22:52:51[22m   [34mΓö£ΓöÇ[39m [2m/blog/defi-yield/why-most-token-launches-fail/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/defi-yield/why-most-token-launches-fail',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:51[22m   [34mΓö£ΓöÇ[39m [2m/blog/infrastructure-tech/how-to-set-up-bitcoin-node-on-raspberry-pi/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/infrastructure-tech/how-to-set-up-bitcoin-node-on-raspberry-pi',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:51[22m   [34mΓö£ΓöÇ[39m [2m/blog/infrastructure-tech/best-hardware-for-bitcoin-nodes/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/infrastructure-tech/best-hardware-for-bitcoin-nodes',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:51[22m   [34mΓö£ΓöÇ[39m [2m/blog/infrastructure-tech/genlayer/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/infrastructure-tech/genlayer',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+114ms)[22m 
+[2m22:52:52[22m   [34mΓö£ΓöÇ[39m [2m/blog/infrastructure-tech/idos-identity/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/infrastructure-tech/idos-identity',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:52:52[22m   [34mΓö£ΓöÇ[39m [2m/blog/infrastructure-tech/iopn-solana/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/infrastructure-tech/iopn-solana',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:52[22m   [34mΓö£ΓöÇ[39m [2m/blog/infrastructure-tech/kloutgg-solana-social-infra/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/infrastructure-tech/kloutgg-solana-social-infra',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+76ms)[22m 
+[2m22:52:52[22m   [34mΓö£ΓöÇ[39m [2m/blog/infrastructure-tech/how-to-setup-up-lightning-network-node/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/infrastructure-tech/how-to-setup-up-lightning-network-node',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+102ms)[22m 
+[2m22:52:52[22m   [34mΓö£ΓöÇ[39m [2m/blog/prediction-markets/how-to-earn-passive-income-on-kalshi-liquidity-incentive-program/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/prediction-markets/how-to-earn-passive-income-on-kalshi-liquidity-incentive-program',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+67ms)[22m 
+[2m22:52:52[22m   [34mΓö£ΓöÇ[39m [2m/blog/infrastructure-tech/what-is-a-bitcoin-node-and-why-you-need-one/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/infrastructure-tech/what-is-a-bitcoin-node-and-why-you-need-one',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:52:52[22m   [34mΓö£ΓöÇ[39m [2m/blog/prediction-markets/prediction-market-arbitrage-guide/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/prediction-markets/prediction-market-arbitrage-guide',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:52:52[22m   [34mΓö£ΓöÇ[39m [2m/blog/prediction-markets/how-to-earn-passive-yield-as-a-liquidity-provider-on-prediction-markets/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/prediction-markets/how-to-earn-passive-yield-as-a-liquidity-provider-on-prediction-markets',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+114ms)[22m 
+[2m22:52:52[22m   [34mΓö£ΓöÇ[39m [2m/blog/prediction-markets/prediction-market-risk-management/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/prediction-markets/prediction-market-risk-management',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+103ms)[22m 
+[2m22:52:52[22m   [34mΓö£ΓöÇ[39m [2m/blog/prediction-markets/top-10-prediction-market-strategies-that-actually-work/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/prediction-markets/top-10-prediction-market-strategies-that-actually-work',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:52[22m   [34mΓö£ΓöÇ[39m [2m/blog/prediction-markets/what-is-augur/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/prediction-markets/what-is-augur',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+147ms)[22m 
+[2m22:52:52[22m   [34mΓö£ΓöÇ[39m [2m/blog/prediction-markets/prediction-markets-regulation/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/prediction-markets/prediction-markets-regulation',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:52:53[22m   [34mΓö£ΓöÇ[39m [2m/blog/prediction-markets/what-is-kalshi/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/prediction-markets/what-is-kalshi',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+139ms)[22m 
+[2m22:52:53[22m   [34mΓö£ΓöÇ[39m [2m/blog/prediction-markets/what-is-polymarket/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/prediction-markets/what-is-polymarket',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:53[22m   [34mΓö£ΓöÇ[39m [2m/blog/prediction-markets/what-is-worm-wtf/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/prediction-markets/what-is-worm-wtf',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+142ms)[22m 
+[2m22:52:53[22m   [34mΓö£ΓöÇ[39m [2m/blog/regulatory-tax/comprehensive-guide-to-global-regulations/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/regulatory-tax/comprehensive-guide-to-global-regulations',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+102ms)[22m 
+[2m22:52:53[22m   [34mΓö£ΓöÇ[39m [2m/blog/regulatory-tax/ultimate-guide-to-crypto-regulatory-and-tax-compliance/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/regulatory-tax/ultimate-guide-to-crypto-regulatory-and-tax-compliance',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:52:53[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/best-crypto-exchanges/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/best-crypto-exchanges',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:52:53[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/best-crypto-debit-cards/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/best-crypto-debit-cards',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:52:53[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/best-crypto-wallets-for-beginners/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/best-crypto-wallets-for-beginners',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:52:53[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/bitcoin-4-year-cycle-explained-for-beginners/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/bitcoin-4-year-cycle-explained-for-beginners',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:53[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/biggest-crypto-mistakes/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/biggest-crypto-mistakes',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+92ms)[22m 
+[2m22:52:53[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/bitcoin-vs-ethereum/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/bitcoin-vs-ethereum',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:53[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/crypto-fees-explained/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/crypto-fees-explained',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/do-i-need-kyc-to-use-crypto/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/do-i-need-kyc-to-use-crypto',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+79ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/crypto-investing-psychology/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/crypto-investing-psychology',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/crypto-scams-explained/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/crypto-scams-explained',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+71ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/crypto-terminology-glossary/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/crypto-terminology-glossary',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+67ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/dollar-cost-averaging-explained/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/dollar-cost-averaging-explained',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/do-i-have-to-pay-taxes-on-crypto/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/do-i-have-to-pay-taxes-on-crypto',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-buy-bitcoin-for-beginners/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-buy-bitcoin-for-beginners',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+91ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-crypto-transactions-actually-work/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-crypto-transactions-actually-work',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+92ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-buy-crypto-with-credit-card-paypal/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-buy-crypto-with-credit-card-paypal',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+109ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-buy-crypto/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-buy-crypto',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-set-up-exodus-wallet/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-set-up-exodus-wallet',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-buy-ethereum-for-beginners/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-buy-ethereum-for-beginners',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+67ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-set-up-rabby-wallet/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-set-up-rabby-wallet',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:52:54[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-set-up-trust-wallet/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-set-up-trust-wallet',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+68ms)[22m 
+[2m22:52:55[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-set-up-okx-wallet/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-set-up-okx-wallet',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+73ms)[22m 
+[2m22:52:55[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-setup-bitocoin-wallet/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-setup-bitocoin-wallet',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:52:55[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-set-up-xverse-wallet/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-set-up-xverse-wallet',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:52:55[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-setup-metamask-wallet/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-setup-metamask-wallet',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+78ms)[22m 
+[2m22:52:55[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-setup-phantom-wallet/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-setup-phantom-wallet',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:55[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-transfer-crypto-from-exchange-to-wallet-safely/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-transfer-crypto-from-exchange-to-wallet-safely',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:52:55[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-track-your-crypto-portfolio/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-track-your-crypto-portfolio',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:55[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/how-to-use-blockchain-explorers-etherscan-solscan-mempool-exxplained/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/how-to-use-blockchain-explorers-etherscan-solscan-mempool-exxplained',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+67ms)[22m 
+[2m22:52:55[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/top-10-cryptocurrencies-explained-for-beginners/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/top-10-cryptocurrencies-explained-for-beginners',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+155ms)[22m 
+[2m22:52:55[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/is-crypto-legal-where-i-live/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/is-crypto-legal-where-i-live',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:52:55[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/what-are-stablecoins/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/what-are-stablecoins',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+170ms)[22m 
+[2m22:52:55[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/what-is-cryptocurrency/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/what-is-cryptocurrency',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+71ms)[22m 
+[2m22:52:56[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/what-is-defi/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/what-is-defi',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:56[22m   [34mΓö£ΓöÇ[39m [2m/blog/getting-started/what-to-do-before-you-buy-your-first-crypto/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/getting-started/what-to-do-before-you-buy-your-first-crypto',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:56[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/advanced-crypto-estate-planning/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/advanced-crypto-estate-planning',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+67ms)[22m 
+[2m22:52:56[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/crypto-estate-planning-basics/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/crypto-estate-planning-basics',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:56[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/crypto-portfolio-allocation-for-beginners/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/crypto-portfolio-allocation-for-beginners',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:52:56[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/advanced-risk-management/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/advanced-risk-management',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+91ms)[22m 
+[2m22:52:56[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/algorithmic-portfolio-rebalancing-for-crypto/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/algorithmic-portfolio-rebalancing-for-crypto',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+104ms)[22m 
+[2m22:52:56[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/crypto-portfolio-risk-management-explained/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/crypto-portfolio-risk-management-explained',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:56[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/crypto-tax-loss-harvesting-explained/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/crypto-tax-loss-harvesting-explained',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:56[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/dynamic-portfolio-allocation-for-crypto/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/dynamic-portfolio-allocation-for-crypto',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+196ms)[22m 
+[2m22:52:56[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/factor-based-allocation-strategies-for-crypto-portfolios/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/factor-based-allocation-strategies-for-crypto-portfolios',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:52:56[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/how-to-rebalance-a-crypto-portfolio/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/how-to-rebalance-a-crypto-portfolio',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+76ms)[22m 
+[2m22:52:57[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/how-to-track-crypto-port-performance-advanced/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/how-to-track-crypto-port-performance-advanced',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:52:57[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/how-to-track-crypto-portfolio-performance/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/how-to-track-crypto-portfolio-performance',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+86ms)[22m 
+[2m22:52:57[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/portfolio-allocation-for-multi-chain-crypto-investors/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/portfolio-allocation-for-multi-chain-crypto-investors',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+101ms)[22m 
+[2m22:52:57[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/market-cap-weighted-allocation-explained-for-crypto/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/market-cap-weighted-allocation-explained-for-crypto',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+81ms)[22m 
+[2m22:52:57[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/rebalancing-strategies-during-bull-and-bear-crypto-markets/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/rebalancing-strategies-during-bull-and-bear-crypto-markets',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+69ms)[22m 
+[2m22:52:57[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/tax-efficient-rebalancing-strategies-for-crypto/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/tax-efficient-rebalancing-strategies-for-crypto',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:57[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/tactical-crypto-portfolio-adjustments-for-opportunistic-investors/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/tactical-crypto-portfolio-adjustments-for-opportunistic-investors',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+68ms)[22m 
+[2m22:52:57[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/the-advanced-guide-to-tax-loss-harvesting-for-crypto-investors/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/the-advanced-guide-to-tax-loss-harvesting-for-crypto-investors',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:52:57[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/time-based-vs-threshold-rebalancing-for-crypto-portfolios/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/time-based-vs-threshold-rebalancing-for-crypto-portfolios',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+78ms)[22m 
+[2m22:52:57[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/volatility-based-rebalancing-explained-for-crypto-portfolios/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/volatility-based-rebalancing-explained-for-crypto-portfolios',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:52:57[22m   [34mΓö£ΓöÇ[39m [2m/blog/research-analysis/60-minute-crypto-due-diligence/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/research-analysis/60-minute-crypto-due-diligence',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:52:57[22m   [34mΓö£ΓöÇ[39m [2m/blog/portfolio-management/volatility-adjusted-portfolio-allocation-in-crypto/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/portfolio-management/volatility-adjusted-portfolio-allocation-in-crypto',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+69ms)[22m 
+[2m22:52:57[22m   [34mΓö£ΓöÇ[39m [2m/blog/research-analysis/common-tokenomics-red-flags/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/research-analysis/common-tokenomics-red-flags',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+102ms)[22m 
+[2m22:52:58[22m   [34mΓö£ΓöÇ[39m [2m/blog/research-analysis/crypto-due-diligence-checklist/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/research-analysis/crypto-due-diligence-checklist',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:52:58[22m   [34mΓö£ΓöÇ[39m [2m/blog/research-analysis/crypto-investment-red-flags/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/research-analysis/crypto-investment-red-flags',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:52:58[22m   [34mΓö£ΓöÇ[39m [2m/blog/research-analysis/crypto-tokenomics-checklist/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/research-analysis/crypto-tokenomics-checklist',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:58[22m   [34mΓö£ΓöÇ[39m [2m/blog/research-analysis/evaluating-token-supply-and-distribution/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/research-analysis/evaluating-token-supply-and-distribution',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+112ms)[22m 
+[2m22:52:58[22m   [34mΓö£ΓöÇ[39m [2m/blog/research-analysis/on-chain-due-diligence-wallet-analysis/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/research-analysis/on-chain-due-diligence-wallet-analysis',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:58[22m   [34mΓö£ΓöÇ[39m [2m/blog/research-analysis/token-incentives-and-utility/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/research-analysis/token-incentives-and-utility',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:58[22m   [34mΓö£ΓöÇ[39m [2m/blog/research-analysis/ultimate-crypto-due-diligence-framework/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/research-analysis/ultimate-crypto-due-diligence-framework',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+70ms)[22m 
+[2m22:52:58[22m   [34mΓö£ΓöÇ[39m [2m/blog/research-analysis/understanding-crypto-tokenomics/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/research-analysis/understanding-crypto-tokenomics',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:52:58[22m   [34mΓö£ΓöÇ[39m [2m/blog/research-analysis/txchyon-capital-private-research-alpha/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/research-analysis/txchyon-capital-private-research-alpha',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+156ms)[22m 
+[2m22:52:58[22m   [34mΓö£ΓöÇ[39m [2m/blog/security-privacy/hot-vs-cold-wallet-how-to-store-crypto/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/security-privacy/hot-vs-cold-wallet-how-to-store-crypto',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:58[22m   [34mΓö£ΓöÇ[39m [2m/blog/security-privacy/how-to-audit-smart-contracts-on-evm-and-solana/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/security-privacy/how-to-audit-smart-contracts-on-evm-and-solana',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:52:58[22m   [34mΓö£ΓöÇ[39m [2m/blog/security-privacy/how-to-revoke-evm/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/security-privacy/how-to-revoke-evm',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+88ms)[22m 
+[2m22:52:58[22m   [34mΓö£ΓöÇ[39m [2m/blog/security-privacy/ledger-setup/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/security-privacy/ledger-setup',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+78ms)[22m 
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/blog/security-privacy/setting-up-trezor/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/security-privacy/setting-up-trezor',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/blog/security-privacy/stop-metamask-ip-leak-2026/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/security-privacy/stop-metamask-ip-leak-2026',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/blog/tools-automation/best-crypto-trading-bots/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/tools-automation/best-crypto-trading-bots',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/blog/tools-automation/crypto-analytics-tools-guide/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/tools-automation/crypto-analytics-tools-guide',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/blog/trading-investing/aster-28-percent-yield/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/trading-investing/aster-28-percent-yield',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/blog/trading-investing/aster-vs-drift-vs-hyperliquid/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/trading-investing/aster-vs-drift-vs-hyperliquid',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/blog/trading-investing/aster-sub-1-dip/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/trading-investing/aster-sub-1-dip',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:52:59[22m   [34mΓööΓöÇ[39m [2m/blog/trading-investing/top-8-dexs-for-lowest-fees/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/trading-investing/top-8-dexs-for-lowest-fees',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+68ms)[22m 
+[2m22:52:59[22m [32mΓû╢[39m src/pages/categories/[category]/[subcategory]/index.astro
+DEBUG: Generated 97 subcategory paths
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/categories/getting-started/basics/index.html[22mFound post for getting-started/basics: getting-started/bitcoin-vs-ethereum.md
+Found post for getting-started/basics: getting-started/crypto-fees-explained.md
+Found post for getting-started/basics: getting-started/do-i-need-kyc-to-use-crypto.md
+Found post for getting-started/basics: getting-started/crypto-terminology-glossary.md
+Found post for getting-started/basics: getting-started/do-i-have-to-pay-taxes-on-crypto.md
+Found post for getting-started/basics: getting-started/how-crypto-transactions-actually-work.md
+Found post for getting-started/basics: getting-started/how-to-track-your-crypto-portfolio.md
+Found post for getting-started/basics: getting-started/how-to-use-blockchain-explorers-etherscan-solscan-mempool-exxplained.md
+Found post for getting-started/basics: getting-started/top-10-cryptocurrencies-explained-for-beginners.md
+Found post for getting-started/basics: getting-started/is-crypto-legal-where-i-live.md
+Found post for getting-started/basics: getting-started/what-are-stablecoins.md
+Found post for getting-started/basics: getting-started/what-is-cryptocurrency.md
+Found post for getting-started/basics: getting-started/what-is-defi.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/getting-started/basics',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/categories/getting-started/first-purchase/index.html[22mFound post for getting-started/first-purchase: getting-started/best-crypto-exchanges.md
+Found post for getting-started/first-purchase: getting-started/best-crypto-debit-cards.md
+Found post for getting-started/first-purchase: getting-started/how-to-buy-bitcoin-for-beginners.md
+Found post for getting-started/first-purchase: getting-started/how-to-buy-crypto-with-credit-card-paypal.md
+Found post for getting-started/first-purchase: getting-started/how-to-buy-crypto.md
+Found post for getting-started/first-purchase: getting-started/how-to-buy-ethereum-for-beginners.md
+Found post for getting-started/first-purchase: getting-started/what-to-do-before-you-buy-your-first-crypto.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/getting-started/first-purchase',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/categories/getting-started/wallet-setup/index.html[22mFound post for getting-started/wallet-setup: getting-started/best-crypto-wallets-for-beginners.md
+Found post for getting-started/wallet-setup: getting-started/how-to-set-up-exodus-wallet.md
+Found post for getting-started/wallet-setup: getting-started/how-to-set-up-rabby-wallet.md
+Found post for getting-started/wallet-setup: getting-started/how-to-set-up-trust-wallet.md
+Found post for getting-started/wallet-setup: getting-started/how-to-set-up-okx-wallet.md
+Found post for getting-started/wallet-setup: getting-started/how-to-setup-bitocoin-wallet.md
+Found post for getting-started/wallet-setup: getting-started/how-to-set-up-xverse-wallet.md
+Found post for getting-started/wallet-setup: getting-started/how-to-setup-metamask-wallet.md
+Found post for getting-started/wallet-setup: getting-started/how-to-setup-phantom-wallet.md
+Found post for getting-started/wallet-setup: getting-started/how-to-transfer-crypto-from-exchange-to-wallet-safely.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/getting-started/wallet-setup',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+79ms)[22m 
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/categories/getting-started/psychology/index.html[22mFound post for getting-started/psychology: getting-started/bitcoin-4-year-cycle-explained-for-beginners.md
+Found post for getting-started/psychology: getting-started/crypto-investing-psychology.md
+Found post for getting-started/psychology: getting-started/dollar-cost-averaging-explained.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/getting-started/psychology',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/categories/getting-started/common-mistakes/index.html[22mFound post for getting-started/common-mistakes: getting-started/biggest-crypto-mistakes.md
+Found post for getting-started/common-mistakes: getting-started/crypto-scams-explained.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/getting-started/common-mistakes',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/categories/security-privacy/hardware-wallets/index.html[22mFound post for security-privacy/hardware-wallets: security-privacy/hot-vs-cold-wallet-how-to-store-crypto.md
+Found post for security-privacy/hardware-wallets: security-privacy/ledger-setup.md
+Found post for security-privacy/hardware-wallets: security-privacy/setting-up-trezor.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/security-privacy/hardware-wallets',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:52:59[22m   [34mΓö£ΓöÇ[39m [2m/categories/security-privacy/software-wallets/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/security-privacy/software-wallets',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+124ms)[22m 
+[2m22:53:00[22m   [34mΓö£ΓöÇ[39m [2m/categories/security-privacy/seed-phrase/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/security-privacy/seed-phrase',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+100ms)[22m 
+[2m22:53:00[22m   [34mΓö£ΓöÇ[39m [2m/categories/security-privacy/transaction-security/index.html[22mFound post for security-privacy/transaction-security: security-privacy/how-to-audit-smart-contracts-on-evm-and-solana.md
+Found post for security-privacy/transaction-security: security-privacy/how-to-revoke-evm.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/security-privacy/transaction-security',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:00[22m   [34mΓö£ΓöÇ[39m [2m/categories/security-privacy/privacy-tools/index.html[22mFound post for security-privacy/privacy-tools: security-privacy/stop-metamask-ip-leak-2026.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/security-privacy/privacy-tools',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:53:00[22m   [34mΓö£ΓöÇ[39m [2m/categories/security-privacy/scam-prevention/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/security-privacy/scam-prevention',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+59ms)[22m 
+[2m22:53:00[22m   [34mΓö£ΓöÇ[39m [2m/categories/security-privacy/multi-sig/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/security-privacy/multi-sig',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+67ms)[22m 
+[2m22:53:00[22m   [34mΓö£ΓöÇ[39m [2m/categories/trading-investing/spot-trading/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/trading-investing/spot-trading',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:00[22m   [34mΓö£ΓöÇ[39m [2m/categories/trading-investing/derivatives/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/trading-investing/derivatives',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:53:00[22m   [34mΓö£ΓöÇ[39m [2m/categories/trading-investing/technical-analysis/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/trading-investing/technical-analysis',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:53:00[22m   [34mΓö£ΓöÇ[39m [2m/categories/trading-investing/on-chain-analysis/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/trading-investing/on-chain-analysis',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+85ms)[22m 
+[2m22:53:00[22m   [34mΓö£ΓöÇ[39m [2m/categories/trading-investing/memecoins-nfts/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/trading-investing/memecoins-nfts',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+98ms)[22m 
+[2m22:53:00[22m   [34mΓö£ΓöÇ[39m [2m/categories/trading-investing/venture-investing/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/trading-investing/venture-investing',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+105ms)[22m 
+[2m22:53:00[22m   [34mΓö£ΓöÇ[39m [2m/categories/trading-investing/exit-strategies/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/trading-investing/exit-strategies',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:53:00[22m   [34mΓö£ΓöÇ[39m [2m/categories/defi-yield/dexs-swapping/index.html[22mFound post for defi-yield/dexs-swapping: defi-yield/liquidity-uniswap-guide.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/defi-yield/dexs-swapping',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:01[22m   [34mΓö£ΓöÇ[39m [2m/categories/defi-yield/liquidity-providing/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/defi-yield/liquidity-providing',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:01[22m   [34mΓö£ΓöÇ[39m [2m/categories/defi-yield/lending-borrowing/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/defi-yield/lending-borrowing',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:01[22m   [34mΓö£ΓöÇ[39m [2m/categories/defi-yield/yield-aggregators/index.html[22mFound post for defi-yield/yield-aggregators: defi-yield/nordvpn-drift.md
+Found post for defi-yield/yield-aggregators: defi-yield/vooi-tge-research.md
+Found post for defi-yield/yield-aggregators: defi-yield/nordvpn-hype.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/defi-yield/yield-aggregators',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:53:01[22m   [34mΓö£ΓöÇ[39m [2m/categories/defi-yield/restaking-lsts/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/defi-yield/restaking-lsts',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:01[22m   [34mΓö£ΓöÇ[39m [2m/categories/defi-yield/structured-products/index.html[22mFound post for defi-yield/structured-products: defi-yield/how-to-launch-a-memecoin-on-pumpfun.md
+Found post for defi-yield/structured-products: defi-yield/why-most-token-launches-fail.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/defi-yield/structured-products',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+146ms)[22m 
+[2m22:53:01[22m   [34mΓö£ΓöÇ[39m [2m/categories/defi-yield/cross-chain-yield/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/defi-yield/cross-chain-yield',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:01[22m   [34mΓö£ΓöÇ[39m [2m/categories/airdrop-farming/wallet-strategy/index.html[22mFound post for airdrop-farming/wallet-strategy: airdrop-farming/cold-vs-hot-wallets-optimizing-security-and-eligibility.md
+Found post for airdrop-farming/wallet-strategy: airdrop-farming/avoiding-red-flags-wallet-hygiene-and-compliance.md
+Found post for airdrop-farming/wallet-strategy: airdrop-farming/wallet-management-best-practices-for-airdrop-farmers.md
+Found post for airdrop-farming/wallet-strategy: airdrop-farming/mastering-wallet-diversification-for-airdrop-farming.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/airdrop-farming/wallet-strategy',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+70ms)[22m 
+[2m22:53:01[22m   [34mΓö£ΓöÇ[39m [2m/categories/airdrop-farming/points-systems/index.html[22mFound post for airdrop-farming/points-systems: airdrop-farming/airdrop-points-case-studies.md
+Found post for airdrop-farming/points-systems: airdrop-farming/alignerz-launchpad.md
+Found post for airdrop-farming/points-systems: airdrop-farming/how-projects-detect-sybil-wallets.md
+Found post for airdrop-farming/points-systems: airdrop-farming/how-to-track-airdrop-points.md
+Found post for airdrop-farming/points-systems: airdrop-farming/preparing-for-the-polymarket-airdrop.md
+Found post for airdrop-farming/points-systems: airdrop-farming/optimizing-airdrop-points-safely.md
+Found post for airdrop-farming/points-systems: airdrop-farming/time-vs-volume-points-systems.md
+Found post for airdrop-farming/points-systems: airdrop-farming/solana-airdrops.md
+Found post for airdrop-farming/points-systems: airdrop-farming/pump-fun-airdrop-hunt.md
+Found post for airdrop-farming/points-systems: airdrop-farming/what-actions-earn-airdrop-points.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/airdrop-farming/points-systems',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+82ms)[22m 
+[2m22:53:01[22m   [34mΓö£ΓöÇ[39m [2m/categories/airdrop-farming/eligibility-optimization/index.html[22mFound post for airdrop-farming/eligibility-optimization: airdrop-farming/airdrop-disqualification-risks.md
+Found post for airdrop-farming/eligibility-optimization: airdrop-farming/airdrop-eligibility-criteria.md
+Found post for airdrop-farming/eligibility-optimization: airdrop-farming/airdrop-minimum-activity-thresholds.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/airdrop-farming/eligibility-optimization',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+84ms)[22m 
+[2m22:53:01[22m   [34mΓö£ΓöÇ[39m [2m/categories/airdrop-farming/gas-optimization/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/airdrop-farming/gas-optimization',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:01[22m   [34mΓö£ΓöÇ[39m [2m/categories/airdrop-farming/multi-chain-farming/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/airdrop-farming/multi-chain-farming',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+59ms)[22m 
+[2m22:53:01[22m   [34mΓö£ΓöÇ[39m [2m/categories/airdrop-farming/retroactive-analysis/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/airdrop-farming/retroactive-analysis',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:01[22m   [34mΓö£ΓöÇ[39m [2m/categories/airdrop-farming/tool-bot-setup/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/airdrop-farming/tool-bot-setup',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+141ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/infrastructure-tech/layer-1s/index.html[22mFound post for infrastructure-tech/layer-1s: infrastructure-tech/how-to-set-up-bitcoin-node-on-raspberry-pi.md
+Found post for infrastructure-tech/layer-1s: infrastructure-tech/best-hardware-for-bitcoin-nodes.md
+Found post for infrastructure-tech/layer-1s: infrastructure-tech/what-is-a-bitcoin-node-and-why-you-need-one.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/infrastructure-tech/layer-1s',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+99ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/infrastructure-tech/layer-2s-rollups/index.html[22mFound post for infrastructure-tech/layer-2s-rollups: infrastructure-tech/iopn-solana.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/infrastructure-tech/layer-2s-rollups',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/infrastructure-tech/oracles/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/infrastructure-tech/oracles',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/infrastructure-tech/bridges/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/infrastructure-tech/bridges',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/infrastructure-tech/zk-technology/index.html[22mFound post for infrastructure-tech/zk-technology: infrastructure-tech/genlayer.md
+Found post for infrastructure-tech/zk-technology: infrastructure-tech/idos-identity.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/infrastructure-tech/zk-technology',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/infrastructure-tech/ai-x-crypto/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/infrastructure-tech/ai-x-crypto',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+58ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/infrastructure-tech/depin-rwas/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/infrastructure-tech/depin-rwas',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/tools-automation/trading-bots/index.html[22mFound post for tools-automation/trading-bots: tools-automation/best-crypto-trading-bots.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/tools-automation/trading-bots',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+165ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/tools-automation/analytics-platforms/index.html[22mFound post for tools-automation/analytics-platforms: tools-automation/crypto-analytics-tools-guide.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/tools-automation/analytics-platforms',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/tools-automation/portfolio-trackers/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/tools-automation/portfolio-trackers',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/tools-automation/alert-systems/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/tools-automation/alert-systems',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/tools-automation/automation-scripts/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/tools-automation/automation-scripts',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/tools-automation/api-integration/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/tools-automation/api-integration',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:53:02[22m   [34mΓö£ΓöÇ[39m [2m/categories/tools-automation/custom-dashboard-builds/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/tools-automation/custom-dashboard-builds',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+85ms)[22m 
+[2m22:53:03[22m   [34mΓö£ΓöÇ[39m [2m/categories/research-analysis/due-diligence-framework/index.html[22mFound post for research-analysis/due-diligence-framework: research-analysis/60-minute-crypto-due-diligence.md
+Found post for research-analysis/due-diligence-framework: research-analysis/crypto-due-diligence-checklist.md
+Found post for research-analysis/due-diligence-framework: research-analysis/crypto-investment-red-flags.md
+Found post for research-analysis/due-diligence-framework: research-analysis/on-chain-due-diligence-wallet-analysis.md
+Found post for research-analysis/due-diligence-framework: research-analysis/ultimate-crypto-due-diligence-framework.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/research-analysis/due-diligence-framework',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:53:03[22m   [34mΓö£ΓöÇ[39m [2m/categories/research-analysis/tokenomics-analysis/index.html[22mFound post for research-analysis/tokenomics-analysis: research-analysis/common-tokenomics-red-flags.md
+Found post for research-analysis/tokenomics-analysis: research-analysis/crypto-tokenomics-checklist.md
+Found post for research-analysis/tokenomics-analysis: research-analysis/evaluating-token-supply-and-distribution.md
+Found post for research-analysis/tokenomics-analysis: research-analysis/token-incentives-and-utility.md
+Found post for research-analysis/tokenomics-analysis: research-analysis/understanding-crypto-tokenomics.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/research-analysis/tokenomics-analysis',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:53:03[22m   [34mΓö£ΓöÇ[39m [2m/categories/research-analysis/team-backer-analysis/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/research-analysis/team-backer-analysis',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+81ms)[22m 
+[2m22:53:03[22m   [34mΓö£ΓöÇ[39m [2m/categories/research-analysis/competitor-analysis/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/research-analysis/competitor-analysis',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+63ms)[22m 
+[2m22:53:03[22m   [34mΓö£ΓöÇ[39m [2m/categories/research-analysis/market-fit-assessment/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/research-analysis/market-fit-assessment',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+141ms)[22m 
+[2m22:53:03[22m   [34mΓö£ΓöÇ[39m [2m/categories/research-analysis/risk-assessment-templates/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/research-analysis/risk-assessment-templates',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+59ms)[22m 
+[2m22:53:03[22m   [34mΓö£ΓöÇ[39m [2m/categories/regulatory-tax/global-regulations/index.html[22mFound post for regulatory-tax/global-regulations: regulatory-tax/comprehensive-guide-to-global-regulations.md
+Found post for regulatory-tax/global-regulations: regulatory-tax/ultimate-guide-to-crypto-regulatory-and-tax-compliance.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/regulatory-tax/global-regulations',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:53:03[22m   [34mΓö£ΓöÇ[39m [2m/categories/regulatory-tax/tax-reporting/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/regulatory-tax/tax-reporting',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+59ms)[22m 
+[2m22:53:03[22m   [34mΓö£ΓöÇ[39m [2m/categories/regulatory-tax/entity-formation/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/regulatory-tax/entity-formation',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:53:03[22m   [34mΓö£ΓöÇ[39m [2m/categories/regulatory-tax/banking-solutions/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/regulatory-tax/banking-solutions',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:03[22m   [34mΓö£ΓöÇ[39m [2m/categories/regulatory-tax/compliance-tools/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/regulatory-tax/compliance-tools',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+113ms)[22m 
+[2m22:53:03[22m   [34mΓö£ΓöÇ[39m [2m/categories/regulatory-tax/legal-structures/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/regulatory-tax/legal-structures',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+76ms)[22m 
+[2m22:53:03[22m   [34mΓö£ΓöÇ[39m [2m/categories/regulatory-tax/audit-accounting/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/regulatory-tax/audit-accounting',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:53:04[22m   [34mΓö£ΓöÇ[39m [2m/categories/portfolio-management/allocation-strategies/index.html[22mFound post for portfolio-management/allocation-strategies: portfolio-management/crypto-portfolio-allocation-for-beginners.md
+Found post for portfolio-management/allocation-strategies: portfolio-management/dynamic-portfolio-allocation-for-crypto.md
+Found post for portfolio-management/allocation-strategies: portfolio-management/factor-based-allocation-strategies-for-crypto-portfolios.md
+Found post for portfolio-management/allocation-strategies: portfolio-management/portfolio-allocation-for-multi-chain-crypto-investors.md
+Found post for portfolio-management/allocation-strategies: portfolio-management/market-cap-weighted-allocation-explained-for-crypto.md
+Found post for portfolio-management/allocation-strategies: portfolio-management/tactical-crypto-portfolio-adjustments-for-opportunistic-investors.md
+Found post for portfolio-management/allocation-strategies: portfolio-management/volatility-adjusted-portfolio-allocation-in-crypto.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/portfolio-management/allocation-strategies',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:53:04[22m   [34mΓö£ΓöÇ[39m [2m/categories/portfolio-management/rebalancing-methods/index.html[22mFound post for portfolio-management/rebalancing-methods: portfolio-management/algorithmic-portfolio-rebalancing-for-crypto.md
+Found post for portfolio-management/rebalancing-methods: portfolio-management/how-to-rebalance-a-crypto-portfolio.md
+Found post for portfolio-management/rebalancing-methods: portfolio-management/rebalancing-strategies-during-bull-and-bear-crypto-markets.md
+Found post for portfolio-management/rebalancing-methods: portfolio-management/tax-efficient-rebalancing-strategies-for-crypto.md
+Found post for portfolio-management/rebalancing-methods: portfolio-management/time-based-vs-threshold-rebalancing-for-crypto-portfolios.md
+Found post for portfolio-management/rebalancing-methods: portfolio-management/volatility-based-rebalancing-explained-for-crypto-portfolios.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/portfolio-management/rebalancing-methods',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+95ms)[22m 
+[2m22:53:04[22m   [34mΓö£ΓöÇ[39m [2m/categories/portfolio-management/risk-management/index.html[22mFound post for portfolio-management/risk-management: portfolio-management/advanced-risk-management.md
+Found post for portfolio-management/risk-management: portfolio-management/crypto-portfolio-risk-management-explained.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/portfolio-management/risk-management',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:53:04[22m   [34mΓö£ΓöÇ[39m [2m/categories/portfolio-management/performance-tracking/index.html[22mFound post for portfolio-management/performance-tracking: portfolio-management/how-to-track-crypto-port-performance-advanced.md
+Found post for portfolio-management/performance-tracking: portfolio-management/how-to-track-crypto-portfolio-performance.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/portfolio-management/performance-tracking',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:04[22m   [34mΓö£ΓöÇ[39m [2m/categories/portfolio-management/tax-loss-harvesting/index.html[22mFound post for portfolio-management/tax-loss-harvesting: portfolio-management/crypto-tax-loss-harvesting-explained.md
+Found post for portfolio-management/tax-loss-harvesting: portfolio-management/the-advanced-guide-to-tax-loss-harvesting-for-crypto-investors.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/portfolio-management/tax-loss-harvesting',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+186ms)[22m 
+[2m22:53:04[22m   [34mΓö£ΓöÇ[39m [2m/categories/portfolio-management/estate-planning/index.html[22mFound post for portfolio-management/estate-planning: portfolio-management/advanced-crypto-estate-planning.md
+Found post for portfolio-management/estate-planning: portfolio-management/crypto-estate-planning-basics.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/portfolio-management/estate-planning',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+110ms)[22m 
+[2m22:53:04[22m   [34mΓö£ΓöÇ[39m [2m/categories/prediction-markets/platform-guides/index.html[22mFound post for prediction-markets/platform-guides: prediction-markets/what-is-augur.md
+Found post for prediction-markets/platform-guides: prediction-markets/what-is-kalshi.md
+Found post for prediction-markets/platform-guides: prediction-markets/what-is-polymarket.md
+Found post for prediction-markets/platform-guides: prediction-markets/what-is-worm-wtf.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/prediction-markets/platform-guides',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:53:04[22m   [34mΓö£ΓöÇ[39m [2m/categories/prediction-markets/event-strategies/index.html[22mFound post for prediction-markets/event-strategies: prediction-markets/top-10-prediction-market-strategies-that-actually-work.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/prediction-markets/event-strategies',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:04[22m   [34mΓö£ΓöÇ[39m [2m/categories/prediction-markets/liquidity-providing/index.html[22mFound post for prediction-markets/liquidity-providing: prediction-markets/how-to-earn-passive-income-on-kalshi-liquidity-incentive-program.md
+Found post for prediction-markets/liquidity-providing: prediction-markets/how-to-earn-passive-yield-as-a-liquidity-provider-on-prediction-markets.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/prediction-markets/liquidity-providing',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:04[22m   [34mΓö£ΓöÇ[39m [2m/categories/prediction-markets/arbitrage-opportunities/index.html[22mFound post for prediction-markets/arbitrage-opportunities: prediction-markets/prediction-market-arbitrage-guide.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/prediction-markets/arbitrage-opportunities',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+227ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/prediction-markets/on-chain-protocols/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/prediction-markets/on-chain-protocols',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/prediction-markets/resolution-mechanisms/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/prediction-markets/resolution-mechanisms',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/prediction-markets/bankroll-management/index.html[22mFound post for prediction-markets/bankroll-management: prediction-markets/prediction-market-risk-management.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/prediction-markets/bankroll-management',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/prediction-markets/market-analysis/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/prediction-markets/market-analysis',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/prediction-markets/regulatory-updates/index.html[22mFound post for prediction-markets/regulatory-updates: prediction-markets/prediction-markets-regulation.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/prediction-markets/regulatory-updates',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/alpha-insider/early-dex-arbitrage/index.html[22mFound post for alpha-insider/early-dex-arbitrage: alpha-insider/capital-allocation-scaling.md
+Found post for alpha-insider/early-dex-arbitrage: alpha-insider/cross-chain-early-arbitrage.md
+Found post for alpha-insider/early-dex-arbitrage: alpha-insider/liquidity-pool-analysis-alpha.md
+Found post for alpha-insider/early-dex-arbitrage: alpha-insider/gas-execution-optimization.md
+Found post for alpha-insider/early-dex-arbitrage: alpha-insider/front-running-anti-bot.md
+Found post for alpha-insider/early-dex-arbitrage: alpha-insider/smart-contract-sniping.md
+Found post for alpha-insider/early-dex-arbitrage: alpha-insider/spot-new-dex-pairs.md
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/alpha-insider/early-dex-arbitrage',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/alpha-insider/memecoin-nft-whitelists/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/alpha-insider/memecoin-nft-whitelists',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+69ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/alpha-insider/high-frequency-airdrops/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/alpha-insider/high-frequency-airdrops',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/alpha-insider/smart-contract-sniping/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/alpha-insider/smart-contract-sniping',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+118ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/alpha-insider/liquidity-market-depth-alpha/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/alpha-insider/liquidity-market-depth-alpha',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/alpha-insider/cross-chain-alpha-arbitrage/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/alpha-insider/cross-chain-alpha-arbitrage',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/alpha-insider/insider-governance-dao-plays/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/alpha-insider/insider-governance-dao-plays',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/alpha-insider/token-launch-fair-launch-tactics/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/alpha-insider/token-launch-fair-launch-tactics',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:05[22m   [34mΓö£ΓöÇ[39m [2m/categories/alpha-insider/private-testnet-beta-exploits/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/alpha-insider/private-testnet-beta-exploits',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+177ms)[22m 
+[2m22:53:06[22m   [34mΓö£ΓöÇ[39m [2m/categories/alpha-insider/on-chain-analytics-wallet-shadowing/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/alpha-insider/on-chain-analytics-wallet-shadowing',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+59ms)[22m 
+[2m22:53:06[22m   [34mΓö£ΓöÇ[39m [2m/categories/web3-gaming-metaverse/play-to-earn-strategies/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/web3-gaming-metaverse/play-to-earn-strategies',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+65ms)[22m 
+[2m22:53:06[22m   [34mΓö£ΓöÇ[39m [2m/categories/web3-gaming-metaverse/nft-game-assets/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/web3-gaming-metaverse/nft-game-assets',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+67ms)[22m 
+[2m22:53:06[22m   [34mΓö£ΓöÇ[39m [2m/categories/web3-gaming-metaverse/metaverse-land-real-estate/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/web3-gaming-metaverse/metaverse-land-real-estate',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+60ms)[22m 
+[2m22:53:06[22m   [34mΓö£ΓöÇ[39m [2m/categories/web3-gaming-metaverse/game-economy-tokenomics/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/web3-gaming-metaverse/game-economy-tokenomics',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+59ms)[22m 
+[2m22:53:06[22m   [34mΓö£ΓöÇ[39m [2m/categories/web3-gaming-metaverse/early-access-insider-play/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/web3-gaming-metaverse/early-access-insider-play',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+61ms)[22m 
+[2m22:53:06[22m   [34mΓö£ΓöÇ[39m [2m/categories/web3-gaming-metaverse/cross-game-multiverse-strategies/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/web3-gaming-metaverse/cross-game-multiverse-strategies',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+66ms)[22m 
+[2m22:53:06[22m   [34mΓö£ΓöÇ[39m [2m/categories/web3-gaming-metaverse/guilds-teams-community/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/web3-gaming-metaverse/guilds-teams-community',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+64ms)[22m 
+[2m22:53:06[22m   [34mΓö£ΓöÇ[39m [2m/categories/web3-gaming-metaverse/defi-integration-gamers/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/web3-gaming-metaverse/defi-integration-gamers',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+99ms)[22m 
+[2m22:53:06[22m   [34mΓö£ΓöÇ[39m [2m/categories/web3-gaming-metaverse/risk-management-exit/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/web3-gaming-metaverse/risk-management-exit',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+109ms)[22m 
+[2m22:53:06[22m   [34mΓö£ΓöÇ[39m [2m/categories/web3-gaming-metaverse/rare-event-opportunities/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/web3-gaming-metaverse/rare-event-opportunities',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+99ms)[22m 
+[2m22:53:06[22m   [34mΓö£ΓöÇ[39m [2m/categories/web3-gaming-metaverse/tools-trackers-analytics/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/web3-gaming-metaverse/tools-trackers-analytics',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+62ms)[22m 
+[2m22:53:06[22m   [34mΓööΓöÇ[39m [2m/categories/web3-gaming-metaverse/social-competitive-alpha/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/categories/web3-gaming-metaverse/social-competitive-alpha',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+59ms)[22m 
+[2m22:53:06[22m [32mΓû╢[39m src/pages/categories/[category]/index.astro
+DEBUG: Generating paths for categories: [
+  'getting-started',
+  'security-privacy',
+  'trading-investing',
+  'defi-yield',
+  'airdrop-farming',
+  'infrastructure-tech',
+  'tools-automation',
+  'research-analysis',
+  'regulatory-tax',
+  'portfolio-management',
+  'prediction-markets',
+  'alpha-insider',
+  'web3-gaming-metaverse'
+]
+[2m22:53:06[22m   [34mΓö£ΓöÇ[39m [2m/categories/getting-started/index.html[22mDEBUG: Current category param: getting-started
+DEBUG: Total posts loaded: 178
+Post: test-gated-article.md is a DRAFT - skipping
+Post: airdrop-farming/airdrop-disqualification-risks.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/airdrop-eligibility-criteria.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/airdrop-points-case-studies.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/alignerz-launchpad.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/cold-vs-hot-wallets-optimizing-security-and-eligibility.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/airdrop-minimum-activity-thresholds.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/avoiding-red-flags-wallet-hygiene-and-compliance.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/how-projects-detect-sybil-wallets.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/how-to-track-airdrop-points.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/preparing-for-the-polymarket-airdrop.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/wallet-management-best-practices-for-airdrop-farmers.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/optimizing-airdrop-points-safely.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/mastering-wallet-diversification-for-airdrop-farming.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/time-vs-volume-points-systems.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/solana-airdrops.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: alpha-insider/capital-allocation-scaling.md, Category: "alpha-insider", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/pump-fun-airdrop-hunt.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: airdrop-farming/what-actions-earn-airdrop-points.md, Category: "airdrop-farming", Looking for: "getting-started", Matches: false
+Post: alpha-insider/cross-chain-early-arbitrage.md, Category: "alpha-insider", Looking for: "getting-started", Matches: false
+Post: alpha-insider/liquidity-pool-analysis-alpha.md, Category: "alpha-insider", Looking for: "getting-started", Matches: false
+Post: alpha-insider/gas-execution-optimization.md, Category: "alpha-insider", Looking for: "getting-started", Matches: false
+Post: alpha-insider/front-running-anti-bot.md, Category: "alpha-insider", Looking for: "getting-started", Matches: false
+Post: alpha-insider/smart-contract-sniping.md, Category: "alpha-insider", Looking for: "getting-started", Matches: false
+Post: alpha-insider/spot-new-dex-pairs.md, Category: "alpha-insider", Looking for: "getting-started", Matches: false
+Post: defi-yield/nordvpn-drift.md, Category: "defi-yield", Looking for: "getting-started", Matches: false
+Post: defi-yield/liquidity-uniswap-guide.md, Category: "defi-yield", Looking for: "getting-started", Matches: false
+Post: defi-yield/vooi-tge-research.md, Category: "defi-yield", Looking for: "getting-started", Matches: false
+Post: defi-yield/how-to-launch-a-memecoin-on-pumpfun.md, Category: "defi-yield", Looking for: "getting-started", Matches: false
+Post: defi-yield/nordvpn-hype.md, Category: "defi-yield", Looking for: "getting-started", Matches: false
+Post: defi-yield/why-most-token-launches-fail.md, Category: "defi-yield", Looking for: "getting-started", Matches: false
+Post: infrastructure-tech/how-to-set-up-bitcoin-node-on-raspberry-pi.md, Category: "infrastructure-tech", Looking for: "getting-started", Matches: false
+Post: infrastructure-tech/best-hardware-for-bitcoin-nodes.md, Category: "infrastructure-tech", Looking for: "getting-started", Matches: false
+Post: infrastructure-tech/genlayer.md, Category: "infrastructure-tech", Looking for: "getting-started", Matches: false
+Post: infrastructure-tech/idos-identity.md, Category: "infrastructure-tech", Looking for: "getting-started", Matches: false
+Post: infrastructure-tech/iopn-solana.md, Category: "infrastructure-tech", Looking for: "getting-started", Matches: false
+Post: infrastructure-tech/kloutgg-solana-social-infra.md, Category: "infrastructure-tech", Looking for: "getting-started", Matches: false
+Post: infrastructure-tech/how-to-setup-up-lightning-network-node.md, Category: "infrastructure-tech", Looking for: "getting-started", Matches: false
+Post: prediction-markets/how-to-earn-passive-income-on-kalshi-liquidity-incentive-program.md, Category: "prediction-markets", Looking for: "getting-started", Matches: false
+Post: infrastructure-tech/what-is-a-bitcoin-node-and-why-you-need-one.md, Category: "infrastructure-tech", Looking for: "getting-started", Matches: false
+Post: prediction-markets/prediction-market-arbitrage-guide.md, Category: "prediction-markets", Looking for: "getting-started", Matches: false
+Post: prediction-markets/how-to-earn-passive-yield-as-a-liquidity-provider-on-prediction-markets.md, Category: "prediction-markets", Looking for: "getting-started", Matches: false
+Post: prediction-markets/prediction-market-risk-management.md, Category: "prediction-markets", Looking for: "getting-started", Matches: false
+Post: prediction-markets/top-10-prediction-market-strategies-that-actually-work.md, Category: "prediction-markets", Looking for: "getting-started", Matches: false
+Post: prediction-markets/what-is-augur.md, Category: "prediction-markets", Looking for: "getting-started", Matches: false
+Post: prediction-markets/prediction-markets-regulation.md, Category: "prediction-markets", Looking for: "getting-started", Matches: false
+Post: prediction-markets/what-is-kalshi.md, Category: "prediction-markets", Looking for: "getting-started", Matches: false
+Post: prediction-markets/what-is-polymarket.md, Category: "prediction-markets", Looking for: "getting-started", Matches: false
+Post: prediction-markets/what-is-worm-wtf.md, Category: "prediction-markets", Looking for: "getting-started", Matches: false
+Post: regulatory-tax/all-about-global-crypto-regulations.md is a DRAFT - skipping
+Post: regulatory-tax/comprehensive-guide-to-global-regulations.md, Category: "regulatory-tax", Looking for: "getting-started", Matches: false
+Post: regulatory-tax/complete-guide-to-crypto-tax-reporting-and-compliance.md is a DRAFT - skipping
+Post: regulatory-tax/audit-and-accounting-best-practices-for-crypto-businesses.md is a DRAFT - skipping
+Post: regulatory-tax/best-banking-solutions-for-crypto-businesses.md is a DRAFT - skipping
+Post: regulatory-tax/global-regulatory-updates-for-crypto-businesses.md is a DRAFT - skipping
+Post: regulatory-tax/defii-and-staking-tax-compliance-for-crypto-investors.md is a DRAFT - skipping
+Post: regulatory-tax/how-to-form-a-legal-entity-for-your-cypto-business.md is a DRAFT - skipping
+Post: regulatory-tax/international-tax-compliance-for-crypto-investors.md is a DRAFT - skipping
+Post: regulatory-tax/top-compliance-tools-for-crypto-businesses.md is a DRAFT - skipping
+Post: regulatory-tax/ultimate-guide-to-crypto-regulatory-and-tax-compliance.md, Category: "regulatory-tax", Looking for: "getting-started", Matches: false
+Post: regulatory-tax/understanding-legal-structures-for-crypto-companies.md is a DRAFT - skipping
+Post: getting-started/best-crypto-exchanges.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/best-crypto-debit-cards.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/best-crypto-wallets-for-beginners.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/bitcoin-4-year-cycle-explained-for-beginners.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/biggest-crypto-mistakes.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/Bitcoin-ordinals-brc-20-runes-explained-for-beginners.md is a DRAFT - skipping
+Post: getting-started/bitcoin-runes-protocol-explained-for-beginners.md is a DRAFT - skipping
+Post: getting-started/bitcoin-vs-ethereum.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/crypto-fees-explained.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/do-i-need-kyc-to-use-crypto.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/crypto-investing-psychology.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/crypto-scams-explained.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/crypto-terminology-glossary.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/dollar-cost-averaging-explained.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/first-30-days-in-crypto.md is a DRAFT - skipping
+Post: getting-started/do-i-have-to-pay-taxes-on-crypto.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-buy-bitcoin-for-beginners.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-crypto-transactions-actually-work.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-bridge-crypto-from-ethereum-to-polygon-arbitrum-bnb-chain-and-hyperliquid.md is a DRAFT - skipping
+Post: getting-started/how-to-buy-crypto-with-credit-card-paypal.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-buy-crypto.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-set-up-exodus-wallet.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-buy-ethereum-for-beginners.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-set-up-rabby-wallet.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-set-up-trust-wallet.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-set-up-okx-wallet.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-setup-bitocoin-wallet.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-set-up-xverse-wallet.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-setup-metamask-wallet.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-setup-phantom-wallet.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-transfer-crypto-from-exchange-to-wallet-safely.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-track-your-crypto-portfolio.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/how-to-use-blockchain-explorers-etherscan-solscan-mempool-exxplained.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/what-are-memecoins.md is a DRAFT - skipping
+Post: getting-started/top-10-cryptocurrencies-explained-for-beginners.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/is-crypto-legal-where-i-live.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/what-are-nfts.md is a DRAFT - skipping
+Post: getting-started/what-are-stablecoins.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/what-is-cryptocurrency.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/what-is-defi.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: getting-started/what-to-do-before-you-buy-your-first-crypto.md, Category: "getting-started", Looking for: "getting-started", Matches: true
+Post: portfolio-management/advanced-crypto-estate-planning.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/crypto-estate-planning-basics.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/crypto-portfolio-allocation-for-beginners.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/advanced-risk-management.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/algorithmic-portfolio-rebalancing-for-crypto.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/crypto-portfolio-risk-management-explained.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/crypto-tax-loss-harvesting-explained.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/dynamic-portfolio-allocation-for-crypto.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/factor-based-allocation-strategies-for-crypto-portfolios.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/how-to-rebalance-a-crypto-portfolio.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/how-to-track-crypto-port-performance-advanced.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/how-to-track-crypto-portfolio-performance.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/portfolio-allocation-for-multi-chain-crypto-investors.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/market-cap-weighted-allocation-explained-for-crypto.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/rebalancing-strategies-during-bull-and-bear-crypto-markets.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/tax-efficient-rebalancing-strategies-for-crypto.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/tactical-crypto-portfolio-adjustments-for-opportunistic-investors.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/the-advanced-guide-to-tax-loss-harvesting-for-crypto-investors.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/time-based-vs-threshold-rebalancing-for-crypto-portfolios.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: portfolio-management/volatility-based-rebalancing-explained-for-crypto-portfolios.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: research-analysis/60-minute-crypto-due-diligence.md, Category: "research-analysis", Looking for: "getting-started", Matches: false
+Post: portfolio-management/volatility-adjusted-portfolio-allocation-in-crypto.md, Category: "portfolio-management", Looking for: "getting-started", Matches: false
+Post: research-analysis/common-tokenomics-red-flags.md, Category: "research-analysis", Looking for: "getting-started", Matches: false
+Post: research-analysis/crypto-due-diligence-checklist.md, Category: "research-analysis", Looking for: "getting-started", Matches: false
+Post: research-analysis/crypto-investment-red-flags.md, Category: "research-analysis", Looking for: "getting-started", Matches: false
+Post: research-analysis/crypto-tokenomics-checklist.md, Category: "research-analysis", Looking for: "getting-started", Matches: false
+Post: research-analysis/evaluating-token-supply-and-distribution.md, Category: "research-analysis", Looking for: "getting-started", Matches: false
+Post: research-analysis/on-chain-due-diligence-wallet-analysis.md, Category: "research-analysis", Looking for: "getting-started", Matches: false
+Post: research-analysis/token-incentives-and-utility.md, Category: "research-analysis", Looking for: "getting-started", Matches: false
+Post: research-analysis/ultimate-crypto-due-diligence-framework.md, Category: "research-analysis", Looking for: "getting-started", Matches: false
+Post: research-analysis/understanding-crypto-tokenomics.md, Category: "research-analysis", Looking for: "getting-started", Matches: false
+Post: research-analysis/txchyon-capital-private-research-alpha.md, Category: "research-analysis", Looking for: "getting-started", Matches: false
+Post: security-privacy/best-crypto-antivirus-and-security-software.md is a DRAFT - skipping
+Post: security-privacy/best-hardware-wallets-for-bitcoin-only-users.md is a DRAFT - skipping
+Post: security-privacy/best-hardware-wallets-for-crypto.md is a DRAFT - skipping
+Post: security-privacy/best-metal-seed-phrase-backup-plates-reviewed.md is a DRAFT - skipping
+Post: security-privacy/best-vpns-for-crypto-trading-and-privacy.md is a DRAFT - skipping
+Post: security-privacy/best-privacy-coins-and-anonymity-tools-for-crypto-users.md is a DRAFT - skipping
+Post: security-privacy/how-crypto-phishing-attacks-work.md is a DRAFT - skipping
+Post: security-privacy/common-transaction-scams-and-how-to-avoid-them.md is a DRAFT - skipping
+Post: security-privacy/hot-vs-cold-wallet-how-to-store-crypto.md, Category: "security-privacy", Looking for: "getting-started", Matches: false
+Post: security-privacy/how-to-audit-smart-contracts-on-evm-and-solana.md, Category: "security-privacy", Looking for: "getting-started", Matches: false
+Post: security-privacy/how-to-recover-crypto-from-a-lost-hardware-wallet.md is a DRAFT - skipping
+Post: security-privacy/how-to-revoke.md is a DRAFT - skipping
+Post: security-privacy/how-to-revoke-evm.md, Category: "security-privacy", Looking for: "getting-started", Matches: false
+Post: security-privacy/how-to-set-up-a-keystone-hardware-wallet.md is a DRAFT - skipping
+Post: security-privacy/how-to-set-up-a-multi-signature-wallet.md is a DRAFT - skipping
+Post: security-privacy/how-to-set-up-a-safepal-s1-hardware-wallet.md is a DRAFT - skipping
+Post: security-privacy/how-to-set-up-a-tangem-hardware-wallet.md is a DRAFT - skipping
+Post: security-privacy/how-to-store-your-seed-phrase-safely.md is a DRAFT - skipping
+Post: security-privacy/how-to-spot-crypto-scams.md is a DRAFT - skipping
+Post: security-privacy/how-to-verifiy-crypto-transactions-before-signing.md is a DRAFT - skipping
+Post: security-privacy/ledger-setup.md, Category: "security-privacy", Looking for: "getting-started", Matches: false
+Post: security-privacy/on-chain-security-best-practices.md is a DRAFT - skipping
+Post: security-privacy/setting-up-trezor.md, Category: "security-privacy", Looking for: "getting-started", Matches: false
+Post: security-privacy/tangem.md is a DRAFT - skipping
+Post: security-privacy/stop-metamask-ip-leak-2026.md, Category: "security-privacy", Looking for: "getting-started", Matches: false
+Post: security-privacy/top-5-crypto-scams.md is a DRAFT - skipping
+Post: tools-automation/best-crypto-alert-tools.md is a DRAFT - skipping
+Post: tools-automation/best-crypto-analytics-platforms.md is a DRAFT - skipping
+Post: security-privacy/top-5-social-engineering-scams-in-crypto-to-avoid.md is a DRAFT - skipping
+Post: security-privacy/what-to-do-if-your-seed-phrase-is-compromised.md is a DRAFT - skipping
+Post: tools-automation/best-crypto-trading-bots.md, Category: "tools-automation", Looking for: "getting-started", Matches: false
+Post: tools-automation/best-crypto-portfolio-trackers.md is a DRAFT - skipping
+Post: tools-automation/best-solana-trading-bots-for-memecoins-and-sniping.md is a DRAFT - skipping
+Post: tools-automation/crypto-analytics-tools-guide.md, Category: "tools-automation", Looking for: "getting-started", Matches: false
+Post: tools-automation/crypto-api-intergration-explained.md is a DRAFT - skipping
+Post: tools-automation/crypto-automation-scripts-explained.md is a DRAFT - skipping
+Post: trading-investing/aster-28-percent-yield.md, Category: "trading-investing", Looking for: "getting-started", Matches: false
+Post: tools-automation/how-to-create-and-secure-exchange-api-keys.md is a DRAFT - skipping
+Post: trading-investing/aster-vs-drift-vs-hyperliquid.md, Category: "trading-investing", Looking for: "getting-started", Matches: false
+Post: trading-investing/aster-sub-1-dip.md, Category: "trading-investing", Looking for: "getting-started", Matches: false
+Post: trading-investing/dca-vs-lump-sum-investing.md is a DRAFT - skipping
+Post: trading-investing/best-crypto-trading-platforms-for-beginners.md is a DRAFT - skipping
+Post: trading-investing/ultimate-dex-comparison-guide.md is a DRAFT - skipping
+Post: trading-investing/top-8-dexs-for-lowest-fees.md, Category: "trading-investing", Looking for: "getting-started", Matches: false
+DEBUG: Found 35 posts in category "getting-started"
+≡ƒÄ» Gate Configuration: {
+  path: '/categories/getting-started',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+Posts is not defined
+  Stack trace:
+    at Object.default (file:///C:/Users/NefuTrades/txchyon/dist/chunks/index_UjhgvHL8.mjs:35:2044)
+    at createAstroComponentInstance (file:///C:/Users/NefuTrades/txchyon/dist/chunks/astro/server_CeM8fSzd.mjs:1613:20)
+    at renderComponent (file:///C:/Users/NefuTrades/txchyon/dist/chunks/astro/server_CeM8fSzd.mjs:2007:12)
+    at async callComponentAsTemplateResultOrResponse (file:///C:/Users/NefuTrades/txchyon/node_modules/astro/dist/runtime/server/render/astro/render.js:91:25)
+    at async renderPage (file:///C:/Users/NefuTrades/txchyon/node_modules/astro/dist/runtime/server/render/page.js:49:12)
+    at async NOOP_MIDDLEWARE_FN (file:///C:/Users/NefuTrades/txchyon/node_modules/astro/dist/core/middleware/noop-middleware.js:3:20)
+    at async RenderContext.render (file:///C:/Users/NefuTrades/txchyon/node_modules/astro/dist/core/render-context.js:249:22)
+    at async generatePathWithLogs (file:///C:/Users/NefuTrades/txchyon/node_modules/astro/dist/core/build/generate.js:159:21)
+    at async generatePages (file:///C:/Users/NefuTrades/txchyon/node_modules/astro/dist/core/build/generate.js:99:7)
+    at async AstroBuilder.build (file:///C:/Users/NefuTrades/txchyon/node_modules/astro/dist/core/build/index.js:157:5)
+    at async build (file:///C:/Users/NefuTrades/txchyon/node_modules/astro/dist/core/build/index.js:45:3)
+    at async runCommand (file:///C:/Users/NefuTrades/txchyon/node_modules/astro/dist/cli/index.js:210:7)

@@ -18,9 +18,9 @@ const similarPosts = posts.filter(p => p.slug !== post.slug && p.data.category =
 const { Content } = await render(post);
 const { title, description, authors, categories, image, date, tags } = post.data;
 
-const siteUrl = "https://txchyon.com";
+const siteUrl = config.site.base_url;
 const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
-const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/og-default.jpg`;
+const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/images/og-txchyon.png`;
 
 // Safe author handling
 const getAuthorNames = () => {
@@ -36,10 +36,7 @@ const getAuthorNames = () => {
 const authorNames = getAuthorNames();
 ---
 
-<!-- REMOVED: The duplicate SEO component that was here -->
-
-<!-- Keep existing viewport meta -->
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- No duplicate SEO or viewport meta needed here, handled by Base layout -->
 
 <section class="section">
   <div class="container">
@@ -244,7 +241,3 @@ const authorNames = getAuthorNames();
 
         <!-- High-Fidelity Read Next Section -->
         <SimilarPosts posts={similarPosts} />
-      </div>
-    </article>
-  </div>
-</section>

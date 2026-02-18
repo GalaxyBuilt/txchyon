@@ -80,11 +80,15 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="BM9NrhHESqRca7xP0Vuqeg" async></script>
 
     <link rel="shortcut icon" href={config.site.favicon} />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
     <meta name="theme-name" content="bookworm-light-astro" />
     <meta name="msapplication-TileColor" content="#000000" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="generator" content={Astro.generator} />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
     
   
     <AstroFont
@@ -114,25 +118,35 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
 
     <!-- SCHEMA MARKUP -->
     {title && (
-      <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": "{finalTitle}",
-          "description": "{finalDescription}",
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "{Astro.url.origin}{Astro.url.pathname}"
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": finalTitle,
+        "description": finalDescription,
+        "image": finalImage,
+        "author": {
+          "@type": "Person",
+          "name": config.metadata.meta_author
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": config.site.title,
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${config.site.base_url}/images/logo.png`
           }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": Astro.url.href
         }
-      </script>
+      })} />
     )}
 
     <link rel="alternate" type="application/rss+xml" title="Txchyon RSS" href="/rss.xml" />
     <link rel="alternate" type="application/feed+json" title="Txchyon Research Hub JSON Feed" href="/feed.json" />
 
     <ClientRouter />
-    <meta name="author" content={config.metadata.meta_author} />
     
     <!-- GATE STYLES - PARTIAL GATE VERSION -->
     {hasGatedContent && (

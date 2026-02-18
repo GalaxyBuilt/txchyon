@@ -67,169 +67,63 @@ const title = "Search Documentation - Txchyon";
 const description = "Real-time search across all guides, tutorials, and documentation pages.";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W77T47Y58P"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W77T47Y58P');
-    </script>
-
-    <link rel="shortcut icon" href={config.site.favicon} />
-    <meta name="theme-name" content="bookworm-light-astro" />
-    <meta name="msapplication-TileColor" content="#000000" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
-    <meta name="generator" content={Astro.generator} />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    <AstroFont
-      config={[
-        {
-          src: [],
-          preload: false,
-          display: "swap",
-          name: fontPrimary!,
-          fallback: "sans-serif",
-          cssVariable: "font-primary",
-          googleFontsURL: `https://fonts.googleapis.com/css2?family=${pf}&display=swap`,
-        },
-      ]}
-    />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-
-    <SEO
-      title={title}
-      description={description}
-      image={`${config.site.base_url}${config.metadata.meta_image}`}
-      canonical={`${config.site.base_url}/search`}
-    />
-
-    <link rel="alternate" type="application/rss+xml" title="Txchyon RSS" href="/rss.xml" />
-    <link rel="alternate" type="application/feed+json" title="Txchyon JSON Feed" href="/feed.json" />
-
-    <ClientRouter />
-    <meta name="author" content={config.metadata.meta_author} />
-  </head>
-
-  <body class="bg-body text-text font-primary font-normal leading-relaxed dark:bg-dark dark:text-light">
-    <TwSizeIndicator />
-    <Header />
-
-    <main id="main-content" class="min-h-[60vh] py-12">
-      <div class="container mx-auto px-4 max-w-4xl">
-        <div class="text-center mb-10">
-          <h1 class="text-4xl font-bold mb-4">Search Documentation</h1>
-          <p class="text-xl text-gray-600 dark:text-gray-300 mb-2">
-            Find guides, tutorials, and references
-          </p>
-          <p class="text-gray-500">
-            Currently indexing {searchList.length} pages
-          </p>
+<Base 
+  title="Search Documentation // Txchyon OS" 
+  description="Real-time search across all DeFi guides, tutorials, and protocol documentation."
+>
+  <main id="main-content" class="min-h-[60vh] py-24 dark:bg-black bg-white">
+    <div class="container mx-auto px-4 max-w-4xl relative z-10">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+          <span class="text-[8px] font-black text-cyan-500 uppercase tracking-widest italic">Protocol_Search_Active</span>
         </div>
-        
-        <div class="mb-12">
-          <SearchBar searchList={searchList} client:load />
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div class="p-6 border rounded-lg dark:border-gray-700">
-            <h3 class="font-semibold text-lg mb-2">Quick Tips</h3>
-            <ul class="text-gray-600 dark:text-gray-300 space-y-1">
-              <li>• Use at least 2 characters</li>
-              <li>• Try different keywords</li>
-              <li>• Check spelling</li>
-            </ul>
-          </div>
-          
-          <div class="p-6 border rounded-lg dark:border-gray-700">
-            <h3 class="font-semibold text-lg mb-2">Search Features</h3>
-            <ul class="text-gray-600 dark:text-gray-300 space-y-1">
-              <li>• Searches titles & descriptions</li>
-              <li>• Full-text content search</li>
-              <li>• Real-time results</li>
-            </ul>
-          </div>
-          
-          <div class="p-6 border rounded-lg dark:border-gray-700">
-            <h3 class="font-semibold text-lg mb-2">Alternative Search</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-3">
-              Try our traditional search page:
-            </p>
-            <a 
-              href="/search-results" 
-              class="inline-block px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            >
-              Go to Search Page →
-            </a>
-          </div>
+        <h1 class="text-4xl md:text-6xl font-black dark:text-white text-gray-900 mb-6 italic tracking-tighter uppercase">
+          Search <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">Documentation_</span>
+        </h1>
+        <p class="text-lg dark:text-gray-400 text-gray-600 mb-4 font-medium italic">
+          Find guides, tutorials, and research briefings in real-time.
+        </p>
+        <div class="text-[10px] font-black dark:text-gray-500 text-gray-400 uppercase tracking-widest">
+                Currently indexing {searchList.length} intelligence nodes
         </div>
       </div>
-    </main>
-
-    <Footer />
-
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <script is:global>
-      const savedTheme = localStorage.getItem('theme');
-      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
       
-      document.documentElement.setAttribute('data-theme', initialTheme);
-      if (initialTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-      }
+      <div class="mb-20">
+        <SearchBar searchList={searchList} client:load />
+      </div>
       
-      if (!savedTheme) {
-        localStorage.setItem('theme', initialTheme);
-      }
-      
-      function toggleDarkMode() {
-        const html = document.documentElement;
-        const isDark = html.classList.contains('dark');
-        const newTheme = isDark ? 'light' : 'dark';
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 border dark:border-white/10 border-gray-200 rounded-3xl dark:bg-white/[0.02] bg-gray-50/50 backdrop-blur-sm group hover:border-cyan-500/30 transition-all">
+          <h3 class="font-black text-sm mb-4 italic uppercase tracking-wider dark:text-white">Quick Tips</h3>
+          <ul class="text-[11px] dark:text-gray-400 text-gray-600 space-y-3 font-medium italic">
+            <li class="flex gap-2"><span>⚡</span> Use at least 2 characters</li>
+            <li class="flex gap-2"><span>🔍</span> Try different keywords</li>
+            <li class="flex gap-2"><span>🎯</span> Check protocol spelling</li>
+          </ul>
+        </div>
         
-        html.setAttribute('data-theme', newTheme);
-        html.classList.toggle('dark');
-        localStorage.setItem('theme', newTheme);
-      }
-      
-      document.addEventListener('DOMContentLoaded', () => {
-        const toggleBtn = document.getElementById('theme-toggle');
-        if (toggleBtn) {
-          toggleBtn.addEventListener('click', toggleDarkMode);
-        }
-      });
-      
-      document.addEventListener('astro:page-load', () => {
-        const toggleBtn = document.getElementById('theme-toggle');
-        if (toggleBtn) {
-          toggleBtn.replaceWith(toggleBtn.cloneNode(true));
-          document.getElementById('theme-toggle')?.addEventListener('click', toggleDarkMode);
-        }
-      });
-    </script>
-
-    <style>
-      .container {
-        animation: fadeIn 0.3s ease-out;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-  </body>
-</html>
+        <div class="p-8 border dark:border-white/10 border-gray-200 rounded-3xl dark:bg-white/[0.02] bg-gray-50/50 backdrop-blur-sm group hover:border-purple-500/30 transition-all">
+          <h3 class="font-black text-sm mb-4 italic uppercase tracking-wider dark:text-white">Search Index</h3>
+          <ul class="text-[11px] dark:text-gray-400 text-gray-600 space-y-3 font-medium italic">
+            <li class="flex gap-2"><span>📖</span> Titles & descriptions</li>
+            <li class="flex gap-2"><span>🔡</span> Full-text content</li>
+            <li class="flex gap-2"><span>⌛</span> Real-time indexing</li>
+          </ul>
+        </div>
+        
+        <div class="p-8 border dark:border-white/10 border-gray-200 rounded-3xl dark:bg-white/[0.02] bg-gray-50/50 backdrop-blur-sm group hover:border-pink-500/30 transition-all">
+          <h3 class="font-black text-sm mb-4 italic uppercase tracking-wider dark:text-white">Need Help?</h3>
+          <p class="text-[11px] dark:text-gray-400 text-gray-600 mb-6 font-medium italic leading-relaxed">
+            Can't find what you're looking for? Try our global search page.
+          </p>
+          <a 
+            href="/search-results" 
+            class="inline-block px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-black text-[10px] font-black uppercase tracking-widest rounded-xl hover:scale-105 transition-all italic text-center w-full"
+          >
+            Terminal Search →
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Base>

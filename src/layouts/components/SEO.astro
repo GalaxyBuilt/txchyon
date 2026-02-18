@@ -9,24 +9,24 @@ const {
   noindex = false,
   type = "website",
   publishedTime,
-  author = "GalaxyBuilt",
+  author = config.metadata.meta_author,
   section = "Crypto",
 } = Astro.props;
 
-const BASE = "https://txchyon.com";
+const BASE = config.site.base_url;
 
 const finalTitle = title
-  ? `${title} // Txchyon OS`
-  : "Txchyon OS — Institutional Research, Execution Terminals & Alpha Intelligence";
+  ? `${title} // ${config.site.title}`
+  : `${config.site.title} — Institutional Research, Execution Terminals & Alpha Intelligence`;
 
 const finalDescription = description && description !== "true"
   ? description
-  : "Txchyon OS: Institutional-grade research terminals, systematic alpha, marketing services, access passes, and the Genesis BTC platform. Built for serious capital.";
+  : config.metadata.meta_description;
 
 // Always use absolute URL so crawlers (Twitter, Facebook, LinkedIn) can fetch it
 const finalImage = image
-  ? (image.startsWith('http') ? image : `${BASE}${image}`)
-  : `${BASE}/images/og-txchyon.png`;
+  ? (image.startsWith('http') ? image : `${BASE}${image.startsWith('/') ? '' : '/'}${image}`)
+  : config.metadata.meta_image;
 
 const cleanPath = Astro.url.pathname.replace(/\/$/, "");
 const finalCanonical = canonical ?? `${BASE}${cleanPath}`;
@@ -49,8 +49,9 @@ const finalCanonical = canonical ?? `${BASE}${cleanPath}`;
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Txchyon OS — Institutional Research & Execution Platform" />
-<meta property="og:site_name" content="Txchyon OS" />
+<meta property="og:image:alt" content={finalTitle} />
+<meta property="og:logo" content={`${BASE}/images/logo.png`} />
+<meta property="og:site_name" content={config.site.title} />
 <meta property="og:locale" content="en_US" />
 
 <!-- Article-specific Open Graph -->
@@ -74,9 +75,9 @@ const finalCanonical = canonical ?? `${BASE}${cleanPath}`;
 <meta name="twitter:title" content={finalTitle} />
 <meta name="twitter:description" content={finalDescription} />
 <meta name="twitter:image" content={finalImage} />
-<meta name="twitter:image:alt" content="Txchyon OS — Institutional Research & Execution Platform" />
-<meta name="twitter:site" content="@txchyon" />
-<meta name="twitter:creator" content="@txchyon" />
+<meta name="twitter:image:alt" content={finalTitle} />
+<meta name="twitter:site" content={config.branding.twitter_handle} />
+<meta name="twitter:creator" content={config.branding.twitter_handle} />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={finalCanonical} />
