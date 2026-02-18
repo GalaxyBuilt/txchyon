@@ -1,0 +1,97 @@
+---
+// src/partials/MobileNavigation.astro
+import menu from "@/config/menu.json";
+const main = menu.main;
+---
+
+<!-- 📱 MOBILE OVERLAY SYSTEM -->
+<div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-md z-[60] hidden transition-opacity duration-300"></div>
+
+<div
+  id="mobile-menu-panel"
+  class="fixed inset-y-0 right-0 w-[85%] max-w-[400px] bg-white dark:bg-[#050505] border-l border-gray-200 dark:border-white/10 shadow-[20px_0_60px_rgba(0,0,0,0.5)] z-[70] overflow-y-auto translate-x-full transition-transform duration-300 ease-out"
+>
+  <!-- Terminal Background Pattern -->
+  <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.1] pointer-events-none" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>
+  
+  <div class="relative z-10 p-6 flex flex-col h-full">
+    <!-- Mobile Header Meta -->
+    <div class="flex justify-between items-center mb-8 pb-4 border-b border-gray-100 dark:border-white/5">
+        <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <span class="text-[10px] font-black text-green-500 uppercase tracking-[0.2em] italic">OS_Mainnet_Active</span>
+        </div>
+        <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-black dark:hover:text-white transition-colors rounded-xl hover:bg-black/5 dark:hover:bg-white/5">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Compact Nav Links -->
+    <nav class="flex-1 overflow-y-auto">
+      <div class="space-y-6">
+        {/* Primary Discovery Nodes */}
+        <div class="grid grid-cols-2 gap-3 mb-8">
+          <a href="/categories" class="flex flex-col items-center justify-center p-5 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 hover:bg-cyan-500/20 transition-all group">
+            <span class="text-2xl mb-2">🗺️</span>
+            <span class="text-[10px] font-black text-cyan-500 uppercase tracking-widest italic group-hover:text-cyan-400">Pillars_</span>
+          </a>
+          <a href="/blog" class="flex flex-col items-center justify-center p-5 rounded-2xl bg-purple-500/10 border border-purple-500/20 hover:bg-purple-500/20 transition-all group">
+            <span class="text-2xl mb-2">📚</span>
+            <span class="text-[10px] font-black text-purple-500 uppercase tracking-widest italic group-hover:text-purple-400">Research_</span>
+          </a>
+        </div>
+
+        <div class="space-y-2">
+          {main && main.map((item, index) => (
+            <div class="mb-4">
+              {item.dropdown ? (
+                <div class="mb-6">
+                  <div class="text-[9px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-[0.4em] px-4 py-2 flex items-center gap-3">
+                    <span class="opacity-30">#{String(index + 1).padStart(2,'0')}</span>
+                    <span>{item.name}</span>
+                  </div>
+                  <div class="grid grid-cols-1 gap-1 mt-2">
+                    {item.dropdown.map(sub => (
+                      <a href={sub.url} class="flex items-center gap-3 px-4 py-3 rounded-xl text-[11px] font-black text-gray-700 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+                        <span class="text-cyan-500/40 font-mono">›</span>
+                        <span class="uppercase tracking-tight">{sub.name}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a href={item.url} class="flex items-center justify-between px-4 py-4 rounded-xl text-sm font-black text-gray-800 dark:text-gray-200 hover:text-cyan-500 dark:hover:text-cyan-400 hover:bg-black/5 dark:hover:bg-white/5 transition-all italic border border-transparent hover:border-cyan-500/10">
+                  <span>{item.name}_</span>
+                  <span class="text-cyan-500/30 text-[10px] font-mono tracking-tighter">[{String(index + 1).padStart(2,'0')}]</span>
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Footer Utils -->
+    <div class="pt-8 border-t border-gray-100 dark:border-white/5 space-y-4">
+       <!-- Main CTAs -->
+       <div class="grid grid-cols-1 gap-3">
+          <a href="/shop" class="flex items-center justify-center py-4 bg-black dark:bg-white text-white dark:text-black rounded-xl active:scale-95 transition-all font-black text-xs uppercase tracking-[0.2em] italic shadow-lg">
+            Access_Passes_⚡
+          </a>
+          <a href="https://txchyon.com/labs/genesis/login" target="_blank" rel="noopener" class="flex items-center justify-center py-4 bg-orange-500/10 border border-orange-500/20 text-orange-500 rounded-xl active:scale-95 transition-all font-black text-xs uppercase tracking-[0.2em] italic">
+            ₿_Genesis_Terminal
+          </a>
+       </div>
+       
+       <div class="flex justify-between items-center px-2 pt-2">
+          <div class="flex gap-5">
+            <a href="https://twitter.com/txchyon" class="text-gray-400 hover:text-cyan-500 font-black uppercase text-[9px] tracking-[0.2em] transition-colors">Twitter</a>
+            <a href="/newsletter" class="text-gray-400 hover:text-cyan-500 font-black uppercase text-[9px] tracking-[0.2em] transition-colors">Intel</a>
+          </div>
+          <span class="text-[8px] text-gray-500 font-mono tracking-[0.3em] opacity-40">v3.4_OS</span>
+       </div>
+    </div>
+  </div>
+</div>
