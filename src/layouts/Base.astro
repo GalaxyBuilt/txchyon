@@ -402,12 +402,15 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
     )}
     
     <!-- SIMPLE THEME SCRIPT -->
-    <script>
+    <script is:inline>
       (function() {
-        const savedTheme = localStorage.getItem('theme');
+        const THEME_KEY = 'txchyon-theme';
+        const savedTheme = localStorage.getItem(THEME_KEY);
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         
-        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+        
+        if (theme === 'dark') {
           document.documentElement.classList.add('dark');
           document.documentElement.setAttribute('data-theme', 'dark');
           document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#000000');
@@ -418,7 +421,7 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
         }
         
         if (!savedTheme) {
-          localStorage.setItem('theme', prefersDark ? 'dark' : 'light');
+          localStorage.setItem(THEME_KEY, theme);
         }
       })();
     </script>
@@ -945,6 +948,7 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
     <!-- Theme toggle -->
     <script>
       function toggleDarkMode() {
+        const THEME_KEY = 'txchyon-theme';
         const html = document.documentElement;
         const isDark = html.classList.contains('dark');
         const newTheme = isDark ? 'light' : 'dark';
@@ -959,8 +963,9 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
           document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#ffffff');
         }
         
-        localStorage.setItem('theme', newTheme);
+        localStorage.setItem(THEME_KEY, newTheme);
         updateThemeIcons();
+        window.dispatchEvent(new CustomEvent('themechange', { detail: newTheme }));
       }
       
       function updateThemeIcons() {

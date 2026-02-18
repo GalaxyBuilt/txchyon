@@ -14,10 +14,10 @@ const {
 } = Astro.props;
 
 // Simple, direct image URL - NO DOUBLE BASE_URL!
-const finalTitle = title ?? "Txchyon - On-Chain Research & DeFi Alpha";
-const finalDescription = description && description !== "true" ? description : "On-chain research + DeFi alpha and Airdrops";
+const finalTitle = title ? `${title} // Txchyon OS` : "Txchyon OS // Institutional DeFi Operating System";
+const finalDescription = description && description !== "true" ? description : "Institutional-grade research, systematic alpha, and multi-protocol execution terminals. Knowledge shouldn't cost $5,000.";
 // Use provided image OR fall back to default
-const finalImage = image ? image : "https://txchyon.com/images/og-txchyon.jpg";
+const finalImage = image ? image : "https://txchyon.com/images/og-txchyon.png";
 
 // FIXED: Normalize canonical URL - remove trailing slash
 const cleanPath = Astro.url.pathname.replace(/\/$/, ""); // Remove trailing slash

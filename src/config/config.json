@@ -1,6 +1,6 @@
 ﻿{
   "site": {
-    "title": "Txchyon",
+    "title": "Txchyon OS",
     "base_url": "https://txchyon.com",
     "base_path": "/",
     "trailing_slash": false,
@@ -8,15 +8,15 @@
     "logo": false,
     "logo_width": "200",
     "logo_height": "34",
-    "logo_text": "Txchyon"
+    "logo_text": "Txchyon OS"
   },
   "settings": {
     "pagination": 6
   },
   "metadata": {
     "meta_author": "GalaxyBuilt",
-    "meta_image": "https://txchyon.com/images/logo.png",
-    "meta_description": "Raw data. Real alpha. Live Aster positions and Solana infra bets."
+    "meta_image": "https://txchyon.com/images/og-txchyon.png",
+    "meta_description": "Institutional DeFi Operating System. Open-source research, systematic alpha, and multi-protocol execution terminals."
   },
   "google_tag_manager": {
     "enable": false,
@@ -47,8 +47,8 @@
     "twitter": "https://x.com/galaxybuilt"
   },
   "branding": {
-    "blog_name": "Txchyon",
-    "tagline": "Signal in the noise.",
+    "blog_name": "Txchyon OS",
+    "tagline": "Institutional Infrastructure. Open-Source Intel.",
     "twitter_handle": "@txchyon"
   }
 }

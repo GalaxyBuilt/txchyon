@@ -1,222 +1,217 @@
 ﻿---
+// src/partials/Header.astro - RE-ENGINEERED ECOSYSTEM HEADER
 import menu from "@/config/menu.json";
 import { IoSearch } from "react-icons/io5";
 
 const main = menu.main;
 ---
 
-<header class="py-4 md:py-6 border-b border-gray-200 dark:border-gray-800">
+<header class="sticky top-0 z-50 py-4 md:py-6 bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-gray-200 dark:border-white/10 transition-all duration-300">
   <div class="mx-auto px-4 md:px-6 lg:px-8 xl:px-12 max-w-7xl flex items-center justify-between gap-4 md:gap-6">
     
-    <!-- LOGO + NAME -->
-    <div class="flex-shrink-0">
-      <a href="/" class="flex items-center space-x-2 md:space-x-3">
-        <img
-          src="https://txchyon.com/images/logo.png"
-          alt="Txchyon"
-          class="w-8 h-8 md:w-10 md:h-10 rounded-lg object-cover"
-        />
-        <span class="text-xl md:text-2xl font-bold text-black dark:text-white whitespace-nowrap">
-          Txchyon
-        </span>
+    <!-- 🧬 LOGO + ECOSYSTEM STATUS -->
+    <div class="flex items-center gap-6">
+      <a href="/" class="flex items-center space-x-3 group">
+        <div class="relative">
+          <img
+            src="https://txchyon.com/images/logo.png"
+            alt="Txchyon"
+            class="w-10 h-10 rounded-xl object-cover transition-transform group-hover:scale-110 shadow-lg"
+          />
+          <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 border-2 border-white dark:border-black rounded-full animate-pulse"></div>
+        </div>
+        <div class="flex flex-col items-start leading-none">
+          <span class="text-xl md:text-2xl font-black text-black dark:text-white uppercase italic tracking-tighter">
+            Txchyon
+          </span>
+          <span class="text-[9px] font-bold text-gray-500 dark:text-gray-400 tracking-widest uppercase mt-0.5">
+            Ecosystem OS
+          </span>
+        </div>
       </a>
+      
+      <!-- Operational Indicator (Desktop) -->
+      <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20">
+         <div class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+         <span class="text-[9px] font-black text-green-500 uppercase tracking-widest italic">Stable</span>
+      </div>
     </div>
 
-    <!-- Desktop Navigation - Tighter spacing -->
-    <nav class="hidden md:flex items-center justify-center flex-1 max-w-2xl mx-4">
-      <div class="flex items-center space-x-4 lg:space-x-6">
+    <!-- 🌐 ECOSYSTEM NAVIGATION -->
+    <nav class="hidden md:flex items-center justify-center flex-1">
+      <div class="flex items-center space-x-1 lg:space-x-2">
         {main.map(item => (
-          <div class="relative group">
+          <div class="relative group px-1 py-2">
             {item.dropdown ? (
-              <button class="text-base font-bold text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition whitespace-nowrap flex items-center gap-1 px-1">
-                {item.name} <span class="text-xs">▼</span>
+              <button class="flex items-center gap-1.5 px-4 py-2 text-sm font-bold text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all rounded-lg hover:bg-black/5 dark:hover:bg-white/5 group-hover:bg-black/5 dark:group-hover:bg-white/5">
+                {item.name} 
+                <svg class="w-2.5 h-2.5 opacity-50 group-hover:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+                </svg>
               </button>
             ) : (
-              (item.name === "Alpha") ? (
-                <a
-                  href={item.url}
-                  class="relative text-base font-bold text-white px-3 py-1 rounded-full transition whitespace-nowrap shadow-lg hover:shadow-xl group/alpha overflow-hidden"
-                >
-                  <!-- Animated gradient background -->
-                  <div class="absolute inset-0 bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-500 bg-[length:200%_100%] animate-gradient-shift rounded-full"></div>
-                  <!-- Pulsing effect -->
-                  <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/30 via-orange-400/30 to-yellow-400/30 rounded-full animate-pulse-slow"></div>
-                  <!-- Content -->
-                  <span class="relative z-10">{item.name}</span>
-                </a>
-              ) : (item.name === "Gaming") ? (
-                <a
-                  href={item.url}
-                  class="relative text-base font-bold text-white px-3 py-1 rounded-full transition whitespace-nowrap shadow-lg hover:shadow-xl group/gaming overflow-hidden"
-                >
-                  <!-- Animated gradient background -->
-                  <div class="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-[length:200%_100%] animate-gradient-shift rounded-full"></div>
-                  <!-- Pulsing effect -->
-                  <div class="absolute inset-0 bg-gradient-to-r from-purple-400/30 via-pink-400/30 to-purple-400/30 rounded-full animate-pulse-slow"></div>
-                  <!-- Content -->
-                  <span class="relative z-10">{item.name}</span>
-                </a>
-              ) : (
-                <a
-                  href={item.url}
-                  class="text-base font-bold text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition whitespace-nowrap px-1"
-                >
-                  {item.name}
-                </a>
-              )
+              <a
+                href={item.url}
+                class="px-4 py-2 text-sm font-bold text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
+              >
+                {item.name}
+              </a>
             )}
 
+            {/* Premium Dropdown with Sub-Descriptions */}
             {item.dropdown && (
-              <ul class="absolute left-1/2 -translate-x-1/2 mt-3 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pt-2">
-                {item.dropdown.map(sub => (
-                  <li>
-                    <a
-                      href={sub.url}
-                      class="block px-4 py-2.5 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition whitespace-nowrap"
-                    >
-                      {sub.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50">
+                <div class="w-80 bg-white dark:bg-zinc-950 border border-gray-200 dark:border-white/10 rounded-2xl shadow-[0_30px_60px_-12px_rgba(0,0,0,0.25)] overflow-hidden backdrop-blur-3xl">
+                  <div class="p-4 grid grid-cols-1 gap-2">
+                    <div class="px-4 py-2 mb-1 border-b border-gray-100 dark:border-white/5">
+                       <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest leading-none">{item.name} Central</span>
+                    </div>
+                    {item.dropdown.map(sub => (
+                      <a
+                        href={sub.url}
+                        class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-black/[0.03] dark:hover:bg-white/[0.03] transition-all group/item"
+                      >
+                        <div class="w-8 h-8 rounded-lg bg-black/5 dark:bg-white/5 flex items-center justify-center text-lg transition-transform group-hover/item:scale-110">
+                          {sub.name.includes("SOL") ? "⚡" : sub.name.includes("Intel") ? "🧠" : sub.name.includes("BTC") ? "₿" : sub.name.includes("Getting") ? "🚀" : sub.name.includes("Airdrop") ? "🪂" : sub.name.includes("DeFi") ? "🏦" : sub.name.includes("Security") ? "🛡️" : sub.name.includes("Alpha") ? "🔥" : sub.name.includes("Gaming") ? "🎮" : "📚"}
+                        </div>
+                        <div class="flex flex-col">
+                          <span class="text-xs font-black text-gray-800 dark:text-gray-200 group-hover/item:text-cyan-500 transition-colors">{sub.name}</span>
+                          <span class="text-[10px] text-gray-500 dark:text-gray-500 font-medium">Access terminal protocols</span>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                  <div class="bg-black/5 dark:bg-white/5 px-5 py-3 flex justify-between items-center">
+                     <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest italic">Txchyon_OS v3.1</span>
+                     <div class="flex gap-2">
+                        <div class="w-1 h-1 rounded-full bg-cyan-500/50"></div>
+                        <div class="w-1 h-1 rounded-full bg-cyan-500/50"></div>
+                        <div class="w-1 h-1 rounded-full bg-cyan-500/50"></div>
+                     </div>
+                  </div>
+                </div>
+              </div>
             )}
           </div>
         ))}
       </div>
     </nav>
 
-    <!-- Icons: RSS, Search, Theme + Mobile Hamburger - Tighter spacing -->
-    <div class="flex items-center gap-3 md:gap-4 lg:gap-5 flex-shrink-0">
-      <a href="/rss.xml" class="text-black dark:text-white hover:text-blue-600 transition p-1" title="RSS Feed">
-        <svg class="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M6.18 15.64a2.18 2.18 0 1 1-4.36 0 2.18 2.18 0 0 1 4.36 0z"/>
-          <path d="M4 4.44A11.83 11.83 0 0 1 15.89 16.33h-2.3A9.51 9.51 0 0 0 4 6.75z"/>
-          <path d="M4 11.16a5.9 5.9 0 0 1 5.9 5.9h-2.3a3.6 3.6 0 0 0-3.6-3.6z"/>
-        </svg>
-      </a>
+
+    <!-- 🛠️ UTILITIES -->
+    <div class="flex items-center gap-2 md:gap-4">
       
-      <a href="/search" class="text-black dark:text-white hover:text-blue-600 transition p-1">
-        <IoSearch class="w-5 h-5 md:w-6 md:h-6" />
+      <!-- Search -->
+      <a href="/search" class="p-2.5 text-gray-500 hover:text-black dark:hover:text-white transition-colors hover:bg-black/5 dark:hover:bg-white/5 rounded-xl block md:hidden lg:block">
+        <IoSearch class="w-5 h-5 md:w-5 md:h-5" />
       </a>
 
       <!-- Theme Toggle -->
       <button
         id="theme-toggle"
-        class="p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+        class="p-2.5 rounded-xl text-gray-500 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all"
         title="Toggle theme"
-        aria-label="Toggle theme"
       >
-        <svg id="theme-icon-sun" class="w-4 h-4 md:w-5 md:h-5 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-3.05-.293l-.707-.707a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414-1.414z" clip-rule="evenodd"/>
+        <svg id="theme-icon-sun" class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
         </svg>
-        <svg id="theme-icon-moon" class="w-4 h-4 md:w-5 md:h-5 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+        <svg id="theme-icon-moon" class="w-5 h-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
-        <span class="sr-only">Toggle theme</span>
       </button>
 
-      <!-- Mobile Hamburger -->
+      <!-- CTA (Terminal Access) -->
+      <a href="https://shop.txchyon.com" class="hidden sm:flex px-6 py-2.5 bg-black dark:bg-white text-white dark:text-black text-xs font-black uppercase tracking-widest rounded-xl hover:scale-105 active:scale-95 transition-all shadow-xl dark:shadow-white/10 italic">
+        Access Passes
+      </a>
+
+      <!-- Mobile Menu Toggle -->
       <div class="md:hidden" x-data="{ open: false }">
-        <button @click="open = !open" class="text-black dark:text-white z-50 p-1">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path :class="{ 'hidden': open, 'block': !open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            <path :class="{ 'hidden': !open, 'block': open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        <button @click="open = !open" class="p-2.5 text-gray-500 hover:text-black dark:hover:text-white transition-colors hover:bg-black/5 dark:hover:bg-white/5 rounded-xl">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
-        <!-- Mobile Menu -->
-        <div x-show="open" @click.away="open = false" x-transition class="fixed inset-0 top-16 bg-white dark:bg-gray-900 z-40 overflow-y-auto">
-          <div class="px-6 py-8 space-y-4">
-            {main.flatMap(item => item.dropdown ? [{ name: item.name, url: null, isHeader: true }, ...item.dropdown] : [item]).map(item => (
-              item.isHeader ? (
-                <div class="text-sm font-semibold text-gray-500 uppercase pt-4 border-t border-gray-200 dark:border-gray-700 first:border-t-0 first:pt-0">
-                  {item.name}
+        <!-- Mobile Menu Panel -->
+        <div 
+          x-show="open" 
+          x-transition:enter="transition ease-out duration-300"
+          x-transition:enter-start="opacity-0 translate-x-12"
+          x-transition:enter-end="opacity-100 translate-x-0"
+          x-transition:leave="transition ease-in duration-200"
+          x-transition:leave-start="opacity-100 translate-x-0"
+          x-transition:leave-end="opacity-0 translate-x-12"
+          class="fixed inset-y-0 right-0 w-[85%] max-w-[400px] bg-white dark:bg-zinc-950 border-l border-gray-200 dark:border-white/10 shadow-2xl z-50 overflow-y-auto"
+        >
+          <!-- Terminal Background Pattern -->
+          <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.07] pointer-events-none" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>
+          
+          <div class="relative z-10 p-8 flex flex-col h-full">
+            <!-- Mobile Header Meta -->
+            <div class="flex justify-between items-center mb-10 pb-6 border-b border-gray-100 dark:border-white/5">
+                <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+                    <span class="text-[10px] font-black text-green-500 uppercase tracking-widest italic">OS_Mainnet_Active</span>
                 </div>
-              ) : (
-                (item.name === "Alpha") ? (
-                  <a
-                    href={item.url}
-                    class="relative block text-xl font-bold text-white px-4 py-2 rounded-full transition shadow-lg my-2 overflow-hidden"
-                    @click="open = false"
-                  >
-                    <!-- Animated gradient background -->
-                    <div class="absolute inset-0 bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-500 bg-[length:200%_100%] animate-gradient-shift rounded-full"></div>
-                    <!-- Pulsing effect -->
-                    <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/30 via-orange-400/30 to-yellow-400/30 rounded-full animate-pulse-slow"></div>
-                    <!-- Content -->
-                    <span class="relative z-10">{item.name}</span>
-                  </a>
-                ) : (item.name === "Gaming") ? (
-                  <a
-                    href={item.url}
-                    class="relative block text-xl font-bold text-white px-4 py-2 rounded-full transition shadow-lg my-2 overflow-hidden"
-                    @click="open = false"
-                  >
-                    <!-- Animated gradient background -->
-                    <div class="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-[length:200%_100%] animate-gradient-shift rounded-full"></div>
-                    <!-- Pulsing effect -->
-                    <div class="absolute inset-0 bg-gradient-to-r from-purple-400/30 via-pink-400/30 to-purple-400/30 rounded-full animate-pulse-slow"></div>
-                    <!-- Content -->
-                    <span class="relative z-10">{item.name}</span>
-                  </a>
-                ) : (
-                  <a
-                    href={item.url}
-                    class="block text-xl font-bold text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 py-2"
-                    @click="open = false"
-                  >
-                    {item.name}
-                  </a>
-                )
-              )
-            ))}
+                <button @click="open = false" class="p-2 text-gray-500 hover:text-black dark:hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
 
-            <a href="/contact" class="block text-xl font-bold text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 py-2 border-t border-gray-200 dark:border-gray-700 pt-4 mt-4" @click="open = false">
-              Contact Us
-            </a>
+            <div class="space-y-10 flex-1">
+              {main.map(item => (
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3">
+                    <span class="text-[8px] font-black text-cyan-500 font-mono tracking-widest px-2 py-0.5 border border-cyan-500/20 rounded">NODE_0{main.indexOf(item) + 1}</span>
+                    <div class="text-[10px] font-black text-gray-400 uppercase tracking-[0.4em] italic">{item.name}</div>
+                  </div>
+                  <div class="grid grid-cols-1 gap-1">
+                    {item.dropdown ? (
+                      item.dropdown.map(sub => (
+                        <a href={sub.url} class="group flex items-center justify-between py-3 px-4 rounded-xl hover:bg-black/[0.03] dark:hover:bg-white/[0.03] transition-all border border-transparent hover:border-gray-100 dark:hover:border-white/5">
+                          <span class="text-lg font-black text-gray-800 dark:text-gray-200 group-hover:text-cyan-500 transition-colors italic tracking-tighter">{sub.name}_</span>
+                          <span class="text-cyan-500/30 group-hover:text-cyan-500 transition-colors">→</span>
+                        </a>
+                      ))
+                    ) : (
+                      <a href={item.url} class="group flex items-center justify-between py-3 px-4 rounded-xl hover:bg-black/[0.03] dark:hover:bg-white/[0.03] transition-all border border-transparent hover:border-gray-100 dark:hover:border-white/5">
+                        <span class="text-lg font-black text-gray-800 dark:text-gray-200 group-hover:text-cyan-500 transition-colors italic tracking-tighter">View_{item.name}_</span>
+                        <span class="text-cyan-500/30 group-hover:text-cyan-500 transition-colors">→</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
 
-            <div class="pt-4 border-t border-gray-200 dark:border-gray-700 flex gap-6">
-              <a href="https://twitter.com/txchyon" class="text-black dark:text-white hover:text-blue-600">Twitter</a>
-              <a href="/newsletter" class="text-black dark:text-white hover:text-blue-600">Newsletter</a>
+            <!-- Mobile Footer Utils -->
+            <div class="mt-auto pt-8 border-t border-gray-100 dark:border-white/5 space-y-6">
+               <a href="https://shop.txchyon.com" class="block w-full py-4 bg-black dark:bg-white text-white dark:text-black text-center font-black uppercase text-xs tracking-[0.3em] rounded-2xl shadow-xl italic transition-transform active:scale-95">
+                 Unlock_Access_Passes ⚡
+               </a>
+               
+               <div class="flex justify-between items-center px-2">
+                  <div class="flex gap-4">
+                    <a href="https://twitter.com/txchyon" class="text-gray-400 hover:text-cyan-500 font-bold uppercase text-[9px] tracking-widest transition-colors">Twitter</a>
+                    <a href="/newsletter" class="text-gray-400 hover:text-cyan-500 font-bold uppercase text-[9px] tracking-widest transition-colors">Intel_Feed</a>
+                  </div>
+                  <span class="text-[8px] text-gray-500 font-mono tracking-widest opacity-50">v3.1_REL_TXC</span>
+               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </header>
 
 <style>
-  /* Gradient shift animation */
-  @keyframes gradient-shift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-  .animate-gradient-shift {
-    background-size: 200% 100%;
-    animation: gradient-shift 3s ease infinite;
-  }
-  
-  /* Slow pulse animation */
-  @keyframes pulse-slow {
-    0%, 100% {
-      opacity: 0.3;
-    }
-    50% {
-      opacity: 0.7;
-    }
-  }
-  
-  .animate-pulse-slow {
-    animation: pulse-slow 2s ease-in-out infinite;
+  /* Sticky blurring fix */
+  header {
+    -webkit-backdrop-filter: blur(20px);
   }
 </style>

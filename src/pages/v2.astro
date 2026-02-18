@@ -1,0 +1,82 @@
+---
+// src/pages/v2.astro - Option 2: Institutional Gateway
+import { getCollection } from 'astro:content';
+import Base from "@/layouts/Base.astro";
+import Posts from "@/layouts/components/Posts.astro";
+
+const allPostsRaw = await getCollection('posts', ({ data }) => !data.draft);
+const sortedPosts = allPostsRaw.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<Base title="Txchyon - Institutional Gateway" description="Elite systematic execution and research.">
+  <!-- 🛰️ THE GATEWAY HERO -->
+  <section class="relative min-h-screen overflow-hidden dark:bg-black bg-white flex items-center justify-center">
+    <!-- Grid Overlay -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+    
+    <div class="container relative z-10 mx-auto px-4 text-center">
+      <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 mb-12 backdrop-blur-xl">
+        <div class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
+        <span class="text-xs font-black tracking-[0.5em] text-white uppercase italic">System Status: Operational</span>
+      </div>
+      
+      <h1 class="text-6xl md:text-8xl font-black mb-12 tracking-tighter dark:text-white uppercase italic">
+        The Execution <span class="text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 to-blue-600">Standard</span>
+      </h1>
+      
+      <p class="text-2xl text-gray-400 max-w-2xl mx-auto mb-16 font-light leading-relaxed">
+        Professional grade infrastructure for the decentralized frontier. 
+        <span class="text-white">Labs. Services. Intelligence.</span>
+      </p>
+
+      <div class="flex flex-col md:flex-row gap-6 justify-center max-w-3xl mx-auto">
+        <a href="http://localhost:3000" class="flex-1 p-1 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 group">
+          <div class="w-full h-full bg-black rounded-xl p-6 flex flex-col items-start text-left group-hover:bg-transparent transition-colors">
+            <span class="text-3xl mb-4 group-hover:scale-110 transition-transform">🧬</span>
+            <h3 class="text-white font-bold text-xl mb-2">Txchyon Labs</h3>
+            <p class="text-xs text-gray-400 group-hover:text-white transition-colors">Proprietary trading systems and high-frequency research terminals.</p>
+          </div>
+        </a>
+        
+        <a href="/services" class="flex-1 p-1 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 group">
+           <div class="w-full h-full bg-black rounded-xl p-6 flex flex-col items-start text-left group-hover:bg-transparent transition-colors">
+            <span class="text-3xl mb-4 group-hover:scale-110 transition-transform">⚡</span>
+            <h3 class="text-white font-bold text-xl mb-2">Growth Services</h3>
+            <p class="text-xs text-gray-400 group-hover:text-white transition-colors">Strategic market positioning and elite narrative activation.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📑 THE PUBLIC LAYER (Education as Onboarding) -->
+  <section class="py-32 bg-zinc-950 border-y border-zinc-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto border-l-4 border-cyan-500 pl-8 mb-20">
+        <h2 class="text-4xl font-black text-white mb-6 italic tracking-tighter">The Open Layer</h2>
+        <p class="text-xl text-gray-400">Our contribution to the ecosystem. Free, high-density research meant to elevate the collective intelligence of the market.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+        {sortedPosts.slice(0, 4).map(post => (
+          <a href={`/blog/${post.slug}`} class="group flex gap-6 items-center">
+            <div class="w-32 h-32 bg-zinc-900 rounded-2xl flex-shrink-0 group-hover:scale-95 transition-all overflow-hidden border border-zinc-800">
+               {post.data.image ? <img src={post.data.image} class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" /> : <div class="w-full h-full flex items-center justify-center text-4xl">📄</div>}
+            </div>
+            <div>
+              <div class="text-xs font-bold text-cyan-500 mb-2 uppercase tracking-widest">{post.data.category}</div>
+              <h4 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">{post.data.title}</h4>
+              <p class="text-sm text-gray-500 line-clamp-1">{post.data.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center">
+        <a href="/blog" class="px-10 py-4 bg-white text-black font-black uppercase tracking-widest text-sm hover:invert transition-all">Explore Entire Research Base</a>
+      </div>
+    </div>
+  </section>
+</Base>

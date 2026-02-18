@@ -1,69 +1,62 @@
 {
   "main": [
     {
-      "name": "Getting Started",
-      "url": "/categories/getting-started"
-    },
-    {
-      "name": "Airdrop",
-      "url": "/categories/airdrop-farming"
-    },
-    {
-      "name": "DeFi & Yield",
-      "url": "/categories/defi-yield"
-    },
-    {
-      "name": "Security",
-      "url": "/categories/security-privacy"
-    },
-    {
-      "name": "Alpha",
-      "url": "/categories/alpha-insider"
-    },
-    {
-      "name": "Gaming",
-      "url": "/categories/web3-gaming-metaverse"
-    },
-    {
-      "name": "More",
+      "name": "Terminals",
       "dropdown": [
         {
-          "name": "Trading",
-          "url": "/categories/trading-investing"
+          "name": "Project Omega (SOL)",
+          "url": "https://omega.txchyon.com"
         },
         {
-          "name": "Infrastructure",
-          "url": "/categories/infrastructure-tech"
+          "name": "Project Ultima (Intel)",
+          "url": "https://ultima.txchyon.com"
         },
         {
-          "name": "Portfolio",
-          "url": "/categories/portfolio-management"
-        },
-        {
-          "name": "Regulatory & Tax",
-          "url": "/categories/regulatory-tax"
-        },
-        {
-          "name": "Tools & Automation",
-          "url": "/categories/tools-automation"
-        },
-        {
-          "name": "Prediction Markets",
-          "url": "/categories/prediction-markets"
-        },
-        {
-          "name": "Research",
-          "url": "/categories/research-analysis"
-        },
-        {
-          "name": "Services",
-          "url": "/services"
-        },
-        {
-          "name": "Tools",
-          "url": "/tools"
+          "name": "Project Genesis (BTC)",
+          "url": "https://genesis.txchyon.com"
         }
       ]
+    },
+    {
+      "name": "Knowledge",
+      "dropdown": [
+        {
+          "name": "Getting Started",
+          "url": "/categories/getting-started"
+        },
+        {
+          "name": "Airdrop Farming",
+          "url": "/categories/airdrop-farming"
+        },
+        {
+          "name": "DeFi & Yield",
+          "url": "/categories/defi-yield"
+        },
+        {
+          "name": "Security & Privacy",
+          "url": "/categories/security-privacy"
+        },
+        {
+          "name": "Alpha & Insider",
+          "url": "/categories/alpha-insider"
+        },
+        {
+          "name": "Web3 Gaming",
+          "url": "/categories/web3-gaming-metaverse"
+        },
+        {
+          "name": "View All Research",
+          "url": "/blog"
+        }
+      ]
+    },
+    {
+      "name": "Growth",
+      "url": "/services"
+    },
+    {
+      "name": "Shop",
+      "url": "https://shop.txchyon.com"
     }
   ],
   "footer": [
