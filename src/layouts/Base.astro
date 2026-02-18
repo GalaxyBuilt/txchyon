@@ -8,6 +8,7 @@ import "@/styles/main.css";
 import { AstroFont } from "astro-font";
 import { ClientRouter } from "astro:transitions";
 import SEO from "@/layouts/components/SEO.astro";
+import TxchyaChat from "@/layouts/components/TxchyaChat.astro";
 
 const currentPath = Astro.url.pathname;
 
@@ -440,6 +441,7 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
       <slot />
     </main>
     <Footer />
+    <TxchyaChat />
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   
