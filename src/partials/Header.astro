@@ -132,30 +132,34 @@ const main = menu.main;
         </svg>
       </button>
 
+      <!-- Genesis Platform Demo CTA -->
+      <a href="https://genesis.txchyon.com" target="_blank" rel="noopener" class="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-xs font-black uppercase tracking-widest rounded-xl hover:scale-105 active:scale-95 transition-all shadow-lg italic">
+        <span class="text-[10px]">₿</span> Genesis_Demo
+      </a>
+
       <!-- CTA (Terminal Access) -->
       <a href="https://shop.txchyon.com" class="hidden sm:flex px-6 py-2.5 bg-black dark:bg-white text-white dark:text-black text-xs font-black uppercase tracking-widest rounded-xl hover:scale-105 active:scale-95 transition-all shadow-xl dark:shadow-white/10 italic">
         Access Passes
       </a>
 
       <!-- Mobile Menu Toggle -->
-      <div class="md:hidden" x-data="{ open: false }">
-        <button @click="open = !open" class="p-2.5 text-gray-500 hover:text-black dark:hover:text-white transition-colors hover:bg-black/5 dark:hover:bg-white/5 rounded-xl">
-          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="p-2.5 text-gray-500 hover:text-black dark:hover:text-white transition-colors hover:bg-black/5 dark:hover:bg-white/5 rounded-xl">
+          <svg id="mobile-icon-hamburger" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+          <svg id="mobile-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
+        <!-- Backdrop -->
+        <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 hidden"></div>
+
         <!-- Mobile Menu Panel -->
-        <div 
-          x-show="open" 
-          x-transition:enter="transition ease-out duration-300"
-          x-transition:enter-start="opacity-0 translate-x-12"
-          x-transition:enter-end="opacity-100 translate-x-0"
-          x-transition:leave="transition ease-in duration-200"
-          x-transition:leave-start="opacity-100 translate-x-0"
-          x-transition:leave-end="opacity-0 translate-x-12"
-          class="fixed inset-y-0 right-0 w-[85%] max-w-[400px] bg-white dark:bg-zinc-950 border-l border-gray-200 dark:border-white/10 shadow-2xl z-50 overflow-y-auto"
+        <div
+          id="mobile-menu-panel"
+          class="fixed inset-y-0 right-0 w-[85%] max-w-[400px] bg-white dark:bg-zinc-950 border-l border-gray-200 dark:border-white/10 shadow-2xl z-50 overflow-y-auto translate-x-full transition-transform duration-300 ease-out"
         >
           <!-- Terminal Background Pattern -->
           <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.07] pointer-events-none" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>
@@ -167,7 +171,7 @@ const main = menu.main;
                     <div class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                     <span class="text-[10px] font-black text-green-500 uppercase tracking-widest italic">OS_Mainnet_Active</span>
                 </div>
-                <button @click="open = false" class="p-2 text-gray-500 hover:text-black dark:hover:text-white transition-colors">
+                <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-black dark:hover:text-white transition-colors rounded-lg hover:bg-black/5 dark:hover:bg-white/5">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
@@ -175,10 +179,10 @@ const main = menu.main;
             </div>
 
             <div class="space-y-10 flex-1">
-              {main.map(item => (
+              {main.map((item, index) => (
                 <div class="space-y-4">
                   <div class="flex items-center gap-3">
-                    <span class="text-[8px] font-black text-cyan-500 font-mono tracking-widest px-2 py-0.5 border border-cyan-500/20 rounded">NODE_0{main.indexOf(item) + 1}</span>
+                    <span class="text-[8px] font-black text-cyan-500 font-mono tracking-widest px-2 py-0.5 border border-cyan-500/20 rounded">NODE_0{index + 1}</span>
                     <div class="text-[10px] font-black text-gray-400 uppercase tracking-[0.4em] italic">{item.name}</div>
                   </div>
                   <div class="grid grid-cols-1 gap-1">
@@ -201,8 +205,12 @@ const main = menu.main;
             </div>
 
             <!-- Mobile Footer Utils -->
-            <div class="mt-auto pt-8 border-t border-gray-100 dark:border-white/5 space-y-6">
-               <a href="https://shop.txchyon.com" class="block w-full py-4 bg-black dark:bg-white text-white dark:text-black text-center font-black uppercase text-xs tracking-[0.3em] rounded-2xl shadow-xl italic transition-transform active:scale-95">
+            <div class="mt-auto pt-8 border-t border-gray-100 dark:border-white/5 space-y-4">
+               <!-- Genesis Demo - prominent on mobile -->
+               <a href="https://genesis.txchyon.com" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-center font-black uppercase text-xs tracking-[0.2em] rounded-2xl shadow-xl italic transition-transform active:scale-95">
+                 <span>₿</span> View Genesis Platform_
+               </a>
+               <a href="https://shop.txchyon.com" class="block w-full py-4 bg-gradient-to-r from-purple-600 to-cyan-500 text-white text-center font-black uppercase text-xs tracking-[0.3em] rounded-2xl shadow-xl italic transition-transform active:scale-95">
                  Unlock_Access_Passes ⚡
                </a>
                
@@ -210,6 +218,7 @@ const main = menu.main;
                   <div class="flex gap-4">
                     <a href="https://twitter.com/txchyon" class="text-gray-400 hover:text-cyan-500 font-bold uppercase text-[9px] tracking-widest transition-colors">Twitter</a>
                     <a href="/newsletter" class="text-gray-400 hover:text-cyan-500 font-bold uppercase text-[9px] tracking-widest transition-colors">Intel_Feed</a>
+                    <a href="/rss.xml" class="text-gray-400 hover:text-orange-500 font-bold uppercase text-[9px] tracking-widest transition-colors">RSS</a>
                   </div>
                   <span class="text-[8px] text-gray-500 font-mono tracking-widest opacity-50">v3.1_REL_TXC</span>
                </div>
@@ -217,6 +226,7 @@ const main = menu.main;
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </header>
@@ -232,7 +242,8 @@ const main = menu.main;
     box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
     border-color: rgba(0, 0, 0, 0.1) !important;
   }
-  .dark header.scrolled {
+  /* .dark is on <html>, so we need :is(.dark) to target header inside it */
+  :is(.dark) header.scrolled {
     background-color: rgba(0, 0, 0, 0.95) !important;
     box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
     border-color: rgba(255, 255, 255, 0.08) !important;
@@ -240,14 +251,52 @@ const main = menu.main;
 </style>
 
 <script>
+  // Scroll-enhanced header
   const header = document.querySelector('header');
   if (header) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      header.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
   }
+
+  // Mobile menu toggle (vanilla JS — no Alpine dependency)
+  function initMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const panel = document.getElementById('mobile-menu-panel');
+    const backdrop = document.getElementById('mobile-menu-backdrop');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const iconHamburger = document.getElementById('mobile-icon-hamburger');
+    const iconClose = document.getElementById('mobile-icon-close');
+
+    if (!btn || !panel) return;
+
+    function openMenu() {
+      panel.classList.remove('translate-x-full');
+      backdrop.classList.remove('hidden');
+      iconHamburger.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      panel.classList.add('translate-x-full');
+      backdrop.classList.add('hidden');
+      iconHamburger.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    btn.addEventListener('click', openMenu);
+    closeBtn?.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+
+    // Close on nav link click
+    panel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  }
+
+  // Run on load and after Astro page transitions
+  document.addEventListener('DOMContentLoaded', initMobileMenu);
+  document.addEventListener('astro:page-load', initMobileMenu);
 </script>
