@@ -58,6 +58,28 @@ const blogCollection = defineCollection({
 
 export const collections = {
   posts: blogCollection,
+  about: defineCollection({
+    type: 'content',
+    schema: z.object({
+      title: z.string(),
+      description: z.string().optional(),
+      image: z.string().optional(),
+    }).passthrough(),
+  }),
+  contact: defineCollection({
+    type: 'content',
+    schema: z.object({
+      title: z.string(),
+      description: z.string().optional(),
+    }).passthrough(),
+  }),
+  pages: defineCollection({
+    type: 'content',
+    schema: z.object({
+      title: z.string(),
+      description: z.string().optional(),
+    }).passthrough(),
+  }),
   authors: defineCollection({
     type: 'content',
     schema: z.object({

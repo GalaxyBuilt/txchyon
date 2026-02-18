@@ -1,22 +1,6 @@
 ---
-import TwSizeIndicator from "@/components/TwSizeIndicator.astro";
+import Base from "@/layouts/Base.astro";
 import config from "@/config/config.json";
-import theme from "@/config/theme.json";
-import { plainify } from "@/lib/utils/textConverter";
-import Footer from "@/partials/Footer.astro";
-import Header from "@/partials/Header.astro";
-import "@/styles/main.css";
-import { AstroFont } from "astro-font";
-import { ClientRouter } from "astro:transitions";
-import SEO from "@/layouts/components/SEO.astro";
-
-const pf = theme.fonts.font_family.primary;
-let fontPrimary;
-if (theme.fonts.font_family.primary) {
-  fontPrimary = theme.fonts.font_family.primary
-    .replace(/\+/g, " ")
-    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
-}
 
 const query = Astro.url.searchParams.get('q')?.trim() || '';
 
@@ -33,6 +17,7 @@ const allContent = Object.values(allModules)
     try {
       rawContent = mod.rawContent?.() || mod.getRawContent?.() || '';
       if (!rawContent && mod.file) {
+        // Fallback: read from file system
         const fileContent = Deno.readTextFileSync(mod.file);
         rawContent = fileContent || '';
       }
@@ -72,13 +57,12 @@ const results = query.length >= 2
     })
   : [];
 
-const title = query ? `Search Results for "${query}" - Txchyon` : "Search - Txchyon";
+const title = query ? `Search Results for "${query}"` : "Search";
 const description = query 
   ? `Search results for "${query}" across guides and documentation.`
-  : "Search through all guides, tutorials, and pages on Txchyon.";
+  : "Search through all guides, tutorials, and pages.";
 
-// FIXED: Add canonical logic to frontmatter
-const cleanPath = Astro.url.pathname.replace(/\/$/, ""); // Remove trailing slash
+const cleanPath = Astro.url.pathname.replace(/\/$/, ""); 
 const canonical = `${config.site.base_url}${cleanPath}`;
 ---
 
@@ -134,7 +118,7 @@ const canonical = `${config.site.base_url}${cleanPath}`;
           
           <div class="space-y-6">
             {results.map(item => (
-              <article class="group relative overflow-hidden dark:bg-[#080808] bg-white border dark:border-white/1) border-gray-100 p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+              <article class="group relative overflow-hidden dark:bg-[#080808] bg-white border dark:border-white/10 border-gray-100 p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
                 <a href={item.url} class="block">
                   <div class="flex justify-between items-start mb-4">
                     <h2 class="text-2xl font-black italic uppercase tracking-tighter dark:text-white text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-pink-500 transition-all">
