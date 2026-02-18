@@ -51,7 +51,10 @@ console.log(`DEBUG: Found ${categoryPosts.length} posts in category "${category}
 const categoryData = CATEGORY_HIERARCHY[category];
 ---
 
-<BaseLayout>
+<BaseLayout 
+  title={`${categoryData?.name || category} // Repository // Txchyon OS`}
+  description={`Institutional-grade research and systematic alpha for ${categoryData?.name || category}. Private intelligence for professional capital.`}
+>
   <div class="container mx-auto px-4 py-8">
     <header class="mb-12">
       <div class="flex items-center gap-4 mb-4">
