@@ -1,0 +1,297 @@
+
+> bookworm-light-astro@3.2.0 build
+> astro build
+
+[33m[1m20:12:14[22m [WARN][39m Unsupported file type [1mC:\Users\NefuTrades\txchyon\src\pages\index.astro.backup[22m found. Prefix filename with an underscore (`_`) to ignore.
+[33m[1m20:12:14[22m [WARN][39m Unsupported file type [1mC:\Users\NefuTrades\txchyon\src\pages\shop.astro.txt[22m found. Prefix filename with an underscore (`_`) to ignore.
+[33m[1m20:12:14[22m [WARN][39m Unsupported file type [1mC:\Users\NefuTrades\txchyon\src\pages\shop\index-backup-comingsoon.astro.txt[22m found. Prefix filename with an underscore (`_`) to ignore.
+[33m[1m20:12:14[22m [WARN][39m Unsupported file type [1mC:\Users\NefuTrades\txchyon\src\pages\shop\index.astro.txt[22m found. Prefix filename with an underscore (`_`) to ignore.
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: about, blog, contact, pages
+
+[2m20:12:14[22m [34m[content][39m Syncing content
+[2m20:12:14[22m [34m[content][39m Content config changed
+[2m20:12:14[22m [34m[content][39m Clearing content store
+[33m[1m20:12:14[22m [WARN] [glob-loader][39m No files found matching "**/*{.md,.mdx},!**/_*/**/*{.md,.mdx},!**/_*{.md,.mdx}" in directory "src\content\blog"
+[2m20:12:17[22m [34m[content][39m Synced content
+[2m20:12:17[22m [34m[types][39m Generated [2m2.78s[22m
+[2m20:12:17[22m [34m[build][39m output: [34m"static"[39m
+[2m20:12:17[22m [34m[build][39m mode: [34m"static"[39m
+[2m20:12:17[22m [34m[build][39m directory: [34mC:\Users\NefuTrades\txchyon\dist\[39m
+[2m20:12:17[22m [34m[build][39m Collecting build info...
+[2m20:12:17[22m [34m[build][39m [32mΓ£ô Completed in 2.81s.[39m
+[2m20:12:17[22m [34m[build][39m Building static entrypoints...
+Found 5 warnings while optimizing generated CSS:
+
+Issue #1:
+Γöé   border-color: #333333 !important;
+Γöé }
+Γöé .dark .row .col-12, .dark .row .sm\\:col-6 {
+Γöå                                      ^-- 'col-6' is not recognized as a valid pseudo-class. Did you mean '::col-6' (pseudo-element) or is this a typo?
+Γöå
+Γöé   background-color: #1a1a1a !important;
+Γöé }
+
+Issue #2:
+Γöé   background-color: #1a1a1a !important;
+Γöé }
+Γöé .dark .row .col-12 a, .dark .row .sm\\:col-6 a {
+Γöå                                        ^-- 'col-6' is not recognized as a valid pseudo-class. Did you mean '::col-6' (pseudo-element) or is this a typo?
+Γöå
+Γöé   background-color: #1a1a1a !important;
+Γöé }
+
+Issue #3:
+Γöé   background-color: #0a0a0a !important;
+Γöé }
+Γöé .dark footer .text-white\\/75 {
+Γöå                            ^-- Unexpected token Number { has_sign: false, value: 75.0, int_value: Some(75) }
+Γöå
+Γöé   color: #a0a0a0 !important;
+Γöé }
+
+Issue #4:
+Γöé   background-color: #1a1a1a !important;
+Γöé }
+Γöé .dark .fixed .dark\\:bg-gray-900 {
+Γöå                      ^-- 'bg-gray-900' is not recognized as a valid pseudo-class. Did you mean '::bg-gray-900' (pseudo-element) or is this a typo?
+Γöå
+Γöé   background-color: #1a1a1a !important;
+Γöé }
+
+Issue #5:
+Γöé   border-color: #333333 !important;
+Γöé }
+Γöé .dark .fixed .dark\\:border-gray-800 {
+Γöå                      ^-- 'border-gray-800' is not recognized as a valid pseudo-class. Did you mean '::border-gray-800' (pseudo-element) or is this a typo?
+Γöå
+Γöé   border-color: #333333 !important;
+Γöé }
+
+[33m[1m20:12:20[22m [WARN] [vite][39m [33m"matchHostname", "matchPathname", "matchPort" and "matchProtocol" are imported from external module "@astrojs/internal-helpers/remote" but never used in "node_modules/astro/dist/assets/utils/remotePattern.js".[39m
+[33m[1m20:12:20[22m [WARN] [vite][39m [33m"parseISO" is imported from external module "date-fns" but never used in "src/lib/utils/dateFormat.ts".[39m
+[2m20:12:20[22m [34m[vite][39m [32mΓ£ô built in 3.07s[39m
+[2m20:12:20[22m [34m[build][39m [32mΓ£ô Completed in 3.10s.[39m
+
+[42m[30m building client (vite) [39m[49m
+[2m20:12:20[22m [34m[vite][39m transforming...
+[2m20:12:21[22m [34m[vite][39m [32mΓ£ô[39m 47 modules transformed.
+[2m20:12:21[22m [34m[vite][39m rendering chunks...
+[2m20:12:21[22m [34m[vite][39m computing gzip size...
+[2m20:12:21[22m [34m[vite][39m [2mdist/[22m[36m_astro/Base.astro_astro_type_script_index_1_lang.Dj7444Vu.js          [39m[1m[2m  8.21 kB[22m[1m[22m[2m Γöé gzip:  3.13 kB[22m
+[2m20:12:21[22m [34m[vite][39m [2mdist/[22m[36m_astro/ClientRouter.astro_astro_type_script_index_0_lang.QW52Ox2j.js  [39m[1m[2m 15.33 kB[22m[1m[22m[2m Γöé gzip:  5.27 kB[22m
+[2m20:12:21[22m [34m[vite][39m [2mdist/[22m[36m_astro/client.EAUERNtn.js                                             [39m[1m[2m194.63 kB[22m[1m[22m[2m Γöé gzip: 60.99 kB[22m
+[2m20:12:21[22m [34m[vite][39m [32mΓ£ô built in 546ms[39m
+
+[42m[30m generating static routes [39m[49m
+[2m20:12:21[22m [32mΓû╢[39m src/pages/404.astro
+[2m20:12:21[22m   [34mΓööΓöÇ[39m [2m/404.html[22m≡ƒÄ» Gate Configuration: { path: '/404', hasGatedContent: false, gateType: 'partial' }
+ [31m(+904ms)[39m 
+[2m20:12:22[22m [32mΓû╢[39m src/pages/about.astro
+[2m20:12:22[22m   [34mΓööΓöÇ[39m [2m/about/index.html[22m≡ƒÄ» Gate Configuration: { path: '/about', hasGatedContent: false, gateType: 'partial' }
+ [2m(+256ms)[22m 
+[2m20:12:22[22m [32mΓû╢[39m src/pages/authors/page/[slug].astro
+[2m20:12:23[22m [32mΓû╢[39m src/pages/authors/[single].astro
+[2m20:12:23[22m   [34mΓö£ΓöÇ[39m [2m/authors/-index/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/authors/-index',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+156ms)[22m 
+[2m20:12:24[22m   [34mΓö£ΓöÇ[39m [2m/authors/mark-dinn/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/authors/mark-dinn',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+72ms)[22m 
+[2m20:12:24[22m   [34mΓööΓöÇ[39m [2m/authors/galaxy/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/authors/galaxy',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [31m(+505ms)[39m 
+[2m20:12:24[22m [32mΓû╢[39m src/pages/authors/index.astro
+[2m20:12:24[22m   [34mΓööΓöÇ[39m [2m/authors/index.html[22m≡ƒÄ» Gate Configuration: { path: '/authors', hasGatedContent: false, gateType: 'partial' }
+ [2m(+427ms)[22m 
+[2m20:12:25[22m [32mΓû╢[39m src/pages/blog.astro
+[2m20:12:25[22m   [34mΓööΓöÇ[39m [2m/blog/index.html[22m≡ƒÄ» Gate Configuration: { path: '/blog', hasGatedContent: false, gateType: 'partial' }
+ [2m(+114ms)[22m 
+[2m20:12:25[22m [32mΓû╢[39m src/pages/blog/[...slug].astro
+[2m20:12:25[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/airdrop-disqualification-risks/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/airdrop-disqualification-risks',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+150ms)[22m 
+[2m20:12:25[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/airdrop-eligibility-criteria/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/airdrop-eligibility-criteria',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+76ms)[22m 
+[2m20:12:25[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/airdrop-points-case-studies/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/airdrop-points-case-studies',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+81ms)[22m 
+[2m20:12:25[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/alignerz-launchpad/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/alignerz-launchpad',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+149ms)[22m 
+[2m20:12:25[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/cold-vs-hot-wallets-optimizing-security-and-eligibility/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/cold-vs-hot-wallets-optimizing-security-and-eligibility',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+158ms)[22m 
+[2m20:12:25[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/airdrop-minimum-activity-thresholds/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/airdrop-minimum-activity-thresholds',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+79ms)[22m 
+[2m20:12:25[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/avoiding-red-flags-wallet-hygiene-and-compliance/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/avoiding-red-flags-wallet-hygiene-and-compliance',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+73ms)[22m 
+[2m20:12:25[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/how-projects-detect-sybil-wallets/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/how-projects-detect-sybil-wallets',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+148ms)[22m 
+[2m20:12:26[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/how-to-track-airdrop-points/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/how-to-track-airdrop-points',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+152ms)[22m 
+[2m20:12:26[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/preparing-for-the-polymarket-airdrop/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/preparing-for-the-polymarket-airdrop',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+166ms)[22m 
+[2m20:12:26[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/wallet-management-best-practices-for-airdrop-farmers/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/wallet-management-best-practices-for-airdrop-farmers',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+150ms)[22m 
+[2m20:12:26[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/optimizing-airdrop-points-safely/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/optimizing-airdrop-points-safely',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+75ms)[22m 
+[2m20:12:26[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/mastering-wallet-diversification-for-airdrop-farming/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/mastering-wallet-diversification-for-airdrop-farming',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [31m(+4.33s)[39m 
+[2m20:12:31[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/time-vs-volume-points-systems/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/time-vs-volume-points-systems',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [31m(+960ms)[39m 
+[2m20:12:31[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/solana-airdrops/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/solana-airdrops',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+84ms)[22m 
+[2m20:12:32[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/capital-allocation-scaling/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/capital-allocation-scaling',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+75ms)[22m 
+[2m20:12:32[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/pump-fun-airdrop-hunt/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/pump-fun-airdrop-hunt',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+72ms)[22m 
+[2m20:12:32[22m   [34mΓö£ΓöÇ[39m [2m/blog/airdrop-farming/what-actions-earn-airdrop-points/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/airdrop-farming/what-actions-earn-airdrop-points',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+461ms)[22m 
+[2m20:12:32[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/cross-chain-early-arbitrage/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/cross-chain-early-arbitrage',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+73ms)[22m 
+[2m20:12:32[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/liquidity-pool-analysis-alpha/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/liquidity-pool-analysis-alpha',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+167ms)[22m 
+[2m20:12:32[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/gas-execution-optimization/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/gas-execution-optimization',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+74ms)[22m 
+[2m20:12:32[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/front-running-anti-bot/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/front-running-anti-bot',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+165ms)[22m 
+[2m20:12:33[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/smart-contract-sniping/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/smart-contract-sniping',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+147ms)[22m 
+[2m20:12:33[22m   [34mΓö£ΓöÇ[39m [2m/blog/alpha-insider/spot-new-dex-pairs/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/alpha-insider/spot-new-dex-pairs',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [2m(+419ms)[22m 
+[2m20:12:33[22m   [34mΓö£ΓöÇ[39m [2m/blog/defi-yield/nordvpn-drift/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/defi-yield/nordvpn-drift',
+  hasGatedContent: true,
+  gateType: 'partial'
+}
+ [31m(+1.00s)[39m 
+[2m20:12:34[22m   [34mΓö£ΓöÇ[39m [2m/blog/defi-yield/liquidity-uniswap-guide/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/defi-yield/liquidity-uniswap-guide',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+70ms)[22m 
+[2m20:12:34[22m   [34mΓö£ΓöÇ[39m [2m/blog/defi-yield/vooi-tge-research/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/defi-yield/vooi-tge-research',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [2m(+126ms)[22m 
+[2m20:12:34[22m   [34mΓö£ΓöÇ[39m [2m/blog/defi-yield/how-to-launch-a-memecoin-on-pumpfun/index.html[22m≡ƒÄ» Gate Configuration: {
+  path: '/blog/defi-yield/how-to-launch-a-memecoin-on-pumpfun',
+  hasGatedContent: false,
+  gateType: 'partial'
+}
+ [31m(+2.08s)[39m 
+Cannot find module 'C:\Users\NefuTrades\txchyon\dist\chunks\content-assets_DleWbedO.mjs' imported from C:\Users\NefuTrades\txchyon\dist\chunks\_astro_content_DZ3qa1dD.mjs
+  Stack trace:
+    at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at o (file:///C:/Users/NefuTrades/txchyon/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+    at AsyncLoaderHooksOnLoaderHookWorker.resolve (node:internal/modules/esm/hooks:265:30)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:845:20)
+[2m20:12:36[22m   [34mΓö£ΓöÇ[39m [2m/blog/defi-yield/nordvpn-hype/index.html[22m
