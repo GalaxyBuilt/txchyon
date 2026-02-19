@@ -16,7 +16,7 @@
   "metadata": {
     "meta_author": "GalaxyBuilt",
     "meta_image": "https://txchyon.com/images/og-txchyon.png",
-    "meta_description": "Txchyon OS: Institutional research terminals, systematic alpha, marketing services, access passes & the Genesis BTC platform. Built for serious capital."
+    "meta_description": "Txchyon OS: Open-Source DeFi Infrastructure. Institutional research terminals, systematic alpha, marketing services & the Genesis BTC platform."
   },
   "google_tag_manager": {
     "enable": false,
@@ -48,7 +48,7 @@
   },
   "branding": {
     "blog_name": "Txchyon OS",
-    "tagline": "Institutional Infrastructure. Private Intelligence.",
+    "tagline": "Open-Source Institutional Infrastructure. Private Intelligence.",
     "twitter_handle": "@txchyon"
   }
 }
