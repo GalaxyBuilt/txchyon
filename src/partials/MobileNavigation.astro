@@ -1,20 +1,8 @@
+---
+// src/partials/MobileNavigation.astro
 import menu from "@/config/menu.json";
 const main = menu.main;
-console.log("[MobileNavigation] Loaded main items:", main?.length);
 ---
-
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const panel = document.getElementById('mobile-menu-panel');
-    const nav = panel?.querySelector('nav');
-    console.log("[MobileNavigation Debug]", {
-      panelExists: !!panel,
-      navExists: !!nav,
-      navChildren: nav?.children.length,
-      panelClasses: panel?.className
-    });
-  });
-</script>
 
 <!-- 📱 MOBILE OVERLAY SYSTEM -->
 <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-md z-[60] hidden transition-opacity duration-300"></div>
@@ -41,9 +29,8 @@ console.log("[MobileNavigation] Loaded main items:", main?.length);
     </div>
 
     <!-- Compact Nav Links -->
-    <nav class="flex-1 overflow-y-auto border-t border-red-500/20">
+    <nav class="flex-1 overflow-y-auto">
       <div class="space-y-6">
-        <div class="text-[8px] font-mono text-red-500 opacity-50 px-4">DEBUG: Nav Start (Items: {main?.length || 0})</div>
         {/* Primary Discovery Nodes */}
         <div class="grid grid-cols-2 gap-3 mb-8">
           <a href="/categories" class="flex flex-col items-center justify-center p-5 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 hover:bg-cyan-500/20 transition-all group">
@@ -57,7 +44,6 @@ console.log("[MobileNavigation] Loaded main items:", main?.length);
         </div>
 
         <div class="space-y-2">
-          {!main && <div class="text-red-500 p-4">ERROR: Menu data not found</div>}
           {main && main.map((item, index) => (
             <div class="mb-4">
               {item.dropdown ? (
@@ -84,7 +70,6 @@ console.log("[MobileNavigation] Loaded main items:", main?.length);
             </div>
           ))}
         </div>
-        <div class="text-[8px] font-mono text-red-500 opacity-50 px-4">DEBUG: Nav End</div>
       </div>
     </nav>
 
