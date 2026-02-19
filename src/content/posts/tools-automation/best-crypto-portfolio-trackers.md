@@ -150,8 +150,8 @@ Ideal for:
 - Advanced traders needing consolidated insights
 
 Casual investors may start with:
-- [Best Crypto Exchanges for Beginners](https://txchyon.com/best-crypto-exchanges)  
-- [How to Buy Crypto Safely](https://txchyon.com/how-to-buy-crypto)
+- [Best Crypto Exchanges for Beginners](https://txchyon.com/blog/getting-started/best-crypto-exchanges)  
+- [How to Buy Crypto Safely](https://txchyon.com/blog/getting-started/how-to-buy-crypto)
 
 ---
 

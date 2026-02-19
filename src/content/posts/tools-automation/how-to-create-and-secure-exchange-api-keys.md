@@ -63,8 +63,8 @@ You typically need API keys to use:
 You do **not** need API keys just to buy crypto manually.
 
 If you’re still early-stage, see:
-- [How to Buy Crypto for Beginners](https://txchyon.com/how-to-buy-crypto)
-- [Best Crypto Exchanges for Beginners](https://txchyon.com/best-crypto-exchanges)
+- [How to Buy Crypto for Beginners](https://txchyon.com/blog/getting-started/how-to-buy-crypto)
+- [Best Crypto Exchanges for Beginners](https://txchyon.com/blog/getting-started/best-crypto-exchanges)
 
 ---
 

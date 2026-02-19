@@ -69,7 +69,7 @@ Before using any bot, make sure you have:
 - A small funded trading wallet (not your main holdings)
 
 Wallet setup guides:
-- [How to Set Up Phantom Wallet](https://txchyon.com/how-to-setup-phantom-wallet)
+- [How to Set Up Phantom Wallet](https://txchyon.com/blog/getting-started/how-to-setup-phantom-wallet)
 - [How to Transfer Crypto from Exchange to Wallet Safely](https://txchyon.com/how-to-transfer-crypto-from-exchange-to-wallet)
 
 ---
@@ -175,7 +175,7 @@ Recommended:
 - Solflare
 
 Guides:
-- [How to Set Up Phantom Wallet](https://txchyon.com/how-to-setup-phantom-wallet)
+- [How to Set Up Phantom Wallet](https://txchyon.com/blog/getting-started/how-to-setup-phantom-wallet)
 
 ---
 

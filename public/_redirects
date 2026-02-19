@@ -1,17 +1,63 @@
-﻿
-# /blog/[slug] /blog/[category]/[actual-filename] 301
-# ACTUAL broken category pages from analytics
-# Add missing redirects that were found
-# Add other common missing ones based on your analytics
-# Category page redirects
-# Check analytics if /blog/free-airdrops is getting traffic
-# Common variations
-# CORRECT category page structure
-# If yes, we need to find what it should redirect to
-# Missing redirects found
-# Note: 'free-airdrops' doesn't seem to exist as a file
-# Redirect /blog/slug to /blog/category/slug
-# Top-level redirects
+﻿# 🧪 SEO RECOVERY: 404 & CANONICAL FIXES
+# Handle legacy root-level posts (Move to /blog/category/slug)
+/genlayer /blog/infrastructure-tech/genlayer 301
+/blog/genlayer /blog/infrastructure-tech/genlayer 301
+/best-crypto-exchanges /blog/getting-started/best-crypto-exchanges 301
+/ledger-setup /blog/security-privacy/ledger-setup 301
+/ledger-setup/ /blog/security-privacy/ledger-setup 301
+/preparing-for-the-polymarket-airdrop /blog/airdrop-farming/preparing-for-the-polymarket-airdrop 301
+/stop-metamask-ip-leak-2026 /blog/security-privacy/stop-metamask-ip-leak-2026 301
+/stop-metamask-ip-leak-2026/ /blog/security-privacy/stop-metamask-ip-leak-2026 301
+
+# Handle legacy/broken category paths
+/categories/solana /tags/solana 301
+/categories/bitcoin /tags/bitcoin 301
+/categories/bitcoin/ /tags/bitcoin 301
+/categories/evm /tags/evm 301
+/categories/evm/ /tags/evm 301
+/categories/aster /tags/aster 301
+/categories/aster/ /tags/aster 301
+/categories/ai /tags/ai 301
+/categories/ai/ /tags/ai 301
+/categories/announcement /blog 301
+/categories/tutorial /blog 301
+
+# Handle trailing slash canoncial issues (trailingSlash: never)
+/blog/getting-started/what-are-stablecoins/ /blog/getting-started/what-are-stablecoins 301
+/blog/getting-started/how-to-track-your-crypto-portfolio/ /blog/getting-started/how-to-track-your-crypto-portfolio 301
+/blog/defi-yield/vooi-tge-research/ /blog/defi-yield/vooi-tge-research 301
+/blog/portfolio-management/the-advanced-guide-to-tax-loss-harvesting-for-crypto-investors/ /blog/portfolio-management/the-advanced-guide-to-tax-loss-harvesting-for-crypto-investors 301
+/blog/portfolio-management/algorithmic-portfolio-rebalancing-for-crypto/ /blog/portfolio-management/algorithmic-portfolio-rebalancing-for-crypto 301
+/blog/getting-started/how-to-set-up-exodus-wallet/ /blog/getting-started/how-to-set-up-exodus-wallet 301
+/blog/aster-vs-drift-vs-hyperliquid/ /blog/trading-investing/aster-vs-drift-vs-hyperliquid 301
+/blog/getting-started/best-crypto-exchanges/ /blog/getting-started/best-crypto-exchanges 301
+/blog/how-to-buy-crypto/ /blog/getting-started/how-to-buy-crypto 301
+/blog/how-to-setup-phantom-wallet/ /blog/getting-started/how-to-setup-phantom-wallet 301
+
+# Handle Tag trailing slashes
+/tags/bitcoin/ /tags/bitcoin 301
+/tags/tax-loss-harvesting/ /tags/tax-loss-harvesting 301
+/tags/kucoin-bonus/ /tags/kucoin-bonus 301
+/tags/liquidity/ /tags/liquidity 301
+/tags/us-crypto-exchanges/ /tags/us-crypto-exchanges 301
+/tags/crypto-trading-bots/ /tags/crypto-trading-bots 301
+/tags/drift-protocol/ /tags/drift-protocol 301
+/tags/kyc/ /tags/kyc 301
+/tags/lowest-fee-crypto-exchange/ /tags/lowest-fee-crypto-exchange 301
+/tags/dca-bots/ /tags/dca-bots 301
+/tags/zk/ /tags/zk 301
+/tags/delta-neutral/ /tags/delta-neutral 301
+/tags/cookie-launchpad/ /tags/cookie-launchpad 301
+/tags/tax-optimization/ /tags/tax-optimization 301
+/tags/buy-altcoins-2026/ /tags/buy-altcoins-2026 301
+/tags/funding-rate/ /tags/funding-rate 301
+/tags/hyperliquid/ /tags/hyperliquid 301
+
+# Handle old pagination paths
+/page/* /blog 301
+/about/ /about 301
+
+# EXISTING REDIRECTS BELOW
 /shop/* https://txchyon-shop.pages.dev/shop/:splat 200
 /authors/nefu /authors/galaxy 301
 /authors/nefu/ /authors/galaxy 301

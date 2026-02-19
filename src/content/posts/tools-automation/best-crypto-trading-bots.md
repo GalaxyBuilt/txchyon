@@ -46,8 +46,8 @@ Most bots connect to centralized exchanges or decentralized exchanges using **AP
 ![axiom trade](/screenshots/axiomtrade.jpg)
 
 If you’re new to exchanges, start here:
-- [Best Crypto Exchanges for Beginners](https://txchyon.com/best-crypto-exchanges)
-- [How to Buy Crypto Safely](https://txchyon.com/how-to-buy-crypto)
+- [Best Crypto Exchanges for Beginners](https://txchyon.com/blog/getting-started/best-crypto-exchanges)
+- [How to Buy Crypto Safely](https://txchyon.com/blog/getting-started/how-to-buy-crypto)
 
 ---
 

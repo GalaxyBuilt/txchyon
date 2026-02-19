@@ -192,7 +192,7 @@ Analytics platforms are ideal if you:
 - Want to spot trends early
 
 If you’re a casual trader just starting out, consider building experience with:
-- [How to Buy Crypto Safely](https://txchyon.com/how-to-buy-crypto)
+- [How to Buy Crypto Safely](https://txchyon.com/blog/getting-started/how-to-buy-crypto)
 
 ---
 
