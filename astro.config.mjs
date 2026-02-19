@@ -8,17 +8,19 @@ import remarkToc from "remark-toc";
 
 import config from "./src/config/config.json";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://txchyon.com",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
-  
+
   // FIX ADDED HERE
   build: {
     format: "directory", // Forces clean URLs: /blog/post/ instead of /blog/post.md
   },
-  
+
   image: {
     service: { entrypoint: "astro/assets/services/sharp" },
   },
@@ -29,6 +31,7 @@ export default defineConfig({
 
   integrations: [
     react(),
+    sitemap(),
     AutoImport({
       imports: [
         "@/shortcodes/Button",
