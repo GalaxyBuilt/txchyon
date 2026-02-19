@@ -7,21 +7,30 @@
 // Immediately set theme to prevent flash
 (function() {
   const theme = (() => {
-    // 1. Check localStorage
-    const stored = localStorage.getItem('theme');
+    // 1. Check ecosystem first
+    const ecosystem = localStorage.getItem('txchyon-ecosystem');
+    if (ecosystem === 'bear') return 'bear';
+
+    // 2. Check localStorage for theme
+    const stored = localStorage.getItem('txchyon-theme');
     if (stored) return stored;
     
-    // 2. Check system preference
+    // 3. Check system preference
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark';
     }
     
-    // 3. Default to light
-    return 'light';
+    // 4. Default to dark (since bull side is dark-first usually) or light
+    return 'dark'; 
   })();
   
   // Apply immediately before any rendering
-  document.documentElement.classList.toggle('dark', theme === 'dark');
-  document.documentElement.setAttribute('data-theme', theme);
+  if (theme === 'bear') {
+    document.documentElement.classList.add('dark');
+    document.documentElement.setAttribute('data-theme', 'bear');
+  } else {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  }
 })();
 </script>

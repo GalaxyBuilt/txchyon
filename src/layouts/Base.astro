@@ -965,17 +965,24 @@ const finalCanonical = canonical ?? `${config.site.base_url}${cleanPath}`;
     <script>
       function toggleDarkMode() {
         const THEME_KEY = 'txchyon-theme';
+        const ECOSYSTEM_KEY = 'txchyon-ecosystem';
         const html = document.documentElement;
         const isDark = html.classList.contains('dark');
         const newTheme = isDark ? 'light' : 'dark';
+        const ecosystem = localStorage.getItem(ECOSYSTEM_KEY);
         
         if (newTheme === 'dark') {
           html.classList.add('dark');
-          html.setAttribute('data-theme', 'dark');
-          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#000000');
+          if (ecosystem !== 'bear') {
+            html.setAttribute('data-theme', 'dark');
+          }
+          const themeColor = ecosystem === 'bear' ? '#030405' : '#000000';
+          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', themeColor);
         } else {
           html.classList.remove('dark');
-          html.setAttribute('data-theme', 'light');
+          if (ecosystem !== 'bear') {
+            html.setAttribute('data-theme', 'light');
+          }
           document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#ffffff');
         }
         

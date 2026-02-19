@@ -1,5 +1,6 @@
 ---
 // src/partials/MobileNavigation.astro
+import BullBearToggle from "@/components/BullBearToggle.astro";
 ---
 
 <!-- 📱 MOBILE OVERLAY SYSTEM -->
@@ -77,9 +78,10 @@
     <div class="pt-8 border-t border-gray-100 dark:border-white/5 space-y-4">
        <!-- Main CTAs -->
        <div class="grid grid-cols-1 gap-3">
-          <a href="/shop" class="flex items-center justify-center py-4 bg-black dark:bg-white text-white dark:text-black rounded-xl active:scale-95 transition-all font-black text-xs uppercase tracking-[0.2em] italic shadow-lg">
-            Access_Passes_⚡
-          </a>
+       <!-- Ecosystem Toggle -->
+       <div class="px-4 py-2 border border-gray-100 dark:border-white/5 rounded-xl bg-black/5 dark:bg-white/5 flex items-center justify-center">
+         <BullBearToggle />
+       </div>
           <a href="https://txchyon.com/labs/genesis/login" target="_blank" rel="noopener" class="flex items-center justify-center py-4 bg-orange-500/10 border border-orange-500/20 text-orange-500 rounded-xl active:scale-95 transition-all font-black text-xs uppercase tracking-[0.2em] italic">
             ₿_Genesis_Terminal
           </a>

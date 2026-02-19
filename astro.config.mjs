@@ -15,6 +15,9 @@ export default defineConfig({
   site: "https://txchyon.com",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
+  server: {
+    port: 4321
+  },
 
   // FIX ADDED HERE
   build: {

@@ -4,6 +4,7 @@ import menu from "@/config/menu.json";
 import config from "@/config/config.json";
 import { IoSearch } from "react-icons/io5";
 import MobileNavigation from "@/partials/MobileNavigation.astro";
+import BullBearToggle from "@/components/BullBearToggle.astro";
 
 const main = menu.main;
 ---
@@ -135,10 +136,10 @@ const main = menu.main;
       </button>
 
 
-      <!-- CTA (Terminal Access) -->
-      <a href="/shop" class="hidden sm:flex px-6 py-2.5 bg-black dark:bg-white text-white dark:text-black text-xs font-black uppercase tracking-widest rounded-xl hover:scale-105 active:scale-95 transition-all shadow-xl dark:shadow-white/10 italic">
-        Access Passes
-      </a>
+      <!-- Ecosystem Toggle -->
+      <div class="hidden sm:block">
+        <BullBearToggle />
+      </div>
       
       <!-- Mobile Menu Toggle -->
       <div class="md:hidden flex items-center">
